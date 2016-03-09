@@ -2,4 +2,4 @@ all:
 	mkdir src/charts/$(CHART)
 	cp -r template/ src/charts/$(CHART)
 	mkdir src/charts/$(CHART)/assets
-	touch test-data/$(CHART).json
+	echo '{}' > test-data/$(CHART).json
