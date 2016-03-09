@@ -1,6 +1,5 @@
 const gulp = require('gulp')
 const rename = require('gulp-rename')
-const browserSync = require('browser-sync')
 const webpackStream = require('webpack-stream')
 const plumber = require('gulp-plumber')
 const report = require('../report-error.js')
@@ -17,7 +16,6 @@ gulp.task('js-chart-dev', () => {
 		.pipe(webpackStream(config))
 		.pipe(rename('bundle.js'))
 		.pipe(gulp.dest(dest))
-		.pipe(browserSync.reload({ stream: true }))
 })
 
 // gulp.task('js-prod', function() {
