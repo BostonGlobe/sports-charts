@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "get-json-lite": "^1.1.1",
-    "pym-iframe-resizer": "^2.0.0"
+    "pym-iframe-resizer": "^3.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.4.0",
