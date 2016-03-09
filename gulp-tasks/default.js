@@ -1,5 +1,4 @@
 const gulp = require('gulp')
-const runSequence = require('run-sequence')
 const argv = require('yargs').argv
 
 const chartPath = `charts/${argv.chart}`
@@ -14,14 +13,4 @@ gulp.task('default', ['dev'], () => {
 
 	gulp.watch('src/common/css/**/*.styl', ['css-common-dev'])
 	gulp.watch('src/common/js/**/*.js', ['js-common-dev'])
-})
-
-gulp.task('dev', (cb) => {
-	runSequence(
-		'html-chart-dev',
-		'css-chart-dev',
-		'js-chart-dev',
-		'browser-sync',
-		cb
-	)
 })
