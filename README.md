@@ -4,4 +4,5 @@
 `make CHART=chart-name`
 
 ## Development
-`gulp --chart chart-name`
+* Start local server: `gulp --chart chart-name`
+* Modify files in **src/charts/chart-name/**
