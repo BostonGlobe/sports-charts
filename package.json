@@ -22,7 +22,9 @@
   "bugs": {
     "url": "https://github.com/BostonGlobe/sports-charts/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "globe-iframe-resizer": "0.0.2"
+  },
   "devDependencies": {
     "babel-cli": "^6.4.0",
     "babel-core": "^6.3.17",

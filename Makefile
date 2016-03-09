@@ -1,3 +1,3 @@
 all:
 	mkdir src/charts/$(CHART)
-	cp -rf template/ src/charts/$(CHART)
+	cp -r template/ src/charts/$(CHART)
