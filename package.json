@@ -1,0 +1,21 @@
+{
+  "name": "sports-charts",
+  "version": "1.0.0",
+  "description": "Charts for Sports section",
+  "scripts": {},
+  "author": "Russell Goldenberg",
+  "contributors": [
+  	{"name": "Russell Goldenberg"},
+  	{"name": "Gabriel Florit"},
+  	{"name": "Elaina Natario"}
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BostonGlobe/sports-charts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BostonGlobe/sports-charts/issues"
+  },
+  "homepage": "https://github.com/BostonGlobe/sports-charts"
+}
