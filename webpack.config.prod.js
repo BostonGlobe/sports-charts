@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = {
 	module: {
 		loaders: [
@@ -12,5 +14,5 @@ module.exports = {
 		new webpack.optimize.UglifyJsPlugin(),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.optimize.DedupePlugin(),
-	]
+	],
 }

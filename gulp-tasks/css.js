@@ -8,7 +8,7 @@ const argv = require('yargs').argv
 
 const chartPath = `charts/${argv.chart}`
 const src = `src/${chartPath}/css/main.styl`
-const dest = `dev/${chartPath}`
+const dest = { dev: `dev/${chartPath}`, prod: `.tmp/${chartPath}` }
 
 gulp.task('css-chart-dev', () => {
 	gulp.src(src)
@@ -16,13 +16,13 @@ gulp.task('css-chart-dev', () => {
         .pipe(stylus())
 		.pipe(autoprefixer())
 		.pipe(rename('bundle.css'))
-		.pipe(gulp.dest(dest))
+		.pipe(gulp.dest(dest.dev))
 })
 
-// gulp.task('css-prod', function () {
-// 	gulp.src(src)
-//         .pipe(stylus())
-// 		.pipe(autoprefixer())
-// 		.pipe(rename('bundle.css'))
-// 		.pipe(gulp.dest('.tmp'))
-// })
+gulp.task('css-chart-prod', () => {
+	gulp.src(src)
+        .pipe(stylus())
+		.pipe(autoprefixer())
+		.pipe(rename('bundle.css'))
+		.pipe(gulp.dest(dest.prod))
+})

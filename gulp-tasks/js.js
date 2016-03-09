@@ -4,23 +4,26 @@ const webpackStream = require('webpack-stream')
 const plumber = require('gulp-plumber')
 const report = require('../report-error.js')
 const argv = require('yargs').argv
-const config = require('../webpack.config.dev.js')
+const config = {
+	dev: require('../webpack.config.dev.js'),
+	prod: require('../webpack.config.prod.js'),
+}
 
 const chartPath = `charts/${argv.chart}`
 const src = `src/${chartPath}/js/main.js`
-const dest = `dev/${chartPath}`
+const dest = { dev: `dev/${chartPath}`, prod: `.tmp/${chartPath}` }
 
 gulp.task('js-chart-dev', () => {
-	return gulp.src(src)
+	gulp.src(src)
 		.pipe(plumber({ errorHandler: report }))
-		.pipe(webpackStream(config))
+		.pipe(webpackStream(config.dev))
 		.pipe(rename('bundle.js'))
-		.pipe(gulp.dest(dest))
+		.pipe(gulp.dest(dest.dev))
 })
 
-// gulp.task('js-prod', function() {
-// 	return gulp.src(src)
-// 		.pipe(webpackStream(prod_config))
-// 		.pipe(rename('bundle.js'))
-// 		.pipe(gulp.dest('.tmp'))
-// })
+gulp.task('js-chart-prod', () => {
+	gulp.src(src)
+		.pipe(webpackStream(config.prod))
+		.pipe(rename('bundle.js'))
+		.pipe(gulp.dest(dest.prod))
+})
