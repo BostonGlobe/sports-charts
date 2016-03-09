@@ -9,6 +9,9 @@ gulp.task('default', ['dev'], () => {
 	gulp.watch(`src/${chartPath}/assets/**/*`, ['assets-chart-dev'])
 	gulp.watch(`src/${chartPath}/chart.html`, ['html-chart-dev'])
 
+	gulp.watch('src/utils/**/*.js', ['js-chart-dev'])
+	// gulp.watch(`src/base/css/**/*.styl`, ['css-base-dev'])
+
 	gulp.watch(`dev/${chartPath}/**/*`, ['browser-sync-reload'])
 
 	gulp.watch('src/common/css/**/*.styl', ['css-common-dev'])
