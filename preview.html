@@ -36,13 +36,15 @@
 			<script src='https://apps.bostonglobe.com/common/js/pym/pym-0.4.5.min.js' type='text/javascript'></script>
 			<script>
 			        (function() {
-			        	var search = window.location.search
+			        	var search = window.location.search;
 			        	if(search.indexOf('?chart=') > -1) {
-			        		var split = search.split('chart=');
-			        		var chart = split[1].trim()
+			        		var chart = search.split('chart=')[1].trim();
 			        		var html = 'dev/charts/' + chart + '/index.html';
 			        		var pymParent = new pym.Parent('globe-graphic-iframe-1', html, {});
-			        		pymParent.onMessage('height-request', function(msg) { pymParent.sendMessage('height-send', window.innerHeight); });
+			        		pymParent.onMessage('req-data-source', function() {
+			        			var dataSource = '../../../test-data/' + chart + '.json';
+			        			pymParent.sendMessage('res-data-source', dataSource);
+			        		});
 			        	} else {
 			        		console.log('no search param in url to preview chart');
 			        	}	

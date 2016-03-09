@@ -1,7 +1,16 @@
-import globeIframe from 'globe-iframe-resizer'
+import setupIframe from '../../../utils/setup-iframe'
+import getJSON from 'get-json-lite'
 
-function handleParentResize(width) {
-	
+function handleDataLoaded(data) {
+
 }
 
-globeIframe(handleParentResize)
+function handleDataError(error) {
+	console.error(error)
+}
+
+function fetchData(source) {
+	getJSON(source, handleDataLoaded, handleDataError)
+}
+
+setupIframe(fetchData)

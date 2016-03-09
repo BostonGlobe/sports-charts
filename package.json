@@ -23,7 +23,8 @@
     "url": "https://github.com/BostonGlobe/sports-charts/issues"
   },
   "dependencies": {
-    "globe-iframe-resizer": "0.0.2"
+    "get-json-lite": "^1.1.1",
+    "pym-iframe-resizer": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.4.0",
