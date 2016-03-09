@@ -5,7 +5,7 @@ const fs = require('fs')
 const argv = require('yargs').argv
 
 const chartPath = `charts/${argv.chart}`
-const src = 'src/common/index.html'
+const src = 'src/base/index.html'
 const dest = `dev/${chartPath}`
 
 gulp.task('html-chart-dev', () => {
