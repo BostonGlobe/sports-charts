@@ -2,7 +2,9 @@
   "name": "sports-charts",
   "version": "1.0.0",
   "description": "Charts for Sports section",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint src"
+  },
   "author": "Russell Goldenberg",
   "contributors": [
     {
