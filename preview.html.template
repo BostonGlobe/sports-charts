@@ -34,10 +34,13 @@
 					var chart = '<!-- chart -->';
 					var html = 'dev/charts/' + chart + '/index.html';
 					var pymParent = new pym.Parent('globe-graphic-iframe-1', html, {});
+
+					// chartifier
 					pymParent.onMessage('request-data', function() {
 						var data = <!-- data -->;
 						pymParent.sendMessage('receive-data', JSON.stringify(data));
 					});
+
 				})();
 
 			</script>

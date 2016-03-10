@@ -1,9 +1,6 @@
-import getJSON from 'get-json-lite'
-
 import setupIframe from '../../../utils/setup-iframe'
 
-// this gets fired when we fetch data (e.g. during production)
-// or when we receive data (e.g. chartbuilder)
+// this gets fired when we receive data
 function handleDataLoaded(data) {
 	console.log(JSON.stringify(data, null, 2))
 }
@@ -13,9 +10,7 @@ function handleDataError(error) {
 	console.error(error)
 }
 
-// this requests json data (e.g. during production)
-// getJSON(url, handleDataLoaded, handleDataError)
-
 // this starts the pym resizer and takes a callback.
-// the callback will fire when we receive data (e.g. chartbuilder)
-setupIframe(handleDataLoaded)
+// the callback will fire when we receive data
+setupIframe(handleDataLoaded, handleDataError)
+
