@@ -1,8 +1,11 @@
 import pymIframe from 'pym-iframe-resizer'
 
-export default function (cb) {
-	pymIframe.setupPym({})
-	const pymChild = pymIframe.getPymChild()
-	pymChild.sendMessage('req-data-source', true)
-	pymChild.onMessage('res-data-source', cb)
+const setup = (callback) => {
+
+	const pymChild = pymIframe({})
+	pymChild.onMessage('receive-data', j => callback(JSON.parse(j)))
+	pymChild.sendMessage('request-data', true)
+
 }
+
+export default setup

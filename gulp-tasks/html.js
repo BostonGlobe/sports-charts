@@ -2,10 +2,20 @@ const gulp = require('gulp')
 const replace = require('gulp-replace')
 const fs = require('fs')
 const argv = require('yargs').argv
+const rename = require('gulp-rename')
 
 const chartPath = `charts/${argv.chart}`
 const src = 'src/base/index.html'
 const dest = { dev: `dev/${chartPath}`, prod: `.tmp/${chartPath}` }
+const data = `test-data/${argv.chart}.json`
+
+gulp.task('preview-html', () => {
+	const json = fs.readFileSync(data)
+	return gulp.src('preview.html.template')
+		.pipe(replace('<!-- data -->', json))
+		.pipe(rename('preview.html'))
+		.pipe(gulp.dest('.'))
+})
 
 gulp.task('html-chart-dev', () => {
 	const html = fs.readFileSync(`src/${chartPath}/chart.html`)
