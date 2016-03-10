@@ -26,3 +26,19 @@ gulp.task('css-chart-prod', () => {
 		.pipe(rename('bundle.css'))
 		.pipe(gulp.dest(dest.prod))
 })
+
+gulp.task('css-base-dev', () => {
+	gulp.src('src/base/css/config.styl')
+        .pipe(stylus())
+		.pipe(autoprefixer())
+		.pipe(rename('chart-base.css'))
+		.pipe(gulp.dest('dev'))
+})
+
+gulp.task('css-base-prod', () => {
+	gulp.src('src/base/css/config.styl')
+        .pipe(stylus())
+		.pipe(autoprefixer())
+		.pipe(rename('chart-base.css'))
+		.pipe(gulp.dest('dist'))
+})
