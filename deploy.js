@@ -15,13 +15,13 @@ function displayUploadScript(charts) {
 	`.trim()
 	console.log('\n-- upload command --')
 	console.log(command)
-	// shell.exec(`echo "${command}" | pbcopy`)
+	shell.exec(`echo "${command}" | pbcopy`)
 }
 
 function runProdScripts() {
-	// shell.exec(`npm version ${version.trim()}`)
-	// shell.exec('git push')
-	shell.exec('rm dist/chart-base.css')
+	shell.exec(`npm version ${version.trim()}`)
+	shell.exec('git push')
+	shell.exec('rm -rf dist')
 	shell.exec('gulp css-base-prod')
 
 	const charts = fs.readdirSync('src/charts')
@@ -29,8 +29,7 @@ function runProdScripts() {
 
 	console.log('\n-- prod command --')
 	console.log(command)
-	// shell.exec(command, () => displayUploadScript(charts))
-	displayUploadScript(charts)
+	shell.exec(command, () => displayUploadScript(charts))
 }
 
 if (username) runProdScripts()
