@@ -3,6 +3,7 @@ const replace = require('gulp-replace')
 const fs = require('fs')
 const argv = require('yargs').argv
 const rename = require('gulp-rename')
+const version = require('../package.json').version.replace(/\./g, '')
 
 const chartPath = `charts/${argv.chart}`
 const src = 'src/base/index.html'
@@ -27,10 +28,10 @@ gulp.task('html-chart-dev', () => {
 
 gulp.task('html-chart-prod', () => {
 	const html = fs.readFileSync(`src/${chartPath}/chart.html`)
-	const fiveMinutes = 1000 * 60 * 5
-	const timestamp = Math.floor(Date.now() / fiveMinutes)
+	const timestamp = Math.floor(Date.now() / 6000)
 	return gulp.src(src)
 		.pipe(replace('<!-- chart -->', html))
-		.pipe(replace(/\?v=0/g, `?v=${timestamp}`))
+		.pipe(replace(/\?v=chart/g, `?v=${timestamp}`))
+		.pipe(replace(/\?v=base/g, `?v=${version}`))
 		.pipe(gulp.dest(dest.prod))
 })
