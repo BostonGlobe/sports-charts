@@ -29,5 +29,6 @@ gulp.task('html-chart-prod', () => {
 	const html = fs.readFileSync(`src/${chartPath}/chart.html`)
 	return gulp.src(src)
 		.pipe(replace('<!-- chart -->', html))
+		.pipe(replace(/\?v=0/g, `?v=${Date.now()}`))
 		.pipe(gulp.dest(dest.prod))
 })
