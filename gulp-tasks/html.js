@@ -29,9 +29,10 @@ gulp.task('html-chart-dev', () => {
 gulp.task('html-chart-prod', () => {
 	const html = fs.readFileSync(`src/${chartPath}/chart.html`)
 	const timestamp = Math.floor(Date.now() / 6000)
+	const appsPath = '//apps.bostonglobe.com/sports'
 	return gulp.src(src)
 		.pipe(replace('<!-- chart -->', html))
 		.pipe(replace(/\?v=chart/g, `?v=${timestamp}`))
-		.pipe(replace(/\?v=base/g, `?v=${version}`))
+		.pipe(replace('../../chart-base.css?v=base', `${appsPath}/chart-base?v=${version}`))
 		.pipe(gulp.dest(dest.prod))
 })
