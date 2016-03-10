@@ -33,6 +33,6 @@ gulp.task('html-chart-prod', () => {
 	return gulp.src(src)
 		.pipe(replace('<!-- chart -->', html))
 		.pipe(replace(/\?v=chart/g, `?v=${timestamp}`))
-		.pipe(replace('../../chart-base.css?v=base', `${appsPath}/chart-base?v=${version}`))
+		.pipe(replace('../../chart-base.css?v=base', `${appsPath}/chart-base.css?v=${version}`))
 		.pipe(gulp.dest(dest.prod))
 })
