@@ -1,16 +1,22 @@
-import setupIframe from '../../../utils/setup-iframe'
 import getJSON from 'get-json-lite'
 
-function handleDataLoaded(data) {
+import setupIframe from '../../../utils/setup-iframe'
 
+// this gets fired when we fetch data (e.g. during production)
+// or when we receive data (e.g. chartbuilder)
+function handleDataLoaded(data) {
+	console.log(JSON.stringify(data, null, 2))
 }
 
+// this gets fired when there is an error fetching data
 function handleDataError(error) {
 	console.error(error)
 }
 
-function fetchData(source) {
-	getJSON(source, handleDataLoaded, handleDataError)
-}
+// this requests json data (e.g. during production)
+// getJSON(url, handleDataLoaded, handleDataError)
 
-setupIframe(fetchData)
+// this starts the pym resizer and takes a callback.
+// the callback will fire when we receive data (e.g. chartbuilder)
+setupIframe(handleDataLoaded)
+
