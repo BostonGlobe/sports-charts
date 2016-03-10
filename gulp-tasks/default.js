@@ -13,6 +13,9 @@ gulp.task('default', ['dev'], () => {
 	// gulp.watch(`src/base/css/**/*.styl`, ['css-base-dev'])
 
 	gulp.watch(`dev/${chartPath}/**/*`, ['browser-sync-reload'])
+	gulp.watch('preview.html', ['browser-sync-reload'])
+
+	gulp.watch('test-data/*.*', ['preview-html'])
 
 	gulp.watch('src/common/css/**/*.styl', ['css-common-dev'])
 	gulp.watch('src/common/js/**/*.js', ['js-common-dev'])

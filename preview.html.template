@@ -38,8 +38,8 @@
 						var html = 'dev/charts/' + chart + '/index.html';
 						var pymParent = new pym.Parent('globe-graphic-iframe-1', html, {});
 						pymParent.onMessage('request-data', function() {
-							var data =
-							pymParent.sendMessage('receive-data', JSON.stringify({one:'two'}));
+							var data = <!-- data -->;
+							pymParent.sendMessage('receive-data', JSON.stringify(data));
 						});
 					} else {
 						console.log('no search param in url to preview chart');
