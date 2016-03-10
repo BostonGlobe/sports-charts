@@ -7,6 +7,7 @@ gulp.task('prod', (cb) => {
 		'html-chart-prod',
 		'css-chart-prod',
 		'js-chart-prod',
+		'ssh-prod',
 		cb
 	)
 })

@@ -17,8 +17,8 @@ function displayUploadScript() {
 
 function runProdScripts() {
 	shell.exec(`npm version ${version.trim()}`)
-	// shell.exec('rm dist/chart-base.css')
-	// shell.exec('gulp css-base-prod')
+	shell.exec('rm dist/chart-base.css')
+	shell.exec('gulp css-base-prod')
 	
 	// const charts = fs.readdirSync('src/charts')
 	// const command = charts.map(c => `gulp prod --chart ${c} -u ${username.trim()}`).join(';')
