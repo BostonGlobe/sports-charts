@@ -20,6 +20,3 @@ If you make changes to something in **src/base** you must redeploy all charts.
 *Note:* All changes must be committed before running command.
 
 `node deploy -u username`
-
-
-
