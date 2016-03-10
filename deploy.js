@@ -9,9 +9,9 @@ const username = argv.u
 const version = argv.v || 'patch'
 
 function displayUploadScript(charts) {
-	const createFileString = (c) => `charts/${c}/index.html charts/${c}/bundle.css charts/${c}/bundle.js`
+	const files = (c) => `charts/${c}/index.html charts/${c}/bundle.css charts/${c}/bundle.js`
 	const command = `
-		upload ${charts.map(createFileString).join(' ')} chart-base.css
+		upload ${charts.map(files).join(' ')} chart-base.css
 	`.trim()
 	console.log('\n-- upload command --')
 	console.log(command)
@@ -21,8 +21,7 @@ function displayUploadScript(charts) {
 function runProdScripts() {
 	shell.exec(`npm version ${version.trim()}`)
 	shell.exec('git push')
-	shell.exec('rm -rf dist')
-	shell.exec('gulp css-base-prod')
+	shell.exec('gulp prod-base')
 
 	const charts = fs.readdirSync('src/charts')
 	const command = charts.map(c => `gulp prod --chart ${c} -u ${username.trim()}`).join(';')
