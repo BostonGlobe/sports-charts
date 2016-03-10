@@ -3,11 +3,20 @@ const runSequence = require('run-sequence')
 
 gulp.task('prod', (cb) => {
 	runSequence(
-		'clean',
+		'clean-chart',
 		'html-chart-prod',
 		'css-chart-prod',
 		'js-chart-prod',
-		'ssh-prod',
+		'ssh-chart',
+		cb
+	)
+})
+
+gulp.task('prod-base', (cb) => {
+	runSequence(
+		'clean-base',
+		'css-base-prod',
+		'ssh-base',
 		cb
 	)
 })
