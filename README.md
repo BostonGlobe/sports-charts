@@ -15,9 +15,11 @@
 `gulp prod --chart chart-name`
 
 #### All charts
-If you make changes to something in **src/base** you must redeploy all charts:
+If you make changes to something in **src/base** you must redeploy all charts.
 
-`npm run deploy` (TBD)
+*Note:* All changes must be committed before running command.
+
+`node deploy -u username`
 
 
 
