@@ -3,6 +3,7 @@ const stylus = require('gulp-stylus')
 const autoprefixer = require('gulp-autoprefixer')
 const rename = require('gulp-rename')
 const plumber = require('gulp-plumber')
+const cleanCSS = require('gulp-clean-css')
 const report = require('../report-error.js')
 const argv = require('yargs').argv
 
@@ -39,6 +40,7 @@ gulp.task('css-base-prod', () => {
 	gulp.src('src/base/css/config.styl')
         .pipe(stylus())
 		.pipe(autoprefixer())
+		.pipe(cleanCSS())
 		.pipe(rename('chart-base.css'))
 		.pipe(gulp.dest('dist'))
 })
