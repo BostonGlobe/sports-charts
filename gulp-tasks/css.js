@@ -11,36 +11,36 @@ const chartPath = `charts/${argv.chart}`
 const src = `src/${chartPath}/css/main.styl`
 const dest = { dev: `dev/${chartPath}`, prod: `dist/${chartPath}` }
 
-gulp.task('css-chart-dev', () => {
+gulp.task('css-chart-dev', () =>
 	gulp.src(src)
-		.pipe(plumber({ errorHandler: report }))
-        .pipe(stylus())
-		.pipe(autoprefixer())
-		.pipe(rename('bundle.css'))
-		.pipe(gulp.dest(dest.dev))
-})
+	.pipe(plumber({ errorHandler: report }))
+	.pipe(stylus())
+	.pipe(autoprefixer())
+	.pipe(rename('bundle.css'))
+	.pipe(gulp.dest(dest.dev))
+)
 
-gulp.task('css-chart-prod', () => {
+gulp.task('css-chart-prod', () =>
 	gulp.src(src)
-        .pipe(stylus())
-		.pipe(autoprefixer())
-		.pipe(rename('bundle.css'))
-		.pipe(gulp.dest(dest.prod))
-})
+	.pipe(stylus())
+	.pipe(autoprefixer())
+	.pipe(rename('bundle.css'))
+	.pipe(gulp.dest(dest.prod))
+)
 
-gulp.task('css-base-dev', () => {
+gulp.task('css-base-dev', () =>
 	gulp.src('src/base/css/config.styl')
-        .pipe(stylus())
-		.pipe(autoprefixer())
-		.pipe(rename('chart-base.css'))
-		.pipe(gulp.dest('dev'))
-})
+	.pipe(stylus())
+	.pipe(autoprefixer())
+	.pipe(rename('chart-base.css'))
+	.pipe(gulp.dest('dev'))
+)
 
-gulp.task('css-base-prod', () => {
+gulp.task('css-base-prod', () =>
 	gulp.src('src/base/css/config.styl')
-        .pipe(stylus())
-		.pipe(autoprefixer())
-		.pipe(cleanCSS())
-		.pipe(rename('chart-base.css'))
-		.pipe(gulp.dest('dist'))
-})
+	.pipe(stylus())
+	.pipe(autoprefixer())
+	.pipe(cleanCSS())
+	.pipe(rename('chart-base.css'))
+	.pipe(gulp.dest('dist'))
+)
