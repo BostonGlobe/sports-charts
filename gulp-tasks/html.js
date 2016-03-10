@@ -27,8 +27,10 @@ gulp.task('html-chart-dev', () => {
 
 gulp.task('html-chart-prod', () => {
 	const html = fs.readFileSync(`src/${chartPath}/chart.html`)
+	const fiveMinutes = 1000 * 60 * 5
+	const timestamp = Math.floor(Date.now() / fiveMinutes)
 	return gulp.src(src)
 		.pipe(replace('<!-- chart -->', html))
-		.pipe(replace(/\?v=0/g, `?v=${Date.now()}`))
+		.pipe(replace(/\?v=0/g, `?v=${timestamp}`))
 		.pipe(gulp.dest(dest.prod))
 })
