@@ -10,7 +10,7 @@
 ## Development
 * Start local server: `gulp --chart chart-name`
 
-## Deploy 
+## Deploy
 #### Single chart
 `gulp prod --chart chart-name -u username`
 
