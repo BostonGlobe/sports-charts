@@ -9,10 +9,11 @@ const src = 'src/base/index.html'
 const dest = { dev: `dev/${chartPath}`, prod: `.tmp/${chartPath}` }
 const data = `test-data/${argv.chart}.json`
 
-gulp.task('preview-html', () => {
+gulp.task('html-preview', () => {
 	const json = fs.readFileSync(data)
 	return gulp.src('preview.html.template')
 		.pipe(replace('<!-- data -->', json))
+		.pipe(replace('<!-- chart -->', argv.chart))
 		.pipe(rename('preview.html'))
 		.pipe(gulp.dest('.'))
 })

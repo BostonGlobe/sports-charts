@@ -31,20 +31,13 @@
 			<script>
 
 				(function() {
-
-					var search = window.location.search;
-					if(search.indexOf('?chart=') > -1) {
-						var chart = search.split('chart=')[1].trim();
-						var html = 'dev/charts/' + chart + '/index.html';
-						var pymParent = new pym.Parent('globe-graphic-iframe-1', html, {});
-						pymParent.onMessage('request-data', function() {
-							var data = <!-- data -->;
-							pymParent.sendMessage('receive-data', JSON.stringify(data));
-						});
-					} else {
-						console.log('no search param in url to preview chart');
-					}
-
+					var chart = '<!-- chart -->';
+					var html = 'dev/charts/' + chart + '/index.html';
+					var pymParent = new pym.Parent('globe-graphic-iframe-1', html, {});
+					pymParent.onMessage('request-data', function() {
+						var data = <!-- data -->;
+						pymParent.sendMessage('receive-data', JSON.stringify(data));
+					});
 				})();
 
 			</script>
