@@ -12,7 +12,7 @@
 
 ## Deploy 
 #### Single chart
-`gulp prod --chart chart-name`
+`gulp prod --chart chart-name -u username`
 
 #### All charts
 If you make changes to something in **src/base** you must redeploy all charts.
