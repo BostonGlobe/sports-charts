@@ -11,7 +11,7 @@ const config = {
 
 const chartPath = `charts/${argv.chart}`
 const src = `src/${chartPath}/js/main.js`
-const dest = { dev: `dev/${chartPath}`, prod: `.tmp/${chartPath}` }
+const dest = { dev: `dev/${chartPath}`, prod: `dist/${chartPath}` }
 
 gulp.task('js-chart-dev', () => {
 	gulp.src(src)

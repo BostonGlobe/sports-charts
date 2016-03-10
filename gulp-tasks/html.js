@@ -6,7 +6,7 @@ const rename = require('gulp-rename')
 
 const chartPath = `charts/${argv.chart}`
 const src = 'src/base/index.html'
-const dest = { dev: `dev/${chartPath}`, prod: `.tmp/${chartPath}` }
+const dest = { dev: `dev/${chartPath}`, prod: `dist/${chartPath}` }
 const data = `test-data/${argv.chart}.json`
 
 gulp.task('html-preview', () => {

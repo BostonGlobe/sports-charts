@@ -9,7 +9,7 @@ const argv = require('yargs').argv
 
 const chartPath = `charts/${argv.chart}`
 const src = `src/${chartPath}/css/main.styl`
-const dest = { dev: `dev/${chartPath}`, prod: `.tmp/${chartPath}` }
+const dest = { dev: `dev/${chartPath}`, prod: `dist/${chartPath}` }
 
 gulp.task('css-chart-dev', () => {
 	gulp.src(src)
