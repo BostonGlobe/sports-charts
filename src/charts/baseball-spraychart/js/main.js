@@ -1,10 +1,13 @@
-import { scalePoint } from 'd3-scale'
+import { timer } from 'd3-timer'
 
 import setupIframe from '../../../utils/setup-iframe'
 import { $ } from '../../../utils/dom.js'
-import createSvg from './createSvgBackground.js'
+import createScales from './createScales.js'
+import createSvg from './createSvg.js'
+import createCanvas from './createCanvas.js'
+import drawData from './drawData.js'
+import drawCanvas from './drawCanvas.js'
 
-const π = Math.PI
 const container = $('.chart-container')
 const { offsetWidth } = container
 
@@ -17,63 +20,36 @@ const height = Math.sqrt(Math.pow(offsetWidth, 2)/2) -
 // for now we will say our ballpark max distance is 500
 const parkSize = 443
 
-// start creating scales. first: zones to angles.
-// each zone is represented by one of the 26 letters
-const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+// create all our scales
+const scales = createScales({ parkSize, width, height })
 
-// 22 zones: π/2, or 90 deg
-// 2 zones: π/22
-// finally we rotate everything by π/4 counterclockwise
-const zoneToAngle = scalePoint()
-	.domain(letters)
-	.range([π/4 - π/22, π/4 + 2*π/4 + π/22])
+// create the svg element
+// this will hold the ballpark, infield, diamond, grid, etc
+const svg = createSvg({ container, margins, width, height, parkSize })
 
-createSvg({ container, margins, width, height, parkSize })
+// create canvas element
+const canvas = createCanvas({ container, margins, width, height })
 
-// // create canvas element
-// const canvas = createCanvas({ container })
+// create a custom container that will not be drawn to DOM,
+// but will be used to hold the data elements
+const detachedContainer = document.createElement('custom')
 
-
-// import createCanvas from './createCanvas.js'
-// import createPark from './createPark.js'
-
-// // // create scales
-
-// // // create grid
-// // createPark({ canvas })
-
-// // // fetch data and draw chart
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// start a timer that will run every tick,
+// and redraw the canvas
+// timer(() => {
+// 	drawCanvas({ canvas, detachedContainer })
+// })
 
 // this gets fired when we receive data
-function handleDataLoaded(data) {
-
-	// $('.chart-container .count span').innerHTML = data.length
-	// $('.chart-container pre').innerHTML = JSON.stringify(data, null, 2)
-
+const handleDataLoaded = (data) => {
+	drawData({ data, detachedContainer, scales })
+	drawCanvas({ canvas, detachedContainer })
 }
 
 // this gets fired when there is an error fetching data
-function handleDataError(error) {
+const handleDataError = (error) =>
 	console.error(error)
-}
 
-// // // this starts the pym resizer and takes a callback.
-// // // the callback will fire when we receive data
+// this starts the pym resizer and takes a callback.
+// the callback will fire when we receive data
 setupIframe({ handleDataLoaded, handleDataError })
