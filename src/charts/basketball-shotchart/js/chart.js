@@ -1,6 +1,18 @@
-	// var courtWidth = 50
-	// var courtHeight = 47
- //  	var dimension = 320
+import { dimensions } from './config'
+
+
+function setup() {
+	const { left, right, top, bottom } = dimensions
+	const courtWidth = Math.abs(right - left)
+	const courtHeight = Math.abs(bottom - top)
+	console.log(courtWidth, courtHeight)
+}
+
+function updateData(data) {
+
+}
+
+export default { setup, updateData }
  //    var margin = { top: 0, right: 0, bottom: 0, left: 0 }
 	// var width = dimension - margin.left - margin.right
 	// var height = dimension * (courtHeight / courtWidth) - margin.top - margin.bottom

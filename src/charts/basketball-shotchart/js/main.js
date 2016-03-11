@@ -1,8 +1,11 @@
 import setupIframe from '../../../utils/setup-iframe'
+import chart from './chart'
+
+chart.setup()
 
 // this gets fired when we receive data
 function handleDataLoaded(data) {
-	console.log(JSON.stringify(data, null, 2))
+	chart.updateData(data)
 }
 
 // this gets fired when there is an error fetching data
