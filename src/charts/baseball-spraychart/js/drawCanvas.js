@@ -24,41 +24,24 @@ const drawCanvas = ({ canvas, detachedContainer }) => {
 		const cx = node.attr('cx')
 		const cy = node.attr('cy')
 		const r = node.attr('r')
+		const fillStyle = node.attr('fillStyle')
+		const strokeStyle = node.attr('strokeStyle')
 
 		c.beginPath()
 
 		c.arc(cx, cy, r, 0, 2 * Math.PI)
+
+		c.fillStyle = fillStyle
 		c.fill()
+
+		c.lineWidth = 1
+
+		c.strokeStyle = strokeStyle
+		c.stroke()
 
 		c.closePath()
 
 	})
-
-	// 	const node = d3.select(this)
-
-	// 	const cx = node.attr('cx')
-	// 	const cy = node.attr('cy')
-	// 	const r = node.attr('r')
-	// 	const fillStyle = node.attr('fillStyle')
-	// 	const strokeStyle = node.attr('strokeStyle')
-	// 	const opacity = node.attr('opacity')
-
-	// 	// TODO: see whether this works on retina screens
-	// 	// TODO: investigate most performant way of doing this
-	// 	c.globalAlpha = opacity
-	// 	c.beginPath()
-	// 	c.arc(cx, cy, r, 0, 2 * Math.PI)
-
-	// 	c.fillStyle = fillStyle
-	// 	c.fill()
-
-	// 	c.lineWidth = 1
-
-	// 	c.strokeStyle = strokeStyle
-	// 	c.stroke()
-
-	// 	c.closePath()
-	// })
 
 }
 

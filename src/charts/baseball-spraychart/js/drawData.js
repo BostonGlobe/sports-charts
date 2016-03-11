@@ -1,5 +1,7 @@
 import { select, selectAll } from 'd3-selection'
 
+import colors from './../../../utils/colors.js'
+
 const π = Math.PI
 
 const drawData = ({ data, detachedContainer, scales }) => {
@@ -38,6 +40,24 @@ const drawData = ({ data, detachedContainer, scales }) => {
 		.attr('cx', x)
 		.attr('cy', y)
 		.attr('r', d => d.description === 'Home run' ? 5 : 3)
+		.attr('strokeStyle', d => {
+			return {
+				'Out': colors.gray3,
+				'Single': colors.redsox2,
+				'Double': colors.redsox2,
+				'Triple': colors.redsox2,
+				'Home run': colors.redsox1,
+			}[d.description] || colors.gray3
+		})
+		.attr('fillStyle', d => {
+			return {
+				'Out': colors.gray3,
+				'Single': 'white',
+				'Double': 'white',
+				'Triple': colors.redsox2,
+				'Home run': colors.redsox1,
+			}[d.description] || 'white'
+		})
 
 	// // const circles = svg.select('g.root')
 	// // 	.append('g').selectAll('.circle').data([0, 1, 2])

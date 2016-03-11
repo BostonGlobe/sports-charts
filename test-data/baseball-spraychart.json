@@ -1,38 +1,38 @@
 [
   {
     "gamedate": "20150406",
-    "description": "Home run",
-    "zone": "G",
-    "distance": 362,
-    "index": 1
+    "description": "Out",
+    "zone": "I",
+    "distance": 127,
+    "index": 7
   },
   {
-    "gamedate": "20150406",
-    "description": "Home run",
+    "gamedate": "20150409",
+    "description": "Single",
+    "zone": "T",
+    "distance": 170,
+    "index": 50
+  },
+  {
+    "gamedate": "20150410",
+    "description": "Single",
+    "zone": "I",
+    "distance": 217,
+    "index": 78
+  },
+  {
+    "gamedate": "20150410",
+    "description": "Out",
     "zone": "D",
-    "distance": 369,
-    "index": 5
+    "distance": 143,
+    "index": 87
   },
   {
-    "gamedate": "20150406",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 374,
-    "index": 11
-  },
-  {
-    "gamedate": "20150406",
-    "description": "Home run",
-    "zone": "H",
-    "distance": 367,
-    "index": 12
-  },
-  {
-    "gamedate": "20150406",
-    "description": "Home run",
-    "zone": "C",
-    "distance": 384,
-    "index": 23
+    "gamedate": "20150410",
+    "description": "Out",
+    "zone": "U",
+    "distance": 157,
+    "index": 105
   },
   {
     "gamedate": "20150410",
@@ -42,18 +42,81 @@
     "index": 111
   },
   {
+    "gamedate": "20150410",
+    "description": "Out",
+    "zone": "J",
+    "distance": 265,
+    "index": 117
+  },
+  {
+    "gamedate": "20150411",
+    "description": "Out",
+    "zone": "U",
+    "distance": 188,
+    "index": 127
+  },
+  {
+    "gamedate": "20150411",
+    "description": "Out",
+    "zone": "W",
+    "distance": 117,
+    "index": 135
+  },
+  {
+    "gamedate": "20150411",
+    "description": "Out",
+    "zone": "J",
+    "distance": 135,
+    "index": 146
+  },
+  {
+    "gamedate": "20150411",
+    "description": "Out",
+    "zone": "Q",
+    "distance": 260,
+    "index": 153
+  },
+  {
     "gamedate": "20150412",
-    "description": "Home run",
-    "zone": "O",
-    "distance": 415,
-    "index": 168
+    "description": "Out",
+    "zone": "I",
+    "distance": 142,
+    "index": 157
+  },
+  {
+    "gamedate": "20150412",
+    "description": "Out",
+    "zone": "X",
+    "distance": 113,
+    "index": 167
+  },
+  {
+    "gamedate": "20150412",
+    "description": "Out",
+    "zone": "W",
+    "distance": 100,
+    "index": 175
   },
   {
     "gamedate": "20150413",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 330,
-    "index": 187
+    "description": "Single",
+    "zone": "G",
+    "distance": 309,
+    "index": 183
+  },
+  {
+    "gamedate": "20150413",
+    "description": "Out",
+    "zone": "S",
+    "distance": 122,
+    "index": 189
+  },
+  {
+    "gamedate": "20150413",
+    "description": "Out",
+    "zone": "V",
+    "distance": 314,
+    "index": 196
   },
   {
     "gamedate": "20150413",
@@ -64,38 +127,115 @@
   },
   {
     "gamedate": "20150414",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 321,
-    "index": 222
+    "description": "Single",
+    "zone": "V",
+    "distance": 249,
+    "index": 210
   },
   {
-    "gamedate": "20150415",
-    "description": "Home run",
-    "zone": "C",
-    "distance": 328,
-    "index": 246
+    "gamedate": "20150414",
+    "description": "Out",
+    "zone": "S",
+    "distance": 278,
+    "index": 223
+  },
+  {
+    "gamedate": "20150414",
+    "description": "Out",
+    "zone": "T",
+    "distance": 176,
+    "index": 228
+  },
+  {
+    "gamedate": "20150414",
+    "description": "Out",
+    "zone": "S",
+    "distance": 146,
+    "index": 233
   },
   {
     "gamedate": "20150417",
-    "description": "Home run",
+    "description": "Out",
+    "zone": "L",
+    "distance": 251,
+    "index": 257
+  },
+  {
+    "gamedate": "20150417",
+    "description": "Out",
+    "zone": "V",
+    "distance": 118,
+    "index": 260
+  },
+  {
+    "gamedate": "20150417",
+    "description": "Out",
+    "zone": "R",
+    "distance": 255,
+    "index": 270
+  },
+  {
+    "gamedate": "20150418",
+    "description": "Single",
     "zone": "D",
-    "distance": 328,
-    "index": 264
+    "distance": 312,
+    "index": 275
+  },
+  {
+    "gamedate": "20150418",
+    "description": "Single",
+    "zone": "M",
+    "distance": 225,
+    "index": 282
+  },
+  {
+    "gamedate": "20150418",
+    "description": "Double",
+    "zone": "V",
+    "distance": 351,
+    "index": 287
   },
   {
     "gamedate": "20150419",
-    "description": "Home run",
-    "zone": "G",
-    "distance": 345,
-    "index": 297
+    "description": "Out",
+    "zone": "T",
+    "distance": 139,
+    "index": 299
+  },
+  {
+    "gamedate": "20150420",
+    "description": "Sacrifice fly",
+    "zone": "S",
+    "distance": 331,
+    "index": 320
+  },
+  {
+    "gamedate": "20150420",
+    "description": "Out",
+    "zone": "S",
+    "distance": 127,
+    "index": 329
+  },
+  {
+    "gamedate": "20150421",
+    "description": "Out",
+    "zone": "F",
+    "distance": 293,
+    "index": 337
+  },
+  {
+    "gamedate": "20150421",
+    "description": "Out",
+    "zone": "X",
+    "distance": 116,
+    "index": 342
   },
   {
     "gamedate": "20150422",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 369,
-    "index": 361
+    "description": "Out",
+    "zone": "W",
+    "distance": 182,
+    "index": 362
   },
   {
     "gamedate": "20150422",
@@ -105,6 +245,41 @@
     "index": 369
   },
   {
+    "gamedate": "20150422",
+    "description": "Out",
+    "zone": "I",
+    "distance": 281,
+    "index": 380
+  },
+  {
+    "gamedate": "20150423",
+    "description": "Out",
+    "zone": "V",
+    "distance": 189,
+    "index": 383
+  },
+  {
+    "gamedate": "20150423",
+    "description": "Out",
+    "zone": "N",
+    "distance": 375,
+    "index": 396
+  },
+  {
+    "gamedate": "20150424",
+    "description": "Out",
+    "zone": "I",
+    "distance": 290,
+    "index": 408
+  },
+  {
+    "gamedate": "20150424",
+    "description": "Single",
+    "zone": "H",
+    "distance": 248,
+    "index": 416
+  },
+  {
     "gamedate": "20150424",
     "description": "Home run",
     "zone": "S",
@@ -112,151 +287,382 @@
     "index": 424
   },
   {
-    "gamedate": "20150424",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 360,
-    "index": 425
-  },
-  {
-    "gamedate": "20150424",
-    "description": "Home run",
-    "zone": "W",
-    "distance": 350,
-    "index": 433
+    "gamedate": "20150425",
+    "description": "Out",
+    "zone": "N",
+    "distance": 280,
+    "index": 444
   },
   {
     "gamedate": "20150425",
-    "description": "Home run",
-    "zone": "X",
-    "distance": 317,
-    "index": 438
+    "description": "Out",
+    "zone": "M",
+    "distance": 390,
+    "index": 452
   },
   {
     "gamedate": "20150425",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 380,
-    "index": 461
-  },
-  {
-    "gamedate": "20150426",
-    "description": "Home run",
-    "zone": "V",
-    "distance": 343,
-    "index": 487
-  },
-  {
-    "gamedate": "20150426",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 406,
-    "index": 488
-  },
-  {
-    "gamedate": "20150426",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 378,
-    "index": 494
+    "description": "Out",
+    "zone": "Q",
+    "distance": 115,
+    "index": 464
   },
   {
     "gamedate": "20150427",
-    "description": "Home run",
-    "zone": "T",
-    "distance": 385,
-    "index": 501
+    "description": "Double",
+    "zone": "D",
+    "distance": 209,
+    "index": 496
+  },
+  {
+    "gamedate": "20150427",
+    "description": "Out",
+    "zone": "U",
+    "distance": 284,
+    "index": 500
+  },
+  {
+    "gamedate": "20150427",
+    "description": "Out",
+    "zone": "Q",
+    "distance": 175,
+    "index": 507
   },
   {
     "gamedate": "20150428",
-    "description": "Home run",
-    "zone": "X",
-    "distance": 333,
-    "index": 546
+    "description": "Out",
+    "zone": "O",
+    "distance": 304,
+    "index": 521
+  },
+  {
+    "gamedate": "20150428",
+    "description": "Single",
+    "zone": "E",
+    "distance": 182,
+    "index": 529
+  },
+  {
+    "gamedate": "20150428",
+    "description": "Sacrifice fly",
+    "zone": "N",
+    "distance": 324,
+    "index": 537
+  },
+  {
+    "gamedate": "20150428",
+    "description": "Double",
+    "zone": "V",
+    "distance": 228,
+    "index": 545
   },
   {
     "gamedate": "20150429",
-    "description": "Home run",
-    "zone": "H",
-    "distance": 355,
-    "index": 562
+    "description": "Single",
+    "zone": "K",
+    "distance": 284,
+    "index": 554
+  },
+  {
+    "gamedate": "20150429",
+    "description": "Single",
+    "zone": "V",
+    "distance": 195,
+    "index": 561
+  },
+  {
+    "gamedate": "20150429",
+    "description": "Out",
+    "zone": "S",
+    "distance": 155,
+    "index": 568
+  },
+  {
+    "gamedate": "20150429",
+    "description": "Out",
+    "zone": "Q",
+    "distance": 211,
+    "index": 576
   },
   {
     "gamedate": "20150501",
-    "description": "Home run",
-    "zone": "D",
-    "distance": 318,
-    "index": 588
+    "description": "Out",
+    "zone": "F",
+    "distance": 231,
+    "index": 579
+  },
+  {
+    "gamedate": "20150501",
+    "description": "Single",
+    "zone": "J",
+    "distance": 286,
+    "index": 586
+  },
+  {
+    "gamedate": "20150501",
+    "description": "Out",
+    "zone": "J",
+    "distance": 132,
+    "index": 592
+  },
+  {
+    "gamedate": "20150501",
+    "description": "Out",
+    "zone": "L",
+    "distance": 129,
+    "index": 597
   },
   {
     "gamedate": "20150502",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 328,
-    "index": 609
+    "description": "Single",
+    "zone": "J",
+    "distance": 166,
+    "index": 602
+  },
+  {
+    "gamedate": "20150502",
+    "description": "Single",
+    "zone": "P",
+    "distance": 235,
+    "index": 610
+  },
+  {
+    "gamedate": "20150502",
+    "description": "Out",
+    "zone": "P",
+    "distance": 136,
+    "index": 618
+  },
+  {
+    "gamedate": "20150502",
+    "description": "Out",
+    "zone": "R",
+    "distance": 142,
+    "index": 626
   },
   {
     "gamedate": "20150503",
-    "description": "Home run",
+    "description": "Out",
     "zone": "I",
-    "distance": 357,
-    "index": 641
+    "distance": 113,
+    "index": 629
   },
   {
-    "gamedate": "20150505",
-    "description": "Home run",
+    "gamedate": "20150503",
+    "description": "Double",
+    "zone": "E",
+    "distance": 314,
+    "index": 639
+  },
+  {
+    "gamedate": "20150503",
+    "description": "Out",
     "zone": "H",
-    "distance": 348,
-    "index": 685
+    "distance": 249,
+    "index": 645
+  },
+  {
+    "gamedate": "20150503",
+    "description": "Out",
+    "zone": "N",
+    "distance": 273,
+    "index": 648
+  },
+  {
+    "gamedate": "20150504",
+    "description": "Out",
+    "zone": "K",
+    "distance": 350,
+    "index": 658
+  },
+  {
+    "gamedate": "20150504",
+    "description": "Single",
+    "zone": "Q",
+    "distance": 226,
+    "index": 663
+  },
+  {
+    "gamedate": "20150504",
+    "description": "Out",
+    "zone": "D",
+    "distance": 302,
+    "index": 671
   },
   {
     "gamedate": "20150505",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 356,
-    "index": 692
+    "description": "Out",
+    "zone": "P",
+    "distance": 404,
+    "index": 681
+  },
+  {
+    "gamedate": "20150505",
+    "description": "Double",
+    "zone": "W",
+    "distance": 367,
+    "index": 687
+  },
+  {
+    "gamedate": "20150505",
+    "description": "Out",
+    "zone": "C",
+    "distance": 133,
+    "index": 694
   },
   {
     "gamedate": "20150506",
-    "description": "Home run",
+    "description": "Out",
     "zone": "I",
-    "distance": 353,
-    "index": 715
+    "distance": 146,
+    "index": 706
+  },
+  {
+    "gamedate": "20150506",
+    "description": "Out",
+    "zone": "S",
+    "distance": 101,
+    "index": 711
+  },
+  {
+    "gamedate": "20150509",
+    "description": "Out",
+    "zone": "H",
+    "distance": 224,
+    "index": 743
+  },
+  {
+    "gamedate": "20150509",
+    "description": "Single",
+    "zone": "G",
+    "distance": 179,
+    "index": 750
   },
   {
     "gamedate": "20150510",
-    "description": "Home run",
-    "zone": "J",
-    "distance": 405,
-    "index": 764
+    "description": "Out",
+    "zone": "Q",
+    "distance": 145,
+    "index": 769
   },
   {
     "gamedate": "20150510",
-    "description": "Home run",
-    "zone": "R",
-    "distance": 397,
-    "index": 779
+    "description": "Out",
+    "zone": "U",
+    "distance": 194,
+    "index": 777
   },
   {
     "gamedate": "20150511",
-    "description": "Home run",
+    "description": "Out",
+    "zone": "T",
+    "distance": 160,
+    "index": 789
+  },
+  {
+    "gamedate": "20150511",
+    "description": "Single",
+    "zone": "K",
+    "distance": 181,
+    "index": 795
+  },
+  {
+    "gamedate": "20150511",
+    "description": "Double",
+    "zone": "D",
+    "distance": 278,
+    "index": 802
+  },
+  {
+    "gamedate": "20150511",
+    "description": "Out",
+    "zone": "V",
+    "distance": 95,
+    "index": 808
+  },
+  {
+    "gamedate": "20150511",
+    "description": "Out",
+    "zone": "P",
+    "distance": 325,
+    "index": 815
+  },
+  {
+    "gamedate": "20150512",
+    "description": "Out",
+    "zone": "K",
+    "distance": 301,
+    "index": 823
+  },
+  {
+    "gamedate": "20150513",
+    "description": "Out",
     "zone": "W",
-    "distance": 345,
-    "index": 818
+    "distance": 130,
+    "index": 845
+  },
+  {
+    "gamedate": "20150513",
+    "description": "Out",
+    "zone": "W",
+    "distance": 140,
+    "index": 850
   },
   {
     "gamedate": "20150514",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 392,
-    "index": 877
+    "description": "Out",
+    "zone": "R",
+    "distance": 134,
+    "index": 866
   },
   {
-    "gamedate": "20150516",
-    "description": "Home run",
+    "gamedate": "20150514",
+    "description": "Out",
     "zone": "K",
-    "distance": 401,
-    "index": 920
+    "distance": 347,
+    "index": 874
+  },
+  {
+    "gamedate": "20150514",
+    "description": "Out",
+    "zone": "S",
+    "distance": 136,
+    "index": 881
+  },
+  {
+    "gamedate": "20150514",
+    "description": "Out",
+    "zone": "M",
+    "distance": 356,
+    "index": 885
+  },
+  {
+    "gamedate": "20150515",
+    "description": "Single",
+    "zone": "S",
+    "distance": 172,
+    "index": 893
+  },
+  {
+    "gamedate": "20150515",
+    "description": "Out",
+    "zone": "P",
+    "distance": 285,
+    "index": 901
+  },
+  {
+    "gamedate": "20150515",
+    "description": "Out",
+    "zone": "R",
+    "distance": 132,
+    "index": 909
+  },
+  {
+    "gamedate": "20150515",
+    "description": "Single",
+    "zone": "P",
+    "distance": 262,
+    "index": 915
   },
   {
     "gamedate": "20150516",
@@ -266,11 +672,32 @@
     "index": 925
   },
   {
+    "gamedate": "20150516",
+    "description": "Single",
+    "zone": "M",
+    "distance": 285,
+    "index": 931
+  },
+  {
+    "gamedate": "20150516",
+    "description": "Out",
+    "zone": "E",
+    "distance": 255,
+    "index": 940
+  },
+  {
     "gamedate": "20150519",
-    "description": "Home run",
-    "zone": "D",
-    "distance": 334,
-    "index": 980
+    "description": "Single",
+    "zone": "W",
+    "distance": 288,
+    "index": 969
+  },
+  {
+    "gamedate": "20150519",
+    "description": "Out",
+    "zone": "Q",
+    "distance": 177,
+    "index": 977
   },
   {
     "gamedate": "20150519",
@@ -280,102 +707,410 @@
     "index": 985
   },
   {
+    "gamedate": "20150519",
+    "description": "Out",
+    "zone": "L",
+    "distance": 313,
+    "index": 992
+  },
+  {
     "gamedate": "20150520",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 386,
-    "index": 1012
+    "description": "Out",
+    "zone": "T",
+    "distance": 183,
+    "index": 1000
+  },
+  {
+    "gamedate": "20150521",
+    "description": "Out",
+    "zone": "U",
+    "distance": 179,
+    "index": 1028
+  },
+  {
+    "gamedate": "20150521",
+    "description": "Out",
+    "zone": "S",
+    "distance": 173,
+    "index": 1036
+  },
+  {
+    "gamedate": "20150521",
+    "description": "Out",
+    "zone": "O",
+    "distance": 148,
+    "index": 1039
+  },
+  {
+    "gamedate": "20150521",
+    "description": "Double",
+    "zone": "J",
+    "distance": 330,
+    "index": 1043
   },
   {
     "gamedate": "20150522",
-    "description": "Home run",
-    "zone": "K",
-    "distance": 398,
-    "index": 1048
-  },
-  {
-    "gamedate": "20150523",
-    "description": "Home run",
-    "zone": "C",
-    "distance": 322,
-    "index": 1077
-  },
-  {
-    "gamedate": "20150523",
-    "description": "Home run",
+    "description": "Single",
     "zone": "H",
-    "distance": 384,
-    "index": 1090
+    "distance": 224,
+    "index": 1046
+  },
+  {
+    "gamedate": "20150522",
+    "description": "Out",
+    "zone": "T",
+    "distance": 154,
+    "index": 1054
+  },
+  {
+    "gamedate": "20150522",
+    "description": "Out",
+    "zone": "V",
+    "distance": 124,
+    "index": 1061
+  },
+  {
+    "gamedate": "20150523",
+    "description": "Out",
+    "zone": "V",
+    "distance": 106,
+    "index": 1082
+  },
+  {
+    "gamedate": "20150523",
+    "description": "Out",
+    "zone": "T",
+    "distance": 253,
+    "index": 1088
+  },
+  {
+    "gamedate": "20150523",
+    "description": "Out",
+    "zone": "K",
+    "distance": 234,
+    "index": 1093
   },
   {
     "gamedate": "20150524",
-    "description": "Home run",
-    "zone": "O",
-    "distance": 423,
-    "index": 1104
+    "description": "Out",
+    "zone": "V",
+    "distance": 116,
+    "index": 1102
   },
   {
-    "gamedate": "20150527",
-    "description": "Home run",
+    "gamedate": "20150524",
+    "description": "Out",
     "zone": "H",
-    "distance": 398,
-    "index": 1189
+    "distance": 123,
+    "index": 1111
+  },
+  {
+    "gamedate": "20150524",
+    "description": "Out",
+    "zone": "R",
+    "distance": 282,
+    "index": 1121
+  },
+  {
+    "gamedate": "20150525",
+    "description": "Out",
+    "zone": "J",
+    "distance": 294,
+    "index": 1129
+  },
+  {
+    "gamedate": "20150525",
+    "description": "Out",
+    "zone": "X",
+    "distance": 109,
+    "index": 1137
+  },
+  {
+    "gamedate": "20150525",
+    "description": "Out",
+    "zone": "T",
+    "distance": 174,
+    "index": 1142
+  },
+  {
+    "gamedate": "20150525",
+    "description": "Out",
+    "zone": "E",
+    "distance": 307,
+    "index": 1151
+  },
+  {
+    "gamedate": "20150526",
+    "description": "Double",
+    "zone": "F",
+    "distance": 353,
+    "index": 1158
+  },
+  {
+    "gamedate": "20150526",
+    "description": "Out",
+    "zone": "G",
+    "distance": 319,
+    "index": 1164
+  },
+  {
+    "gamedate": "20150526",
+    "description": "Out",
+    "zone": "L",
+    "distance": 150,
+    "index": 1170
+  },
+  {
+    "gamedate": "20150526",
+    "description": "Out",
+    "zone": "P",
+    "distance": 150,
+    "index": 1178
   },
   {
     "gamedate": "20150527",
-    "description": "Home run",
+    "description": "Out",
+    "zone": "T",
+    "distance": 172,
+    "index": 1184
+  },
+  {
+    "gamedate": "20150527",
+    "description": "Out",
+    "zone": "H",
+    "distance": 28,
+    "index": 1192
+  },
+  {
+    "gamedate": "20150527",
+    "description": "Out",
+    "zone": "Q",
+    "distance": 120,
+    "index": 1201
+  },
+  {
+    "gamedate": "20150527",
+    "description": "Out",
     "zone": "G",
-    "distance": 408,
-    "index": 1197
+    "distance": 76,
+    "index": 1208
   },
   {
-    "gamedate": "20150528",
-    "description": "Home run",
+    "gamedate": "20150530",
+    "description": "Out",
+    "zone": "R",
+    "distance": 133,
+    "index": 1262
+  },
+  {
+    "gamedate": "20150530",
+    "description": "Out",
+    "zone": "T",
+    "distance": 176,
+    "index": 1266
+  },
+  {
+    "gamedate": "20150530",
+    "description": "Double",
+    "zone": "K",
+    "distance": 314,
+    "index": 1272
+  },
+  {
+    "gamedate": "20150530",
+    "description": "Single",
+    "zone": "H",
+    "distance": 211,
+    "index": 1278
+  },
+  {
+    "gamedate": "20150531",
+    "description": "Out",
+    "zone": "V",
+    "distance": 94,
+    "index": 1286
+  },
+  {
+    "gamedate": "20150531",
+    "description": "Single",
+    "zone": "L",
+    "distance": 285,
+    "index": 1292
+  },
+  {
+    "gamedate": "20150531",
+    "description": "Out",
     "zone": "I",
-    "distance": 406,
-    "index": 1227
+    "distance": 374,
+    "index": 1299
   },
   {
-    "gamedate": "20150529",
-    "description": "Home run",
-    "zone": "U",
-    "distance": 371,
-    "index": 1257
+    "gamedate": "20150531",
+    "description": "Out",
+    "zone": "W",
+    "distance": 10,
+    "index": 1306
+  },
+  {
+    "gamedate": "20150602",
+    "description": "Out",
+    "zone": "N",
+    "distance": 390,
+    "index": 1315
+  },
+  {
+    "gamedate": "20150602",
+    "description": "Out",
+    "zone": "V",
+    "distance": 120,
+    "index": 1321
+  },
+  {
+    "gamedate": "20150602",
+    "description": "Out",
+    "zone": "O",
+    "distance": 143,
+    "index": 1330
+  },
+  {
+    "gamedate": "20150602",
+    "description": "Single",
+    "zone": "L",
+    "distance": 250,
+    "index": 1337
   },
   {
     "gamedate": "20150603",
-    "description": "Home run",
-    "zone": "H",
-    "distance": 345,
-    "index": 1363
+    "description": "Double",
+    "zone": "L",
+    "distance": 383,
+    "index": 1340
   },
   {
-    "gamedate": "20150604",
-    "description": "Home run",
+    "gamedate": "20150603",
+    "description": "Double",
     "zone": "F",
-    "distance": 369,
-    "index": 1399
+    "distance": 314,
+    "index": 1346
+  },
+  {
+    "gamedate": "20150603",
+    "description": "Out",
+    "zone": "N",
+    "distance": 154,
+    "index": 1353
+  },
+  {
+    "gamedate": "20150603",
+    "description": "Out",
+    "zone": "S",
+    "distance": 122,
+    "index": 1361
+  },
+  {
+    "gamedate": "20150603",
+    "description": "Out",
+    "zone": "E",
+    "distance": 300,
+    "index": 1369
+  },
+  {
+    "gamedate": "20150603",
+    "description": "Out",
+    "zone": "M",
+    "distance": 321,
+    "index": 1373
+  },
+  {
+    "gamedate": "20150603",
+    "description": "Out",
+    "zone": "V",
+    "distance": 113,
+    "index": 1379
   },
   {
     "gamedate": "20150604",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 361,
-    "index": 1401
+    "description": "Out",
+    "zone": "N",
+    "distance": 263,
+    "index": 1387
+  },
+  {
+    "gamedate": "20150604",
+    "description": "Out",
+    "zone": "K",
+    "distance": 31,
+    "index": 1403
+  },
+  {
+    "gamedate": "20150604",
+    "description": "Out",
+    "zone": "M",
+    "distance": 93,
+    "index": 1410
+  },
+  {
+    "gamedate": "20150604",
+    "description": "Out",
+    "zone": "N",
+    "distance": 144,
+    "index": 1418
   },
   {
     "gamedate": "20150606",
-    "description": "Home run",
-    "zone": "N",
-    "distance": 415,
-    "index": 1444
+    "description": "Double",
+    "zone": "H",
+    "distance": 332,
+    "index": 1452
   },
   {
     "gamedate": "20150607",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 355,
-    "index": 1485
+    "description": "Out",
+    "zone": "O",
+    "distance": 148,
+    "index": 1480
+  },
+  {
+    "gamedate": "20150607",
+    "description": "Sacrifice fly",
+    "zone": "H",
+    "distance": 303,
+    "index": 1489
+  },
+  {
+    "gamedate": "20150609",
+    "description": "Single",
+    "zone": "O",
+    "distance": 286,
+    "index": 1498
+  },
+  {
+    "gamedate": "20150609",
+    "description": "Out",
+    "zone": "J",
+    "distance": 312,
+    "index": 1505
+  },
+  {
+    "gamedate": "20150609",
+    "description": "Out",
+    "zone": "U",
+    "distance": 175,
+    "index": 1512
+  },
+  {
+    "gamedate": "20150611",
+    "description": "Out",
+    "zone": "F",
+    "distance": 235,
+    "index": 1547
+  },
+  {
+    "gamedate": "20150611",
+    "description": "Out",
+    "zone": "F",
+    "distance": 281,
+    "index": 1554
   },
   {
     "gamedate": "20150611",
@@ -386,24 +1121,38 @@
   },
   {
     "gamedate": "20150612",
-    "description": "Home run",
-    "zone": "R",
-    "distance": 386,
-    "index": 1569
+    "description": "Single",
+    "zone": "I",
+    "distance": 333,
+    "index": 1568
   },
   {
     "gamedate": "20150612",
-    "description": "Home run",
-    "zone": "G",
-    "distance": 332,
-    "index": 1570
+    "description": "Single",
+    "zone": "V",
+    "distance": 186,
+    "index": 1575
   },
   {
     "gamedate": "20150612",
-    "description": "Home run",
-    "zone": "G",
-    "distance": 343,
-    "index": 1578
+    "description": "Out",
+    "zone": "U",
+    "distance": 166,
+    "index": 1580
+  },
+  {
+    "gamedate": "20150612",
+    "description": "Out",
+    "zone": "J",
+    "distance": 204,
+    "index": 1588
+  },
+  {
+    "gamedate": "20150613",
+    "description": "Out",
+    "zone": "V",
+    "distance": 211,
+    "index": 1597
   },
   {
     "gamedate": "20150613",
@@ -414,6 +1163,13 @@
   },
   {
     "gamedate": "20150614",
+    "description": "Out",
+    "zone": "S",
+    "distance": 189,
+    "index": 1632
+  },
+  {
+    "gamedate": "20150614",
     "description": "Home run",
     "zone": "S",
     "distance": 386,
@@ -421,45 +1177,136 @@
   },
   {
     "gamedate": "20150615",
-    "description": "Home run",
-    "zone": "N",
-    "distance": 413,
-    "index": 1668
+    "description": "Single",
+    "zone": "Q",
+    "distance": 253,
+    "index": 1655
+  },
+  {
+    "gamedate": "20150615",
+    "description": "Out",
+    "zone": "H",
+    "distance": 300,
+    "index": 1663
+  },
+  {
+    "gamedate": "20150615",
+    "description": "Out",
+    "zone": "J",
+    "distance": 359,
+    "index": 1674
   },
   {
     "gamedate": "20150616",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 345,
-    "index": 1701
+    "description": "Out",
+    "zone": "U",
+    "distance": 113,
+    "index": 1688
+  },
+  {
+    "gamedate": "20150616",
+    "description": "Out",
+    "zone": "S",
+    "distance": 134,
+    "index": 1695
+  },
+  {
+    "gamedate": "20150616",
+    "description": "Single",
+    "zone": "H",
+    "distance": 329,
+    "index": 1703
   },
   {
     "gamedate": "20150617",
-    "description": "Home run",
-    "zone": "K",
-    "distance": 420,
-    "index": 1724
+    "description": "Out",
+    "zone": "G",
+    "distance": 180,
+    "index": 1733
+  },
+  {
+    "gamedate": "20150618",
+    "description": "Out",
+    "zone": "W",
+    "distance": 122,
+    "index": 1736
+  },
+  {
+    "gamedate": "20150618",
+    "description": "Out",
+    "zone": "U",
+    "distance": 108,
+    "index": 1743
+  },
+  {
+    "gamedate": "20150618",
+    "description": "Single",
+    "zone": "U",
+    "distance": 265,
+    "index": 1749
   },
   {
     "gamedate": "20150619",
-    "description": "Home run",
-    "zone": "J",
-    "distance": 398,
-    "index": 1781
+    "description": "Out",
+    "zone": "W",
+    "distance": 87,
+    "index": 1763
+  },
+  {
+    "gamedate": "20150619",
+    "description": "Out",
+    "zone": "V",
+    "distance": 87,
+    "index": 1771
+  },
+  {
+    "gamedate": "20150619",
+    "description": "Out",
+    "zone": "W",
+    "distance": 89,
+    "index": 1780
+  },
+  {
+    "gamedate": "20150619",
+    "description": "Out",
+    "zone": "N",
+    "distance": 310,
+    "index": 1788
+  },
+  {
+    "gamedate": "20150619",
+    "description": "Single",
+    "zone": "X",
+    "distance": 196,
+    "index": 1792
   },
   {
     "gamedate": "20150620",
-    "description": "Home run",
-    "zone": "J",
-    "distance": 409,
-    "index": 1795
+    "description": "Out",
+    "zone": "O",
+    "distance": 140,
+    "index": 1798
+  },
+  {
+    "gamedate": "20150620",
+    "description": "Out",
+    "zone": "S",
+    "distance": 143,
+    "index": 1806
+  },
+  {
+    "gamedate": "20150620",
+    "description": "Single",
+    "zone": "N",
+    "distance": 217,
+    "index": 1819
   },
   {
     "gamedate": "20150621",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 406,
-    "index": 1830
+    "description": "Out",
+    "zone": "P",
+    "distance": 343,
+    "index": 1829
   },
   {
     "gamedate": "20150621",
@@ -470,10 +1317,38 @@
   },
   {
     "gamedate": "20150621",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 426,
-    "index": 1841
+    "description": "Single",
+    "zone": "T",
+    "distance": 241,
+    "index": 1849
+  },
+  {
+    "gamedate": "20150621",
+    "description": "Out",
+    "zone": "T",
+    "distance": 140,
+    "index": 1857
+  },
+  {
+    "gamedate": "20150623",
+    "description": "Out",
+    "zone": "K",
+    "distance": 295,
+    "index": 1870
+  },
+  {
+    "gamedate": "20150623",
+    "description": "Out",
+    "zone": "F",
+    "distance": 109,
+    "index": 1884
+  },
+  {
+    "gamedate": "20150624",
+    "description": "Out",
+    "zone": "V",
+    "distance": 175,
+    "index": 1894
   },
   {
     "gamedate": "20150624",
@@ -483,32 +1358,74 @@
     "index": 1900
   },
   {
+    "gamedate": "20150624",
+    "description": "Out",
+    "zone": "W",
+    "distance": 111,
+    "index": 1905
+  },
+  {
     "gamedate": "20150625",
-    "description": "Home run",
-    "zone": "X",
-    "distance": 370,
-    "index": 1919
+    "description": "Out",
+    "zone": "B",
+    "distance": 276,
+    "index": 1908
+  },
+  {
+    "gamedate": "20150625",
+    "description": "Out",
+    "zone": "N",
+    "distance": 278,
+    "index": 1922
+  },
+  {
+    "gamedate": "20150625",
+    "description": "Out",
+    "zone": "W",
+    "distance": 121,
+    "index": 1929
+  },
+  {
+    "gamedate": "20150626",
+    "description": "Single",
+    "zone": "T",
+    "distance": 292,
+    "index": 1941
+  },
+  {
+    "gamedate": "20150626",
+    "description": "Out",
+    "zone": "H",
+    "distance": 359,
+    "index": 1948
+  },
+  {
+    "gamedate": "20150626",
+    "description": "Out",
+    "zone": "P",
+    "distance": 139,
+    "index": 1954
+  },
+  {
+    "gamedate": "20150626",
+    "description": "Single",
+    "zone": "P",
+    "distance": 295,
+    "index": 1960
   },
   {
     "gamedate": "20150627",
-    "description": "Home run",
-    "zone": "X",
-    "distance": 390,
-    "index": 1979
+    "description": "Out",
+    "zone": "I",
+    "distance": 361,
+    "index": 1969
   },
   {
     "gamedate": "20150628",
-    "description": "Home run",
-    "zone": "C",
-    "distance": 341,
-    "index": 1985
-  },
-  {
-    "gamedate": "20150628",
-    "description": "Home run",
-    "zone": "T",
-    "distance": 360,
-    "index": 1986
+    "description": "Out",
+    "zone": "V",
+    "distance": 157,
+    "index": 1984
   },
   {
     "gamedate": "20150628",
@@ -518,11 +1435,39 @@
     "index": 1991
   },
   {
+    "gamedate": "20150628",
+    "description": "Out",
+    "zone": "T",
+    "distance": 279,
+    "index": 2001
+  },
+  {
+    "gamedate": "20150629",
+    "description": "Out",
+    "zone": "X",
+    "distance": 122,
+    "index": 2008
+  },
+  {
+    "gamedate": "20150629",
+    "description": "Out",
+    "zone": "E",
+    "distance": 112,
+    "index": 2013
+  },
+  {
+    "gamedate": "20150629",
+    "description": "Out",
+    "zone": "K",
+    "distance": 149,
+    "index": 2021
+  },
+  {
     "gamedate": "20150630",
-    "description": "Home run",
-    "zone": "W",
-    "distance": 350,
-    "index": 2034
+    "description": "Out",
+    "zone": "K",
+    "distance": 358,
+    "index": 2033
   },
   {
     "gamedate": "20150630",
@@ -532,11 +1477,32 @@
     "index": 2038
   },
   {
+    "gamedate": "20150630",
+    "description": "Out",
+    "zone": "J",
+    "distance": 144,
+    "index": 2053
+  },
+  {
     "gamedate": "20150701",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 385,
-    "index": 2078
+    "description": "Single",
+    "zone": "K",
+    "distance": 279,
+    "index": 2061
+  },
+  {
+    "gamedate": "20150701",
+    "description": "Out",
+    "zone": "V",
+    "distance": 105,
+    "index": 2073
+  },
+  {
+    "gamedate": "20150701",
+    "description": "Out",
+    "zone": "W",
+    "distance": 117,
+    "index": 2079
   },
   {
     "gamedate": "20150702",
@@ -547,24 +1513,73 @@
   },
   {
     "gamedate": "20150702",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 434,
-    "index": 2086
+    "description": "Out",
+    "zone": "I",
+    "distance": 130,
+    "index": 2093
+  },
+  {
+    "gamedate": "20150702",
+    "description": "Out",
+    "zone": "Q",
+    "distance": 129,
+    "index": 2104
+  },
+  {
+    "gamedate": "20150702",
+    "description": "Out",
+    "zone": "P",
+    "distance": 153,
+    "index": 2110
+  },
+  {
+    "gamedate": "20150702",
+    "description": "Out",
+    "zone": "T",
+    "distance": 304,
+    "index": 2119
   },
   {
     "gamedate": "20150703",
-    "description": "Home run",
-    "zone": "K",
-    "distance": 387,
-    "index": 2122
+    "description": "Single",
+    "zone": "O",
+    "distance": 259,
+    "index": 2131
+  },
+  {
+    "gamedate": "20150703",
+    "description": "Double",
+    "zone": "I",
+    "distance": 348,
+    "index": 2139
+  },
+  {
+    "gamedate": "20150704",
+    "description": "Out",
+    "zone": "I",
+    "distance": 193,
+    "index": 2149
+  },
+  {
+    "gamedate": "20150704",
+    "description": "Out",
+    "zone": "V",
+    "distance": 125,
+    "index": 2167
   },
   {
     "gamedate": "20150705",
-    "description": "Home run",
-    "zone": "D",
-    "distance": 322,
-    "index": 2196
+    "description": "Out",
+    "zone": "R",
+    "distance": 128,
+    "index": 2190
+  },
+  {
+    "gamedate": "20150707",
+    "description": "Out",
+    "zone": "X",
+    "distance": 115,
+    "index": 2210
   },
   {
     "gamedate": "20150708",
@@ -574,18 +1589,130 @@
     "index": 2230
   },
   {
+    "gamedate": "20150708",
+    "description": "Double",
+    "zone": "P",
+    "distance": 370,
+    "index": 2237
+  },
+  {
+    "gamedate": "20150708",
+    "description": "Out",
+    "zone": "U",
+    "distance": 169,
+    "index": 2244
+  },
+  {
     "gamedate": "20150710",
-    "description": "Home run",
-    "zone": "G",
-    "distance": 338,
-    "index": 2257
+    "description": "Out",
+    "zone": "W",
+    "distance": 118,
+    "index": 2247
+  },
+  {
+    "gamedate": "20150710",
+    "description": "Out",
+    "zone": "U",
+    "distance": 169,
+    "index": 2259
+  },
+  {
+    "gamedate": "20150710",
+    "description": "Out",
+    "zone": "K",
+    "distance": 299,
+    "index": 2265
   },
   {
     "gamedate": "20150711",
-    "description": "Home run",
+    "description": "Double",
+    "zone": "C",
+    "distance": 282,
+    "index": 2268
+  },
+  {
+    "gamedate": "20150711",
+    "description": "Single",
+    "zone": "U",
+    "distance": 249,
+    "index": 2277
+  },
+  {
+    "gamedate": "20150711",
+    "description": "Out",
+    "zone": "H",
+    "distance": 327,
+    "index": 2286
+  },
+  {
+    "gamedate": "20150717",
+    "description": "Out",
+    "zone": "G",
+    "distance": 105,
+    "index": 2324
+  },
+  {
+    "gamedate": "20150717",
+    "description": "Single",
+    "zone": "L",
+    "distance": 220,
+    "index": 2328
+  },
+  {
+    "gamedate": "20150717",
+    "description": "Single",
+    "zone": "L",
+    "distance": 195,
+    "index": 2335
+  },
+  {
+    "gamedate": "20150717",
+    "description": "Out",
+    "zone": "C",
+    "distance": 295,
+    "index": 2343
+  },
+  {
+    "gamedate": "20150718",
+    "description": "Out",
+    "zone": "N",
+    "distance": 280,
+    "index": 2347
+  },
+  {
+    "gamedate": "20150718",
+    "description": "Out",
+    "zone": "X",
+    "distance": 120,
+    "index": 2353
+  },
+  {
+    "gamedate": "20150718",
+    "description": "Out",
+    "zone": "Q",
+    "distance": 145,
+    "index": 2361
+  },
+  {
+    "gamedate": "20150720",
+    "description": "Single",
+    "zone": "L",
+    "distance": 245,
+    "index": 2374
+  },
+  {
+    "gamedate": "20150720",
+    "description": "Out",
+    "zone": "W",
+    "distance": 200,
+    "index": 2380
+  },
+  {
+    "gamedate": "20150720",
+    "description": "Out",
     "zone": "R",
-    "distance": 381,
-    "index": 2278
+    "distance": 320,
+    "index": 2392
   },
   {
     "gamedate": "20150720",
@@ -595,11 +1722,67 @@
     "index": 2406
   },
   {
+    "gamedate": "20150720",
+    "description": "Single",
+    "zone": "Q",
+    "distance": 230,
+    "index": 2411
+  },
+  {
+    "gamedate": "20150721",
+    "description": "Out",
+    "zone": "O",
+    "distance": 386,
+    "index": 2422
+  },
+  {
+    "gamedate": "20150721",
+    "description": "Out",
+    "zone": "I",
+    "distance": 370,
+    "index": 2428
+  },
+  {
+    "gamedate": "20150721",
+    "description": "Out",
+    "zone": "K",
+    "distance": 347,
+    "index": 2437
+  },
+  {
+    "gamedate": "20150722",
+    "description": "Out",
+    "zone": "U",
+    "distance": 166,
+    "index": 2441
+  },
+  {
+    "gamedate": "20150722",
+    "description": "Out",
+    "zone": "X",
+    "distance": 121,
+    "index": 2448
+  },
+  {
+    "gamedate": "20150722",
+    "description": "Out",
+    "zone": "U",
+    "distance": 178,
+    "index": 2456
+  },
+  {
     "gamedate": "20150723",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 340,
-    "index": 2470
+    "description": "Double",
+    "zone": "D",
+    "distance": 315,
+    "index": 2466
+  },
+  {
+    "gamedate": "20150723",
+    "description": "Out",
+    "zone": "E",
+    "distance": 110,
+    "index": 2480
   },
   {
     "gamedate": "20150723",
@@ -609,11 +1792,53 @@
     "index": 2485
   },
   {
+    "gamedate": "20150723",
+    "description": "Out",
+    "zone": "R",
+    "distance": 120,
+    "index": 2491
+  },
+  {
+    "gamedate": "20150725",
+    "description": "Double",
+    "zone": "G",
+    "distance": 319,
+    "index": 2526
+  },
+  {
+    "gamedate": "20150725",
+    "description": "Out",
+    "zone": "M",
+    "distance": 50,
+    "index": 2538
+  },
+  {
+    "gamedate": "20150726",
+    "description": "Single",
+    "zone": "V",
+    "distance": 186,
+    "index": 2549
+  },
+  {
+    "gamedate": "20150726",
+    "description": "Out",
+    "zone": "U",
+    "distance": 175,
+    "index": 2555
+  },
+  {
     "gamedate": "20150726",
     "description": "Home run",
     "zone": "T",
     "distance": 420,
     "index": 2563
+  },
+  {
+    "gamedate": "20150726",
+    "description": "Single",
+    "zone": "N",
+    "distance": 212,
+    "index": 2570
   },
   {
     "gamedate": "20150726",
@@ -630,53 +1855,158 @@
     "index": 2584
   },
   {
+    "gamedate": "20150727",
+    "description": "Out",
+    "zone": "V",
+    "distance": 104,
+    "index": 2591
+  },
+  {
+    "gamedate": "20150727",
+    "description": "Out",
+    "zone": "P",
+    "distance": 351,
+    "index": 2598
+  },
+  {
+    "gamedate": "20150727",
+    "description": "Out",
+    "zone": "T",
+    "distance": 138,
+    "index": 2606
+  },
+  {
+    "gamedate": "20150727",
+    "description": "Out",
+    "zone": "R",
+    "distance": 137,
+    "index": 2611
+  },
+  {
     "gamedate": "20150728",
-    "description": "Home run",
-    "zone": "G",
-    "distance": 340,
-    "index": 2619
+    "description": "Out",
+    "zone": "J",
+    "distance": 83,
+    "index": 2617
+  },
+  {
+    "gamedate": "20150728",
+    "description": "Out",
+    "zone": "O",
+    "distance": 306,
+    "index": 2624
+  },
+  {
+    "gamedate": "20150728",
+    "description": "Out",
+    "zone": "V",
+    "distance": 301,
+    "index": 2630
+  },
+  {
+    "gamedate": "20150728",
+    "description": "Single",
+    "zone": "U",
+    "distance": 111,
+    "index": 2639
   },
   {
     "gamedate": "20150729",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 338,
-    "index": 2661
+    "description": "Out",
+    "zone": "R",
+    "distance": 344,
+    "index": 2645
+  },
+  {
+    "gamedate": "20150729",
+    "description": "Out",
+    "zone": "K",
+    "distance": 207,
+    "index": 2660
   },
   {
     "gamedate": "20150730",
-    "description": "Home run",
-    "zone": "M",
-    "distance": 397,
-    "index": 2686
+    "description": "Double",
+    "zone": "W",
+    "distance": 368,
+    "index": 2669
+  },
+  {
+    "gamedate": "20150730",
+    "description": "Single",
+    "zone": "G",
+    "distance": 86,
+    "index": 2674
+  },
+  {
+    "gamedate": "20150730",
+    "description": "Single",
+    "zone": "P",
+    "distance": 239,
+    "index": 2678
   },
   {
     "gamedate": "20150731",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 317,
-    "index": 2706
+    "description": "Out",
+    "zone": "H",
+    "distance": 319,
+    "index": 2696
   },
   {
     "gamedate": "20150801",
-    "description": "Home run",
-    "zone": "U",
-    "distance": 407,
-    "index": 2723
+    "description": "Out",
+    "zone": "W",
+    "distance": 343,
+    "index": 2714
   },
   {
     "gamedate": "20150801",
-    "description": "Home run",
-    "zone": "N",
-    "distance": 407,
-    "index": 2741
+    "description": "Single",
+    "zone": "D",
+    "distance": 279,
+    "index": 2728
+  },
+  {
+    "gamedate": "20150802",
+    "description": "Double",
+    "zone": "H",
+    "distance": 335,
+    "index": 2751
+  },
+  {
+    "gamedate": "20150802",
+    "description": "Out",
+    "zone": "W",
+    "distance": 160,
+    "index": 2764
   },
   {
     "gamedate": "20150804",
-    "description": "Home run",
-    "zone": "S",
-    "distance": 405,
-    "index": 2784
+    "description": "Out",
+    "zone": "N",
+    "distance": 364,
+    "index": 2768
+  },
+  {
+    "gamedate": "20150804",
+    "description": "Out",
+    "zone": "X",
+    "distance": 118,
+    "index": 2775
+  },
+  {
+    "gamedate": "20150804",
+    "description": "Out",
+    "zone": "U",
+    "distance": 168,
+    "index": 2787
+  },
+  {
+    "gamedate": "20150805",
+    "description": "Out",
+    "zone": "V",
+    "distance": 207,
+    "index": 2794
   },
   {
     "gamedate": "20150805",
@@ -686,11 +2016,81 @@
     "index": 2799
   },
   {
+    "gamedate": "20150805",
+    "description": "Out",
+    "zone": "V",
+    "distance": 118,
+    "index": 2805
+  },
+  {
+    "gamedate": "20150805",
+    "description": "Out",
+    "zone": "H",
+    "distance": 376,
+    "index": 2810
+  },
+  {
+    "gamedate": "20150806",
+    "description": "Out",
+    "zone": "L",
+    "distance": 290,
+    "index": 2814
+  },
+  {
+    "gamedate": "20150806",
+    "description": "Out",
+    "zone": "D",
+    "distance": 87,
+    "index": 2819
+  },
+  {
+    "gamedate": "20150806",
+    "description": "Out",
+    "zone": "U",
+    "distance": 169,
+    "index": 2828
+  },
+  {
+    "gamedate": "20150807",
+    "description": "Out",
+    "zone": "M",
+    "distance": 353,
+    "index": 2835
+  },
+  {
     "gamedate": "20150807",
     "description": "Home run",
     "zone": "T",
     "distance": 405,
     "index": 2841
+  },
+  {
+    "gamedate": "20150807",
+    "description": "Out",
+    "zone": "S",
+    "distance": 148,
+    "index": 2848
+  },
+  {
+    "gamedate": "20150807",
+    "description": "Out",
+    "zone": "M",
+    "distance": 304,
+    "index": 2860
+  },
+  {
+    "gamedate": "20150808",
+    "description": "Double",
+    "zone": "N",
+    "distance": 419,
+    "index": 2867
+  },
+  {
+    "gamedate": "20150808",
+    "description": "Out",
+    "zone": "X",
+    "distance": 116,
+    "index": 2875
   },
   {
     "gamedate": "20150808",
@@ -700,11 +2100,53 @@
     "index": 2881
   },
   {
+    "gamedate": "20150808",
+    "description": "Single",
+    "zone": "P",
+    "distance": 250,
+    "index": 2890
+  },
+  {
     "gamedate": "20150809",
-    "description": "Home run",
+    "description": "Single",
+    "zone": "K",
+    "distance": 263,
+    "index": 2900
+  },
+  {
+    "gamedate": "20150809",
+    "description": "Single",
+    "zone": "H",
+    "distance": 263,
+    "index": 2911
+  },
+  {
+    "gamedate": "20150809",
+    "description": "Out",
     "zone": "R",
-    "distance": 401,
-    "index": 2908
+    "distance": 153,
+    "index": 2917
+  },
+  {
+    "gamedate": "20150811",
+    "description": "Out",
+    "zone": "T",
+    "distance": 139,
+    "index": 2922
+  },
+  {
+    "gamedate": "20150811",
+    "description": "Out",
+    "zone": "U",
+    "distance": 55,
+    "index": 2930
+  },
+  {
+    "gamedate": "20150811",
+    "description": "Single",
+    "zone": "U",
+    "distance": 136,
+    "index": 2939
   },
   {
     "gamedate": "20150812",
@@ -715,6 +2157,13 @@
   },
   {
     "gamedate": "20150812",
+    "description": "Single",
+    "zone": "Q",
+    "distance": 299,
+    "index": 2960
+  },
+  {
+    "gamedate": "20150812",
     "description": "Home run",
     "zone": "V",
     "distance": 358,
@@ -722,73 +2171,150 @@
   },
   {
     "gamedate": "20150814",
-    "description": "Home run",
-    "zone": "Q",
-    "distance": 396,
-    "index": 2976
+    "description": "Double",
+    "zone": "R",
+    "distance": 303,
+    "index": 2975
   },
   {
     "gamedate": "20150814",
-    "description": "Home run",
-    "zone": "S",
-    "distance": 385,
-    "index": 2985
-  },
-  {
-    "gamedate": "20150814",
-    "description": "Home run",
+    "description": "Single",
     "zone": "T",
-    "distance": 385,
-    "index": 3008
+    "distance": 310,
+    "index": 2982
+  },
+  {
+    "gamedate": "20150814",
+    "description": "Out",
+    "zone": "W",
+    "distance": 129,
+    "index": 2991
+  },
+  {
+    "gamedate": "20150814",
+    "description": "Out",
+    "zone": "P",
+    "distance": 380,
+    "index": 2997
   },
   {
     "gamedate": "20150815",
-    "description": "Home run",
-    "zone": "L",
-    "distance": 394,
-    "index": 3016
+    "description": "Single",
+    "zone": "H",
+    "distance": 241,
+    "index": 3014
   },
   {
     "gamedate": "20150815",
-    "description": "Home run",
-    "zone": "M",
-    "distance": 404,
-    "index": 3018
+    "description": "Sacrifice fly",
+    "zone": "J",
+    "distance": 337,
+    "index": 3022
   },
   {
     "gamedate": "20150815",
-    "description": "Home run",
+    "description": "Sacrifice fly",
+    "zone": "P",
+    "distance": 409,
+    "index": 3028
+  },
+  {
+    "gamedate": "20150815",
+    "description": "Double",
+    "zone": "G",
+    "distance": 324,
+    "index": 3035
+  },
+  {
+    "gamedate": "20150815",
+    "description": "Single",
+    "zone": "K",
+    "distance": 250,
+    "index": 3041
+  },
+  {
+    "gamedate": "20150816",
+    "description": "Single",
     "zone": "X",
-    "distance": 364,
-    "index": 3024
-  },
-  {
-    "gamedate": "20150815",
-    "description": "Home run",
-    "zone": "S",
-    "distance": 410,
-    "index": 3052
+    "distance": 113,
+    "index": 3058
   },
   {
     "gamedate": "20150816",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 378,
-    "index": 3062
+    "description": "Out",
+    "zone": "H",
+    "distance": 183,
+    "index": 3063
   },
   {
     "gamedate": "20150816",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 342,
-    "index": 3064
+    "description": "Sacrifice fly",
+    "zone": "O",
+    "distance": 316,
+    "index": 3071
+  },
+  {
+    "gamedate": "20150816",
+    "description": "Out",
+    "zone": "U",
+    "distance": 182,
+    "index": 3076
   },
   {
     "gamedate": "20150817",
-    "description": "Home run",
-    "zone": "V",
-    "distance": 418,
-    "index": 3090
+    "description": "Out",
+    "zone": "W",
+    "distance": 122,
+    "index": 3087
+  },
+  {
+    "gamedate": "20150817",
+    "description": "Out",
+    "zone": "F",
+    "distance": 303,
+    "index": 3094
+  },
+  {
+    "gamedate": "20150817",
+    "description": "Out",
+    "zone": "G",
+    "distance": 213,
+    "index": 3101
+  },
+  {
+    "gamedate": "20150817",
+    "description": "Single",
+    "zone": "O",
+    "distance": 255,
+    "index": 3107
+  },
+  {
+    "gamedate": "20150818",
+    "description": "Double",
+    "zone": "X",
+    "distance": 326,
+    "index": 3113
+  },
+  {
+    "gamedate": "20150818",
+    "description": "Out",
+    "zone": "T",
+    "distance": 185,
+    "index": 3119
+  },
+  {
+    "gamedate": "20150818",
+    "description": "Double",
+    "zone": "K",
+    "distance": 296,
+    "index": 3126
+  },
+  {
+    "gamedate": "20150818",
+    "description": "Out",
+    "zone": "L",
+    "distance": 134,
+    "index": 3140
   },
   {
     "gamedate": "20150819",
@@ -799,52 +2325,122 @@
   },
   {
     "gamedate": "20150819",
-    "description": "Home run",
+    "description": "Single",
+    "zone": "N",
+    "distance": 267,
+    "index": 3161
+  },
+  {
+    "gamedate": "20150820",
+    "description": "Out",
     "zone": "J",
-    "distance": 368,
-    "index": 3146
+    "distance": 297,
+    "index": 3177
   },
   {
-    "gamedate": "20150819",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 320,
-    "index": 3152
-  },
-  {
-    "gamedate": "20150819",
-    "description": "Home run",
+    "gamedate": "20150820",
+    "description": "Out",
     "zone": "H",
-    "distance": 359,
-    "index": 3153
+    "distance": 255,
+    "index": 3185
   },
   {
     "gamedate": "20150821",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 356,
-    "index": 3211
+    "description": "Out",
+    "zone": "V",
+    "distance": 260,
+    "index": 3192
+  },
+  {
+    "gamedate": "20150821",
+    "description": "Out",
+    "zone": "J",
+    "distance": 138,
+    "index": 3208
+  },
+  {
+    "gamedate": "20150821",
+    "description": "Out",
+    "zone": "V",
+    "distance": 118,
+    "index": 3215
   },
   {
     "gamedate": "20150822",
-    "description": "Home run",
-    "zone": "F",
+    "description": "Single",
+    "zone": "T",
+    "distance": 235,
+    "index": 3228
+  },
+  {
+    "gamedate": "20150822",
+    "description": "Single",
+    "zone": "Q",
+    "distance": 207,
+    "index": 3231
+  },
+  {
+    "gamedate": "20150823",
+    "description": "Out",
+    "zone": "S",
+    "distance": 363,
+    "index": 3251
+  },
+  {
+    "gamedate": "20150823",
+    "description": "Sacrifice fly",
+    "zone": "I",
+    "distance": 332,
+    "index": 3257
+  },
+  {
+    "gamedate": "20150823",
+    "description": "Out",
+    "zone": "P",
     "distance": 340,
-    "index": 3234
+    "index": 3264
   },
   {
     "gamedate": "20150824",
-    "description": "Home run",
-    "zone": "L",
-    "distance": 405,
-    "index": 3274
+    "description": "Out",
+    "zone": "H",
+    "distance": 181,
+    "index": 3271
   },
   {
-    "gamedate": "20150826",
-    "description": "Home run",
+    "gamedate": "20150824",
+    "description": "Out",
+    "zone": "L",
+    "distance": 146,
+    "index": 3278
+  },
+  {
+    "gamedate": "20150824",
+    "description": "Out",
+    "zone": "R",
+    "distance": 319,
+    "index": 3281
+  },
+  {
+    "gamedate": "20150825",
+    "description": "Out",
+    "zone": "R",
+    "distance": 373,
+    "index": 3295
+  },
+  {
+    "gamedate": "20150828",
+    "description": "Out",
+    "zone": "M",
+    "distance": 56,
+    "index": 3338
+  },
+  {
+    "gamedate": "20150828",
+    "description": "Single",
     "zone": "X",
-    "distance": 394,
-    "index": 3332
+    "distance": 290,
+    "index": 3343
   },
   {
     "gamedate": "20150828",
@@ -854,25 +2450,18 @@
     "index": 3347
   },
   {
-    "gamedate": "20150828",
-    "description": "Home run",
-    "zone": "L",
-    "distance": 420,
-    "index": 3350
-  },
-  {
-    "gamedate": "20150828",
-    "description": "Home run",
-    "zone": "M",
-    "distance": 409,
-    "index": 3355
-  },
-  {
     "gamedate": "20150829",
-    "description": "Home run",
-    "zone": "C",
-    "distance": 350,
-    "index": 3373
+    "description": "Double",
+    "zone": "M",
+    "distance": 400,
+    "index": 3377
+  },
+  {
+    "gamedate": "20150830",
+    "description": "Out",
+    "zone": "S",
+    "distance": 262,
+    "index": 3387
   },
   {
     "gamedate": "20150830",
@@ -882,11 +2471,18 @@
     "index": 3395
   },
   {
+    "gamedate": "20150830",
+    "description": "Out",
+    "zone": "H",
+    "distance": 199,
+    "index": 3402
+  },
+  {
     "gamedate": "20150831",
-    "description": "Home run",
-    "zone": "J",
-    "distance": 372,
-    "index": 3414
+    "description": "Out",
+    "zone": "T",
+    "distance": 188,
+    "index": 3408
   },
   {
     "gamedate": "20150831",
@@ -896,18 +2492,46 @@
     "index": 3417
   },
   {
+    "gamedate": "20150831",
+    "description": "Double",
+    "zone": "I",
+    "distance": 338,
+    "index": 3424
+  },
+  {
     "gamedate": "20150902",
-    "description": "Home run",
-    "zone": "H",
-    "distance": 351,
-    "index": 3468
+    "description": "Double",
+    "zone": "R",
+    "distance": 362,
+    "index": 3455
+  },
+  {
+    "gamedate": "20150902",
+    "description": "Out",
+    "zone": "O",
+    "distance": 377,
+    "index": 3463
   },
   {
     "gamedate": "20150904",
-    "description": "Home run",
+    "description": "Out",
+    "zone": "X",
+    "distance": 94,
+    "index": 3493
+  },
+  {
+    "gamedate": "20150904",
+    "description": "Double",
     "zone": "M",
-    "distance": 414,
-    "index": 3503
+    "distance": 385,
+    "index": 3505
+  },
+  {
+    "gamedate": "20150905",
+    "description": "Single",
+    "zone": "V",
+    "distance": 189,
+    "index": 3518
   },
   {
     "gamedate": "20150905",
@@ -917,6 +2541,20 @@
     "index": 3525
   },
   {
+    "gamedate": "20150905",
+    "description": "Out",
+    "zone": "S",
+    "distance": 142,
+    "index": 3534
+  },
+  {
+    "gamedate": "20150905",
+    "description": "Out",
+    "zone": "J",
+    "distance": 28,
+    "index": 3541
+  },
+  {
     "gamedate": "20150906",
     "description": "Home run",
     "zone": "U",
@@ -924,32 +2562,53 @@
     "index": 3545
   },
   {
-    "gamedate": "20150907",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 360,
-    "index": 3588
+    "gamedate": "20150906",
+    "description": "Sacrifice fly",
+    "zone": "N",
+    "distance": 381,
+    "index": 3552
   },
   {
     "gamedate": "20150907",
-    "description": "Home run",
-    "zone": "U",
-    "distance": 383,
-    "index": 3599
+    "description": "Double",
+    "zone": "X",
+    "distance": 284,
+    "index": 3567
+  },
+  {
+    "gamedate": "20150907",
+    "description": "Double",
+    "zone": "I",
+    "distance": 342,
+    "index": 3576
+  },
+  {
+    "gamedate": "20150907",
+    "description": "Out",
+    "zone": "T",
+    "distance": 176,
+    "index": 3584
   },
   {
     "gamedate": "20150908",
-    "description": "Home run",
-    "zone": "W",
-    "distance": 395,
-    "index": 3604
+    "description": "Out",
+    "zone": "V",
+    "distance": 114,
+    "index": 3603
+  },
+  {
+    "gamedate": "20150908",
+    "description": "Out",
+    "zone": "I",
+    "distance": 195,
+    "index": 3617
   },
   {
     "gamedate": "20150909",
-    "description": "Home run",
-    "zone": "J",
-    "distance": 360,
-    "index": 3630
+    "description": "Out",
+    "zone": "W",
+    "distance": 114,
+    "index": 3627
   },
   {
     "gamedate": "20150909",
@@ -957,6 +2616,34 @@
     "zone": "O",
     "distance": 419,
     "index": 3633
+  },
+  {
+    "gamedate": "20150909",
+    "description": "Out",
+    "zone": "P",
+    "distance": 369,
+    "index": 3644
+  },
+  {
+    "gamedate": "20150911",
+    "description": "Double",
+    "zone": "L",
+    "distance": 399,
+    "index": 3656
+  },
+  {
+    "gamedate": "20150911",
+    "description": "Out",
+    "zone": "T",
+    "distance": 144,
+    "index": 3657
+  },
+  {
+    "gamedate": "20150911",
+    "description": "Single",
+    "zone": "R",
+    "distance": 259,
+    "index": 3663
   },
   {
     "gamedate": "20150912",
@@ -967,17 +2654,10 @@
   },
   {
     "gamedate": "20150912",
-    "description": "Home run",
-    "zone": "E",
-    "distance": 349,
-    "index": 3684
-  },
-  {
-    "gamedate": "20150912",
-    "description": "Home run",
-    "zone": "J",
-    "distance": 401,
-    "index": 3685
+    "description": "Out",
+    "zone": "M",
+    "distance": 252,
+    "index": 3687
   },
   {
     "gamedate": "20150912",
@@ -988,17 +2668,38 @@
   },
   {
     "gamedate": "20150912",
-    "description": "Home run",
-    "zone": "J",
-    "distance": 399,
-    "index": 3701
+    "description": "Single",
+    "zone": "M",
+    "distance": 239,
+    "index": 3700
+  },
+  {
+    "gamedate": "20150914",
+    "description": "Out",
+    "zone": "O",
+    "distance": 260,
+    "index": 3753
+  },
+  {
+    "gamedate": "20150914",
+    "description": "Out",
+    "zone": "P",
+    "distance": 291,
+    "index": 3757
   },
   {
     "gamedate": "20150915",
-    "description": "Home run",
-    "zone": "P",
-    "distance": 395,
-    "index": 3779
+    "description": "Sacrifice fly",
+    "zone": "K",
+    "distance": 285,
+    "index": 3773
+  },
+  {
+    "gamedate": "20150915",
+    "description": "Out",
+    "zone": "W",
+    "distance": 123,
+    "index": 3778
   },
   {
     "gamedate": "20150916",
@@ -1009,38 +2710,157 @@
   },
   {
     "gamedate": "20150916",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 385,
-    "index": 3801
+    "description": "Single",
+    "zone": "O",
+    "distance": 146,
+    "index": 3802
   },
   {
     "gamedate": "20150916",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 384,
-    "index": 3809
+    "description": "Out",
+    "zone": "W",
+    "distance": 82,
+    "index": 3810
   },
   {
-    "gamedate": "20150919",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 375,
-    "index": 3862
+    "gamedate": "20150916",
+    "description": "Out",
+    "zone": "J",
+    "distance": 173,
+    "index": 3814
   },
   {
-    "gamedate": "20150919",
-    "description": "Home run",
+    "gamedate": "20150918",
+    "description": "Out",
+    "zone": "H",
+    "distance": 162,
+    "index": 3827
+  },
+  {
+    "gamedate": "20150918",
+    "description": "Out",
     "zone": "S",
-    "distance": 398,
-    "index": 3874
+    "distance": 145,
+    "index": 3833
+  },
+  {
+    "gamedate": "20150918",
+    "description": "Out",
+    "zone": "R",
+    "distance": 146,
+    "index": 3839
+  },
+  {
+    "gamedate": "20150918",
+    "description": "Single",
+    "zone": "E",
+    "distance": 118,
+    "index": 3845
+  },
+  {
+    "gamedate": "20150919",
+    "description": "Out",
+    "zone": "V",
+    "distance": 261,
+    "index": 3849
+  },
+  {
+    "gamedate": "20150919",
+    "description": "Out",
+    "zone": "U",
+    "distance": 202,
+    "index": 3863
+  },
+  {
+    "gamedate": "20150919",
+    "description": "Single",
+    "zone": "G",
+    "distance": 203,
+    "index": 3877
+  },
+  {
+    "gamedate": "20150920",
+    "description": "Out",
+    "zone": "U",
+    "distance": 144,
+    "index": 3882
+  },
+  {
+    "gamedate": "20150920",
+    "description": "Out",
+    "zone": "T",
+    "distance": 59,
+    "index": 3890
+  },
+  {
+    "gamedate": "20150920",
+    "description": "Out",
+    "zone": "U",
+    "distance": 159,
+    "index": 3909
   },
   {
     "gamedate": "20150921",
-    "description": "Home run",
-    "zone": "D",
-    "distance": 319,
-    "index": 3934
+    "description": "Out",
+    "zone": "O",
+    "distance": 150,
+    "index": 3911
+  },
+  {
+    "gamedate": "20150921",
+    "description": "Out",
+    "zone": "U",
+    "distance": 182,
+    "index": 3916
+  },
+  {
+    "gamedate": "20150921",
+    "description": "Out",
+    "zone": "P",
+    "distance": 134,
+    "index": 3923
+  },
+  {
+    "gamedate": "20150921",
+    "description": "Out",
+    "zone": "M",
+    "distance": 150,
+    "index": 3930
+  },
+  {
+    "gamedate": "20150922",
+    "description": "Out",
+    "zone": "I",
+    "distance": 225,
+    "index": 3942
+  },
+  {
+    "gamedate": "20150922",
+    "description": "Out",
+    "zone": "F",
+    "distance": 252,
+    "index": 3948
+  },
+  {
+    "gamedate": "20150922",
+    "description": "Out",
+    "zone": "W",
+    "distance": 116,
+    "index": 3955
+  },
+  {
+    "gamedate": "20150923",
+    "description": "Out",
+    "zone": "I",
+    "distance": 248,
+    "index": 3975
+  },
+  {
+    "gamedate": "20150923",
+    "description": "Out",
+    "zone": "H",
+    "distance": 321,
+    "index": 3982
   },
   {
     "gamedate": "20150924",
@@ -1050,74 +2870,102 @@
     "index": 3985
   },
   {
-    "gamedate": "20150927",
-    "description": "Home run",
-    "zone": "Q",
-    "distance": 391,
-    "index": 4052
-  },
-  {
-    "gamedate": "20150928",
-    "description": "Home run",
-    "zone": "U",
-    "distance": 358,
-    "index": 4081
-  },
-  {
-    "gamedate": "20150928",
-    "description": "Home run",
-    "zone": "C",
-    "distance": 335,
-    "index": 4084
-  },
-  {
-    "gamedate": "20150928",
-    "description": "Home run",
-    "zone": "S",
-    "distance": 361,
-    "index": 4090
-  },
-  {
-    "gamedate": "20150929",
-    "description": "Home run",
-    "zone": "W",
-    "distance": 352,
-    "index": 4097
-  },
-  {
-    "gamedate": "20150929",
-    "description": "Home run",
-    "zone": "F",
-    "distance": 371,
-    "index": 4108
-  },
-  {
-    "gamedate": "20150929",
-    "description": "Home run",
+    "gamedate": "20150924",
+    "description": "Single",
     "zone": "R",
-    "distance": 394,
-    "index": 4115
+    "distance": 226,
+    "index": 3991
   },
   {
-    "gamedate": "20150930",
-    "description": "Home run",
+    "gamedate": "20150924",
+    "description": "Out",
     "zone": "U",
-    "distance": 375,
-    "index": 4123
+    "distance": 162,
+    "index": 4005
+  },
+  {
+    "gamedate": "20150925",
+    "description": "Double",
+    "zone": "Q",
+    "distance": 272,
+    "index": 4009
+  },
+  {
+    "gamedate": "20150925",
+    "description": "Out",
+    "zone": "R",
+    "distance": 133,
+    "index": 4013
+  },
+  {
+    "gamedate": "20150925",
+    "description": "Double",
+    "zone": "W",
+    "distance": 348,
+    "index": 4019
+  },
+  {
+    "gamedate": "20150925",
+    "description": "Double",
+    "zone": "D",
+    "distance": 310,
+    "index": 4025
+  },
+  {
+    "gamedate": "20150927",
+    "description": "Out",
+    "zone": "D",
+    "distance": 231,
+    "index": 4050
+  },
+  {
+    "gamedate": "20150927",
+    "description": "Out",
+    "zone": "T",
+    "distance": 127,
+    "index": 4061
+  },
+  {
+    "gamedate": "20150929",
+    "description": "Double",
+    "zone": "U",
+    "distance": 332,
+    "index": 4095
+  },
+  {
+    "gamedate": "20150929",
+    "description": "Out",
+    "zone": "U",
+    "distance": 114,
+    "index": 4102
+  },
+  {
+    "gamedate": "20150929",
+    "description": "Out",
+    "zone": "S",
+    "distance": 182,
+    "index": 4111
   },
   {
     "gamedate": "20150930",
-    "description": "Home run",
-    "zone": "I",
-    "distance": 420,
-    "index": 4141
+    "description": "Single",
+    "zone": "K",
+    "distance": 279,
+    "index": 4131
   },
   {
     "gamedate": "20150930",
-    "description": "Home run",
-    "zone": "H",
+    "description": "Double",
+    "zone": "K",
     "distance": 400,
-    "index": 4152
+    "index": 4138
+  },
+  {
+    "gamedate": "20151002",
+    "description": "Out",
+    "zone": "V",
+    "distance": 166,
+    "index": 4181
   },
   {
     "gamedate": "20151002",
@@ -1125,5 +2973,26 @@
     "zone": "V",
     "distance": 403,
     "index": 4190
+  },
+  {
+    "gamedate": "20151002",
+    "description": "Out",
+    "zone": "X",
+    "distance": 88,
+    "index": 4195
+  },
+  {
+    "gamedate": "20151004",
+    "description": "Double",
+    "zone": "K",
+    "distance": 383,
+    "index": 4221
+  },
+  {
+    "gamedate": "20151004",
+    "description": "Out",
+    "zone": "U",
+    "distance": 210,
+    "index": 4226
   }
 ]
