@@ -5,4 +5,6 @@ const dimensions = {
 	bottom: 41.75,
 }
 
-export { dimensions }
+const binRatio = 1 / 32
+
+export { dimensions, binRatio }

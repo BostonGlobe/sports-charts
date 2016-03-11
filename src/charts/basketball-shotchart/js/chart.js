@@ -1,116 +1,90 @@
-import { dimensions } from './config'
+import { scaleLinear } from 'd3-scale'
+import { select } from 'd3-selection'
+import { max } from 'd3-array'
+import { hexbin } from 'd3-hexbin'
 
+import { dimensions, binRatio } from './config'
+
+const { left, right, top, bottom } = dimensions
+const courtWidth = right - left
+const courtHeight = bottom - top
+const scales = {
+	shotX: scaleLinear().domain([left, right]),
+	shotY: scaleLinear().domain([top, bottom]),
+	color: scaleLinear().range(['white', 'green']),
+	radius: scaleLinear(),
+}
+
+const hexbinner = hexbin()
 
 function setup() {
-	const { left, right, top, bottom } = dimensions
-	const courtWidth = Math.abs(right - left)
-	const courtHeight = Math.abs(bottom - top)
-	console.log(courtWidth, courtHeight)
+	// create svg and containers for vis
+	const svg = select('.chart-container').append('svg')
+	svg.append('g').attr('hexbin-group')
+
+	svg.append('clipPath')
+		.attr('id', 'clip')
+		.append('rect')
+			.attr('class', 'mesh')
+}
+
+function updateScales() {
+	scales.color.domain([0.15, .7])
+	scales.radius.domain([1, maxRadius])
+}
+
+function updateContainer() {
+	const width = Math.floor(select('.chart-container')[0].offsetWidth)
+	const ratio = courtHeight / courtWidth
+	const height = Math.floor(width * ratio)
+	select('svg').attr('width', width).attr('height', height)
+	select('#clip').attr('width', width).attr('height', height)
+
+	const hexRadius = Math.floor(width * binRatio)
+	hexbinner.size([width, height])
+	hexbinner.radius(hexRadius)
+
+	scales.shotX.range([0, width])
+	scales.shotY.range([height, 0])
+	scales.radius.range([1, hexRadius])
 }
 
 function updateData(data) {
+	const points = data.map(datum => ({
+		x: scales.shotX(+datum['shot-x']),
+		y: scales.shotY(+datum['shot-y']),
+		shotX: +datum['shot-x'],
+		shotY: +datum['shot-y'],
+		made: datum.event.toLowerCase().indexOf('missed') < 0,
+	}))
 
+	const hexbinData = hexbinner(points.map(point => {
+		const { made, shotX, shotY } = point
+		return [point.x, point.y, { made, shotX, shotY }]
+	}))
+
+	const maxRadius = max(hexbinData, d => d.length)
+
+	 //    // what does hexbin.hexagon do? (looks like it returns a path what params?)
+	 //    svg.append('g')
+	 //      .attr('clip-path', 'url(#clip)')
+	 //      .selectAll('.hexagon')
+	 //      .data(hexbinData)
+	 //      .enter().append('path')
+	 //      .attr('class', 'hexagon')
+	 //      .attr('d', function(d) { return hexbin.hexagon() })
+	 //      .attr('transform', function(d) {
+	 //        return 'translate(' + d.x + ',' + d.y + ')';
+	 //      })
+	 //      .style('fill', function(d) {
+		// 	const made = d.reduce(function(previous, current) {
+		// 		return previous += current[2].made ? 1 : 0
+		// 	}, 0)
+		// 	const percent = made / d.length
+		// 	console.log(percent)
+		// 	return color(percent)
+	 //      })
+	 //      .style('stroke', 'none');
 }
 
 export default { setup, updateData }
- //    var margin = { top: 0, right: 0, bottom: 0, left: 0 }
-	// var width = dimension - margin.left - margin.right
-	// var height = dimension * (courtHeight / courtWidth) - margin.top - margin.bottom
-
- //    var shotX = d3.scale.linear()
- //    	.domain([-25, 25])
- //    	.range([0, width])
-
-	// var shotY = d3.scale.linear()
-	// 	.domain([-5.25, 41.75])
-	// 	.range([height, 0])
-
-	// var points = window.data.map(function(obj) {
-	// 	var d = {
-	// 		x: shotX(parseFloat(obj['shot-x'])),
-	// 		y: shotY(parseFloat(obj['shot-y'])),
-	// 		shotX: +obj['shot-x'],
-	// 		shotY: +obj['shot-y'],
- //      		made: obj['event'].toLowerCase().indexOf('missed') < 0,
-	// 	}
-	// 	return d
-	// })
-
-	// var ratio = (1 / 21)
-	// var hexRadius = Math.floor(width * ratio)
- //    var hexbin = d3.hexbin()
- //      .size([width, height])
- //      .radius(hexRadius)
-
- //    // the result of the hexbin layout
- //    var hexbinData = hexbin(points.map(function(obj) {
- //    	return [obj.x, obj.y, {made: obj.made, shotX: obj.shotX, shotY: obj.shotY}]
- //    }))
-
- //    // var tot = hexbinData.reduce(function(previous, current) {
- //    // 	if (current[0][2].shotX < 5 && current[0][2].shotX > -5 && current[0][2].shotY < 5) {
- //    // 		return previous += 1
- //    // 	} 
- //    // 	return previous
-    	
- //    // }, 0)
-
- //    // console.log(hexbinData)
-
-	// var maxRadius = d3.max(hexbinData, function(d) {
-	// 	return d.length;
-	// })
-
- //    var color = d3.scale.linear()
- //      .domain([0.15, .7])
- //      .range(['white', 'green'])
- //      .interpolate(d3.interpolateLab);
-    
- //    // what is identity
- //    var x = d3.scale.identity()
- //      .domain([0, width]);
-
- //    var y = d3.scale.linear()
- //      .domain([0, height])
- //      .range([height, 0]);
-
- //    var radiusScale = d3.scale.linear()
- //    	.domain([1, maxRadius])
- //    	.range([1, hexRadius])
-
- //    var svg = d3.select('body').append('svg')
- //      .attr('width', width + margin.left + margin.right)
- //      .attr('height', height + margin.top + margin.bottom)
- //      .append('g')
- //      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-	// // what is clipath?
- //    svg.append('clipPath')
- //      .attr('id', 'clip')
- //      .append('rect')
- //      .attr({
- //      	'class': 'mesh',
- //      	'width': width,
- //      	'height': height,
- //      })
-
- //    // what does hexbin.hexagon do? (looks like it returns a path what params?)
- //    svg.append('g')
- //      .attr('clip-path', 'url(#clip)')
- //      .selectAll('.hexagon')
- //      .data(hexbinData)
- //      .enter().append('path')
- //      .attr('class', 'hexagon')
- //      .attr('d', function(d) { return hexbin.hexagon() })
- //      .attr('transform', function(d) {
- //        return 'translate(' + d.x + ',' + d.y + ')';
- //      })
- //      .style('fill', function(d) {
-	// 	var made = d.reduce(function(previous, current) {
-	// 		return previous += current[2].made ? 1 : 0
-	// 	}, 0)
-	// 	var percent = made / d.length
-	// 	console.log(percent)
-	// 	return color(percent)
- //      })
- //      .style('stroke', 'none');
