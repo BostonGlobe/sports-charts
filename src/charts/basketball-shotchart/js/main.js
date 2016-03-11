@@ -12,5 +12,5 @@ function handleDataError(error) {
 
 // this starts the pym resizer and takes a callback.
 // the callback will fire when we receive data
-setupIframe(handleDataLoaded, handleDataError)
+setupIframe({ handleDataLoaded, handleDataError })
 
