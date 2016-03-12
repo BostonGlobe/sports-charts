@@ -13,7 +13,7 @@ const createCanvas = ({ container, margins, width, height }) => {
 		.node()
 
 	// make room for margins
-	canvas.getContext('2d').translate(left + width/2, top)
+	canvas.getContext('2d').translate(left + width / 2, top)
 
 	return canvas
 

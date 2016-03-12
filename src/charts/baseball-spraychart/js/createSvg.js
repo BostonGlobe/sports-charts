@@ -11,31 +11,31 @@ const createSvg = ({ container, margins, width, height, parkSize }) => {
 	right = right / 2
 	bottom = bottom / 2
 	left = left / 2
-	width = width / 2
-	height = height / 2
+	const newWidth = width / 2
+	const newHeight = height / 2
 
 	// create svg
 	const svg = select(container).append('svg')
-		.attr('width', width + left + right)
-		.attr('height', height + top + bottom)
-		.attr('viewBox', [0, 0, width + left + right, height + top + bottom].join(' '))
+		.attr('newWidth', newWidth + left + right)
+		.attr('newHeight', newHeight + top + bottom)
+		.attr('viewBox', [0, 0, newWidth + left + right, newHeight + top + bottom].join(' '))
 		.attr('preserveAspectRatio', 'xMidYMid')
 
 	const g = svg.append('g')
 		.attr('class', 'root')
-		.attr('transform', `translate(${width/2 + left}, ${height + top})`)
+		.attr('transform', `translate(${newWidth / 2 + left}, ${newHeight + top})`)
 
 	// create parkScale
 	const parkScale = scaleLinear()
 		.domain([0, parkSize])
-		.range([0, height])
+		.range([0, newHeight])
 
 	// create arc generator
 	const arcGenerator = arc()
 		.innerRadius(0)
 		.outerRadius(parkScale(parkSize))
-		.startAngle(-π/4)
-		.endAngle(π/4)
+		.startAngle(-π / 4)
+		.endAngle(π / 4)
 
 	// make ballpark
 	g.append('path')
@@ -62,8 +62,8 @@ const createSvg = ({ container, margins, width, height, parkSize }) => {
 		.data([200, 300, 400])
 	.enter().append('text')
 		.attr('class', 'tick')
-		.attr('x', d => parkScale(Math.cos(-π/4) * d))
-		.attr('y', d => parkScale(Math.sin(-π/4) * d))
+		.attr('x', d => parkScale(Math.cos(-π / 4) * d))
+		.attr('y', d => parkScale(Math.sin(-π / 4) * d))
 		.attr('dx', 0)
 		.attr('dy', 10)
 		.text((d, i) => i === 1 ? `${d}ft` : d)
@@ -74,19 +74,17 @@ const createSvg = ({ container, margins, width, height, parkSize }) => {
 		.attr('clip-path', 'url(#ballpark-clip)')
 		.attr('r', parkScale(95))
 		.attr('cx', 0)
-		.attr('cy', -parkScale(Math.sqrt(2*Math.pow(90, 2))/2))
+		.attr('cy', -parkScale(Math.sqrt(2 * Math.pow(90, 2)) / 2))
 
 	// make diamond
 	g.append('rect')
 		.attr('class', 'diamond')
-		.attr('width', parkScale(90))
-		.attr('height', parkScale(90))
+		.attr('newWidth', parkScale(90))
+		.attr('newHeight', parkScale(90))
 		.attr('x', 0)
 		.attr('y', -parkScale(90))
 		.attr('transform',
 			`rotate(-45) translate(${parkScale(10)}, -${parkScale(10)})`)
-
-	return svg
 
 }
 

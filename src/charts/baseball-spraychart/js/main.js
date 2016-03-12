@@ -22,7 +22,7 @@ const height = Math.sqrt(Math.pow(offsetWidth, 2) / 2) -
 const parkSize = 443
 
 // create all our scales
-const scales = createScales({ parkSize, width, height })
+const scales = createScales({ parkSize, height })
 
 // create the svg element
 // this will hold the ballpark, infield, diamond, grid, etc

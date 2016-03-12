@@ -2,7 +2,7 @@ import { scalePoint, scaleLinear } from 'd3-scale'
 
 const π = Math.PI
 
-const createScales = ({ parkSize, width, height }) => {
+const createScales = ({ parkSize, height }) => {
 
 	// start creating scales. first: zones to angles.
 	// each zone is represented by one of the 26 letters
@@ -13,7 +13,7 @@ const createScales = ({ parkSize, width, height }) => {
 	// finally we rotate everything by π/4 counterclockwise
 	const zoneToAngle = scalePoint()
 		.domain(letters)
-		.range([π/4 + 2*π/4 + π/22, π/4 - π/22])
+		.range([π / 4 + 2 * π / 4 + π / 22, π / 4 - π / 22])
 
 	// create x-scale
 	const xScale = scaleLinear()
@@ -28,11 +28,11 @@ const createScales = ({ parkSize, width, height }) => {
 	// convert from polar to cartesian coordinates,
 	// but still ensure that we stay in the distance domain, whatever that is
 	const convertFromPolarToCartesian = (d) => {
-		const {distance, zone} = d
+		const { distance, zone } = d
 		const angle = zoneToAngle(zone)
 		const x = distance * Math.cos(angle)
 		const y = distance * Math.sin(angle)
-		return {x, y}
+		return { x, y }
 	}
 
 	// x-scale function
@@ -51,8 +51,8 @@ const createScales = ({ parkSize, width, height }) => {
 
 	// setup origin helper constant
 	const origin = {
-		x: x({distance: 0, zone: 'A'}),
-		y: y({distance: 0, zone: 'A'})
+		x: x({ distance: 0, zone: 'A' }),
+		y: y({ distance: 0, zone: 'A' }),
 	}
 
 	return { x, y, origin }

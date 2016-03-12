@@ -1,4 +1,4 @@
-import { select, selectAll } from 'd3-selection'
+import { select } from 'd3-selection'
 
 const drawCanvas = ({ canvas, detachedContainer }) => {
 
@@ -18,7 +18,7 @@ const drawCanvas = ({ canvas, detachedContainer }) => {
 
 	const dataContainer = select(detachedContainer)
 
-	dataContainer.selectAll('custom.circle').each(function() {
+	dataContainer.selectAll('custom.circle').each(function draw() {
 
 		const node = select(this)
 		const cx = node.attr('cx')
