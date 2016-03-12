@@ -15,10 +15,10 @@ offsetWidth = offsetWidth * 2
 // setup chart margins
 const margins = { top: 10, right: 10, bottom: 10, left: 10 }
 const width = offsetWidth - margins.left - margins.right
-const height = Math.sqrt(Math.pow(offsetWidth, 2)/2) -
+const height = Math.sqrt(Math.pow(offsetWidth, 2) / 2) -
 	margins.top - margins.bottom
 
-// for now we will say our ballpark max distance is 500
+// for now we will say our ballpark max distance is 443
 const parkSize = 443
 
 // create all our scales
@@ -26,7 +26,7 @@ const scales = createScales({ parkSize, width, height })
 
 // create the svg element
 // this will hold the ballpark, infield, diamond, grid, etc
-const svg = createSvg({ container, margins, width, height, parkSize })
+createSvg({ container, margins, width, height, parkSize })
 
 // create canvas element
 const canvas = createCanvas({ container, margins, width, height })
@@ -37,14 +37,13 @@ const detachedContainer = document.createElement('custom')
 
 // start a timer that will run every tick,
 // and redraw the canvas
-// timer(() => {
-// 	drawCanvas({ canvas, detachedContainer })
-// })
+timer(() => {
+	drawCanvas({ canvas, detachedContainer })
+})
 
 // this gets fired when we receive data
 const handleDataLoaded = (data) => {
 	drawData({ data, detachedContainer, scales })
-	drawCanvas({ canvas, detachedContainer })
 }
 
 // this gets fired when there is an error fetching data

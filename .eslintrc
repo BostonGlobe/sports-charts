@@ -3,6 +3,7 @@
 	"rules": {
 		"comma-dangle": [2, "always-multiline"],
 		"indent": [2, "tab", {"SwitchCase": 1}],
+		"padded-blocks": 0,
 		"quotes": [2, "single", "avoid-escape"],
 		"no-console": 0,
 		"no-debugger": 0,

@@ -8,19 +8,6 @@ const drawData = ({ data, detachedContainer, scales }) => {
 
 	const { x, y } = scales
 
-	// // get canvas context
-	// const c = canvas.getContext('2d')
-
-	// // create arc generator
-	// const arcGenerator = arc()
-	// 	.innerRadius(0)
-	// 	.outerRadius(d => d)
-	// 	.startAngle(0)
-	// 	.endAngle(2*π)
-	// 	.context(c)
-
-	// data = [0, 25, 50]
-
 	// get the custom data container
 	const dataContainer = select(detachedContainer);
 
@@ -58,29 +45,6 @@ const drawData = ({ data, detachedContainer, scales }) => {
 				'Home run': colors.redsox1,
 			}[d.description] || 'white'
 		})
-
-	// // const circles = svg.select('g.root')
-	// // 	.append('g').selectAll('.circle').data([0, 1, 2])
-
-	// // circles.enter().append('path')
-	// // 	.attr('d', arcGenerator)
-	// // 	.attr('transform', d => `translate(0, ${d * -50})`)
-	// // 	.style('fill', 'red')
-
-	// // data.forEach((d, i) => {
-	// // 	c.beginPath()
-	// // 	arcGenerator(d)
-	// // 	c.strokeStyle = 'red'
-	// // 	c.stroke()
-	// // })
-
-
-
-
-
-
-
-
 
 }
 
