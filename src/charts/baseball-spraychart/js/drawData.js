@@ -39,7 +39,7 @@ const drawData = ({ data, detachedContainer, scales }) => {
 		.attr('class', 'circle')
 		.attr('cx', x)
 		.attr('cy', y)
-		.attr('r', d => d.description === 'Home run' ? 5 : 3)
+		.attr('r', d => d.description === 'Home run' ? 8 : 5)
 		.attr('strokeStyle', d => {
 			return {
 				'Out': colors.gray3,

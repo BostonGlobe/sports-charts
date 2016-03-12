@@ -9,7 +9,8 @@ import drawData from './drawData.js'
 import drawCanvas from './drawCanvas.js'
 
 const container = $('.chart-container')
-const { offsetWidth } = container
+let { offsetWidth } = container
+offsetWidth = offsetWidth * 2
 
 // setup chart margins
 const margins = { top: 10, right: 10, bottom: 10, left: 10 }

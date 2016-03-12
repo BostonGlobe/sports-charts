@@ -1,3 +1,8 @@
+@require '../../../base/css/reset.styl'
+@require '../../../base/css/variables.styl'
+@require '../../../base/css/helpers.styl'
+@require '../../../base/css/typography.styl'
+
 .chart-container
 	width 320px
 	position relative
@@ -6,8 +11,8 @@ svg
 	display block
 
 	.ballpark
-		fill #ededed
-		stroke #ededed
+		fill $gray-pale
+		stroke $gray-pale
 		stroke-width 3px
 
 	.grid
@@ -18,10 +23,11 @@ svg
 		fill white
 
 	.diamond
-		fill #ededed
+		fill $gray-pale
 
 canvas
 	display block
+	width 100%
 	position absolute
 	top 0
 	left 0
