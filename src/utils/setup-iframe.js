@@ -4,7 +4,7 @@ import pymIframe from 'pym-iframe-resizer'
 const setup = ({
 	handleDataLoaded,
 	handleDataError,
-	transform = (d) => d
+	transform = (d) => d,
 }) => {
 
 	const pymChild = pymIframe({})

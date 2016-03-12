@@ -1,13 +1,8 @@
 import { select } from 'd3-selection'
 
-export default function createCanvas({ container }) {
+const createCanvas = ({ container, margins, width, height }) => {
 
-	const { offsetWidth } = container
-
-	// setup chart margins
-	const top = 10, right = 10, bottom = 10, left = 10
-	const width = offsetWidth - left - right
-	const height = Math.sqrt(Math.pow(offsetWidth, 2)/2) - top - bottom
+	const { top, right, bottom, left } = margins
 
 	// create canvas element
 	const canvas = select(container).append('canvas')
@@ -18,9 +13,10 @@ export default function createCanvas({ container }) {
 		.node()
 
 	// make room for margins
-	canvas.getContext('2d').translate(left + width/2, top);
+	canvas.getContext('2d').translate(left + width / 2, top)
 
 	return canvas
 
 }
 
+export default createCanvas
