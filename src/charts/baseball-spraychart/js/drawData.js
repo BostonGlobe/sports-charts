@@ -16,12 +16,11 @@ const drawData = ({ data, detachedContainer, scales }) => {
 	// EXIT
 	circles.exit().remove()
 
-	// UPDATE
-	// circles.attr(...)
-
 	// ENTER
 	circles.enter().append('custom')
 		.attr('class', 'circle')
+		// ENTER + UPDATE
+		.merge(circles)
 		.attr('cx', x)
 		.attr('cy', y)
 		.attr('r', d => d.description === 'Home run' ? 8 : 5)
