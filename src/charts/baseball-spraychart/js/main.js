@@ -46,9 +46,7 @@ const detachedContainer = document.createElement('custom')
 
 // start a timer that will run every tick,
 // and redraw the canvas
-timer(() => {
-	// drawCanvas({ canvas, detachedContainer })
-})
+timer(() => drawCanvas({ canvas, detachedContainer }))
 
 // this gets fired when we receive data
 const handleDataLoaded = (rawdata) => {
@@ -56,11 +54,10 @@ const handleDataLoaded = (rawdata) => {
 	const data = formatData(rawdata)
 	const uniqueDates = getUniqueDates(data)
 
-	drawData({ data, detachedContainer, scales })
+	drawData({ data, detachedContainer, scales, uniqueDates, input, tooltip })
 
-	setupSlider({ data, uniqueDates, input, labels, tooltip })
-
-	drawCanvas({ canvas, detachedContainer })
+	setupSlider({ data, detachedContainer, uniqueDates, input, labels,
+		tooltip, scales })
 
 }
 

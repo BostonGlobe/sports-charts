@@ -29,7 +29,9 @@ const drawCanvas = ({ canvas, detachedContainer }) => {
 		const fillStyle = node.attr('fillStyle')
 		const strokeStyle = node.attr('strokeStyle')
 		const isHalf = node.attr('isHalf') === 'true'
+		const opacity = node.attr('opacity')
 
+		c.globalAlpha = opacity
 		c.lineWidth = 1
 
 		if (isHalf) {

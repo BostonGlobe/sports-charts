@@ -2,11 +2,13 @@ import { timeFormat } from 'd3-time-format'
 
 import fancySlider from './fancySlider.js'
 import setSliderTooltip from './setSliderTooltip.js'
+import drawData from './drawData.js'
 
 // create date formatting function
 const dateFormat = timeFormat('%b. %e')
 
-const setupSlider = ({ data, uniqueDates, input, labels, tooltip }) => {
+const setupSlider = ({ data, uniqueDates, input, labels, tooltip,
+scales, detachedContainer }) => {
 
 	// get first and last dates
 	const firstDate = data[0].gamedate
@@ -35,17 +37,8 @@ const setupSlider = ({ data, uniqueDates, input, labels, tooltip }) => {
 
 		setSliderTooltip({ input, time: gamedate, index: value - 1, tooltip })
 
-		// drawChart({
-		// 	data,
-		// 	gamedate,
-
-		// 	g_balls,
-		// 	origin,
-		// 	x,
-		// 	y,
-		// 	arc
-
-		// })
+		drawData({ data, detachedContainer, scales, gamedate, uniqueDates,
+			input, tooltip })
 
 	})
 
