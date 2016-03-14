@@ -7,8 +7,16 @@ import createSvg from './createSvg.js'
 import createCanvas from './createCanvas.js'
 import drawData from './drawData.js'
 import drawCanvas from './drawCanvas.js'
+import setupSlider from './setupSlider.js'
+import formatData from './formatData.js'
+import getUniqueDates from './getUniqueDates.js'
 
+// convenience variables
 const container = $('.chart-container')
+const input = $('.slider input')
+const start = $('.slider-date-ranges .start-date span')
+const end = $('.slider-date-ranges .end-date span')
+const labels = { start, end }
 let { offsetWidth } = container
 offsetWidth = offsetWidth * 2
 
@@ -38,12 +46,21 @@ const detachedContainer = document.createElement('custom')
 // start a timer that will run every tick,
 // and redraw the canvas
 timer(() => {
-	drawCanvas({ canvas, detachedContainer })
+	// drawCanvas({ canvas, detachedContainer })
 })
 
 // this gets fired when we receive data
-const handleDataLoaded = (data) => {
+const handleDataLoaded = (rawdata) => {
+
+	const data = formatData(rawdata)
+	const uniqueDates = getUniqueDates(data)
+
 	drawData({ data, detachedContainer, scales })
+
+	setupSlider({ data, uniqueDates, input, labels })
+
+	drawCanvas({ canvas, detachedContainer })
+
 }
 
 // this gets fired when there is an error fetching data
