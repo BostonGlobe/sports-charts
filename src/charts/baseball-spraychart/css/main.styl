@@ -2,6 +2,7 @@
 @require '../../../base/css/variables.styl'
 @require '../../../base/css/helpers.styl'
 @require '../../../base/css/typography.styl'
+@require './slider.styl'
 
 .chart-container
 	width 300px
@@ -31,3 +32,41 @@ canvas
 	position absolute
 	top 0
 	left 0
+
+.slider
+	width 100%
+	margin 1em 0 0.5em 0
+	text-align center
+	position relative
+	span
+		font-family $benton
+
+	input
+		display block
+		margin 0 auto
+		width 99%
+
+	.slider-date-ranges
+		width 100%
+		overflow hidden
+		span
+			font-size $notes-size
+
+		.start-date
+			float left
+
+		.end-date
+			float right
+
+	.slider-current-date-wrapper
+		position relative
+		overflow hidden
+		margin 0.25em auto
+
+		.slider-current-date
+			position absolute
+			top 0
+
+			span
+				white-space nowrap
+				font-weight bold
