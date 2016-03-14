@@ -1,10 +1,12 @@
 import { timeFormat } from 'd3-time-format'
+
 import fancySlider from './fancySlider.js'
+import setSliderTooltip from './setSliderTooltip.js'
 
 // create date formatting function
 const dateFormat = timeFormat('%b. %e')
 
-const setupSlider = ({ data, uniqueDates, input, labels }) => {
+const setupSlider = ({ data, uniqueDates, input, labels, tooltip }) => {
 
 	// get first and last dates
 	const firstDate = data[0].gamedate
@@ -16,12 +18,6 @@ const setupSlider = ({ data, uniqueDates, input, labels }) => {
 	start.innerHTML = dateFormat(firstDate)
 	end.innerHTML = dateFormat(lastDate)
 
-	// document.querySelector('.slider-date-ranges .start-date span').innerHTML =
-	// 	dateFormat(firstDate)
-
-	// document.querySelector('.slider-date-ranges .end-date span').innerHTML =
-	// 	dateFormat(lastDate)
-
 	// set max distance on slider
 	input.setAttribute('max', uniqueDates.length)
 
@@ -30,6 +26,28 @@ const setupSlider = ({ data, uniqueDates, input, labels }) => {
 
 	// turn slider into fancy slider
 	fancySlider.init(input)
+
+	// update chart on input change
+	input.addEventListener('input', (e) => {
+
+		const { value } = e.target
+		const gamedate = uniqueDates[value - 1]
+
+		setSliderTooltip({ input, time: gamedate, index: value - 1, tooltip })
+
+		// drawChart({
+		// 	data,
+		// 	gamedate,
+
+		// 	g_balls,
+		// 	origin,
+		// 	x,
+		// 	y,
+		// 	arc
+
+		// })
+
+	})
 
 }
 

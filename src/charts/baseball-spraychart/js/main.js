@@ -16,6 +16,7 @@ const container = $('.chart-container')
 const input = $('.slider input')
 const start = $('.slider-date-ranges .start-date span')
 const end = $('.slider-date-ranges .end-date span')
+const tooltip = $('.slider-current-date')
 const labels = { start, end }
 let { offsetWidth } = container
 offsetWidth = offsetWidth * 2
@@ -57,7 +58,7 @@ const handleDataLoaded = (rawdata) => {
 
 	drawData({ data, detachedContainer, scales })
 
-	setupSlider({ data, uniqueDates, input, labels })
+	setupSlider({ data, uniqueDates, input, labels, tooltip })
 
 	drawCanvas({ canvas, detachedContainer })
 
