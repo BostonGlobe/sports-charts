@@ -1,5 +1,7 @@
 import { select } from 'd3-selection'
 
+const π = Math.PI
+
 const drawCanvas = ({ canvas, detachedContainer }) => {
 
 	const { width, height } = canvas
@@ -29,7 +31,7 @@ const drawCanvas = ({ canvas, detachedContainer }) => {
 
 		c.beginPath()
 
-		c.arc(cx, cy, r, 0, 2 * Math.PI)
+		c.arc(cx, cy, r, 0, 2 * π)
 
 		c.fillStyle = fillStyle
 		c.fill()
