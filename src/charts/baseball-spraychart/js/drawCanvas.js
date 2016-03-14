@@ -28,20 +28,38 @@ const drawCanvas = ({ canvas, detachedContainer }) => {
 		const r = node.attr('r')
 		const fillStyle = node.attr('fillStyle')
 		const strokeStyle = node.attr('strokeStyle')
-
-		c.beginPath()
-
-		c.arc(cx, cy, r, 0, 2 * π)
-
-		c.fillStyle = fillStyle
-		c.fill()
+		const isHalf = node.attr('isHalf') === 'true'
 
 		c.lineWidth = 1
 
-		c.strokeStyle = strokeStyle
-		c.stroke()
+		if (isHalf) {
 
-		c.closePath()
+			// fill a half circle
+			c.beginPath()
+			c.arc(cx, cy, r, 0, π)
+			c.fillStyle = fillStyle
+			c.fill()
+			c.closePath()
+
+			// stroke a circle
+			c.beginPath()
+			c.arc(cx, cy, r, 0, 2 * π)
+			c.strokeStyle = strokeStyle
+			c.stroke()
+			c.closePath()
+
+		} else {
+
+			// fill and stroke a circle
+			c.beginPath()
+			c.arc(cx, cy, r, 0, 2 * π)
+			c.fillStyle = fillStyle
+			c.fill()
+			c.strokeStyle = strokeStyle
+			c.stroke()
+			c.closePath()
+
+		}
 
 	})
 

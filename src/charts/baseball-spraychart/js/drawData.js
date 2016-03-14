@@ -24,6 +24,7 @@ const drawData = ({ data, detachedContainer, scales }) => {
 		.attr('cx', x)
 		.attr('cy', y)
 		.attr('r', d => d.description === 'Home run' ? 8 : 5)
+		.attr('isHalf', d => d.description === 'Double')
 		.attr('strokeStyle', d => ({
 			Out: colors.gray3,
 			Single: colors.redsox2,
@@ -33,8 +34,8 @@ const drawData = ({ data, detachedContainer, scales }) => {
 		}[d.description] || colors.gray3))
 		.attr('fillStyle', d => ({
 			Out: colors.gray3,
-			Single: 'white',
-			Double: 'white',
+			Single: colors.graypale,
+			Double: colors.redsox2,
 			Triple: colors.redsox2,
 			'Home run': colors.redsox1,
 		}[d.description] || 'white'))

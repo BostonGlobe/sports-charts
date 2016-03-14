@@ -16,8 +16,8 @@ const createSvg = ({ container, margins, width, height, parkSize }) => {
 
 	// create svg
 	const svg = select(container).append('svg')
-		.attr('newWidth', newWidth + left + right)
-		.attr('newHeight', newHeight + top + bottom)
+		.attr('width', newWidth + left + right)
+		.attr('height', newHeight + top + bottom)
 		.attr('viewBox', [0, 0, newWidth + left + right, newHeight + top + bottom].join(' '))
 		.attr('preserveAspectRatio', 'xMidYMid')
 
@@ -79,8 +79,8 @@ const createSvg = ({ container, margins, width, height, parkSize }) => {
 	// make diamond
 	g.append('rect')
 		.attr('class', 'diamond')
-		.attr('newWidth', parkScale(90))
-		.attr('newHeight', parkScale(90))
+		.attr('width', parkScale(90))
+		.attr('height', parkScale(90))
 		.attr('x', 0)
 		.attr('y', -parkScale(90))
 		.attr('transform',
