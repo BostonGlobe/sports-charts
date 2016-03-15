@@ -37,4 +37,4 @@ Available fonts:
 Extracting sample data from raw data: 
 ```
 csvcut -c season,gamedate,opponent,home-away,event,quarter,time,player,shot-x,shot-y nbashotchart-gs.csv | csvgrep -c player -m "Stephen Curry" | csvjson > curry.json
-``
+```
