@@ -1,5 +1,4 @@
 import { select } from 'd3-selection'
-import { transition } from 'd3-transition'
 
 import colors from './../../../utils/colors.js'
 import setSliderTooltip from './setSliderTooltip.js'
@@ -14,7 +13,7 @@ uniqueDates, input, tooltip }) => {
 		data
 
 	const DELAY = 0
-	let DURATION = gamedate ? 300 : 500
+	const DURATION = gamedate ? 300 : 500
 
 	const { x, y, origin } = scales
 
@@ -29,7 +28,7 @@ uniqueDates, input, tooltip }) => {
 	circles.exit()
 		.transition()
 		.delay(0)
-		.duration(DURATION/5)
+		.duration(DURATION / 5)
 		.attr('cx', origin.x)
 		.attr('cy', origin.y)
 		.attr('opacity', 0)

@@ -50,6 +50,8 @@ const detachedContainer = document.createElement('custom')
 // and redraw the canvas
 timer(() => drawCanvas({ canvas, detachedContainer }))
 
+let initialTimer
+
 const handleInputChange = ({ e, uniqueDates, data }) => {
 
 	initialTimer.stop()
@@ -67,7 +69,6 @@ const handleInputChange = ({ e, uniqueDates, data }) => {
 }
 
 // this gets fired when we receive data
-let initialTimer
 const handleDataLoaded = (err, rawdata) => {
 
 	if (err) {

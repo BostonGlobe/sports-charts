@@ -7,7 +7,7 @@ const gameDateParse = timeParse('%Y%m%d')
 const formatData = (data) =>
 	data.map(x => ({
 		...x,
-		gamedate: gameDateParse(x.gamedate)
+		gamedate: gameDateParse(x.gamedate),
 	}))
 	.sort((a, b) => a.gamedate.getTime() - b.gamedate.getTime())
 

@@ -1,7 +1,6 @@
 import { timeFormat } from 'd3-time-format'
 
 import fancySlider from './fancySlider.js'
-import drawData from './drawData.js'
 import setSliderTooltip from './setSliderTooltip.js'
 
 // create date formatting function
@@ -24,6 +23,7 @@ onInputChange }) => {
 	input.setAttribute('max', uniqueDates.length)
 
 	// set slider thumb to slider min
+	// eslint-disable-next-line no-param-reassign
 	input.value = input.getAttribute('min')
 
 	// turn slider into fancy slider

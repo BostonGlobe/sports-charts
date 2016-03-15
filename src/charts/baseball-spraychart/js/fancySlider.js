@@ -1,29 +1,6 @@
-function initSlider(input) {
-
-	// prepare a <style> tag that will be used by handleSlider()
-	var st = document.createElement('style')
-	st.id = 's' + input.id
-	document.head.appendChild(st)
-
-	// add event listeners to sliders
-	input.addEventListener('input', function () {
-		handleSlider(this)
-	}, false)
-
-	input.addEventListener('change', function () {
-		handleSlider(this)
-	}, false)
-
-	// color slider track with starting value
-	if (input.value*1) {
-		handleSlider(input)
-	}
-
-}
-
 function handleSlider(input) {
 
-	var tracks = [
+	const tracks = [
 		'-webkit-slider-runnable-track',
 	]
 
@@ -34,20 +11,42 @@ function handleSlider(input) {
 
 	// this sets the gradient for one slider to the correct color stops
 	// needs a prepared <style> tag created by initSliders()
-	var gradValue = Math.round(100*(value-min)/delta)
-	var grad = 'linear-gradient(90deg,#ffa7a7 ' + gradValue + '%,#ededed ' + gradValue + '%)'
-	var rangeSelector = 'input[id='+input.id+']::'
-	var styleString = ''
+	const gradValue = Math.round(100 * (value - min) / delta)
+	const grad = `linear-gradient(90deg,#ffa7a7 ${gradValue}%,#ededed ${gradValue}%)`
+	const rangeSelector = `input[id=${input.id}]::`
 
-	for (var j=0;j<tracks.length;j+=1) {
-		styleString += rangeSelector + tracks[j] + '{background: ' + grad + ';} '
+	const styleString = tracks.map(t =>
+		`${rangeSelector}${t}{background: ${grad};}`).join(' ')
+
+	document.getElementById(`s${input.id}`).textContent = styleString
+}
+
+function initSlider(input) {
+
+	// prepare a <style> tag that will be used by handleSlider()
+	const st = document.createElement('style')
+	st.id = `s${input.id}`
+	document.head.appendChild(st)
+
+	// add event listeners to sliders
+	input.addEventListener('input', function onInput() {
+		handleSlider(this)
+	}, false)
+
+	input.addEventListener('change', function onChange() {
+		handleSlider(this)
+	}, false)
+
+	// color slider track with starting value
+	if (input.value * 1) {
+		handleSlider(input)
 	}
-	document.getElementById('s'+input.id).textContent = styleString
+
 }
 
 const fancySlider = {
 	init: initSlider,
-	drawTrack: handleSlider
+	drawTrack: handleSlider,
 }
 
 export default fancySlider
