@@ -8,10 +8,12 @@ const setup = ({ handleDataLoaded, transform }) => {
 	// send transformed data to chartifier
 	pymChild.onMessage('transform-data', d => {
 		const json = JSON.parse(d)
-		let output
-		if (transform) transform(json, (err, result) => output = result)
-		else output = json
-		pymChild.sendMessage('data-transformed', JSON.stringify(output))
+		if (transform) {
+			transform(json, (err, result) =>
+				pymChild.sendMessage('data-transformed', JSON.stringify(result)))
+		} else {
+			pymChild.sendMessage('data-transformed', JSON.stringify(json))
+		}
 	})
 
 	// talk to chartifier
