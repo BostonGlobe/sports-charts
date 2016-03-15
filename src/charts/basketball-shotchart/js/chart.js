@@ -63,8 +63,7 @@ function getPercentMade(d) {
 }
 
 function updateData(data) {
-	console.log(data)
-	const points = data.map(datum => ({
+	const points = data.shots.map(datum => ({
 		...datum,
 		x: scales.shotX(datum.shotX),
 		y: scales.shotY(datum.shotY),

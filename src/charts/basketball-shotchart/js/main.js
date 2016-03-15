@@ -5,8 +5,9 @@ import transform from './transform'
 chart.setup()
 
 // this gets fired when we receive data
-function handleDataLoaded(data) {
-	chart.updateData(data)
+function handleDataLoaded(err, data) {
+	if (err) console.log(err)
+	else chart.updateData(data)
 }
 
 // this gets fired when there is an error fetching data

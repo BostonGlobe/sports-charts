@@ -16,7 +16,7 @@ const setup = ({
 
 	// talk to chartifier
 	pymChild.onMessage('receive-data', d =>
-		handleDataLoaded(transform(JSON.parse(d)))
+		transform(JSON.parse(d), handleDataLoaded)
 	)
 	pymChild.sendMessage('request-data', true)
 
