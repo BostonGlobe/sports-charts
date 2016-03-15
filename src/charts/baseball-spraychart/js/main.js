@@ -80,7 +80,7 @@ const handleDataLoaded = (rawdata) => {
 	initialTimer = timer(() => {
 
 		// are we at the end? if so stop.
-		if (dataIndex < data.length - 1) {
+		if (dataIndex < data.length) {
 
 			drawData({ data: data.slice(0, dataIndex++), detachedContainer,
 				scales, uniqueDates, input, tooltip })
