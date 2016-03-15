@@ -27,3 +27,18 @@ gulp.task('js-chart-prod', () =>
 	.pipe(rename('bundle.js'))
 	.pipe(gulp.dest(dest.prod))
 )
+
+gulp.task('js-base-dev', () =>
+	gulp.src('src/base/js/config.js')
+	.pipe(plumber({ errorHandler: report }))
+	.pipe(webpackStream(config.dev))
+	.pipe(rename('chart-base.js'))
+	.pipe(gulp.dest('dev'))
+)
+
+gulp.task('js-base-prod', () =>
+	gulp.src('src/base/js/config.js')
+	.pipe(webpackStream(config.prod))
+	.pipe(rename('chart-base.js'))
+	.pipe(gulp.dest('dist'))
+)

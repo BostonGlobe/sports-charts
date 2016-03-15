@@ -14,6 +14,18 @@
 #### Single chart
 `gulp prod --chart chart-name -u username`
 
+## Fonts
+Available fonts:
+* Benton regular ('benton-regular')
+* Benton bold ('benton-bold')
+* Benton condensed regular ('benton-cond-regular')
+* Benton compressed regular ('benton-comp-regular')
+
+#### Usage
+```html
+<p class='benton-regular'>I love the sports ball.</p>
+```
+
 #### All charts
 If you make changes to something in **src/base** you must redeploy all charts.
 

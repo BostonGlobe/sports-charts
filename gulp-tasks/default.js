@@ -10,6 +10,7 @@ gulp.task('default', ['dev'], () => {
 
 	gulp.watch('src/utils/**/*.js', ['js-chart-dev'])
 	gulp.watch('src/base/css/**/*.styl', ['css-base-dev'])
+	gulp.watch('src/base/js/**/*.js', ['js-base-dev'])
 
 	gulp.watch('dev/**/*', ['browser-sync-reload'])
 	gulp.watch('preview.html', ['browser-sync-reload'])

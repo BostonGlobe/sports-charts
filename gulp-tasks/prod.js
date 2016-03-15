@@ -16,6 +16,7 @@ gulp.task('prod-base', (cb) => {
 	runSequence(
 		'clean-base',
 		'css-base-prod',
+		'css-js-prod',
 		'ssh-base',
 		cb
 	)

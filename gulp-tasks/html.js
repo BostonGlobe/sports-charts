@@ -34,5 +34,6 @@ gulp.task('html-chart-prod', () => {
 		.pipe(replace('<!-- chart -->', html))
 		.pipe(replace(/\?v=chart/g, `?v=${timestamp}`))
 		.pipe(replace('../../chart-base.css?v=base', `${appsPath}/chart-base.css?v=${version}`))
+		.pipe(replace('../../chart-base.js?v=base', `${appsPath}/chart-base.js?v=${version}`))
 		.pipe(gulp.dest(dest.prod))
 })

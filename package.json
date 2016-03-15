@@ -33,6 +33,7 @@
     "d3-time-format": "0.3.1",
     "d3-timer": "0.4.1",
     "d3-transition": "0.2.8",
+    "fontfaceobserver": "1.6.4",
     "get-json-lite": "2.0.0",
     "lodash.uniq": "4.2.0",
     "pym-iframe-resizer": "4.0.0"
