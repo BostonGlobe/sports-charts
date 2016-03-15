@@ -6,18 +6,13 @@ const setup = ({ handleDataLoaded, transform = (d, c) => c(null, d) }) => {
 	const pymChild = pymIframe({})
 
 	// send transformed data to chartifier
-	pymChild.onMessage('transform-data', d => {
-		const json = JSON.parse(d)
-		transform(json, (err, result) =>
-			pymChild.sendMessage('data-transformed', JSON.stringify(result)))
-	})
+	pymChild.onMessage('transform-data', d =>
+		transform(JSON.parse(d), (err, result) =>
+			pymChild.sendMessage('data-transformed', JSON.stringify(result))))
 
 	// talk to chartifier
-	pymChild.onMessage('receive-data', d => {
-		const json = JSON.parse(d)
-		transform(json, handleDataLoaded)
-	})
-
+	pymChild.onMessage('receive-data', d =>
+		transform(JSON.parse(d), handleDataLoaded))
 	pymChild.sendMessage('request-data', true)
 
 	// talk to production
