@@ -73,7 +73,7 @@ const handleDataLoaded = (rawdata) => {
 	const data = formatData(rawdata)
 	const uniqueDates = getUniqueDates(data)
 
-	setupSlider({ data, uniqueDates, input, labels,
+	setupSlider({ data, uniqueDates, input, tooltip, labels,
 		onInputChange: (e) => handleInputChange({ e, uniqueDates, data }) })
 
 	let dataIndex = 0
