@@ -16,7 +16,7 @@ function findZone(args) {
 
 function loadAverageData(cb) {
 	const url = '../../../test-data/basketball-shotchart-averages-zones.json'
-	getJSON(url, averageData => cb(null, averageData), cb(`error loading ${url}`, null))
+	getJSON(url, cb)
 }
 
 export default function transform(data, cb) {
