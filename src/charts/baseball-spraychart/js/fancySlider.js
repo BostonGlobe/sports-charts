@@ -27,10 +27,15 @@ function handleSlider(input) {
 		'-webkit-slider-runnable-track',
 	]
 
+	const { value } = input
+	const min = input.getAttribute('min')
+	const max = input.getAttribute('max')
+	const delta = max - min
+
 	// this sets the gradient for one slider to the correct color stops
 	// needs a prepared <style> tag created by initSliders()
-	var gradValue = Math.round((input.value/input.getAttribute('max')*1)*100)
-	var grad = 'linear-gradient(90deg,#ffa7a7 ' + gradValue + '%,#ededed ' + (gradValue+1) + '%)'
+	var gradValue = Math.round(100*(value-min)/delta)
+	var grad = 'linear-gradient(90deg,#ffa7a7 ' + gradValue + '%,#ededed ' + gradValue + '%)'
 	var rangeSelector = 'input[id='+input.id+']::'
 	var styleString = ''
 
