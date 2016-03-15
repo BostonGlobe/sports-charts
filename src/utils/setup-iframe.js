@@ -26,7 +26,8 @@ const setup = ({ handleDataLoaded, transform }) => {
 	pymChild.sendMessage('request-data', true)
 
 	// talk to production
-	pymChild.onMessage('receive-data-url', url => getJSON(url, handleDataLoaded))
+	pymChild.onMessage('receive-data-url', url =>
+		getJSON(url, handleDataLoaded))
 	pymChild.sendMessage('request-data-url', true)
 
 }
