@@ -61,12 +61,12 @@ const createSvg = ({ container, margins, width, height, parkSize }) => {
 	g.selectAll('.tick')
 		.data([200, 300, 400])
 	.enter().append('text')
-		.attr('class', 'tick')
+		.attr('class', 'tick benton-cond-regular')
 		.attr('x', d => parkScale(Math.cos(-π / 4) * d))
 		.attr('y', d => parkScale(Math.sin(-π / 4) * d))
 		.attr('dx', 0)
 		.attr('dy', 10)
-		.text((d, i) => i === 1 ? `${d}ft` : d)
+		.text((d, i) => i === 0 ? `${d}ft` : d)
 
 	// make infield
 	g.append('circle')

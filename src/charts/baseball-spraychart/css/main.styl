@@ -1,4 +1,6 @@
 $header-1-size = 1.424em
+$header-2-size = 1.125em
+$label-size = 0.889em
 $unitlabel-size = 0.79em
 $notes-size = 0.65em
 $spacer = 0.75em
@@ -7,13 +9,16 @@ $spacer = 0.75em
 @require './slider.styl'
 @require './key.styl'
 
+*, *:before, *:after
+	color $text
+
 header
-	border-top solid black 0.225em
+	border-top solid $text 0.225em
 	padding-top 0.5em
 	margin-bottom 1em
 	span
 		text-transform uppercase
-		font-size 1.5em
+		font-size $header-1-size
 
 .chart-container
 	width 100%
@@ -37,6 +42,10 @@ svg
 	.diamond
 		fill $gray-pale
 
+	text.tick
+		fill $text
+		font-size $notes-size
+
 canvas
 	display block
 	width 100%
@@ -46,11 +55,11 @@ canvas
 
 .slider
 	width 100%
-	margin 1em 0 0.5em 0
+	margin 1em 0 0 0
+	padding-bottom 1em
 	text-align center
 	position relative
-	span
-		font-family $benton
+	border-bottom solid $text 1px
 
 	input
 		display block
@@ -60,8 +69,9 @@ canvas
 	.slider-date-ranges
 		width 100%
 		overflow hidden
+		margin-top 0.25em
 		span
-			font-size $notes-size
+			font-size $label-size
 
 		.start-date
 			float left
@@ -79,5 +89,5 @@ canvas
 			top 0
 
 			span
+				// font-size $label-size
 				white-space nowrap
-				font-weight bold
