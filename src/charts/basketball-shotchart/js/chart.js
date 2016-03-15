@@ -63,15 +63,15 @@ function getPercentMade(d) {
 	}, 0)
 }
 
-function getZonesByDate(averages, gamedate) {
-	return averages.filter(day => day.date === gamedate)[0].zones
+function getZonesByDate(averages, date) {
+	return averages.filter(day => day.date === date)[0].zones
 }
 
 function getPercentFromZone(zones, zone) {
 	return zones[zone].percent
 }
 
-function getWeightedAverage(d, averages) {
+function getWeightedAverage(d, averages, date) {
 	// must combine averages since multiple zones might make up a bin
 	const zonesWeighted = d.reduce((previous, current) => {
 		const datum = current[2]
@@ -79,7 +79,7 @@ function getWeightedAverage(d, averages) {
 			previous[datum.zone].count += 1
 		}
 		else {
-			const zones = getZonesByDate(averages, datum.gamedate)
+			const zones = getZonesByDate(averages, date)
 			const percent = getPercentFromZone(zones, datum.zone)
 			const count = 1
 			previous[datum.zone] = { count, percent } 
@@ -97,7 +97,14 @@ function getWeightedAverage(d, averages) {
 	return (total / count).toFixed()
 }
 
+function getLatestDate(shots) {
+	const sorted = shots.sort((a, b) => (+b.gameDate) - (+a.gameDate))
+	return sorted[0].gameDate
+}
+
 function updateData(data) {
+	const latestDate = getLatestDate(data.shots)
+
 	const points = data.shots.map(datum => ({
 		...datum,
 		x: scales.shotX(datum.shotX),
@@ -121,7 +128,7 @@ function updateData(data) {
 			.attr('transform', d => `translate(${d.x}, ${d.y})`)
 			.style('fill', d => {
 				const made = getPercentMade(d)
-				const average = getWeightedAverage(d, data.averages)
+				const average = getWeightedAverage(d, data.averages, latestDate)
 				const percent = +((made / d.length * 1000) / 10).toFixed(2)
 				const diff = percent - average
 				return scales.color(diff)

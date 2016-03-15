@@ -8,5 +8,6 @@
 
 {"season": "201516", "gamedate": "20151028", "opponent": "Phi", "home-away": "home", "event": "Field Goal Missed", "quarter": "1", "time": "5:30", "player": "Isaiah Thomas", "shot-x": "10.1", "shot-y": "15"},
 {"season": "201516", "gamedate": "20151028", "opponent": "Phi", "home-away": "home", "event": "Field Goal Made", "quarter": "1", "time": "5:30", "player": "Isaiah Thomas", "shot-x": "10.1", "shot-y": "15"},
-{"season": "201516", "gamedate": "20151028", "opponent": "Phi", "home-away": "home", "event": "Field Goal Made", "quarter": "1", "time": "5:30", "player": "Isaiah Thomas", "shot-x": "10.1", "shot-y": "15"},
+{"season": "201516", "gamedate": "20151028", "opponent": "Phi", "home-away": "home", "event": "Field Goal Made", "quarter": "1", "time": "5:30", "player": "Isaiah Thomas", "shot-x": "8.1", "shot-y": "15"},
+{"season": "201516", "gamedate": "20151028", "opponent": "Phi", "home-away": "home", "event": "Field Goal Made", "quarter": "1", "time": "5:30", "player": "Isaiah Thomas", "shot-x": "7.9", "shot-y": "15"},
 ]

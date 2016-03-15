@@ -26,7 +26,7 @@ export default function transform(data, cb) {
 			// season, gamedate, opponent, home-away, event, quarter, time, player, shot-x, shot-y
 			const shots = data.map(datum => {
 				const season = datum.season
-				const gamedate = datum.gamedate
+				const gameDate = datum.gamedate
 				const opponent = datum.opponent
 				const home = datum['home-away'] === 'home'
 				const quarter = +datum.quarter
@@ -42,7 +42,7 @@ export default function transform(data, cb) {
 
 				return {
 					season,
-					gamedate,
+					gameDate,
 					opponent,
 					home,
 					quarter,
