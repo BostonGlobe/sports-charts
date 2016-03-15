@@ -15,7 +15,7 @@ function findZone(args) {
 }
 
 function loadAverageData(cb) {
-	const url = '../../../test-data/basketball-shotchart-averages.json'
+	const url = '../../../test-data/basketball-shotchart-averages-zones.json'
 	getJSON(url, averageData => cb(null, averageData), cb(`error loading ${url}`, null))
 }
 
@@ -23,15 +23,38 @@ export default function transform(data, cb) {
 	loadAverageData((err, averages) => {
 		if (err) cb(err)
 		else {
+			// season, gamedate, opponent, home-away, event, quarter, time, player, shot-x, shot-y
 			const shots = data.map(datum => {
+				const season = datum.season
+				const gamedate = datum.gamedate
+				const opponent = datum.opponent
+				const home = datum['home-away'] === 'home'
+				const quarter = +datum.quarter
+				const time = datum.time
+				const player = datum.player
 				const shotX = +datum['shot-x']
 				const shotY = +datum['shot-y']
+
 				const distance = +calculateDistance(shotX, shotY)
 				const distanceBin = +calculateDistanceBin(distance)
 				const zone = findZone({ shotX, shotY, distance })
 				const made = datum.event.toLowerCase().indexOf('missed') < 0
 
-				return { shotX, shotY, made, distance, distanceBin, zone }
+				return {
+					season,
+					gamedate,
+					opponent,
+					home,
+					quarter,
+					time,
+					player,
+					shotX,
+					shotY,
+					made,
+					distance,
+					distanceBin,
+					zone,
+				}
 			})
 
 			cb(null, { averages, shots })

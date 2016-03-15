@@ -1,0 +1,5807 @@
+[
+  {
+    "date": "20151027",
+    "distances": {
+      "0": {
+        "made": 95,
+        "total": 170,
+        "percent": 55.88
+      },
+      "1": {
+        "made": 17,
+        "total": 48,
+        "percent": 35.42
+      },
+      "2": {
+        "made": 8,
+        "total": 33,
+        "percent": 24.24
+      },
+      "3": {
+        "made": 19,
+        "total": 48,
+        "percent": 39.58
+      },
+      "4": {
+        "made": 23,
+        "total": 55,
+        "percent": 41.82
+      },
+      "5": {
+        "made": 21,
+        "total": 59,
+        "percent": 35.59
+      },
+      "6": {
+        "made": 39,
+        "total": 115,
+        "percent": 33.91
+      },
+      "7": {
+        "made": 3,
+        "total": 4,
+        "percent": 75
+      }
+    }
+  },
+  {
+    "date": "20151028",
+    "distances": {
+      "0": {
+        "made": 547,
+        "total": 934,
+        "percent": 58.57
+      },
+      "1": {
+        "made": 114,
+        "total": 291,
+        "percent": 39.18
+      },
+      "2": {
+        "made": 61,
+        "total": 188,
+        "percent": 32.45
+      },
+      "3": {
+        "made": 101,
+        "total": 241,
+        "percent": 41.91
+      },
+      "4": {
+        "made": 118,
+        "total": 327,
+        "percent": 36.09
+      },
+      "5": {
+        "made": 96,
+        "total": 290,
+        "percent": 33.1
+      },
+      "6": {
+        "made": 216,
+        "total": 615,
+        "percent": 35.12
+      },
+      "7": {
+        "made": 6,
+        "total": 22,
+        "percent": 27.27
+      }
+    }
+  },
+  {
+    "date": "20151029",
+    "distances": {
+      "0": {
+        "made": 652,
+        "total": 1103,
+        "percent": 59.11
+      },
+      "1": {
+        "made": 125,
+        "total": 329,
+        "percent": 37.99
+      },
+      "2": {
+        "made": 67,
+        "total": 211,
+        "percent": 31.75
+      },
+      "3": {
+        "made": 124,
+        "total": 286,
+        "percent": 43.36
+      },
+      "4": {
+        "made": 146,
+        "total": 391,
+        "percent": 37.34
+      },
+      "5": {
+        "made": 110,
+        "total": 329,
+        "percent": 33.43
+      },
+      "6": {
+        "made": 259,
+        "total": 750,
+        "percent": 34.53
+      },
+      "7": {
+        "made": 7,
+        "total": 29,
+        "percent": 24.14
+      }
+    }
+  },
+  {
+    "date": "20151030",
+    "distances": {
+      "0": {
+        "made": 1066,
+        "total": 1808,
+        "percent": 58.96
+      },
+      "1": {
+        "made": 206,
+        "total": 564,
+        "percent": 36.52
+      },
+      "2": {
+        "made": 111,
+        "total": 322,
+        "percent": 34.47
+      },
+      "3": {
+        "made": 180,
+        "total": 421,
+        "percent": 42.76
+      },
+      "4": {
+        "made": 230,
+        "total": 642,
+        "percent": 35.83
+      },
+      "5": {
+        "made": 172,
+        "total": 513,
+        "percent": 33.53
+      },
+      "6": {
+        "made": 394,
+        "total": 1177,
+        "percent": 33.47
+      },
+      "7": {
+        "made": 11,
+        "total": 39,
+        "percent": 28.21
+      }
+    }
+  },
+  {
+    "date": "20151031",
+    "distances": {
+      "0": {
+        "made": 1255,
+        "total": 2144,
+        "percent": 58.54
+      },
+      "1": {
+        "made": 246,
+        "total": 654,
+        "percent": 37.61
+      },
+      "2": {
+        "made": 137,
+        "total": 381,
+        "percent": 35.96
+      },
+      "3": {
+        "made": 213,
+        "total": 507,
+        "percent": 42.01
+      },
+      "4": {
+        "made": 294,
+        "total": 778,
+        "percent": 37.79
+      },
+      "5": {
+        "made": 206,
+        "total": 619,
+        "percent": 33.28
+      },
+      "6": {
+        "made": 467,
+        "total": 1376,
+        "percent": 33.94
+      },
+      "7": {
+        "made": 16,
+        "total": 47,
+        "percent": 34.04
+      }
+    }
+  },
+  {
+    "date": "20151101",
+    "distances": {
+      "0": {
+        "made": 1488,
+        "total": 2563,
+        "percent": 58.06
+      },
+      "1": {
+        "made": 286,
+        "total": 758,
+        "percent": 37.73
+      },
+      "2": {
+        "made": 166,
+        "total": 448,
+        "percent": 37.05
+      },
+      "3": {
+        "made": 240,
+        "total": 575,
+        "percent": 41.74
+      },
+      "4": {
+        "made": 336,
+        "total": 906,
+        "percent": 37.09
+      },
+      "5": {
+        "made": 247,
+        "total": 746,
+        "percent": 33.11
+      },
+      "6": {
+        "made": 557,
+        "total": 1660,
+        "percent": 33.55
+      },
+      "7": {
+        "made": 17,
+        "total": 49,
+        "percent": 34.69
+      }
+    }
+  },
+  {
+    "date": "20151102",
+    "distances": {
+      "0": {
+        "made": 1727,
+        "total": 2944,
+        "percent": 58.66
+      },
+      "1": {
+        "made": 332,
+        "total": 883,
+        "percent": 37.6
+      },
+      "2": {
+        "made": 192,
+        "total": 528,
+        "percent": 36.36
+      },
+      "3": {
+        "made": 271,
+        "total": 657,
+        "percent": 41.25
+      },
+      "4": {
+        "made": 397,
+        "total": 1060,
+        "percent": 37.45
+      },
+      "5": {
+        "made": 290,
+        "total": 857,
+        "percent": 33.84
+      },
+      "6": {
+        "made": 632,
+        "total": 1902,
+        "percent": 33.23
+      },
+      "7": {
+        "made": 19,
+        "total": 56,
+        "percent": 33.93
+      }
+    }
+  },
+  {
+    "date": "20151103",
+    "distances": {
+      "0": {
+        "made": 1949,
+        "total": 3310,
+        "percent": 58.88
+      },
+      "1": {
+        "made": 384,
+        "total": 1005,
+        "percent": 38.21
+      },
+      "2": {
+        "made": 220,
+        "total": 615,
+        "percent": 35.77
+      },
+      "3": {
+        "made": 302,
+        "total": 750,
+        "percent": 40.27
+      },
+      "4": {
+        "made": 465,
+        "total": 1215,
+        "percent": 38.27
+      },
+      "5": {
+        "made": 332,
+        "total": 987,
+        "percent": 33.64
+      },
+      "6": {
+        "made": 713,
+        "total": 2145,
+        "percent": 33.24
+      },
+      "7": {
+        "made": 24,
+        "total": 64,
+        "percent": 37.5
+      }
+    }
+  },
+  {
+    "date": "20151104",
+    "distances": {
+      "0": {
+        "made": 2275,
+        "total": 3858,
+        "percent": 58.97
+      },
+      "1": {
+        "made": 429,
+        "total": 1142,
+        "percent": 37.57
+      },
+      "2": {
+        "made": 256,
+        "total": 716,
+        "percent": 35.75
+      },
+      "3": {
+        "made": 363,
+        "total": 881,
+        "percent": 41.2
+      },
+      "4": {
+        "made": 560,
+        "total": 1425,
+        "percent": 39.3
+      },
+      "5": {
+        "made": 401,
+        "total": 1165,
+        "percent": 34.42
+      },
+      "6": {
+        "made": 836,
+        "total": 2499,
+        "percent": 33.45
+      },
+      "7": {
+        "made": 27,
+        "total": 77,
+        "percent": 35.06
+      }
+    }
+  },
+  {
+    "date": "20151105",
+    "distances": {
+      "0": {
+        "made": 2433,
+        "total": 4120,
+        "percent": 59.05
+      },
+      "1": {
+        "made": 456,
+        "total": 1213,
+        "percent": 37.59
+      },
+      "2": {
+        "made": 275,
+        "total": 764,
+        "percent": 35.99
+      },
+      "3": {
+        "made": 397,
+        "total": 958,
+        "percent": 41.44
+      },
+      "4": {
+        "made": 599,
+        "total": 1537,
+        "percent": 38.97
+      },
+      "5": {
+        "made": 437,
+        "total": 1261,
+        "percent": 34.66
+      },
+      "6": {
+        "made": 889,
+        "total": 2656,
+        "percent": 33.47
+      },
+      "7": {
+        "made": 27,
+        "total": 79,
+        "percent": 34.18
+      }
+    }
+  },
+  {
+    "date": "20151106",
+    "distances": {
+      "0": {
+        "made": 2772,
+        "total": 4677,
+        "percent": 59.27
+      },
+      "1": {
+        "made": 530,
+        "total": 1397,
+        "percent": 37.94
+      },
+      "2": {
+        "made": 306,
+        "total": 861,
+        "percent": 35.54
+      },
+      "3": {
+        "made": 439,
+        "total": 1070,
+        "percent": 41.03
+      },
+      "4": {
+        "made": 682,
+        "total": 1730,
+        "percent": 39.42
+      },
+      "5": {
+        "made": 506,
+        "total": 1437,
+        "percent": 35.21
+      },
+      "6": {
+        "made": 1013,
+        "total": 3022,
+        "percent": 33.52
+      },
+      "7": {
+        "made": 29,
+        "total": 83,
+        "percent": 34.94
+      }
+    }
+  },
+  {
+    "date": "20151107",
+    "distances": {
+      "0": {
+        "made": 3093,
+        "total": 5200,
+        "percent": 59.48
+      },
+      "1": {
+        "made": 581,
+        "total": 1531,
+        "percent": 37.95
+      },
+      "2": {
+        "made": 338,
+        "total": 959,
+        "percent": 35.25
+      },
+      "3": {
+        "made": 479,
+        "total": 1170,
+        "percent": 40.94
+      },
+      "4": {
+        "made": 747,
+        "total": 1920,
+        "percent": 38.91
+      },
+      "5": {
+        "made": 559,
+        "total": 1591,
+        "percent": 35.14
+      },
+      "6": {
+        "made": 1123,
+        "total": 3340,
+        "percent": 33.62
+      },
+      "7": {
+        "made": 31,
+        "total": 92,
+        "percent": 33.7
+      }
+    }
+  },
+  {
+    "date": "20151108",
+    "distances": {
+      "0": {
+        "made": 3254,
+        "total": 5470,
+        "percent": 59.49
+      },
+      "1": {
+        "made": 609,
+        "total": 1607,
+        "percent": 37.9
+      },
+      "2": {
+        "made": 363,
+        "total": 1020,
+        "percent": 35.59
+      },
+      "3": {
+        "made": 522,
+        "total": 1266,
+        "percent": 41.23
+      },
+      "4": {
+        "made": 790,
+        "total": 2024,
+        "percent": 39.03
+      },
+      "5": {
+        "made": 591,
+        "total": 1673,
+        "percent": 35.33
+      },
+      "6": {
+        "made": 1175,
+        "total": 3497,
+        "percent": 33.6
+      },
+      "7": {
+        "made": 31,
+        "total": 98,
+        "percent": 31.63
+      }
+    }
+  },
+  {
+    "date": "20151109",
+    "distances": {
+      "0": {
+        "made": 3490,
+        "total": 5852,
+        "percent": 59.64
+      },
+      "1": {
+        "made": 649,
+        "total": 1730,
+        "percent": 37.51
+      },
+      "2": {
+        "made": 383,
+        "total": 1077,
+        "percent": 35.56
+      },
+      "3": {
+        "made": 557,
+        "total": 1348,
+        "percent": 41.32
+      },
+      "4": {
+        "made": 854,
+        "total": 2189,
+        "percent": 39.01
+      },
+      "5": {
+        "made": 640,
+        "total": 1782,
+        "percent": 35.91
+      },
+      "6": {
+        "made": 1263,
+        "total": 3745,
+        "percent": 33.72
+      },
+      "7": {
+        "made": 32,
+        "total": 107,
+        "percent": 29.91
+      }
+    }
+  },
+  {
+    "date": "20151110",
+    "distances": {
+      "0": {
+        "made": 3728,
+        "total": 6246,
+        "percent": 59.69
+      },
+      "1": {
+        "made": 693,
+        "total": 1839,
+        "percent": 37.68
+      },
+      "2": {
+        "made": 409,
+        "total": 1147,
+        "percent": 35.66
+      },
+      "3": {
+        "made": 593,
+        "total": 1447,
+        "percent": 40.98
+      },
+      "4": {
+        "made": 910,
+        "total": 2326,
+        "percent": 39.12
+      },
+      "5": {
+        "made": 674,
+        "total": 1883,
+        "percent": 35.79
+      },
+      "6": {
+        "made": 1360,
+        "total": 3996,
+        "percent": 34.03
+      },
+      "7": {
+        "made": 38,
+        "total": 118,
+        "percent": 32.2
+      }
+    }
+  },
+  {
+    "date": "20151111",
+    "distances": {
+      "0": {
+        "made": 4087,
+        "total": 6863,
+        "percent": 59.55
+      },
+      "1": {
+        "made": 756,
+        "total": 1988,
+        "percent": 38.03
+      },
+      "2": {
+        "made": 459,
+        "total": 1269,
+        "percent": 36.17
+      },
+      "3": {
+        "made": 657,
+        "total": 1588,
+        "percent": 41.37
+      },
+      "4": {
+        "made": 1000,
+        "total": 2540,
+        "percent": 39.37
+      },
+      "5": {
+        "made": 755,
+        "total": 2085,
+        "percent": 36.21
+      },
+      "6": {
+        "made": 1498,
+        "total": 4379,
+        "percent": 34.21
+      },
+      "7": {
+        "made": 40,
+        "total": 126,
+        "percent": 31.75
+      }
+    }
+  },
+  {
+    "date": "20151112",
+    "distances": {
+      "0": {
+        "made": 4198,
+        "total": 7039,
+        "percent": 59.64
+      },
+      "1": {
+        "made": 777,
+        "total": 2033,
+        "percent": 38.22
+      },
+      "2": {
+        "made": 467,
+        "total": 1297,
+        "percent": 36.01
+      },
+      "3": {
+        "made": 672,
+        "total": 1629,
+        "percent": 41.25
+      },
+      "4": {
+        "made": 1030,
+        "total": 2612,
+        "percent": 39.43
+      },
+      "5": {
+        "made": 775,
+        "total": 2135,
+        "percent": 36.3
+      },
+      "6": {
+        "made": 1538,
+        "total": 4481,
+        "percent": 34.32
+      },
+      "7": {
+        "made": 40,
+        "total": 126,
+        "percent": 31.75
+      }
+    }
+  },
+  {
+    "date": "20151113",
+    "distances": {
+      "0": {
+        "made": 4518,
+        "total": 7654,
+        "percent": 59.03
+      },
+      "1": {
+        "made": 832,
+        "total": 2184,
+        "percent": 38.1
+      },
+      "2": {
+        "made": 510,
+        "total": 1419,
+        "percent": 35.94
+      },
+      "3": {
+        "made": 727,
+        "total": 1765,
+        "percent": 41.19
+      },
+      "4": {
+        "made": 1113,
+        "total": 2833,
+        "percent": 39.29
+      },
+      "5": {
+        "made": 860,
+        "total": 2335,
+        "percent": 36.83
+      },
+      "6": {
+        "made": 1669,
+        "total": 4876,
+        "percent": 34.23
+      },
+      "7": {
+        "made": 43,
+        "total": 137,
+        "percent": 31.39
+      }
+    }
+  },
+  {
+    "date": "20151114",
+    "distances": {
+      "0": {
+        "made": 4752,
+        "total": 8051,
+        "percent": 59.02
+      },
+      "1": {
+        "made": 880,
+        "total": 2304,
+        "percent": 38.19
+      },
+      "2": {
+        "made": 544,
+        "total": 1510,
+        "percent": 36.03
+      },
+      "3": {
+        "made": 750,
+        "total": 1830,
+        "percent": 40.98
+      },
+      "4": {
+        "made": 1175,
+        "total": 2996,
+        "percent": 39.22
+      },
+      "5": {
+        "made": 889,
+        "total": 2435,
+        "percent": 36.51
+      },
+      "6": {
+        "made": 1760,
+        "total": 5159,
+        "percent": 34.12
+      },
+      "7": {
+        "made": 45,
+        "total": 147,
+        "percent": 30.61
+      }
+    }
+  },
+  {
+    "date": "20151115",
+    "distances": {
+      "0": {
+        "made": 4951,
+        "total": 8385,
+        "percent": 59.05
+      },
+      "1": {
+        "made": 922,
+        "total": 2414,
+        "percent": 38.19
+      },
+      "2": {
+        "made": 581,
+        "total": 1584,
+        "percent": 36.68
+      },
+      "3": {
+        "made": 785,
+        "total": 1916,
+        "percent": 40.97
+      },
+      "4": {
+        "made": 1246,
+        "total": 3146,
+        "percent": 39.61
+      },
+      "5": {
+        "made": 937,
+        "total": 2553,
+        "percent": 36.7
+      },
+      "6": {
+        "made": 1841,
+        "total": 5404,
+        "percent": 34.07
+      },
+      "7": {
+        "made": 45,
+        "total": 153,
+        "percent": 29.41
+      }
+    }
+  },
+  {
+    "date": "20151116",
+    "distances": {
+      "0": {
+        "made": 5136,
+        "total": 8706,
+        "percent": 58.99
+      },
+      "1": {
+        "made": 952,
+        "total": 2488,
+        "percent": 38.26
+      },
+      "2": {
+        "made": 609,
+        "total": 1648,
+        "percent": 36.95
+      },
+      "3": {
+        "made": 815,
+        "total": 1998,
+        "percent": 40.79
+      },
+      "4": {
+        "made": 1298,
+        "total": 3276,
+        "percent": 39.62
+      },
+      "5": {
+        "made": 968,
+        "total": 2654,
+        "percent": 36.47
+      },
+      "6": {
+        "made": 1928,
+        "total": 5627,
+        "percent": 34.26
+      },
+      "7": {
+        "made": 45,
+        "total": 157,
+        "percent": 28.66
+      }
+    }
+  },
+  {
+    "date": "20151117",
+    "distances": {
+      "0": {
+        "made": 5339,
+        "total": 9039,
+        "percent": 59.07
+      },
+      "1": {
+        "made": 1004,
+        "total": 2606,
+        "percent": 38.53
+      },
+      "2": {
+        "made": 641,
+        "total": 1731,
+        "percent": 37.03
+      },
+      "3": {
+        "made": 855,
+        "total": 2093,
+        "percent": 40.85
+      },
+      "4": {
+        "made": 1354,
+        "total": 3409,
+        "percent": 39.72
+      },
+      "5": {
+        "made": 1007,
+        "total": 2771,
+        "percent": 36.34
+      },
+      "6": {
+        "made": 2027,
+        "total": 5884,
+        "percent": 34.45
+      },
+      "7": {
+        "made": 46,
+        "total": 160,
+        "percent": 28.75
+      }
+    }
+  },
+  {
+    "date": "20151118",
+    "distances": {
+      "0": {
+        "made": 5667,
+        "total": 9596,
+        "percent": 59.06
+      },
+      "1": {
+        "made": 1056,
+        "total": 2779,
+        "percent": 38
+      },
+      "2": {
+        "made": 709,
+        "total": 1874,
+        "percent": 37.83
+      },
+      "3": {
+        "made": 894,
+        "total": 2203,
+        "percent": 40.58
+      },
+      "4": {
+        "made": 1441,
+        "total": 3618,
+        "percent": 39.83
+      },
+      "5": {
+        "made": 1076,
+        "total": 2952,
+        "percent": 36.45
+      },
+      "6": {
+        "made": 2146,
+        "total": 6242,
+        "percent": 34.38
+      },
+      "7": {
+        "made": 47,
+        "total": 166,
+        "percent": 28.31
+      }
+    }
+  },
+  {
+    "date": "20151119",
+    "distances": {
+      "0": {
+        "made": 5763,
+        "total": 9750,
+        "percent": 59.11
+      },
+      "1": {
+        "made": 1078,
+        "total": 2826,
+        "percent": 38.15
+      },
+      "2": {
+        "made": 720,
+        "total": 1901,
+        "percent": 37.87
+      },
+      "3": {
+        "made": 913,
+        "total": 2240,
+        "percent": 40.76
+      },
+      "4": {
+        "made": 1468,
+        "total": 3675,
+        "percent": 39.95
+      },
+      "5": {
+        "made": 1096,
+        "total": 2998,
+        "percent": 36.56
+      },
+      "6": {
+        "made": 2196,
+        "total": 6348,
+        "percent": 34.59
+      },
+      "7": {
+        "made": 47,
+        "total": 170,
+        "percent": 27.65
+      }
+    }
+  },
+  {
+    "date": "20151120",
+    "distances": {
+      "0": {
+        "made": 6108,
+        "total": 10318,
+        "percent": 59.2
+      },
+      "1": {
+        "made": 1151,
+        "total": 3001,
+        "percent": 38.35
+      },
+      "2": {
+        "made": 756,
+        "total": 2005,
+        "percent": 37.71
+      },
+      "3": {
+        "made": 969,
+        "total": 2376,
+        "percent": 40.78
+      },
+      "4": {
+        "made": 1557,
+        "total": 3900,
+        "percent": 39.92
+      },
+      "5": {
+        "made": 1161,
+        "total": 3190,
+        "percent": 36.39
+      },
+      "6": {
+        "made": 2342,
+        "total": 6763,
+        "percent": 34.63
+      },
+      "7": {
+        "made": 48,
+        "total": 178,
+        "percent": 26.97
+      }
+    }
+  },
+  {
+    "date": "20151121",
+    "distances": {
+      "0": {
+        "made": 6326,
+        "total": 10706,
+        "percent": 59.09
+      },
+      "1": {
+        "made": 1199,
+        "total": 3126,
+        "percent": 38.36
+      },
+      "2": {
+        "made": 772,
+        "total": 2065,
+        "percent": 37.38
+      },
+      "3": {
+        "made": 1000,
+        "total": 2454,
+        "percent": 40.75
+      },
+      "4": {
+        "made": 1604,
+        "total": 4014,
+        "percent": 39.96
+      },
+      "5": {
+        "made": 1202,
+        "total": 3301,
+        "percent": 36.41
+      },
+      "6": {
+        "made": 2433,
+        "total": 7003,
+        "percent": 34.74
+      },
+      "7": {
+        "made": 49,
+        "total": 188,
+        "percent": 26.06
+      }
+    }
+  },
+  {
+    "date": "20151122",
+    "distances": {
+      "0": {
+        "made": 6512,
+        "total": 11038,
+        "percent": 59
+      },
+      "1": {
+        "made": 1229,
+        "total": 3207,
+        "percent": 38.32
+      },
+      "2": {
+        "made": 798,
+        "total": 2118,
+        "percent": 37.68
+      },
+      "3": {
+        "made": 1036,
+        "total": 2542,
+        "percent": 40.76
+      },
+      "4": {
+        "made": 1654,
+        "total": 4138,
+        "percent": 39.97
+      },
+      "5": {
+        "made": 1240,
+        "total": 3391,
+        "percent": 36.57
+      },
+      "6": {
+        "made": 2523,
+        "total": 7236,
+        "percent": 34.87
+      },
+      "7": {
+        "made": 50,
+        "total": 196,
+        "percent": 25.51
+      }
+    }
+  },
+  {
+    "date": "20151123",
+    "distances": {
+      "0": {
+        "made": 6745,
+        "total": 11427,
+        "percent": 59.03
+      },
+      "1": {
+        "made": 1269,
+        "total": 3309,
+        "percent": 38.35
+      },
+      "2": {
+        "made": 836,
+        "total": 2209,
+        "percent": 37.85
+      },
+      "3": {
+        "made": 1064,
+        "total": 2618,
+        "percent": 40.64
+      },
+      "4": {
+        "made": 1722,
+        "total": 4289,
+        "percent": 40.15
+      },
+      "5": {
+        "made": 1272,
+        "total": 3491,
+        "percent": 36.44
+      },
+      "6": {
+        "made": 2615,
+        "total": 7483,
+        "percent": 34.95
+      },
+      "7": {
+        "made": 50,
+        "total": 201,
+        "percent": 24.88
+      }
+    }
+  },
+  {
+    "date": "20151124",
+    "distances": {
+      "0": {
+        "made": 6908,
+        "total": 11724,
+        "percent": 58.92
+      },
+      "1": {
+        "made": 1307,
+        "total": 3397,
+        "percent": 38.48
+      },
+      "2": {
+        "made": 855,
+        "total": 2255,
+        "percent": 37.92
+      },
+      "3": {
+        "made": 1086,
+        "total": 2691,
+        "percent": 40.36
+      },
+      "4": {
+        "made": 1780,
+        "total": 4427,
+        "percent": 40.21
+      },
+      "5": {
+        "made": 1324,
+        "total": 3609,
+        "percent": 36.69
+      },
+      "6": {
+        "made": 2690,
+        "total": 7698,
+        "percent": 34.94
+      },
+      "7": {
+        "made": 57,
+        "total": 214,
+        "percent": 26.64
+      }
+    }
+  },
+  {
+    "date": "20151125",
+    "distances": {
+      "0": {
+        "made": 7256,
+        "total": 12320,
+        "percent": 58.9
+      },
+      "1": {
+        "made": 1386,
+        "total": 3602,
+        "percent": 38.48
+      },
+      "2": {
+        "made": 915,
+        "total": 2390,
+        "percent": 38.28
+      },
+      "3": {
+        "made": 1152,
+        "total": 2847,
+        "percent": 40.46
+      },
+      "4": {
+        "made": 1871,
+        "total": 4672,
+        "percent": 40.05
+      },
+      "5": {
+        "made": 1400,
+        "total": 3812,
+        "percent": 36.73
+      },
+      "6": {
+        "made": 2844,
+        "total": 8129,
+        "percent": 34.99
+      },
+      "7": {
+        "made": 62,
+        "total": 229,
+        "percent": 27.07
+      }
+    }
+  },
+  {
+    "date": "20151127",
+    "distances": {
+      "0": {
+        "made": 7622,
+        "total": 12959,
+        "percent": 58.82
+      },
+      "1": {
+        "made": 1448,
+        "total": 3783,
+        "percent": 38.28
+      },
+      "2": {
+        "made": 959,
+        "total": 2497,
+        "percent": 38.41
+      },
+      "3": {
+        "made": 1198,
+        "total": 2973,
+        "percent": 40.3
+      },
+      "4": {
+        "made": 1959,
+        "total": 4897,
+        "percent": 40
+      },
+      "5": {
+        "made": 1493,
+        "total": 4052,
+        "percent": 36.85
+      },
+      "6": {
+        "made": 3008,
+        "total": 8574,
+        "percent": 35.08
+      },
+      "7": {
+        "made": 64,
+        "total": 239,
+        "percent": 26.78
+      }
+    }
+  },
+  {
+    "date": "20151128",
+    "distances": {
+      "0": {
+        "made": 7800,
+        "total": 13273,
+        "percent": 58.77
+      },
+      "1": {
+        "made": 1498,
+        "total": 3902,
+        "percent": 38.39
+      },
+      "2": {
+        "made": 998,
+        "total": 2593,
+        "percent": 38.49
+      },
+      "3": {
+        "made": 1217,
+        "total": 3039,
+        "percent": 40.05
+      },
+      "4": {
+        "made": 2016,
+        "total": 5056,
+        "percent": 39.87
+      },
+      "5": {
+        "made": 1540,
+        "total": 4182,
+        "percent": 36.82
+      },
+      "6": {
+        "made": 3099,
+        "total": 8819,
+        "percent": 35.14
+      },
+      "7": {
+        "made": 68,
+        "total": 244,
+        "percent": 27.87
+      }
+    }
+  },
+  {
+    "date": "20151129",
+    "distances": {
+      "0": {
+        "made": 8044,
+        "total": 13709,
+        "percent": 58.68
+      },
+      "1": {
+        "made": 1540,
+        "total": 4008,
+        "percent": 38.42
+      },
+      "2": {
+        "made": 1037,
+        "total": 2699,
+        "percent": 38.42
+      },
+      "3": {
+        "made": 1253,
+        "total": 3127,
+        "percent": 40.07
+      },
+      "4": {
+        "made": 2088,
+        "total": 5228,
+        "percent": 39.94
+      },
+      "5": {
+        "made": 1585,
+        "total": 4317,
+        "percent": 36.72
+      },
+      "6": {
+        "made": 3206,
+        "total": 9125,
+        "percent": 35.13
+      },
+      "7": {
+        "made": 70,
+        "total": 255,
+        "percent": 27.45
+      }
+    }
+  },
+  {
+    "date": "20151130",
+    "distances": {
+      "0": {
+        "made": 8299,
+        "total": 14154,
+        "percent": 58.63
+      },
+      "1": {
+        "made": 1597,
+        "total": 4139,
+        "percent": 38.58
+      },
+      "2": {
+        "made": 1068,
+        "total": 2781,
+        "percent": 38.4
+      },
+      "3": {
+        "made": 1285,
+        "total": 3221,
+        "percent": 39.89
+      },
+      "4": {
+        "made": 2152,
+        "total": 5405,
+        "percent": 39.81
+      },
+      "5": {
+        "made": 1638,
+        "total": 4443,
+        "percent": 36.87
+      },
+      "6": {
+        "made": 3298,
+        "total": 9402,
+        "percent": 35.08
+      },
+      "7": {
+        "made": 71,
+        "total": 262,
+        "percent": 27.1
+      }
+    }
+  },
+  {
+    "date": "20151201",
+    "distances": {
+      "0": {
+        "made": 8488,
+        "total": 14466,
+        "percent": 58.68
+      },
+      "1": {
+        "made": 1633,
+        "total": 4241,
+        "percent": 38.51
+      },
+      "2": {
+        "made": 1097,
+        "total": 2844,
+        "percent": 38.57
+      },
+      "3": {
+        "made": 1315,
+        "total": 3303,
+        "percent": 39.81
+      },
+      "4": {
+        "made": 2192,
+        "total": 5510,
+        "percent": 39.78
+      },
+      "5": {
+        "made": 1683,
+        "total": 4567,
+        "percent": 36.85
+      },
+      "6": {
+        "made": 3367,
+        "total": 9624,
+        "percent": 34.99
+      },
+      "7": {
+        "made": 73,
+        "total": 268,
+        "percent": 27.24
+      }
+    }
+  },
+  {
+    "date": "20151202",
+    "distances": {
+      "0": {
+        "made": 8803,
+        "total": 15002,
+        "percent": 58.68
+      },
+      "1": {
+        "made": 1675,
+        "total": 4366,
+        "percent": 38.36
+      },
+      "2": {
+        "made": 1140,
+        "total": 2966,
+        "percent": 38.44
+      },
+      "3": {
+        "made": 1344,
+        "total": 3408,
+        "percent": 39.44
+      },
+      "4": {
+        "made": 2253,
+        "total": 5682,
+        "percent": 39.65
+      },
+      "5": {
+        "made": 1739,
+        "total": 4722,
+        "percent": 36.83
+      },
+      "6": {
+        "made": 3474,
+        "total": 9957,
+        "percent": 34.89
+      },
+      "7": {
+        "made": 77,
+        "total": 278,
+        "percent": 27.7
+      }
+    }
+  },
+  {
+    "date": "20151203",
+    "distances": {
+      "0": {
+        "made": 8968,
+        "total": 15273,
+        "percent": 58.72
+      },
+      "1": {
+        "made": 1723,
+        "total": 4486,
+        "percent": 38.41
+      },
+      "2": {
+        "made": 1167,
+        "total": 3025,
+        "percent": 38.58
+      },
+      "3": {
+        "made": 1368,
+        "total": 3477,
+        "percent": 39.34
+      },
+      "4": {
+        "made": 2296,
+        "total": 5806,
+        "percent": 39.55
+      },
+      "5": {
+        "made": 1787,
+        "total": 4840,
+        "percent": 36.92
+      },
+      "6": {
+        "made": 3562,
+        "total": 10176,
+        "percent": 35
+      },
+      "7": {
+        "made": 77,
+        "total": 281,
+        "percent": 27.4
+      }
+    }
+  },
+  {
+    "date": "20151204",
+    "distances": {
+      "0": {
+        "made": 9161,
+        "total": 15596,
+        "percent": 58.74
+      },
+      "1": {
+        "made": 1765,
+        "total": 4590,
+        "percent": 38.45
+      },
+      "2": {
+        "made": 1196,
+        "total": 3102,
+        "percent": 38.56
+      },
+      "3": {
+        "made": 1397,
+        "total": 3544,
+        "percent": 39.42
+      },
+      "4": {
+        "made": 2344,
+        "total": 5917,
+        "percent": 39.61
+      },
+      "5": {
+        "made": 1831,
+        "total": 4950,
+        "percent": 36.99
+      },
+      "6": {
+        "made": 3635,
+        "total": 10385,
+        "percent": 35
+      },
+      "7": {
+        "made": 79,
+        "total": 288,
+        "percent": 27.43
+      }
+    }
+  },
+  {
+    "date": "20151205",
+    "distances": {
+      "0": {
+        "made": 9475,
+        "total": 16115,
+        "percent": 58.8
+      },
+      "1": {
+        "made": 1827,
+        "total": 4756,
+        "percent": 38.41
+      },
+      "2": {
+        "made": 1242,
+        "total": 3229,
+        "percent": 38.46
+      },
+      "3": {
+        "made": 1459,
+        "total": 3666,
+        "percent": 39.8
+      },
+      "4": {
+        "made": 2418,
+        "total": 6104,
+        "percent": 39.61
+      },
+      "5": {
+        "made": 1901,
+        "total": 5121,
+        "percent": 37.12
+      },
+      "6": {
+        "made": 3773,
+        "total": 10755,
+        "percent": 35.08
+      },
+      "7": {
+        "made": 81,
+        "total": 294,
+        "percent": 27.55
+      }
+    }
+  },
+  {
+    "date": "20151206",
+    "distances": {
+      "0": {
+        "made": 9635,
+        "total": 16382,
+        "percent": 58.81
+      },
+      "1": {
+        "made": 1860,
+        "total": 4847,
+        "percent": 38.37
+      },
+      "2": {
+        "made": 1266,
+        "total": 3290,
+        "percent": 38.48
+      },
+      "3": {
+        "made": 1490,
+        "total": 3741,
+        "percent": 39.83
+      },
+      "4": {
+        "made": 2457,
+        "total": 6200,
+        "percent": 39.63
+      },
+      "5": {
+        "made": 1935,
+        "total": 5213,
+        "percent": 37.12
+      },
+      "6": {
+        "made": 3829,
+        "total": 10927,
+        "percent": 35.04
+      },
+      "7": {
+        "made": 82,
+        "total": 295,
+        "percent": 27.8
+      }
+    }
+  },
+  {
+    "date": "20151207",
+    "distances": {
+      "0": {
+        "made": 9941,
+        "total": 16886,
+        "percent": 58.87
+      },
+      "1": {
+        "made": 1910,
+        "total": 4965,
+        "percent": 38.47
+      },
+      "2": {
+        "made": 1310,
+        "total": 3395,
+        "percent": 38.59
+      },
+      "3": {
+        "made": 1533,
+        "total": 3854,
+        "percent": 39.78
+      },
+      "4": {
+        "made": 2524,
+        "total": 6376,
+        "percent": 39.59
+      },
+      "5": {
+        "made": 1987,
+        "total": 5357,
+        "percent": 37.09
+      },
+      "6": {
+        "made": 3933,
+        "total": 11240,
+        "percent": 34.99
+      },
+      "7": {
+        "made": 84,
+        "total": 303,
+        "percent": 27.72
+      }
+    }
+  },
+  {
+    "date": "20151208",
+    "distances": {
+      "0": {
+        "made": 10165,
+        "total": 17243,
+        "percent": 58.95
+      },
+      "1": {
+        "made": 1944,
+        "total": 5064,
+        "percent": 38.39
+      },
+      "2": {
+        "made": 1337,
+        "total": 3457,
+        "percent": 38.68
+      },
+      "3": {
+        "made": 1557,
+        "total": 3915,
+        "percent": 39.77
+      },
+      "4": {
+        "made": 2560,
+        "total": 6463,
+        "percent": 39.61
+      },
+      "5": {
+        "made": 2034,
+        "total": 5463,
+        "percent": 37.23
+      },
+      "6": {
+        "made": 4024,
+        "total": 11475,
+        "percent": 35.07
+      },
+      "7": {
+        "made": 88,
+        "total": 316,
+        "percent": 27.85
+      }
+    }
+  },
+  {
+    "date": "20151209",
+    "distances": {
+      "0": {
+        "made": 10485,
+        "total": 17749,
+        "percent": 59.07
+      },
+      "1": {
+        "made": 2009,
+        "total": 5236,
+        "percent": 38.37
+      },
+      "2": {
+        "made": 1386,
+        "total": 3551,
+        "percent": 39.03
+      },
+      "3": {
+        "made": 1612,
+        "total": 4055,
+        "percent": 39.75
+      },
+      "4": {
+        "made": 2671,
+        "total": 6718,
+        "percent": 39.76
+      },
+      "5": {
+        "made": 2094,
+        "total": 5621,
+        "percent": 37.25
+      },
+      "6": {
+        "made": 4135,
+        "total": 11824,
+        "percent": 34.97
+      },
+      "7": {
+        "made": 90,
+        "total": 323,
+        "percent": 27.86
+      }
+    }
+  },
+  {
+    "date": "20151210",
+    "distances": {
+      "0": {
+        "made": 10595,
+        "total": 17953,
+        "percent": 59.02
+      },
+      "1": {
+        "made": 2032,
+        "total": 5290,
+        "percent": 38.41
+      },
+      "2": {
+        "made": 1406,
+        "total": 3588,
+        "percent": 39.19
+      },
+      "3": {
+        "made": 1631,
+        "total": 4112,
+        "percent": 39.66
+      },
+      "4": {
+        "made": 2709,
+        "total": 6814,
+        "percent": 39.76
+      },
+      "5": {
+        "made": 2127,
+        "total": 5722,
+        "percent": 37.17
+      },
+      "6": {
+        "made": 4172,
+        "total": 11942,
+        "percent": 34.94
+      },
+      "7": {
+        "made": 91,
+        "total": 325,
+        "percent": 28
+      }
+    }
+  },
+  {
+    "date": "20151211",
+    "distances": {
+      "0": {
+        "made": 10942,
+        "total": 18543,
+        "percent": 59.01
+      },
+      "1": {
+        "made": 2093,
+        "total": 5447,
+        "percent": 38.42
+      },
+      "2": {
+        "made": 1448,
+        "total": 3704,
+        "percent": 39.09
+      },
+      "3": {
+        "made": 1681,
+        "total": 4239,
+        "percent": 39.66
+      },
+      "4": {
+        "made": 2813,
+        "total": 7049,
+        "percent": 39.91
+      },
+      "5": {
+        "made": 2195,
+        "total": 5893,
+        "percent": 37.25
+      },
+      "6": {
+        "made": 4330,
+        "total": 12386,
+        "percent": 34.96
+      },
+      "7": {
+        "made": 94,
+        "total": 330,
+        "percent": 28.48
+      }
+    }
+  },
+  {
+    "date": "20151212",
+    "distances": {
+      "0": {
+        "made": 11245,
+        "total": 19039,
+        "percent": 59.06
+      },
+      "1": {
+        "made": 2141,
+        "total": 5572,
+        "percent": 38.42
+      },
+      "2": {
+        "made": 1482,
+        "total": 3787,
+        "percent": 39.13
+      },
+      "3": {
+        "made": 1734,
+        "total": 4370,
+        "percent": 39.68
+      },
+      "4": {
+        "made": 2894,
+        "total": 7247,
+        "percent": 39.93
+      },
+      "5": {
+        "made": 2262,
+        "total": 6058,
+        "percent": 37.34
+      },
+      "6": {
+        "made": 4446,
+        "total": 12712,
+        "percent": 34.97
+      },
+      "7": {
+        "made": 95,
+        "total": 341,
+        "percent": 27.86
+      }
+    }
+  },
+  {
+    "date": "20151213",
+    "distances": {
+      "0": {
+        "made": 11365,
+        "total": 19256,
+        "percent": 59.02
+      },
+      "1": {
+        "made": 2169,
+        "total": 5635,
+        "percent": 38.49
+      },
+      "2": {
+        "made": 1497,
+        "total": 3833,
+        "percent": 39.06
+      },
+      "3": {
+        "made": 1758,
+        "total": 4424,
+        "percent": 39.74
+      },
+      "4": {
+        "made": 2921,
+        "total": 7311,
+        "percent": 39.95
+      },
+      "5": {
+        "made": 2292,
+        "total": 6140,
+        "percent": 37.33
+      },
+      "6": {
+        "made": 4484,
+        "total": 12828,
+        "percent": 34.95
+      },
+      "7": {
+        "made": 96,
+        "total": 344,
+        "percent": 27.91
+      }
+    }
+  },
+  {
+    "date": "20151214",
+    "distances": {
+      "0": {
+        "made": 11680,
+        "total": 19774,
+        "percent": 59.07
+      },
+      "1": {
+        "made": 2224,
+        "total": 5797,
+        "percent": 38.36
+      },
+      "2": {
+        "made": 1532,
+        "total": 3921,
+        "percent": 39.07
+      },
+      "3": {
+        "made": 1806,
+        "total": 4552,
+        "percent": 39.67
+      },
+      "4": {
+        "made": 3019,
+        "total": 7522,
+        "percent": 40.14
+      },
+      "5": {
+        "made": 2364,
+        "total": 6334,
+        "percent": 37.32
+      },
+      "6": {
+        "made": 4618,
+        "total": 13181,
+        "percent": 35.04
+      },
+      "7": {
+        "made": 96,
+        "total": 349,
+        "percent": 27.51
+      }
+    }
+  },
+  {
+    "date": "20151215",
+    "distances": {
+      "0": {
+        "made": 11812,
+        "total": 19994,
+        "percent": 59.08
+      },
+      "1": {
+        "made": 2248,
+        "total": 5858,
+        "percent": 38.37
+      },
+      "2": {
+        "made": 1551,
+        "total": 3961,
+        "percent": 39.16
+      },
+      "3": {
+        "made": 1825,
+        "total": 4595,
+        "percent": 39.72
+      },
+      "4": {
+        "made": 3039,
+        "total": 7587,
+        "percent": 40.06
+      },
+      "5": {
+        "made": 2395,
+        "total": 6410,
+        "percent": 37.36
+      },
+      "6": {
+        "made": 4667,
+        "total": 13321,
+        "percent": 35.03
+      },
+      "7": {
+        "made": 96,
+        "total": 349,
+        "percent": 27.51
+      }
+    }
+  },
+  {
+    "date": "20151216",
+    "distances": {
+      "0": {
+        "made": 12195,
+        "total": 20631,
+        "percent": 59.11
+      },
+      "1": {
+        "made": 2313,
+        "total": 6027,
+        "percent": 38.38
+      },
+      "2": {
+        "made": 1605,
+        "total": 4085,
+        "percent": 39.29
+      },
+      "3": {
+        "made": 1879,
+        "total": 4738,
+        "percent": 39.66
+      },
+      "4": {
+        "made": 3173,
+        "total": 7869,
+        "percent": 40.32
+      },
+      "5": {
+        "made": 2473,
+        "total": 6601,
+        "percent": 37.46
+      },
+      "6": {
+        "made": 4826,
+        "total": 13745,
+        "percent": 35.11
+      },
+      "7": {
+        "made": 98,
+        "total": 359,
+        "percent": 27.3
+      }
+    }
+  },
+  {
+    "date": "20151217",
+    "distances": {
+      "0": {
+        "made": 12298,
+        "total": 20803,
+        "percent": 59.12
+      },
+      "1": {
+        "made": 2327,
+        "total": 6062,
+        "percent": 38.39
+      },
+      "2": {
+        "made": 1615,
+        "total": 4120,
+        "percent": 39.2
+      },
+      "3": {
+        "made": 1890,
+        "total": 4769,
+        "percent": 39.63
+      },
+      "4": {
+        "made": 3194,
+        "total": 7927,
+        "percent": 40.29
+      },
+      "5": {
+        "made": 2488,
+        "total": 6636,
+        "percent": 37.49
+      },
+      "6": {
+        "made": 4868,
+        "total": 13886,
+        "percent": 35.06
+      },
+      "7": {
+        "made": 100,
+        "total": 367,
+        "percent": 27.25
+      }
+    }
+  },
+  {
+    "date": "20151218",
+    "distances": {
+      "0": {
+        "made": 12726,
+        "total": 21479,
+        "percent": 59.25
+      },
+      "1": {
+        "made": 2389,
+        "total": 6237,
+        "percent": 38.3
+      },
+      "2": {
+        "made": 1675,
+        "total": 4265,
+        "percent": 39.27
+      },
+      "3": {
+        "made": 1963,
+        "total": 4925,
+        "percent": 39.86
+      },
+      "4": {
+        "made": 3283,
+        "total": 8172,
+        "percent": 40.17
+      },
+      "5": {
+        "made": 2573,
+        "total": 6852,
+        "percent": 37.55
+      },
+      "6": {
+        "made": 4988,
+        "total": 14280,
+        "percent": 34.93
+      },
+      "7": {
+        "made": 100,
+        "total": 372,
+        "percent": 26.88
+      }
+    }
+  },
+  {
+    "date": "20151219",
+    "distances": {
+      "0": {
+        "made": 12888,
+        "total": 21755,
+        "percent": 59.24
+      },
+      "1": {
+        "made": 2417,
+        "total": 6307,
+        "percent": 38.32
+      },
+      "2": {
+        "made": 1700,
+        "total": 4315,
+        "percent": 39.4
+      },
+      "3": {
+        "made": 1989,
+        "total": 4995,
+        "percent": 39.82
+      },
+      "4": {
+        "made": 3322,
+        "total": 8267,
+        "percent": 40.18
+      },
+      "5": {
+        "made": 2612,
+        "total": 6936,
+        "percent": 37.66
+      },
+      "6": {
+        "made": 5037,
+        "total": 14464,
+        "percent": 34.82
+      },
+      "7": {
+        "made": 100,
+        "total": 378,
+        "percent": 26.46
+      }
+    }
+  },
+  {
+    "date": "20151220",
+    "distances": {
+      "0": {
+        "made": 13133,
+        "total": 22142,
+        "percent": 59.31
+      },
+      "1": {
+        "made": 2452,
+        "total": 6408,
+        "percent": 38.26
+      },
+      "2": {
+        "made": 1733,
+        "total": 4405,
+        "percent": 39.34
+      },
+      "3": {
+        "made": 2017,
+        "total": 5053,
+        "percent": 39.92
+      },
+      "4": {
+        "made": 3384,
+        "total": 8414,
+        "percent": 40.22
+      },
+      "5": {
+        "made": 2664,
+        "total": 7056,
+        "percent": 37.76
+      },
+      "6": {
+        "made": 5118,
+        "total": 14687,
+        "percent": 34.85
+      },
+      "7": {
+        "made": 101,
+        "total": 382,
+        "percent": 26.44
+      }
+    }
+  },
+  {
+    "date": "20151221",
+    "distances": {
+      "0": {
+        "made": 13435,
+        "total": 22626,
+        "percent": 59.38
+      },
+      "1": {
+        "made": 2495,
+        "total": 6529,
+        "percent": 38.21
+      },
+      "2": {
+        "made": 1778,
+        "total": 4509,
+        "percent": 39.43
+      },
+      "3": {
+        "made": 2070,
+        "total": 5169,
+        "percent": 40.05
+      },
+      "4": {
+        "made": 3469,
+        "total": 8601,
+        "percent": 40.33
+      },
+      "5": {
+        "made": 2724,
+        "total": 7223,
+        "percent": 37.71
+      },
+      "6": {
+        "made": 5227,
+        "total": 15011,
+        "percent": 34.82
+      },
+      "7": {
+        "made": 102,
+        "total": 387,
+        "percent": 26.36
+      }
+    }
+  },
+  {
+    "date": "20151222",
+    "distances": {
+      "0": {
+        "made": 13559,
+        "total": 22831,
+        "percent": 59.39
+      },
+      "1": {
+        "made": 2517,
+        "total": 6585,
+        "percent": 38.22
+      },
+      "2": {
+        "made": 1801,
+        "total": 4558,
+        "percent": 39.51
+      },
+      "3": {
+        "made": 2096,
+        "total": 5232,
+        "percent": 40.06
+      },
+      "4": {
+        "made": 3498,
+        "total": 8672,
+        "percent": 40.34
+      },
+      "5": {
+        "made": 2744,
+        "total": 7275,
+        "percent": 37.72
+      },
+      "6": {
+        "made": 5284,
+        "total": 15166,
+        "percent": 34.84
+      },
+      "7": {
+        "made": 102,
+        "total": 391,
+        "percent": 26.09
+      }
+    }
+  },
+  {
+    "date": "20151223",
+    "distances": {
+      "0": {
+        "made": 13998,
+        "total": 23569,
+        "percent": 59.39
+      },
+      "1": {
+        "made": 2597,
+        "total": 6783,
+        "percent": 38.29
+      },
+      "2": {
+        "made": 1854,
+        "total": 4708,
+        "percent": 39.38
+      },
+      "3": {
+        "made": 2180,
+        "total": 5405,
+        "percent": 40.33
+      },
+      "4": {
+        "made": 3614,
+        "total": 8941,
+        "percent": 40.42
+      },
+      "5": {
+        "made": 2838,
+        "total": 7500,
+        "percent": 37.84
+      },
+      "6": {
+        "made": 5431,
+        "total": 15608,
+        "percent": 34.8
+      },
+      "7": {
+        "made": 106,
+        "total": 405,
+        "percent": 26.17
+      }
+    }
+  },
+  {
+    "date": "20151225",
+    "distances": {
+      "0": {
+        "made": 14144,
+        "total": 23842,
+        "percent": 59.32
+      },
+      "1": {
+        "made": 2625,
+        "total": 6859,
+        "percent": 38.27
+      },
+      "2": {
+        "made": 1883,
+        "total": 4783,
+        "percent": 39.37
+      },
+      "3": {
+        "made": 2208,
+        "total": 5481,
+        "percent": 40.28
+      },
+      "4": {
+        "made": 3652,
+        "total": 9055,
+        "percent": 40.33
+      },
+      "5": {
+        "made": 2862,
+        "total": 7562,
+        "percent": 37.85
+      },
+      "6": {
+        "made": 5484,
+        "total": 15790,
+        "percent": 34.73
+      },
+      "7": {
+        "made": 107,
+        "total": 408,
+        "percent": 26.23
+      }
+    }
+  },
+  {
+    "date": "20151226",
+    "distances": {
+      "0": {
+        "made": 14548,
+        "total": 24506,
+        "percent": 59.37
+      },
+      "1": {
+        "made": 2698,
+        "total": 7056,
+        "percent": 38.24
+      },
+      "2": {
+        "made": 1936,
+        "total": 4914,
+        "percent": 39.4
+      },
+      "3": {
+        "made": 2270,
+        "total": 5636,
+        "percent": 40.28
+      },
+      "4": {
+        "made": 3774,
+        "total": 9348,
+        "percent": 40.37
+      },
+      "5": {
+        "made": 2968,
+        "total": 7795,
+        "percent": 38.08
+      },
+      "6": {
+        "made": 5654,
+        "total": 16231,
+        "percent": 34.83
+      },
+      "7": {
+        "made": 109,
+        "total": 411,
+        "percent": 26.52
+      }
+    }
+  },
+  {
+    "date": "20151227",
+    "distances": {
+      "0": {
+        "made": 14686,
+        "total": 24730,
+        "percent": 59.39
+      },
+      "1": {
+        "made": 2733,
+        "total": 7145,
+        "percent": 38.25
+      },
+      "2": {
+        "made": 1949,
+        "total": 4935,
+        "percent": 39.49
+      },
+      "3": {
+        "made": 2285,
+        "total": 5690,
+        "percent": 40.16
+      },
+      "4": {
+        "made": 3799,
+        "total": 9418,
+        "percent": 40.34
+      },
+      "5": {
+        "made": 3004,
+        "total": 7874,
+        "percent": 38.15
+      },
+      "6": {
+        "made": 5700,
+        "total": 16374,
+        "percent": 34.81
+      },
+      "7": {
+        "made": 109,
+        "total": 414,
+        "percent": 26.33
+      }
+    }
+  },
+  {
+    "date": "20151228",
+    "distances": {
+      "0": {
+        "made": 15041,
+        "total": 25314,
+        "percent": 59.42
+      },
+      "1": {
+        "made": 2805,
+        "total": 7309,
+        "percent": 38.38
+      },
+      "2": {
+        "made": 1994,
+        "total": 5047,
+        "percent": 39.51
+      },
+      "3": {
+        "made": 2331,
+        "total": 5806,
+        "percent": 40.15
+      },
+      "4": {
+        "made": 3894,
+        "total": 9659,
+        "percent": 40.31
+      },
+      "5": {
+        "made": 3072,
+        "total": 8070,
+        "percent": 38.07
+      },
+      "6": {
+        "made": 5830,
+        "total": 16760,
+        "percent": 34.79
+      },
+      "7": {
+        "made": 116,
+        "total": 431,
+        "percent": 26.91
+      }
+    }
+  },
+  {
+    "date": "20151229",
+    "distances": {
+      "0": {
+        "made": 15229,
+        "total": 25639,
+        "percent": 59.4
+      },
+      "1": {
+        "made": 2836,
+        "total": 7379,
+        "percent": 38.43
+      },
+      "2": {
+        "made": 2022,
+        "total": 5106,
+        "percent": 39.6
+      },
+      "3": {
+        "made": 2354,
+        "total": 5860,
+        "percent": 40.17
+      },
+      "4": {
+        "made": 3923,
+        "total": 9740,
+        "percent": 40.28
+      },
+      "5": {
+        "made": 3120,
+        "total": 8183,
+        "percent": 38.13
+      },
+      "6": {
+        "made": 5885,
+        "total": 16918,
+        "percent": 34.79
+      },
+      "7": {
+        "made": 116,
+        "total": 434,
+        "percent": 26.73
+      }
+    }
+  },
+  {
+    "date": "20151230",
+    "distances": {
+      "0": {
+        "made": 15525,
+        "total": 26149,
+        "percent": 59.37
+      },
+      "1": {
+        "made": 2891,
+        "total": 7517,
+        "percent": 38.46
+      },
+      "2": {
+        "made": 2070,
+        "total": 5246,
+        "percent": 39.46
+      },
+      "3": {
+        "made": 2393,
+        "total": 5977,
+        "percent": 40.04
+      },
+      "4": {
+        "made": 4015,
+        "total": 9953,
+        "percent": 40.34
+      },
+      "5": {
+        "made": 3193,
+        "total": 8358,
+        "percent": 38.2
+      },
+      "6": {
+        "made": 6012,
+        "total": 17285,
+        "percent": 34.78
+      },
+      "7": {
+        "made": 118,
+        "total": 446,
+        "percent": 26.46
+      }
+    }
+  },
+  {
+    "date": "20151231",
+    "distances": {
+      "0": {
+        "made": 15717,
+        "total": 26464,
+        "percent": 59.39
+      },
+      "1": {
+        "made": 2931,
+        "total": 7610,
+        "percent": 38.52
+      },
+      "2": {
+        "made": 2095,
+        "total": 5302,
+        "percent": 39.51
+      },
+      "3": {
+        "made": 2424,
+        "total": 6053,
+        "percent": 40.05
+      },
+      "4": {
+        "made": 4068,
+        "total": 10065,
+        "percent": 40.42
+      },
+      "5": {
+        "made": 3234,
+        "total": 8454,
+        "percent": 38.25
+      },
+      "6": {
+        "made": 6105,
+        "total": 17521,
+        "percent": 34.84
+      },
+      "7": {
+        "made": 118,
+        "total": 448,
+        "percent": 26.34
+      }
+    }
+  },
+  {
+    "date": "20160101",
+    "distances": {
+      "0": {
+        "made": 15866,
+        "total": 26753,
+        "percent": 59.31
+      },
+      "1": {
+        "made": 2953,
+        "total": 7681,
+        "percent": 38.45
+      },
+      "2": {
+        "made": 2111,
+        "total": 5351,
+        "percent": 39.45
+      },
+      "3": {
+        "made": 2456,
+        "total": 6127,
+        "percent": 40.08
+      },
+      "4": {
+        "made": 4122,
+        "total": 10178,
+        "percent": 40.5
+      },
+      "5": {
+        "made": 3261,
+        "total": 8541,
+        "percent": 38.18
+      },
+      "6": {
+        "made": 6166,
+        "total": 17687,
+        "percent": 34.86
+      },
+      "7": {
+        "made": 122,
+        "total": 460,
+        "percent": 26.52
+      }
+    }
+  },
+  {
+    "date": "20160102",
+    "distances": {
+      "0": {
+        "made": 16220,
+        "total": 27330,
+        "percent": 59.35
+      },
+      "1": {
+        "made": 3005,
+        "total": 7825,
+        "percent": 38.4
+      },
+      "2": {
+        "made": 2163,
+        "total": 5494,
+        "percent": 39.37
+      },
+      "3": {
+        "made": 2506,
+        "total": 6245,
+        "percent": 40.13
+      },
+      "4": {
+        "made": 4226,
+        "total": 10432,
+        "percent": 40.51
+      },
+      "5": {
+        "made": 3334,
+        "total": 8730,
+        "percent": 38.19
+      },
+      "6": {
+        "made": 6302,
+        "total": 18082,
+        "percent": 34.85
+      },
+      "7": {
+        "made": 126,
+        "total": 474,
+        "percent": 26.58
+      }
+    }
+  },
+  {
+    "date": "20160103",
+    "distances": {
+      "0": {
+        "made": 16365,
+        "total": 27590,
+        "percent": 59.31
+      },
+      "1": {
+        "made": 3036,
+        "total": 7900,
+        "percent": 38.43
+      },
+      "2": {
+        "made": 2185,
+        "total": 5547,
+        "percent": 39.39
+      },
+      "3": {
+        "made": 2543,
+        "total": 6314,
+        "percent": 40.28
+      },
+      "4": {
+        "made": 4263,
+        "total": 10527,
+        "percent": 40.5
+      },
+      "5": {
+        "made": 3378,
+        "total": 8823,
+        "percent": 38.29
+      },
+      "6": {
+        "made": 6363,
+        "total": 18286,
+        "percent": 34.8
+      },
+      "7": {
+        "made": 128,
+        "total": 477,
+        "percent": 26.83
+      }
+    }
+  },
+  {
+    "date": "20160104",
+    "distances": {
+      "0": {
+        "made": 16684,
+        "total": 28126,
+        "percent": 59.32
+      },
+      "1": {
+        "made": 3099,
+        "total": 8070,
+        "percent": 38.4
+      },
+      "2": {
+        "made": 2228,
+        "total": 5658,
+        "percent": 39.38
+      },
+      "3": {
+        "made": 2597,
+        "total": 6426,
+        "percent": 40.41
+      },
+      "4": {
+        "made": 4364,
+        "total": 10756,
+        "percent": 40.57
+      },
+      "5": {
+        "made": 3438,
+        "total": 8978,
+        "percent": 38.29
+      },
+      "6": {
+        "made": 6481,
+        "total": 18615,
+        "percent": 34.82
+      },
+      "7": {
+        "made": 130,
+        "total": 485,
+        "percent": 26.8
+      }
+    }
+  },
+  {
+    "date": "20160105",
+    "distances": {
+      "0": {
+        "made": 16824,
+        "total": 28361,
+        "percent": 59.32
+      },
+      "1": {
+        "made": 3124,
+        "total": 8125,
+        "percent": 38.45
+      },
+      "2": {
+        "made": 2240,
+        "total": 5700,
+        "percent": 39.3
+      },
+      "3": {
+        "made": 2627,
+        "total": 6497,
+        "percent": 40.43
+      },
+      "4": {
+        "made": 4399,
+        "total": 10840,
+        "percent": 40.58
+      },
+      "5": {
+        "made": 3481,
+        "total": 9071,
+        "percent": 38.38
+      },
+      "6": {
+        "made": 6526,
+        "total": 18760,
+        "percent": 34.79
+      },
+      "7": {
+        "made": 130,
+        "total": 486,
+        "percent": 26.75
+      }
+    }
+  },
+  {
+    "date": "20160106",
+    "distances": {
+      "0": {
+        "made": 17156,
+        "total": 28922,
+        "percent": 59.32
+      },
+      "1": {
+        "made": 3188,
+        "total": 8304,
+        "percent": 38.39
+      },
+      "2": {
+        "made": 2291,
+        "total": 5825,
+        "percent": 39.33
+      },
+      "3": {
+        "made": 2682,
+        "total": 6637,
+        "percent": 40.41
+      },
+      "4": {
+        "made": 4489,
+        "total": 11046,
+        "percent": 40.64
+      },
+      "5": {
+        "made": 3563,
+        "total": 9273,
+        "percent": 38.42
+      },
+      "6": {
+        "made": 6661,
+        "total": 19136,
+        "percent": 34.81
+      },
+      "7": {
+        "made": 133,
+        "total": 495,
+        "percent": 26.87
+      }
+    }
+  },
+  {
+    "date": "20160107",
+    "distances": {
+      "0": {
+        "made": 17302,
+        "total": 29144,
+        "percent": 59.37
+      },
+      "1": {
+        "made": 3219,
+        "total": 8370,
+        "percent": 38.46
+      },
+      "2": {
+        "made": 2316,
+        "total": 5873,
+        "percent": 39.43
+      },
+      "3": {
+        "made": 2705,
+        "total": 6689,
+        "percent": 40.44
+      },
+      "4": {
+        "made": 4518,
+        "total": 11120,
+        "percent": 40.63
+      },
+      "5": {
+        "made": 3592,
+        "total": 9342,
+        "percent": 38.45
+      },
+      "6": {
+        "made": 6704,
+        "total": 19285,
+        "percent": 34.76
+      },
+      "7": {
+        "made": 134,
+        "total": 497,
+        "percent": 26.96
+      }
+    }
+  },
+  {
+    "date": "20160108",
+    "distances": {
+      "0": {
+        "made": 17615,
+        "total": 29672,
+        "percent": 59.37
+      },
+      "1": {
+        "made": 3278,
+        "total": 8516,
+        "percent": 38.49
+      },
+      "2": {
+        "made": 2360,
+        "total": 5984,
+        "percent": 39.44
+      },
+      "3": {
+        "made": 2751,
+        "total": 6827,
+        "percent": 40.3
+      },
+      "4": {
+        "made": 4590,
+        "total": 11330,
+        "percent": 40.51
+      },
+      "5": {
+        "made": 3659,
+        "total": 9522,
+        "percent": 38.43
+      },
+      "6": {
+        "made": 6830,
+        "total": 19625,
+        "percent": 34.8
+      },
+      "7": {
+        "made": 139,
+        "total": 510,
+        "percent": 27.25
+      }
+    }
+  },
+  {
+    "date": "20160109",
+    "distances": {
+      "0": {
+        "made": 17857,
+        "total": 30063,
+        "percent": 59.4
+      },
+      "1": {
+        "made": 3324,
+        "total": 8635,
+        "percent": 38.49
+      },
+      "2": {
+        "made": 2388,
+        "total": 6055,
+        "percent": 39.44
+      },
+      "3": {
+        "made": 2789,
+        "total": 6911,
+        "percent": 40.36
+      },
+      "4": {
+        "made": 4653,
+        "total": 11487,
+        "percent": 40.51
+      },
+      "5": {
+        "made": 3715,
+        "total": 9628,
+        "percent": 38.59
+      },
+      "6": {
+        "made": 6916,
+        "total": 19850,
+        "percent": 34.84
+      },
+      "7": {
+        "made": 142,
+        "total": 518,
+        "percent": 27.41
+      }
+    }
+  },
+  {
+    "date": "20160110",
+    "distances": {
+      "0": {
+        "made": 18127,
+        "total": 30548,
+        "percent": 59.34
+      },
+      "1": {
+        "made": 3378,
+        "total": 8780,
+        "percent": 38.47
+      },
+      "2": {
+        "made": 2431,
+        "total": 6143,
+        "percent": 39.57
+      },
+      "3": {
+        "made": 2821,
+        "total": 7002,
+        "percent": 40.29
+      },
+      "4": {
+        "made": 4723,
+        "total": 11674,
+        "percent": 40.46
+      },
+      "5": {
+        "made": 3774,
+        "total": 9791,
+        "percent": 38.55
+      },
+      "6": {
+        "made": 7029,
+        "total": 20202,
+        "percent": 34.79
+      },
+      "7": {
+        "made": 144,
+        "total": 522,
+        "percent": 27.59
+      }
+    }
+  },
+  {
+    "date": "20160111",
+    "distances": {
+      "0": {
+        "made": 18242,
+        "total": 30718,
+        "percent": 59.39
+      },
+      "1": {
+        "made": 3395,
+        "total": 8824,
+        "percent": 38.47
+      },
+      "2": {
+        "made": 2449,
+        "total": 6186,
+        "percent": 39.59
+      },
+      "3": {
+        "made": 2833,
+        "total": 7042,
+        "percent": 40.23
+      },
+      "4": {
+        "made": 4759,
+        "total": 11759,
+        "percent": 40.47
+      },
+      "5": {
+        "made": 3791,
+        "total": 9843,
+        "percent": 38.51
+      },
+      "6": {
+        "made": 7055,
+        "total": 20275,
+        "percent": 34.8
+      },
+      "7": {
+        "made": 144,
+        "total": 523,
+        "percent": 27.53
+      }
+    }
+  },
+  {
+    "date": "20160112",
+    "distances": {
+      "0": {
+        "made": 18505,
+        "total": 31152,
+        "percent": 59.4
+      },
+      "1": {
+        "made": 3445,
+        "total": 8955,
+        "percent": 38.47
+      },
+      "2": {
+        "made": 2480,
+        "total": 6274,
+        "percent": 39.53
+      },
+      "3": {
+        "made": 2880,
+        "total": 7148,
+        "percent": 40.29
+      },
+      "4": {
+        "made": 4823,
+        "total": 11915,
+        "percent": 40.48
+      },
+      "5": {
+        "made": 3833,
+        "total": 9965,
+        "percent": 38.46
+      },
+      "6": {
+        "made": 7165,
+        "total": 20582,
+        "percent": 34.81
+      },
+      "7": {
+        "made": 146,
+        "total": 533,
+        "percent": 27.39
+      }
+    }
+  },
+  {
+    "date": "20160113",
+    "distances": {
+      "0": {
+        "made": 18828,
+        "total": 31708,
+        "percent": 59.38
+      },
+      "1": {
+        "made": 3525,
+        "total": 9124,
+        "percent": 38.63
+      },
+      "2": {
+        "made": 2521,
+        "total": 6361,
+        "percent": 39.63
+      },
+      "3": {
+        "made": 2935,
+        "total": 7278,
+        "percent": 40.33
+      },
+      "4": {
+        "made": 4878,
+        "total": 12072,
+        "percent": 40.41
+      },
+      "5": {
+        "made": 3894,
+        "total": 10144,
+        "percent": 38.39
+      },
+      "6": {
+        "made": 7298,
+        "total": 20972,
+        "percent": 34.8
+      },
+      "7": {
+        "made": 148,
+        "total": 540,
+        "percent": 27.41
+      }
+    }
+  },
+  {
+    "date": "20160114",
+    "distances": {
+      "0": {
+        "made": 19024,
+        "total": 32025,
+        "percent": 59.4
+      },
+      "1": {
+        "made": 3568,
+        "total": 9219,
+        "percent": 38.7
+      },
+      "2": {
+        "made": 2542,
+        "total": 6432,
+        "percent": 39.52
+      },
+      "3": {
+        "made": 2966,
+        "total": 7356,
+        "percent": 40.32
+      },
+      "4": {
+        "made": 4928,
+        "total": 12197,
+        "percent": 40.4
+      },
+      "5": {
+        "made": 3929,
+        "total": 10244,
+        "percent": 38.35
+      },
+      "6": {
+        "made": 7388,
+        "total": 21191,
+        "percent": 34.86
+      },
+      "7": {
+        "made": 148,
+        "total": 543,
+        "percent": 27.26
+      }
+    }
+  },
+  {
+    "date": "20160115",
+    "distances": {
+      "0": {
+        "made": 19344,
+        "total": 32602,
+        "percent": 59.33
+      },
+      "1": {
+        "made": 3618,
+        "total": 9356,
+        "percent": 38.67
+      },
+      "2": {
+        "made": 2574,
+        "total": 6499,
+        "percent": 39.61
+      },
+      "3": {
+        "made": 3002,
+        "total": 7454,
+        "percent": 40.27
+      },
+      "4": {
+        "made": 5002,
+        "total": 12379,
+        "percent": 40.41
+      },
+      "5": {
+        "made": 3993,
+        "total": 10421,
+        "percent": 38.32
+      },
+      "6": {
+        "made": 7500,
+        "total": 21510,
+        "percent": 34.87
+      },
+      "7": {
+        "made": 153,
+        "total": 551,
+        "percent": 27.77
+      }
+    }
+  },
+  {
+    "date": "20160116",
+    "distances": {
+      "0": {
+        "made": 19586,
+        "total": 33028,
+        "percent": 59.3
+      },
+      "1": {
+        "made": 3666,
+        "total": 9494,
+        "percent": 38.61
+      },
+      "2": {
+        "made": 2612,
+        "total": 6591,
+        "percent": 39.63
+      },
+      "3": {
+        "made": 3045,
+        "total": 7543,
+        "percent": 40.37
+      },
+      "4": {
+        "made": 5083,
+        "total": 12551,
+        "percent": 40.5
+      },
+      "5": {
+        "made": 4039,
+        "total": 10530,
+        "percent": 38.36
+      },
+      "6": {
+        "made": 7605,
+        "total": 21817,
+        "percent": 34.86
+      },
+      "7": {
+        "made": 156,
+        "total": 565,
+        "percent": 27.61
+      }
+    }
+  },
+  {
+    "date": "20160117",
+    "distances": {
+      "0": {
+        "made": 19762,
+        "total": 33322,
+        "percent": 59.31
+      },
+      "1": {
+        "made": 3705,
+        "total": 9577,
+        "percent": 38.69
+      },
+      "2": {
+        "made": 2627,
+        "total": 6635,
+        "percent": 39.59
+      },
+      "3": {
+        "made": 3073,
+        "total": 7602,
+        "percent": 40.42
+      },
+      "4": {
+        "made": 5129,
+        "total": 12653,
+        "percent": 40.54
+      },
+      "5": {
+        "made": 4078,
+        "total": 10618,
+        "percent": 38.41
+      },
+      "6": {
+        "made": 7651,
+        "total": 21967,
+        "percent": 34.83
+      },
+      "7": {
+        "made": 157,
+        "total": 569,
+        "percent": 27.59
+      }
+    }
+  },
+  {
+    "date": "20160118",
+    "distances": {
+      "0": {
+        "made": 20070,
+        "total": 33825,
+        "percent": 59.33
+      },
+      "1": {
+        "made": 3784,
+        "total": 9771,
+        "percent": 38.73
+      },
+      "2": {
+        "made": 2670,
+        "total": 6739,
+        "percent": 39.62
+      },
+      "3": {
+        "made": 3127,
+        "total": 7745,
+        "percent": 40.37
+      },
+      "4": {
+        "made": 5216,
+        "total": 12854,
+        "percent": 40.58
+      },
+      "5": {
+        "made": 4142,
+        "total": 10786,
+        "percent": 38.4
+      },
+      "6": {
+        "made": 7828,
+        "total": 22367,
+        "percent": 35
+      },
+      "7": {
+        "made": 162,
+        "total": 584,
+        "percent": 27.74
+      }
+    }
+  },
+  {
+    "date": "20160119",
+    "distances": {
+      "0": {
+        "made": 20214,
+        "total": 34061,
+        "percent": 59.35
+      },
+      "1": {
+        "made": 3802,
+        "total": 9822,
+        "percent": 38.71
+      },
+      "2": {
+        "made": 2682,
+        "total": 6770,
+        "percent": 39.62
+      },
+      "3": {
+        "made": 3139,
+        "total": 7782,
+        "percent": 40.34
+      },
+      "4": {
+        "made": 5247,
+        "total": 12949,
+        "percent": 40.52
+      },
+      "5": {
+        "made": 4166,
+        "total": 10857,
+        "percent": 38.37
+      },
+      "6": {
+        "made": 7866,
+        "total": 22493,
+        "percent": 34.97
+      },
+      "7": {
+        "made": 162,
+        "total": 585,
+        "percent": 27.69
+      }
+    }
+  },
+  {
+    "date": "20160120",
+    "distances": {
+      "0": {
+        "made": 20591,
+        "total": 34701,
+        "percent": 59.34
+      },
+      "1": {
+        "made": 3887,
+        "total": 10017,
+        "percent": 38.8
+      },
+      "2": {
+        "made": 2723,
+        "total": 6880,
+        "percent": 39.58
+      },
+      "3": {
+        "made": 3207,
+        "total": 7922,
+        "percent": 40.48
+      },
+      "4": {
+        "made": 5339,
+        "total": 13166,
+        "percent": 40.55
+      },
+      "5": {
+        "made": 4244,
+        "total": 11076,
+        "percent": 38.32
+      },
+      "6": {
+        "made": 7990,
+        "total": 22858,
+        "percent": 34.95
+      },
+      "7": {
+        "made": 166,
+        "total": 594,
+        "percent": 27.95
+      }
+    }
+  },
+  {
+    "date": "20160121",
+    "distances": {
+      "0": {
+        "made": 20761,
+        "total": 34982,
+        "percent": 59.35
+      },
+      "1": {
+        "made": 3920,
+        "total": 10102,
+        "percent": 38.8
+      },
+      "2": {
+        "made": 2748,
+        "total": 6927,
+        "percent": 39.67
+      },
+      "3": {
+        "made": 3235,
+        "total": 7980,
+        "percent": 40.54
+      },
+      "4": {
+        "made": 5369,
+        "total": 13255,
+        "percent": 40.51
+      },
+      "5": {
+        "made": 4274,
+        "total": 11166,
+        "percent": 38.28
+      },
+      "6": {
+        "made": 8050,
+        "total": 23038,
+        "percent": 34.94
+      },
+      "7": {
+        "made": 166,
+        "total": 596,
+        "percent": 27.85
+      }
+    }
+  },
+  {
+    "date": "20160122",
+    "distances": {
+      "0": {
+        "made": 21085,
+        "total": 35506,
+        "percent": 59.38
+      },
+      "1": {
+        "made": 3980,
+        "total": 10256,
+        "percent": 38.81
+      },
+      "2": {
+        "made": 2781,
+        "total": 7030,
+        "percent": 39.56
+      },
+      "3": {
+        "made": 3289,
+        "total": 8103,
+        "percent": 40.59
+      },
+      "4": {
+        "made": 5447,
+        "total": 13430,
+        "percent": 40.56
+      },
+      "5": {
+        "made": 4335,
+        "total": 11328,
+        "percent": 38.27
+      },
+      "6": {
+        "made": 8159,
+        "total": 23339,
+        "percent": 34.96
+      },
+      "7": {
+        "made": 167,
+        "total": 604,
+        "percent": 27.65
+      }
+    }
+  },
+  {
+    "date": "20160123",
+    "distances": {
+      "0": {
+        "made": 21216,
+        "total": 35744,
+        "percent": 59.36
+      },
+      "1": {
+        "made": 4010,
+        "total": 10317,
+        "percent": 38.87
+      },
+      "2": {
+        "made": 2801,
+        "total": 7072,
+        "percent": 39.61
+      },
+      "3": {
+        "made": 3306,
+        "total": 8147,
+        "percent": 40.58
+      },
+      "4": {
+        "made": 5472,
+        "total": 13497,
+        "percent": 40.54
+      },
+      "5": {
+        "made": 4355,
+        "total": 11385,
+        "percent": 38.25
+      },
+      "6": {
+        "made": 8218,
+        "total": 23482,
+        "percent": 35
+      },
+      "7": {
+        "made": 167,
+        "total": 608,
+        "percent": 27.47
+      }
+    }
+  },
+  {
+    "date": "20160124",
+    "distances": {
+      "0": {
+        "made": 21357,
+        "total": 35975,
+        "percent": 59.37
+      },
+      "1": {
+        "made": 4032,
+        "total": 10375,
+        "percent": 38.86
+      },
+      "2": {
+        "made": 2820,
+        "total": 7119,
+        "percent": 39.61
+      },
+      "3": {
+        "made": 3321,
+        "total": 8187,
+        "percent": 40.56
+      },
+      "4": {
+        "made": 5496,
+        "total": 13566,
+        "percent": 40.51
+      },
+      "5": {
+        "made": 4392,
+        "total": 11475,
+        "percent": 38.27
+      },
+      "6": {
+        "made": 8280,
+        "total": 23642,
+        "percent": 35.02
+      },
+      "7": {
+        "made": 167,
+        "total": 613,
+        "percent": 27.24
+      }
+    }
+  },
+  {
+    "date": "20160125",
+    "distances": {
+      "0": {
+        "made": 21669,
+        "total": 36487,
+        "percent": 59.39
+      },
+      "1": {
+        "made": 4093,
+        "total": 10525,
+        "percent": 38.89
+      },
+      "2": {
+        "made": 2854,
+        "total": 7211,
+        "percent": 39.58
+      },
+      "3": {
+        "made": 3371,
+        "total": 8295,
+        "percent": 40.64
+      },
+      "4": {
+        "made": 5562,
+        "total": 13741,
+        "percent": 40.48
+      },
+      "5": {
+        "made": 4457,
+        "total": 11648,
+        "percent": 38.26
+      },
+      "6": {
+        "made": 8400,
+        "total": 23974,
+        "percent": 35.04
+      },
+      "7": {
+        "made": 167,
+        "total": 618,
+        "percent": 27.02
+      }
+    }
+  },
+  {
+    "date": "20160126",
+    "distances": {
+      "0": {
+        "made": 21920,
+        "total": 36913,
+        "percent": 59.38
+      },
+      "1": {
+        "made": 4140,
+        "total": 10650,
+        "percent": 38.87
+      },
+      "2": {
+        "made": 2883,
+        "total": 7282,
+        "percent": 39.59
+      },
+      "3": {
+        "made": 3409,
+        "total": 8393,
+        "percent": 40.62
+      },
+      "4": {
+        "made": 5644,
+        "total": 13932,
+        "percent": 40.51
+      },
+      "5": {
+        "made": 4506,
+        "total": 11776,
+        "percent": 38.26
+      },
+      "6": {
+        "made": 8500,
+        "total": 24236,
+        "percent": 35.07
+      },
+      "7": {
+        "made": 168,
+        "total": 623,
+        "percent": 26.97
+      }
+    }
+  },
+  {
+    "date": "20160127",
+    "distances": {
+      "0": {
+        "made": 22218,
+        "total": 37360,
+        "percent": 59.47
+      },
+      "1": {
+        "made": 4180,
+        "total": 10779,
+        "percent": 38.78
+      },
+      "2": {
+        "made": 2920,
+        "total": 7383,
+        "percent": 39.55
+      },
+      "3": {
+        "made": 3451,
+        "total": 8483,
+        "percent": 40.68
+      },
+      "4": {
+        "made": 5703,
+        "total": 14064,
+        "percent": 40.55
+      },
+      "5": {
+        "made": 4556,
+        "total": 11918,
+        "percent": 38.23
+      },
+      "6": {
+        "made": 8603,
+        "total": 24515,
+        "percent": 35.09
+      },
+      "7": {
+        "made": 170,
+        "total": 631,
+        "percent": 26.94
+      }
+    }
+  },
+  {
+    "date": "20160128",
+    "distances": {
+      "0": {
+        "made": 22424,
+        "total": 37718,
+        "percent": 59.45
+      },
+      "1": {
+        "made": 4216,
+        "total": 10875,
+        "percent": 38.77
+      },
+      "2": {
+        "made": 2947,
+        "total": 7434,
+        "percent": 39.64
+      },
+      "3": {
+        "made": 3483,
+        "total": 8568,
+        "percent": 40.65
+      },
+      "4": {
+        "made": 5735,
+        "total": 14175,
+        "percent": 40.46
+      },
+      "5": {
+        "made": 4594,
+        "total": 12028,
+        "percent": 38.19
+      },
+      "6": {
+        "made": 8684,
+        "total": 24723,
+        "percent": 35.13
+      },
+      "7": {
+        "made": 173,
+        "total": 637,
+        "percent": 27.16
+      }
+    }
+  },
+  {
+    "date": "20160129",
+    "distances": {
+      "0": {
+        "made": 22729,
+        "total": 38235,
+        "percent": 59.45
+      },
+      "1": {
+        "made": 4261,
+        "total": 11009,
+        "percent": 38.7
+      },
+      "2": {
+        "made": 2985,
+        "total": 7527,
+        "percent": 39.66
+      },
+      "3": {
+        "made": 3543,
+        "total": 8712,
+        "percent": 40.67
+      },
+      "4": {
+        "made": 5801,
+        "total": 14310,
+        "percent": 40.54
+      },
+      "5": {
+        "made": 4653,
+        "total": 12187,
+        "percent": 38.18
+      },
+      "6": {
+        "made": 8777,
+        "total": 25007,
+        "percent": 35.1
+      },
+      "7": {
+        "made": 174,
+        "total": 643,
+        "percent": 27.06
+      }
+    }
+  },
+  {
+    "date": "20160130",
+    "distances": {
+      "0": {
+        "made": 22965,
+        "total": 38636,
+        "percent": 59.44
+      },
+      "1": {
+        "made": 4321,
+        "total": 11144,
+        "percent": 38.77
+      },
+      "2": {
+        "made": 3020,
+        "total": 7615,
+        "percent": 39.66
+      },
+      "3": {
+        "made": 3589,
+        "total": 8795,
+        "percent": 40.81
+      },
+      "4": {
+        "made": 5855,
+        "total": 14437,
+        "percent": 40.56
+      },
+      "5": {
+        "made": 4702,
+        "total": 12300,
+        "percent": 38.23
+      },
+      "6": {
+        "made": 8877,
+        "total": 25269,
+        "percent": 35.13
+      },
+      "7": {
+        "made": 175,
+        "total": 649,
+        "percent": 26.96
+      }
+    }
+  },
+  {
+    "date": "20160131",
+    "distances": {
+      "0": {
+        "made": 23171,
+        "total": 38987,
+        "percent": 59.43
+      },
+      "1": {
+        "made": 4354,
+        "total": 11237,
+        "percent": 38.75
+      },
+      "2": {
+        "made": 3046,
+        "total": 7689,
+        "percent": 39.62
+      },
+      "3": {
+        "made": 3619,
+        "total": 8868,
+        "percent": 40.81
+      },
+      "4": {
+        "made": 5910,
+        "total": 14575,
+        "percent": 40.55
+      },
+      "5": {
+        "made": 4746,
+        "total": 12414,
+        "percent": 38.23
+      },
+      "6": {
+        "made": 8978,
+        "total": 25564,
+        "percent": 35.12
+      },
+      "7": {
+        "made": 177,
+        "total": 654,
+        "percent": 27.06
+      }
+    }
+  },
+  {
+    "date": "20160201",
+    "distances": {
+      "0": {
+        "made": 23474,
+        "total": 39485,
+        "percent": 59.45
+      },
+      "1": {
+        "made": 4412,
+        "total": 11377,
+        "percent": 38.78
+      },
+      "2": {
+        "made": 3091,
+        "total": 7790,
+        "percent": 39.68
+      },
+      "3": {
+        "made": 3679,
+        "total": 8992,
+        "percent": 40.91
+      },
+      "4": {
+        "made": 5981,
+        "total": 14766,
+        "percent": 40.51
+      },
+      "5": {
+        "made": 4809,
+        "total": 12565,
+        "percent": 38.27
+      },
+      "6": {
+        "made": 9093,
+        "total": 25894,
+        "percent": 35.12
+      },
+      "7": {
+        "made": 177,
+        "total": 657,
+        "percent": 26.94
+      }
+    }
+  },
+  {
+    "date": "20160202",
+    "distances": {
+      "0": {
+        "made": 23650,
+        "total": 39767,
+        "percent": 59.47
+      },
+      "1": {
+        "made": 4435,
+        "total": 11443,
+        "percent": 38.76
+      },
+      "2": {
+        "made": 3113,
+        "total": 7839,
+        "percent": 39.71
+      },
+      "3": {
+        "made": 3703,
+        "total": 9046,
+        "percent": 40.94
+      },
+      "4": {
+        "made": 6022,
+        "total": 14865,
+        "percent": 40.51
+      },
+      "5": {
+        "made": 4856,
+        "total": 12668,
+        "percent": 38.33
+      },
+      "6": {
+        "made": 9147,
+        "total": 26059,
+        "percent": 35.1
+      },
+      "7": {
+        "made": 177,
+        "total": 658,
+        "percent": 26.9
+      }
+    }
+  },
+  {
+    "date": "20160203",
+    "distances": {
+      "0": {
+        "made": 24024,
+        "total": 40378,
+        "percent": 59.5
+      },
+      "1": {
+        "made": 4489,
+        "total": 11606,
+        "percent": 38.68
+      },
+      "2": {
+        "made": 3169,
+        "total": 7965,
+        "percent": 39.79
+      },
+      "3": {
+        "made": 3766,
+        "total": 9190,
+        "percent": 40.98
+      },
+      "4": {
+        "made": 6120,
+        "total": 15098,
+        "percent": 40.54
+      },
+      "5": {
+        "made": 4929,
+        "total": 12863,
+        "percent": 38.32
+      },
+      "6": {
+        "made": 9290,
+        "total": 26442,
+        "percent": 35.13
+      },
+      "7": {
+        "made": 181,
+        "total": 672,
+        "percent": 26.93
+      }
+    }
+  },
+  {
+    "date": "20160204",
+    "distances": {
+      "0": {
+        "made": 24141,
+        "total": 40598,
+        "percent": 59.46
+      },
+      "1": {
+        "made": 4517,
+        "total": 11662,
+        "percent": 38.73
+      },
+      "2": {
+        "made": 3186,
+        "total": 8005,
+        "percent": 39.8
+      },
+      "3": {
+        "made": 3791,
+        "total": 9252,
+        "percent": 40.97
+      },
+      "4": {
+        "made": 6150,
+        "total": 15167,
+        "percent": 40.55
+      },
+      "5": {
+        "made": 4957,
+        "total": 12922,
+        "percent": 38.36
+      },
+      "6": {
+        "made": 9343,
+        "total": 26591,
+        "percent": 35.14
+      },
+      "7": {
+        "made": 184,
+        "total": 679,
+        "percent": 27.1
+      }
+    }
+  },
+  {
+    "date": "20160205",
+    "distances": {
+      "0": {
+        "made": 24465,
+        "total": 41138,
+        "percent": 59.47
+      },
+      "1": {
+        "made": 4583,
+        "total": 11819,
+        "percent": 38.78
+      },
+      "2": {
+        "made": 3221,
+        "total": 8093,
+        "percent": 39.8
+      },
+      "3": {
+        "made": 3852,
+        "total": 9375,
+        "percent": 41.09
+      },
+      "4": {
+        "made": 6233,
+        "total": 15379,
+        "percent": 40.53
+      },
+      "5": {
+        "made": 5023,
+        "total": 13109,
+        "percent": 38.32
+      },
+      "6": {
+        "made": 9464,
+        "total": 26925,
+        "percent": 35.15
+      },
+      "7": {
+        "made": 186,
+        "total": 689,
+        "percent": 27
+      }
+    }
+  },
+  {
+    "date": "20160206",
+    "distances": {
+      "0": {
+        "made": 24760,
+        "total": 41634,
+        "percent": 59.47
+      },
+      "1": {
+        "made": 4643,
+        "total": 11963,
+        "percent": 38.81
+      },
+      "2": {
+        "made": 3279,
+        "total": 8229,
+        "percent": 39.85
+      },
+      "3": {
+        "made": 3903,
+        "total": 9494,
+        "percent": 41.11
+      },
+      "4": {
+        "made": 6323,
+        "total": 15602,
+        "percent": 40.53
+      },
+      "5": {
+        "made": 5092,
+        "total": 13267,
+        "percent": 38.38
+      },
+      "6": {
+        "made": 9586,
+        "total": 27308,
+        "percent": 35.1
+      },
+      "7": {
+        "made": 190,
+        "total": 706,
+        "percent": 26.91
+      }
+    }
+  },
+  {
+    "date": "20160207",
+    "distances": {
+      "0": {
+        "made": 24890,
+        "total": 41858,
+        "percent": 59.46
+      },
+      "1": {
+        "made": 4666,
+        "total": 12025,
+        "percent": 38.8
+      },
+      "2": {
+        "made": 3293,
+        "total": 8270,
+        "percent": 39.82
+      },
+      "3": {
+        "made": 3924,
+        "total": 9550,
+        "percent": 41.09
+      },
+      "4": {
+        "made": 6370,
+        "total": 15710,
+        "percent": 40.55
+      },
+      "5": {
+        "made": 5116,
+        "total": 13323,
+        "percent": 38.4
+      },
+      "6": {
+        "made": 9639,
+        "total": 27447,
+        "percent": 35.12
+      },
+      "7": {
+        "made": 192,
+        "total": 712,
+        "percent": 26.97
+      }
+    }
+  },
+  {
+    "date": "20160208",
+    "distances": {
+      "0": {
+        "made": 25208,
+        "total": 42381,
+        "percent": 59.48
+      },
+      "1": {
+        "made": 4730,
+        "total": 12179,
+        "percent": 38.84
+      },
+      "2": {
+        "made": 3334,
+        "total": 8378,
+        "percent": 39.79
+      },
+      "3": {
+        "made": 3978,
+        "total": 9682,
+        "percent": 41.09
+      },
+      "4": {
+        "made": 6461,
+        "total": 15920,
+        "percent": 40.58
+      },
+      "5": {
+        "made": 5195,
+        "total": 13508,
+        "percent": 38.46
+      },
+      "6": {
+        "made": 9767,
+        "total": 27838,
+        "percent": 35.09
+      },
+      "7": {
+        "made": 193,
+        "total": 722,
+        "percent": 26.73
+      }
+    }
+  },
+  {
+    "date": "20160209",
+    "distances": {
+      "0": {
+        "made": 25372,
+        "total": 42628,
+        "percent": 59.52
+      },
+      "1": {
+        "made": 4765,
+        "total": 12251,
+        "percent": 38.89
+      },
+      "2": {
+        "made": 3372,
+        "total": 8446,
+        "percent": 39.92
+      },
+      "3": {
+        "made": 4012,
+        "total": 9759,
+        "percent": 41.11
+      },
+      "4": {
+        "made": 6503,
+        "total": 16025,
+        "percent": 40.58
+      },
+      "5": {
+        "made": 5232,
+        "total": 13594,
+        "percent": 38.49
+      },
+      "6": {
+        "made": 9834,
+        "total": 28012,
+        "percent": 35.11
+      },
+      "7": {
+        "made": 195,
+        "total": 729,
+        "percent": 26.75
+      }
+    }
+  },
+  {
+    "date": "20160210",
+    "distances": {
+      "0": {
+        "made": 25780,
+        "total": 43289,
+        "percent": 59.55
+      },
+      "1": {
+        "made": 4834,
+        "total": 12452,
+        "percent": 38.82
+      },
+      "2": {
+        "made": 3416,
+        "total": 8574,
+        "percent": 39.84
+      },
+      "3": {
+        "made": 4078,
+        "total": 9904,
+        "percent": 41.18
+      },
+      "4": {
+        "made": 6620,
+        "total": 16269,
+        "percent": 40.69
+      },
+      "5": {
+        "made": 5326,
+        "total": 13817,
+        "percent": 38.55
+      },
+      "6": {
+        "made": 9994,
+        "total": 28461,
+        "percent": 35.11
+      },
+      "7": {
+        "made": 198,
+        "total": 738,
+        "percent": 26.83
+      }
+    }
+  },
+  {
+    "date": "20160211",
+    "distances": {
+      "0": {
+        "made": 25858,
+        "total": 43417,
+        "percent": 59.56
+      },
+      "1": {
+        "made": 4843,
+        "total": 12481,
+        "percent": 38.8
+      },
+      "2": {
+        "made": 3424,
+        "total": 8595,
+        "percent": 39.84
+      },
+      "3": {
+        "made": 4095,
+        "total": 9930,
+        "percent": 41.24
+      },
+      "4": {
+        "made": 6630,
+        "total": 16303,
+        "percent": 40.67
+      },
+      "5": {
+        "made": 5338,
+        "total": 13852,
+        "percent": 38.54
+      },
+      "6": {
+        "made": 10012,
+        "total": 28525,
+        "percent": 35.1
+      },
+      "7": {
+        "made": 199,
+        "total": 744,
+        "percent": 26.75
+      }
+    }
+  },
+  {
+    "date": "20160218",
+    "distances": {
+      "0": {
+        "made": 25959,
+        "total": 43579,
+        "percent": 59.57
+      },
+      "1": {
+        "made": 4864,
+        "total": 12536,
+        "percent": 38.8
+      },
+      "2": {
+        "made": 3438,
+        "total": 8631,
+        "percent": 39.83
+      },
+      "3": {
+        "made": 4111,
+        "total": 9974,
+        "percent": 41.22
+      },
+      "4": {
+        "made": 6654,
+        "total": 16370,
+        "percent": 40.65
+      },
+      "5": {
+        "made": 5355,
+        "total": 13901,
+        "percent": 38.52
+      },
+      "6": {
+        "made": 10044,
+        "total": 28612,
+        "percent": 35.1
+      },
+      "7": {
+        "made": 200,
+        "total": 750,
+        "percent": 26.67
+      }
+    }
+  },
+  {
+    "date": "20160219",
+    "distances": {
+      "0": {
+        "made": 26433,
+        "total": 44336,
+        "percent": 59.62
+      },
+      "1": {
+        "made": 4941,
+        "total": 12736,
+        "percent": 38.8
+      },
+      "2": {
+        "made": 3497,
+        "total": 8768,
+        "percent": 39.88
+      },
+      "3": {
+        "made": 4176,
+        "total": 10130,
+        "percent": 41.22
+      },
+      "4": {
+        "made": 6769,
+        "total": 16690,
+        "percent": 40.56
+      },
+      "5": {
+        "made": 5457,
+        "total": 14181,
+        "percent": 38.48
+      },
+      "6": {
+        "made": 10240,
+        "total": 29118,
+        "percent": 35.17
+      },
+      "7": {
+        "made": 207,
+        "total": 764,
+        "percent": 27.09
+      }
+    }
+  },
+  {
+    "date": "20160220",
+    "distances": {
+      "0": {
+        "made": 26585,
+        "total": 44584,
+        "percent": 59.63
+      },
+      "1": {
+        "made": 4962,
+        "total": 12794,
+        "percent": 38.78
+      },
+      "2": {
+        "made": 3521,
+        "total": 8820,
+        "percent": 39.92
+      },
+      "3": {
+        "made": 4208,
+        "total": 10194,
+        "percent": 41.28
+      },
+      "4": {
+        "made": 6813,
+        "total": 16799,
+        "percent": 40.56
+      },
+      "5": {
+        "made": 5483,
+        "total": 14248,
+        "percent": 38.48
+      },
+      "6": {
+        "made": 10275,
+        "total": 29259,
+        "percent": 35.12
+      },
+      "7": {
+        "made": 212,
+        "total": 770,
+        "percent": 27.53
+      }
+    }
+  },
+  {
+    "date": "20160221",
+    "distances": {
+      "0": {
+        "made": 26939,
+        "total": 45148,
+        "percent": 59.67
+      },
+      "1": {
+        "made": 5034,
+        "total": 12967,
+        "percent": 38.82
+      },
+      "2": {
+        "made": 3567,
+        "total": 8918,
+        "percent": 40
+      },
+      "3": {
+        "made": 4258,
+        "total": 10312,
+        "percent": 41.29
+      },
+      "4": {
+        "made": 6880,
+        "total": 16981,
+        "percent": 40.52
+      },
+      "5": {
+        "made": 5540,
+        "total": 14422,
+        "percent": 38.41
+      },
+      "6": {
+        "made": 10410,
+        "total": 29624,
+        "percent": 35.14
+      },
+      "7": {
+        "made": 215,
+        "total": 779,
+        "percent": 27.6
+      }
+    }
+  },
+  {
+    "date": "20160222",
+    "distances": {
+      "0": {
+        "made": 27159,
+        "total": 45521,
+        "percent": 59.66
+      },
+      "1": {
+        "made": 5084,
+        "total": 13086,
+        "percent": 38.85
+      },
+      "2": {
+        "made": 3607,
+        "total": 9001,
+        "percent": 40.07
+      },
+      "3": {
+        "made": 4304,
+        "total": 10424,
+        "percent": 41.29
+      },
+      "4": {
+        "made": 6928,
+        "total": 17101,
+        "percent": 40.51
+      },
+      "5": {
+        "made": 5595,
+        "total": 14586,
+        "percent": 38.36
+      },
+      "6": {
+        "made": 10492,
+        "total": 29853,
+        "percent": 35.15
+      },
+      "7": {
+        "made": 216,
+        "total": 785,
+        "percent": 27.52
+      }
+    }
+  },
+  {
+    "date": "20160223",
+    "distances": {
+      "0": {
+        "made": 27348,
+        "total": 45823,
+        "percent": 59.68
+      },
+      "1": {
+        "made": 5121,
+        "total": 13181,
+        "percent": 38.85
+      },
+      "2": {
+        "made": 3628,
+        "total": 9049,
+        "percent": 40.09
+      },
+      "3": {
+        "made": 4323,
+        "total": 10488,
+        "percent": 41.22
+      },
+      "4": {
+        "made": 6962,
+        "total": 17186,
+        "percent": 40.51
+      },
+      "5": {
+        "made": 5626,
+        "total": 14678,
+        "percent": 38.33
+      },
+      "6": {
+        "made": 10556,
+        "total": 30011,
+        "percent": 35.17
+      },
+      "7": {
+        "made": 218,
+        "total": 793,
+        "percent": 27.49
+      }
+    }
+  },
+  {
+    "date": "20160224",
+    "distances": {
+      "0": {
+        "made": 27674,
+        "total": 46340,
+        "percent": 59.72
+      },
+      "1": {
+        "made": 5172,
+        "total": 13333,
+        "percent": 38.79
+      },
+      "2": {
+        "made": 3669,
+        "total": 9143,
+        "percent": 40.13
+      },
+      "3": {
+        "made": 4381,
+        "total": 10635,
+        "percent": 41.19
+      },
+      "4": {
+        "made": 7051,
+        "total": 17394,
+        "percent": 40.54
+      },
+      "5": {
+        "made": 5695,
+        "total": 14869,
+        "percent": 38.3
+      },
+      "6": {
+        "made": 10706,
+        "total": 30408,
+        "percent": 35.21
+      },
+      "7": {
+        "made": 220,
+        "total": 799,
+        "percent": 27.53
+      }
+    }
+  },
+  {
+    "date": "20160225",
+    "distances": {
+      "0": {
+        "made": 27916,
+        "total": 46699,
+        "percent": 59.78
+      },
+      "1": {
+        "made": 5210,
+        "total": 13426,
+        "percent": 38.81
+      },
+      "2": {
+        "made": 3694,
+        "total": 9212,
+        "percent": 40.1
+      },
+      "3": {
+        "made": 4411,
+        "total": 10702,
+        "percent": 41.22
+      },
+      "4": {
+        "made": 7093,
+        "total": 17504,
+        "percent": 40.52
+      },
+      "5": {
+        "made": 5740,
+        "total": 14976,
+        "percent": 38.33
+      },
+      "6": {
+        "made": 10782,
+        "total": 30601,
+        "percent": 35.23
+      },
+      "7": {
+        "made": 222,
+        "total": 808,
+        "percent": 27.48
+      }
+    }
+  },
+  {
+    "date": "20160226",
+    "distances": {
+      "0": {
+        "made": 28172,
+        "total": 47092,
+        "percent": 59.82
+      },
+      "1": {
+        "made": 5268,
+        "total": 13569,
+        "percent": 38.82
+      },
+      "2": {
+        "made": 3725,
+        "total": 9297,
+        "percent": 40.07
+      },
+      "3": {
+        "made": 4450,
+        "total": 10806,
+        "percent": 41.18
+      },
+      "4": {
+        "made": 7164,
+        "total": 17679,
+        "percent": 40.52
+      },
+      "5": {
+        "made": 5786,
+        "total": 15111,
+        "percent": 38.29
+      },
+      "6": {
+        "made": 10881,
+        "total": 30907,
+        "percent": 35.21
+      },
+      "7": {
+        "made": 224,
+        "total": 814,
+        "percent": 27.52
+      }
+    }
+  },
+  {
+    "date": "20160227",
+    "distances": {
+      "0": {
+        "made": 28462,
+        "total": 47589,
+        "percent": 59.81
+      },
+      "1": {
+        "made": 5318,
+        "total": 13694,
+        "percent": 38.83
+      },
+      "2": {
+        "made": 3755,
+        "total": 9384,
+        "percent": 40.01
+      },
+      "3": {
+        "made": 4487,
+        "total": 10901,
+        "percent": 41.16
+      },
+      "4": {
+        "made": 7234,
+        "total": 17852,
+        "percent": 40.52
+      },
+      "5": {
+        "made": 5834,
+        "total": 15256,
+        "percent": 38.24
+      },
+      "6": {
+        "made": 10969,
+        "total": 31155,
+        "percent": 35.21
+      },
+      "7": {
+        "made": 227,
+        "total": 818,
+        "percent": 27.75
+      }
+    }
+  },
+  {
+    "date": "20160228",
+    "distances": {
+      "0": {
+        "made": 28691,
+        "total": 47950,
+        "percent": 59.84
+      },
+      "1": {
+        "made": 5360,
+        "total": 13793,
+        "percent": 38.86
+      },
+      "2": {
+        "made": 3786,
+        "total": 9452,
+        "percent": 40.06
+      },
+      "3": {
+        "made": 4520,
+        "total": 10998,
+        "percent": 41.1
+      },
+      "4": {
+        "made": 7303,
+        "total": 18020,
+        "percent": 40.53
+      },
+      "5": {
+        "made": 5877,
+        "total": 15365,
+        "percent": 38.25
+      },
+      "6": {
+        "made": 11058,
+        "total": 31396,
+        "percent": 35.22
+      },
+      "7": {
+        "made": 230,
+        "total": 828,
+        "percent": 27.78
+      }
+    }
+  },
+  {
+    "date": "20160229",
+    "distances": {
+      "0": {
+        "made": 28958,
+        "total": 48359,
+        "percent": 59.88
+      },
+      "1": {
+        "made": 5403,
+        "total": 13910,
+        "percent": 38.84
+      },
+      "2": {
+        "made": 3821,
+        "total": 9522,
+        "percent": 40.13
+      },
+      "3": {
+        "made": 4545,
+        "total": 11061,
+        "percent": 41.09
+      },
+      "4": {
+        "made": 7361,
+        "total": 18165,
+        "percent": 40.52
+      },
+      "5": {
+        "made": 5924,
+        "total": 15481,
+        "percent": 38.27
+      },
+      "6": {
+        "made": 11146,
+        "total": 31650,
+        "percent": 35.22
+      },
+      "7": {
+        "made": 233,
+        "total": 839,
+        "percent": 27.77
+      }
+    }
+  },
+  {
+    "date": "20160301",
+    "distances": {
+      "0": {
+        "made": 29175,
+        "total": 48698,
+        "percent": 59.91
+      },
+      "1": {
+        "made": 5451,
+        "total": 14015,
+        "percent": 38.89
+      },
+      "2": {
+        "made": 3844,
+        "total": 9590,
+        "percent": 40.08
+      },
+      "3": {
+        "made": 4567,
+        "total": 11125,
+        "percent": 41.05
+      },
+      "4": {
+        "made": 7410,
+        "total": 18298,
+        "percent": 40.5
+      },
+      "5": {
+        "made": 5957,
+        "total": 15585,
+        "percent": 38.22
+      },
+      "6": {
+        "made": 11236,
+        "total": 31879,
+        "percent": 35.25
+      },
+      "7": {
+        "made": 234,
+        "total": 844,
+        "percent": 27.73
+      }
+    }
+  },
+  {
+    "date": "20160302",
+    "distances": {
+      "0": {
+        "made": 29540,
+        "total": 49311,
+        "percent": 59.91
+      },
+      "1": {
+        "made": 5513,
+        "total": 14164,
+        "percent": 38.92
+      },
+      "2": {
+        "made": 3886,
+        "total": 9696,
+        "percent": 40.08
+      },
+      "3": {
+        "made": 4611,
+        "total": 11249,
+        "percent": 40.99
+      },
+      "4": {
+        "made": 7511,
+        "total": 18560,
+        "percent": 40.47
+      },
+      "5": {
+        "made": 6025,
+        "total": 15785,
+        "percent": 38.17
+      },
+      "6": {
+        "made": 11375,
+        "total": 32282,
+        "percent": 35.24
+      },
+      "7": {
+        "made": 236,
+        "total": 854,
+        "percent": 27.63
+      }
+    }
+  },
+  {
+    "date": "20160303",
+    "distances": {
+      "0": {
+        "made": 29692,
+        "total": 49543,
+        "percent": 59.93
+      },
+      "1": {
+        "made": 5534,
+        "total": 14216,
+        "percent": 38.93
+      },
+      "2": {
+        "made": 3903,
+        "total": 9732,
+        "percent": 40.1
+      },
+      "3": {
+        "made": 4636,
+        "total": 11296,
+        "percent": 41.04
+      },
+      "4": {
+        "made": 7545,
+        "total": 18658,
+        "percent": 40.44
+      },
+      "5": {
+        "made": 6044,
+        "total": 15841,
+        "percent": 38.15
+      },
+      "6": {
+        "made": 11424,
+        "total": 32434,
+        "percent": 35.22
+      },
+      "7": {
+        "made": 236,
+        "total": 860,
+        "percent": 27.44
+      }
+    }
+  },
+  {
+    "date": "20160304",
+    "distances": {
+      "0": {
+        "made": 30030,
+        "total": 50103,
+        "percent": 59.94
+      },
+      "1": {
+        "made": 5608,
+        "total": 14387,
+        "percent": 38.98
+      },
+      "2": {
+        "made": 3952,
+        "total": 9846,
+        "percent": 40.14
+      },
+      "3": {
+        "made": 4682,
+        "total": 11434,
+        "percent": 40.95
+      },
+      "4": {
+        "made": 7621,
+        "total": 18858,
+        "percent": 40.41
+      },
+      "5": {
+        "made": 6102,
+        "total": 15999,
+        "percent": 38.14
+      },
+      "6": {
+        "made": 11543,
+        "total": 32777,
+        "percent": 35.22
+      },
+      "7": {
+        "made": 237,
+        "total": 868,
+        "percent": 27.3
+      }
+    }
+  },
+  {
+    "date": "20160305",
+    "distances": {
+      "0": {
+        "made": 30311,
+        "total": 50550,
+        "percent": 59.96
+      },
+      "1": {
+        "made": 5664,
+        "total": 14518,
+        "percent": 39.01
+      },
+      "2": {
+        "made": 3992,
+        "total": 9943,
+        "percent": 40.15
+      },
+      "3": {
+        "made": 4722,
+        "total": 11521,
+        "percent": 40.99
+      },
+      "4": {
+        "made": 7678,
+        "total": 19006,
+        "percent": 40.4
+      },
+      "5": {
+        "made": 6145,
+        "total": 16127,
+        "percent": 38.1
+      },
+      "6": {
+        "made": 11651,
+        "total": 33061,
+        "percent": 35.24
+      },
+      "7": {
+        "made": 239,
+        "total": 879,
+        "percent": 27.19
+      }
+    }
+  },
+  {
+    "date": "20160306",
+    "distances": {
+      "0": {
+        "made": 30544,
+        "total": 50945,
+        "percent": 59.95
+      },
+      "1": {
+        "made": 5702,
+        "total": 14635,
+        "percent": 38.96
+      },
+      "2": {
+        "made": 4025,
+        "total": 10018,
+        "percent": 40.18
+      },
+      "3": {
+        "made": 4751,
+        "total": 11600,
+        "percent": 40.96
+      },
+      "4": {
+        "made": 7721,
+        "total": 19101,
+        "percent": 40.42
+      },
+      "5": {
+        "made": 6195,
+        "total": 16260,
+        "percent": 38.1
+      },
+      "6": {
+        "made": 11748,
+        "total": 33331,
+        "percent": 35.25
+      },
+      "7": {
+        "made": 241,
+        "total": 886,
+        "percent": 27.2
+      }
+    }
+  },
+  {
+    "date": "20160309",
+    "distances": {
+      "0": {
+        "made": 30852,
+        "total": 51412,
+        "percent": 60.01
+      },
+      "1": {
+        "made": 5766,
+        "total": 14785,
+        "percent": 39
+      },
+      "2": {
+        "made": 4069,
+        "total": 10126,
+        "percent": 40.18
+      },
+      "3": {
+        "made": 4793,
+        "total": 11695,
+        "percent": 40.98
+      },
+      "4": {
+        "made": 7778,
+        "total": 19252,
+        "percent": 40.4
+      },
+      "5": {
+        "made": 6253,
+        "total": 16417,
+        "percent": 38.09
+      },
+      "6": {
+        "made": 11888,
+        "total": 33703,
+        "percent": 35.27
+      },
+      "7": {
+        "made": 245,
+        "total": 898,
+        "percent": 27.28
+      }
+    }
+  },
+  {
+    "date": "20160310",
+    "distances": {
+      "0": {
+        "made": 30992,
+        "total": 51640,
+        "percent": 60.02
+      },
+      "1": {
+        "made": 5784,
+        "total": 14834,
+        "percent": 38.99
+      },
+      "2": {
+        "made": 4084,
+        "total": 10173,
+        "percent": 40.15
+      },
+      "3": {
+        "made": 4814,
+        "total": 11745,
+        "percent": 40.99
+      },
+      "4": {
+        "made": 7820,
+        "total": 19340,
+        "percent": 40.43
+      },
+      "5": {
+        "made": 6282,
+        "total": 16481,
+        "percent": 38.12
+      },
+      "6": {
+        "made": 11942,
+        "total": 33861,
+        "percent": 35.27
+      },
+      "7": {
+        "made": 246,
+        "total": 900,
+        "percent": 27.33
+      }
+    }
+  },
+  {
+    "date": "20160311",
+    "distances": {
+      "0": {
+        "made": 31325,
+        "total": 52227,
+        "percent": 59.98
+      },
+      "1": {
+        "made": 5849,
+        "total": 14988,
+        "percent": 39.02
+      },
+      "2": {
+        "made": 4126,
+        "total": 10271,
+        "percent": 40.17
+      },
+      "3": {
+        "made": 4862,
+        "total": 11857,
+        "percent": 41.01
+      },
+      "4": {
+        "made": 7904,
+        "total": 19535,
+        "percent": 40.46
+      },
+      "5": {
+        "made": 6351,
+        "total": 16664,
+        "percent": 38.11
+      },
+      "6": {
+        "made": 12065,
+        "total": 34218,
+        "percent": 35.26
+      },
+      "7": {
+        "made": 250,
+        "total": 911,
+        "percent": 27.44
+      }
+    }
+  },
+  {
+    "date": "20160312",
+    "distances": {
+      "0": {
+        "made": 31674,
+        "total": 52793,
+        "percent": 60
+      },
+      "1": {
+        "made": 5912,
+        "total": 15159,
+        "percent": 39
+      },
+      "2": {
+        "made": 4173,
+        "total": 10371,
+        "percent": 40.24
+      },
+      "3": {
+        "made": 4920,
+        "total": 11986,
+        "percent": 41.05
+      },
+      "4": {
+        "made": 7986,
+        "total": 19737,
+        "percent": 40.46
+      },
+      "5": {
+        "made": 6421,
+        "total": 16863,
+        "percent": 38.08
+      },
+      "6": {
+        "made": 12183,
+        "total": 34578,
+        "percent": 35.23
+      },
+      "7": {
+        "made": 250,
+        "total": 913,
+        "percent": 27.38
+      }
+    }
+  },
+  {
+    "date": "20160313",
+    "distances": {
+      "0": {
+        "made": 31825,
+        "total": 53041,
+        "percent": 60
+      },
+      "1": {
+        "made": 5949,
+        "total": 15241,
+        "percent": 39.03
+      },
+      "2": {
+        "made": 4196,
+        "total": 10426,
+        "percent": 40.25
+      },
+      "3": {
+        "made": 4938,
+        "total": 12040,
+        "percent": 41.01
+      },
+      "4": {
+        "made": 8021,
+        "total": 19827,
+        "percent": 40.45
+      },
+      "5": {
+        "made": 6464,
+        "total": 16962,
+        "percent": 38.11
+      },
+      "6": {
+        "made": 12249,
+        "total": 34761,
+        "percent": 35.24
+      },
+      "7": {
+        "made": 251,
+        "total": 917,
+        "percent": 27.37
+      }
+    }
+  }
+]

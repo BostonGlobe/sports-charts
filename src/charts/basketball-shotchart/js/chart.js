@@ -4,7 +4,7 @@ import { max } from 'd3-array'
 import { hexbin } from 'd3-hexbin'
 import { $ } from '../../../utils/dom'
 
-import { dimensions, binRatio } from './config'
+import { dimensions, binRatio, minHexRadius } from './config'
 
 const { left, right, top, bottom } = dimensions
 const courtWidth = right - left
@@ -13,7 +13,7 @@ const courtRatio = courtHeight / courtWidth
 const scales = {
 	shotX: scaleLinear().domain([left, right]),
 	shotY: scaleLinear().domain([top, bottom]),
-	color: scaleLinear().range(['white', 'green']),
+	color: scaleLinear().domain([-10, 10]).range(['white', 'green']),
 	radius: scaleLinear(),
 }
 
@@ -22,7 +22,7 @@ const hexbinner = hexbin()
 function updateScales({ width, height, hexRadius }) {
 	scales.shotX.range([0, width])
 	scales.shotY.range([height, 0])
-	scales.radius.range([1, hexRadius])
+	scales.radius.range([minHexRadius, hexRadius])
 }
 
 function updateContainer({ width, height }) {
@@ -56,10 +56,45 @@ function setup() {
 
 function getPercentMade(d) {
 	return d.reduce((previous, current) => {
-		const madeValue = current[2].made ? 1 : 0
+		const datum = current[2]
+		const madeValue = datum.made ? 1 : 0
 		const next = previous + madeValue
 		return next
 	}, 0)
+}
+
+function getZonesByDate(averages, gamedate) {
+	return averages.filter(day => day.date === gamedate)[0].zones
+}
+
+function getPercentFromZone(zones, zone) {
+	return zones[zone].percent
+}
+
+function getWeightedAverage(d, averages) {
+	// must combine averages since multiple zones might make up a bin
+	const zonesWeighted = d.reduce((previous, current) => {
+		const datum = current[2]
+		if (previous[datum.zone]) {
+			previous[datum.zone].count += 1
+		}
+		else {
+			const zones = getZonesByDate(averages, datum.gamedate)
+			const percent = getPercentFromZone(zones, datum.zone)
+			const count = 1
+			previous[datum.zone] = { count, percent } 
+		}
+		return previous
+	}, {})
+
+	let count = 0
+	let total = 0
+	for (var z in zonesWeighted) {
+		count += zonesWeighted[z].count
+		total += zonesWeighted[z].count * zonesWeighted[z].percent
+	}
+
+	return (total / count).toFixed()
 }
 
 function updateData(data) {
@@ -70,8 +105,7 @@ function updateData(data) {
 	}))
 
 	const hexbinData = hexbinner(points.map(point => {
-		const { made, shotX, shotY } = point
-		return [point.x, point.y, { made, shotX, shotY }]
+		return [point.x, point.y, { ...point }]
 	}))
 
 	const maxData = max(hexbinData, d => d.length)
@@ -87,8 +121,10 @@ function updateData(data) {
 			.attr('transform', d => `translate(${d.x}, ${d.y})`)
 			.style('fill', d => {
 				const made = getPercentMade(d)
-				const percent = made / d.length
-				return scales.color(percent)
+				const average = getWeightedAverage(d, data.averages)
+				const percent = +((made / d.length * 1000) / 10).toFixed(2)
+				const diff = percent - average
+				return scales.color(diff)
 			})
 			.style('stroke', 'none')
 }

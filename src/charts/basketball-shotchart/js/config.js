@@ -6,8 +6,9 @@ const dimensions = {
 }
 
 const binRatio = 1 / 40
+const minHexRadius = 2
 
 const distanceBinSize = 4
 const maxDistanceBin = Math.floor(32 / distanceBinSize)
 
-export { dimensions, binRatio, binRatio, distanceBinSize, maxDistanceBin }
+export { dimensions, binRatio, binRatio, distanceBinSize, maxDistanceBin, minHexRadius }
