@@ -10,7 +10,7 @@ uniqueDates, input, tooltip }) => {
 
 	// if we have a gamedate, then only show data up to that gamedate
 	const filteredData = gamedate ?
-		data.filter(x => x.gamedate < gamedate) :
+		data.filter(x => x.gamedate <= gamedate) :
 		data
 
 	const DELAY = 0
@@ -63,15 +63,17 @@ uniqueDates, input, tooltip }) => {
 		.attr('cx', x)
 		.attr('cy', y)
 		.attr('opacity', 1)
-		.on('start', (d, i) => {
+		.on('start', (d) => {
 
+			// if we don't have a gamedate (which means this is called at the
+			// beginning), then we should, at the start of every transition,
+			// set the slider to this datum's time
 			if (!gamedate) {
 
 				const time = d.gamedate.getTime()
 				const index = uniqueDates.indexOf(time)
 
 				setSlider({ input, value: index + 1 })
-
 				setSliderTooltip({ input, tooltip, time, index })
 
 			}
