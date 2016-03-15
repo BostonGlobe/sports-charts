@@ -68,7 +68,13 @@ const handleInputChange = ({ e, uniqueDates, data }) => {
 
 // this gets fired when we receive data
 let initialTimer
-const handleDataLoaded = (rawdata) => {
+const handleDataLoaded = (err, rawdata) => {
+
+	if (err) {
+		// TODO: better error handling
+		console.log("Oops. Look like we couldn't load this chart's data.")
+		return
+	}
 
 	const data = formatData(rawdata)
 	const uniqueDates = getUniqueDates(data)
