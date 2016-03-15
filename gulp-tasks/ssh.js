@@ -23,7 +23,7 @@ gulp.task('ssh-base', (cb) => {
 	const username = argv.u
 
 	if (username) {
-		const command = `(cd dist; scp -r chart-base.css chart-base.js ${username}@${host}:${base}/)`
+		const command = `(cd dist; scp -r chart-base.* ${username}@${host}:${base}/)`
 		console.log(command)
 		shell.exec(command, cb)
 	} else {
