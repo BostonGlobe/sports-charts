@@ -1,4 +1,5 @@
 import { select } from 'd3-selection'
+import { transition } from 'd3-transition'
 
 import colors from './../../../utils/colors.js'
 import setSliderTooltip from './setSliderTooltip.js'

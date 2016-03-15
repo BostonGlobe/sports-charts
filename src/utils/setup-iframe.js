@@ -1,26 +1,21 @@
 import getJSON from 'get-json-lite'
 import pymIframe from 'pym-iframe-resizer'
 
-const setup = ({ handleDataLoaded, transform }) => {
+const setup = ({ handleDataLoaded, transform = (d, c) => c(null, d) }) => {
 
 	const pymChild = pymIframe({})
 
 	// send transformed data to chartifier
 	pymChild.onMessage('transform-data', d => {
 		const json = JSON.parse(d)
-		if (transform) {
-			transform(json, (err, result) =>
-				pymChild.sendMessage('data-transformed', JSON.stringify(result)))
-		} else {
-			pymChild.sendMessage('data-transformed', JSON.stringify(json))
-		}
+		transform(json, (err, result) =>
+			pymChild.sendMessage('data-transformed', JSON.stringify(result)))
 	})
 
 	// talk to chartifier
 	pymChild.onMessage('receive-data', d => {
 		const json = JSON.parse(d)
-		if (transform) transform(json, handleDataLoaded)
-		else handleDataLoaded(null, json)
+		transform(json, handleDataLoaded)
 	})
 
 	pymChild.sendMessage('request-data', true)

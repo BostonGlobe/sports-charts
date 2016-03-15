@@ -103,10 +103,6 @@ const handleDataLoaded = (err, rawdata) => {
 
 }
 
-// this gets fired when there is an error fetching data
-const handleDataError = (error) =>
-	console.error(error)
-
 // this starts the pym resizer and takes a callback.
 // the callback will fire when we receive data
-setupIframe({ handleDataLoaded, handleDataError })
+setupIframe({ handleDataLoaded })
