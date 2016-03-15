@@ -1,4 +1,4 @@
-import { distanceBinSize } from './config'
+import { distanceBinSize, maxDistanceBin } from './config'
 import zones from './zones'
 
 function calculateDistance(x, y) {
@@ -6,7 +6,7 @@ function calculateDistance(x, y) {
 }
 
 function calculateDistanceBin(distance) {
-	return Math.floor(distance / distanceBinSize)
+	return Math.min(maxDistanceBin, Math.floor(distance / distanceBinSize))
 }
 
 function findZone(args) {
