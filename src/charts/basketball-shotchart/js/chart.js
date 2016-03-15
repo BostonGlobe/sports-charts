@@ -1,10 +1,10 @@
-import { scaleLinear } from 'd3-scale'
+import { scaleLinear, scaleOrdinal, scaleQuantile } from 'd3-scale'
 import { select } from 'd3-selection'
 import { max } from 'd3-array'
 import { hexbin } from 'd3-hexbin'
 import { $ } from '../../../utils/dom'
 
-import { dimensions, binRatio, minHexRadius } from './config'
+import { dimensions, binRatio, minHexRadius, colors } from './config'
 
 const { left, right, top, bottom } = dimensions
 const courtWidth = right - left
@@ -13,8 +13,8 @@ const courtRatio = courtHeight / courtWidth
 const scales = {
 	shotX: scaleLinear().domain([left, right]),
 	shotY: scaleLinear().domain([top, bottom]),
-	color: scaleLinear().domain([-10, 10]).range(['white', 'green']),
-	radius: scaleLinear(),
+	color: scaleQuantile().domain([-10, 10]).range([colors.dark, colors.neutral, colors.green]),
+	radius: scaleLinear().clamp(true),
 }
 
 const hexbinner = hexbin()
@@ -94,7 +94,7 @@ function getWeightedAverage(d, averages, date) {
 		total += zonesWeighted[z].count * zonesWeighted[z].percent
 	}
 
-	return (total / count).toFixed()
+	return +(total / count).toFixed()
 }
 
 function getLatestDate(shots) {
@@ -102,7 +102,13 @@ function getLatestDate(shots) {
 	return sorted[0].gameDate
 }
 
+// TODO remove
+function testFilter(data) {
+	data.shots = data.shots.filter(s => s.zone.indexOf('three') > -1) 
+	return data
+}
 function updateData(data) {
+	// data = testFilter(data)
 	const latestDate = getLatestDate(data.shots)
 
 	const points = data.shots.map(datum => ({
@@ -131,7 +137,9 @@ function updateData(data) {
 				const average = getWeightedAverage(d, data.averages, latestDate)
 				const percent = +((made / d.length * 1000) / 10).toFixed(2)
 				const diff = percent - average
-				return scales.color(diff)
+				const color = scales.color(diff)
+				// console.table([{percent, average, diff, color}])
+				return color
 			})
 			.style('stroke', 'none')
 }
