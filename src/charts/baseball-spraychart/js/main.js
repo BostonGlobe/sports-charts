@@ -10,6 +10,8 @@ import drawCanvas from './drawCanvas.js'
 import setupSlider from './setupSlider.js'
 import formatData from './formatData.js'
 import getUniqueDates from './getUniqueDates.js'
+import setSliderTooltip from './setSliderTooltip.js'
+import setSlider from './setSlider.js'
 
 // convenience variables
 const container = $('.chart-container')
@@ -48,16 +50,49 @@ const detachedContainer = document.createElement('custom')
 // and redraw the canvas
 timer(() => drawCanvas({ canvas, detachedContainer }))
 
+const handleInputChange = ({ e, uniqueDates, data }) => {
+
+	initialTimer.stop()
+
+	const { value } = e.target
+	const gamedate = uniqueDates[value - 1]
+
+	setSlider({ input, value })
+
+	setSliderTooltip({ input, time: gamedate, index: value - 1, tooltip })
+
+	drawData({ data, detachedContainer, scales, gamedate, uniqueDates,
+		input, tooltip })
+
+}
+
 // this gets fired when we receive data
+let initialTimer
 const handleDataLoaded = (rawdata) => {
 
 	const data = formatData(rawdata)
 	const uniqueDates = getUniqueDates(data)
 
-	drawData({ data, detachedContainer, scales, uniqueDates, input, tooltip })
+	setupSlider({ data, uniqueDates, input, labels,
+		onInputChange: (e) => handleInputChange({ e, uniqueDates, data }) })
 
-	setupSlider({ data, detachedContainer, uniqueDates, input, labels,
-		tooltip, scales })
+	let dataIndex = 0
+	initialTimer = timer(() => {
+
+		// are we at the end? if so stop.
+		if (dataIndex < data.length - 1) {
+
+			drawData({ data: data.slice(0, dataIndex++), detachedContainer,
+				scales, uniqueDates, input, tooltip })
+
+		} else {
+			initialTimer.stop()
+		}
+		// otherwise continue
+
+	})
+
+	// start a loop that will call drawData once every second, with new data
 
 }
 

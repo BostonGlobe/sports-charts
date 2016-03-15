@@ -13,8 +13,8 @@ uniqueDates, input, tooltip }) => {
 		data.filter(x => x.gamedate < gamedate) :
 		data
 
-	let DELAY = gamedate ? 0 : 50
-	let DURATION = gamedate ? 300 : 1000
+	const DELAY = 0
+	let DURATION = gamedate ? 300 : 500
 
 	const { x, y, origin } = scales
 
@@ -29,7 +29,9 @@ uniqueDates, input, tooltip }) => {
 	circles.exit()
 		.transition()
 		.delay(0)
-		.duration(DURATION)
+		.duration(DURATION/5)
+		.attr('cx', origin.x)
+		.attr('cy', origin.y)
 		.attr('opacity', 0)
 		.remove()
 
@@ -52,8 +54,8 @@ uniqueDates, input, tooltip }) => {
 		}[d.description] || 'white'))
 		.attr('isHalf', d => d.description === 'Double')
 		.attr('r', d => d.description === 'Home run' ? 8 : 5)
-		.attr('cx', gamedate ? x : origin.x)
-		.attr('cy', gamedate ? y : origin.y)
+		.attr('cx', origin.x)
+		.attr('cy', origin.y)
 		.attr('opacity', 0)
 		.transition()
 		.delay((d, i) => i * DELAY)
@@ -61,7 +63,7 @@ uniqueDates, input, tooltip }) => {
 		.attr('cx', x)
 		.attr('cy', y)
 		.attr('opacity', 1)
-		.on('start', d => {
+		.on('start', (d, i) => {
 
 			if (!gamedate) {
 
@@ -75,16 +77,6 @@ uniqueDates, input, tooltip }) => {
 			}
 
 		})
-		// .each('end', (d, i) => {
-
-		// 	// // TODO: enable slider now
-		// 	// if (isInitialDraw && i === data.length - 1) {
-
-		// 	// 	console.log('enable slider now')
-
-		// 	// }
-
-		// })
 
 }
 

@@ -1,14 +1,13 @@
 import { timeFormat } from 'd3-time-format'
 
 import fancySlider from './fancySlider.js'
-import setSliderTooltip from './setSliderTooltip.js'
 import drawData from './drawData.js'
 
 // create date formatting function
 const dateFormat = timeFormat('%b. %e')
 
-const setupSlider = ({ data, uniqueDates, input, labels, tooltip,
-scales, detachedContainer }) => {
+const setupSlider = ({ data, uniqueDates, input, labels,
+onInputChange }) => {
 
 	// get first and last dates
 	const firstDate = data[0].gamedate
@@ -30,17 +29,7 @@ scales, detachedContainer }) => {
 	fancySlider.init(input)
 
 	// update chart on input change
-	input.addEventListener('input', (e) => {
-
-		const { value } = e.target
-		const gamedate = uniqueDates[value - 1]
-
-		setSliderTooltip({ input, time: gamedate, index: value - 1, tooltip })
-
-		drawData({ data, detachedContainer, scales, gamedate, uniqueDates,
-			input, tooltip })
-
-	})
+	input.addEventListener('input', onInputChange)
 
 }
 
