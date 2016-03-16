@@ -89,7 +89,7 @@ const handleDataLoaded = (err, rawdata) => {
 		// are we at the end? if so stop.
 		if (dataIndex < data.length) {
 
-			drawData({ data: data.slice(0, dataIndex++), detachedContainer,
+			drawData({ data: data.slice(0, ++dataIndex), detachedContainer,
 				scales, uniqueDates, input, tooltip })
 
 		} else {
