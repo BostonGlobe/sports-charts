@@ -110,7 +110,13 @@ const handleDataLoaded = (err, payload) => {
 	} else {
 
 		// show slider
-		removeClas(sliderContainer, 'displayNone')
+		removeClass(sliderContainer, 'displayNone')
+
+		// create the slider start/end labels
+		const labels = {
+			start: dateFormat(data[0].gamedate),
+			end: dateFormat(data[data.length - 1].gamedate),
+		}
 
 		// setup slider (set input max, set start/end labels)
 		setupSlider({ container: sliderContainer, labels,
