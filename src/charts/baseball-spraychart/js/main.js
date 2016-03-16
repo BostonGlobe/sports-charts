@@ -1,4 +1,5 @@
 import { timer } from 'd3-timer'
+import { timeFormat } from 'd3-time-format'
 
 import setupIframe from '../../../utils/setup-iframe'
 import { $ } from '../../../utils/dom.js'
@@ -7,20 +8,24 @@ import createSvg from './createSvg.js'
 import createCanvas from './createCanvas.js'
 import drawData from './drawData.js'
 import drawCanvas from './drawCanvas.js'
-import setupSlider from './setupSlider.js'
 import formatData from './formatData.js'
 import getUniqueDates from './getUniqueDates.js'
-import setSliderTooltip from './setSliderTooltip.js'
-import setSlider from './setSlider.js'
+import createSlider from './../../../utils/slider/createSlider.js'
+import setupSlider from './../../../utils/slider/setupSlider.js'
+import setSliderTooltip from './../../../utils/slider/setSliderTooltip.js'
 
 // convenience variables
-const container = $('.chart-container')
-const input = $('.slider input')
-const start = $('.slider-date-ranges .start-date span')
-const end = $('.slider-date-ranges .end-date span')
-const tooltip = $('.slider-current-date')
-const labels = { start, end }
-let { offsetWidth } = container
+const chartContainer = $('.chart-container')
+const sliderContainer = $('.slider-container')
+const dateFormat = timeFormat('%b. %e')
+let handleInput = (e) => console.log(e)
+const onInput = (e) => handleInput(e)
+
+// create slider
+createSlider({ container: sliderContainer, onInput })
+
+// get the chart container outside width
+let { offsetWidth } = chartContainer
 offsetWidth = offsetWidth * 2
 
 // setup chart margins
@@ -37,10 +42,11 @@ const scales = createScales({ parkSize, height })
 
 // create the svg element
 // this will hold the ballpark, infield, diamond, grid, etc
-createSvg({ container, margins, width, height, parkSize })
+createSvg({ container: chartContainer, margins, width, height, parkSize })
 
 // create canvas element
-const canvas = createCanvas({ container, margins, width, height })
+const canvas = createCanvas({ container: chartContainer, margins, width,
+	height })
 
 // create a custom container that will not be drawn to DOM,
 // but will be used to hold the data elements
@@ -50,21 +56,29 @@ const detachedContainer = document.createElement('custom')
 // and redraw the canvas
 timer(() => drawCanvas({ canvas, detachedContainer }))
 
+// this timer manages the initial animation
 let initialTimer
 
+// handle input change (draw data, set tooltip)
 const handleInputChange = ({ e, uniqueDates, data }) => {
 
+	// stop the timer, if it's running
+	// why do we need this? well, if the user updates the slider
+	// during initial animation, we need to stop the animation
+	// and immediately draw up to the user's desired data
 	initialTimer.stop()
 
+	// get the slider position
 	const { value } = e.target
 	const gamedate = uniqueDates[value - 1]
 
-	setSlider({ input, value })
+	const text = dateFormat(new Date(gamedate))
 
-	setSliderTooltip({ input, time: gamedate, index: value - 1, tooltip })
+	// setSlider({ container: sliderContainer, value })
+	setSliderTooltip({ container: sliderContainer, text, index: value - 1 })
 
-	drawData({ data, detachedContainer, scales, gamedate, uniqueDates,
-		input, tooltip })
+	// draw data based on slider input
+	drawData({ data, detachedContainer, scales, gamedate, uniqueDates })
 
 }
 
@@ -77,29 +91,46 @@ const handleDataLoaded = (err, rawdata) => {
 		return
 	}
 
+	// format the data (i.e. turn gamedate into Date, etc)
 	const data = formatData(rawdata)
+
+	// get array of unique dates
 	const uniqueDates = getUniqueDates(data)
 
-	setupSlider({ data, uniqueDates, input, tooltip, labels,
-		onInputChange: (e) => handleInputChange({ e, uniqueDates, data }) })
+	// create the slider start/end labels
+	const labels = {
+		start: dateFormat(data[0].gamedate),
+		end: dateFormat(data[data.length - 1].gamedate),
+	}
 
+	// setup slider (set input max, set start/end labels)
+	setupSlider({ container: sliderContainer, labels,
+		max: uniqueDates.length })
+
+	// on input change, call a function with data-specific variables
+	handleInput = (e) => handleInputChange({ e, uniqueDates, data })
+
+	// we'll use this to manage data during initial animation
 	let dataIndex = 0
+
+	// start the initial animation
 	initialTimer = timer(() => {
 
-		// are we at the end? if so stop.
+		// are we before the end?
 		if (dataIndex < data.length) {
 
+			// draw data
+			// in other words, draw an array of one more datum
 			drawData({ data: data.slice(0, ++dataIndex), detachedContainer,
-				scales, uniqueDates, input, tooltip })
+				scales, uniqueDates, sliderContainer })
 
 		} else {
+
+			// no, we're at the end - stop.
 			initialTimer.stop()
 		}
-		// otherwise continue
 
 	})
-
-	// start a loop that will call drawData once every second, with new data
 
 }
 

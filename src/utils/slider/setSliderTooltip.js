@@ -1,16 +1,14 @@
-import { timeFormat } from 'd3-time-format'
+const setSliderTooltip = ({ container, text, index }) => {
 
-// create date formatting function
-const dateFormat = timeFormat('%b. %e')
-
-const setSliderTooltip = ({ input, tooltip, time, index }) => {
+	const input = container.querySelector('input')
+	const tooltip = container.querySelector('.tooltip')
 
 	const min = +input.getAttribute('min')
 	const max = +input.getAttribute('max')
 
 	// set tooltip content
 	// eslint-disable-next-line no-param-reassign
-	tooltip.querySelector('span').innerHTML = dateFormat(new Date(time))
+	tooltip.querySelector('span').innerHTML = text
 
 	const position = 100 * index / (max - min)
 

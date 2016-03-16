@@ -1,12 +1,18 @@
 import { select } from 'd3-selection'
+
+// eslint-disable-next-line no-unused-vars
 import { transition } from 'd3-transition'
+import { timeFormat } from 'd3-time-format'
 
 import colors from './../../../utils/colors.js'
-import setSliderTooltip from './setSliderTooltip.js'
-import setSlider from './setSlider.js'
+import setSlider from './../../../utils/slider/setSlider.js'
+import setSliderTooltip from './../../../utils/slider/setSliderTooltip.js'
+
+// create date formatting function
+const dateFormat = timeFormat('%b. %e')
 
 const drawData = ({ data, detachedContainer, scales, gamedate,
-uniqueDates, input, tooltip }) => {
+uniqueDates, sliderContainer }) => {
 
 	// if we have a gamedate, then only show data up to that gamedate
 	const filteredData = gamedate ?
@@ -72,9 +78,10 @@ uniqueDates, input, tooltip }) => {
 
 				const time = d.gamedate.getTime()
 				const index = uniqueDates.indexOf(time)
+				const text = dateFormat(d.gamedate)
 
-				setSlider({ input, value: index + 1 })
-				setSliderTooltip({ input, tooltip, time, index })
+				setSlider({ container: sliderContainer, value: index + 1 })
+				setSliderTooltip({ container: sliderContainer, text, index })
 
 			}
 
