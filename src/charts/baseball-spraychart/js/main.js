@@ -2,7 +2,7 @@ import { timer } from 'd3-timer'
 import { timeFormat } from 'd3-time-format'
 
 import setupIframe from '../../../utils/setup-iframe'
-import { $ } from '../../../utils/dom.js'
+import { $, removeClass } from '../../../utils/dom.js'
 import createScales from './createScales.js'
 import createSvg from './createSvg.js'
 import createCanvas from './createCanvas.js'
@@ -18,7 +18,7 @@ import setSliderTooltip from './../../../utils/slider/setSliderTooltip.js'
 const chartContainer = $('.chart-container')
 const sliderContainer = $('.slider-container')
 const dateFormat = timeFormat('%b. %e')
-let handleInput = (e) => console.log(e)
+let handleInput = (e) => e
 const onInput = (e) => handleInput(e)
 
 // create slider
@@ -100,40 +100,48 @@ const handleDataLoaded = (err, payload) => {
 	// get array of unique dates
 	const uniqueDates = getUniqueDates(data)
 
-	// create the slider start/end labels
-	const labels = {
-		start: dateFormat(data[0].gamedate),
-		end: dateFormat(data[data.length - 1].gamedate),
+	// if this is chartbuilder, don't animate
+	if (payload.isChartbuilder) {
+
+		// draw data
+		drawData({ data, detachedContainer,
+			scales, uniqueDates, sliderContainer })
+
+	} else {
+
+		// show slider
+		removeClas(sliderContainer, 'displayNone')
+
+		// setup slider (set input max, set start/end labels)
+		setupSlider({ container: sliderContainer, labels,
+			max: uniqueDates.length })
+
+		// on input change, call a function with data-specific variables
+		handleInput = (e) => handleInputChange({ e, uniqueDates, data })
+
+		// we'll use this to manage data during initial animation
+		let dataIndex = 0
+
+		// start the initial animation
+		initialTimer = timer(() => {
+
+			// are we before the end?
+			if (dataIndex < data.length) {
+
+				// draw data
+				// in other words, draw an array of one more datum
+				drawData({ data: data.slice(0, ++dataIndex), detachedContainer,
+					scales, uniqueDates, sliderContainer })
+
+			} else {
+
+				// no, we're at the end - stop.
+				initialTimer.stop()
+			}
+
+		})
+
 	}
-
-	// setup slider (set input max, set start/end labels)
-	setupSlider({ container: sliderContainer, labels,
-		max: uniqueDates.length })
-
-	// on input change, call a function with data-specific variables
-	handleInput = (e) => handleInputChange({ e, uniqueDates, data })
-
-	// we'll use this to manage data during initial animation
-	let dataIndex = 0
-
-	// start the initial animation
-	initialTimer = timer(() => {
-
-		// are we before the end?
-		if (dataIndex < data.length) {
-
-			// draw data
-			// in other words, draw an array of one more datum
-			drawData({ data: data.slice(0, ++dataIndex), detachedContainer,
-				scales, uniqueDates, sliderContainer })
-
-		} else {
-
-			// no, we're at the end - stop.
-			initialTimer.stop()
-		}
-
-	})
 
 }
 
