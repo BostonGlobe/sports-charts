@@ -1,4 +1,5 @@
 import setSliderTooltip from './setSliderTooltip.js'
+import setSlider from './setSlider.js'
 
 const setupSlider = ({ container, labels, max }) => {
 
@@ -20,6 +21,7 @@ const setupSlider = ({ container, labels, max }) => {
 	input.value = input.getAttribute('min')
 
 	// position the tooltip correctly: at the beginning
+	setSlider({ container, value: 1 })
 	setSliderTooltip({ container, text: start, index: 0 })
 
 }
