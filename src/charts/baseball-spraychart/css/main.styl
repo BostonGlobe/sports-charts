@@ -6,7 +6,7 @@ $notes-size = 0.65em
 $spacer = 0.75em
 
 @require './../../../base/css/variables.styl'
-@require './slider.styl'
+@require './../../../base/css/slider.styl'
 @require './key.styl'
 
 *, *:before, *:after
@@ -52,42 +52,3 @@ canvas
 	position absolute
 	top 0
 	left 0
-
-.slider-container
-	width 100%
-	margin 1em 0 0 0
-	padding-bottom 1em
-	text-align center
-	position relative
-	border-bottom solid $text 1px
-
-	input
-		display block
-		margin 0 auto
-		width 99%
-
-	.dates
-		width 100%
-		overflow hidden
-		margin-top 0.25em
-		span
-			font-size $label-size
-
-		.start
-			float left
-
-		.end
-			float right
-
-	.tooltip-wrapper
-		position relative
-		overflow hidden
-		margin 0.25em auto
-
-		.tooltip
-			position absolute
-			top 0
-
-			span
-				// font-size $label-size
-				white-space nowrap
