@@ -1,10 +1,10 @@
-import { scaleLinear, scaleOrdinal, scaleQuantile } from 'd3-scale'
+import { scaleLinear, scaleQuantile, scaleQuantize } from 'd3-scale'
 import { select } from 'd3-selection'
-import { max } from 'd3-array'
 import { hexbin } from 'd3-hexbin'
 import { $ } from '../../../utils/dom'
+import jenks from './jenks'
 
-import { dimensions, binRatio, minHexRadius, colors } from './config'
+import { dimensions, binRatio, colors, strokes, radiusRangeFactors, percentRange } from './config'
 
 const { left, right, top, bottom } = dimensions
 const courtWidth = right - left
@@ -13,16 +13,19 @@ const courtRatio = courtHeight / courtWidth
 const scales = {
 	shotX: scaleLinear().domain([left, right]),
 	shotY: scaleLinear().domain([top, bottom]),
-	color: scaleQuantile().domain([-10, 10]).range([colors.dark, colors.neutral, colors.green]),
-	radius: scaleLinear().clamp(true),
+	color: scaleQuantize().domain([-percentRange, percentRange]).range(colors),
+	stroke: scaleQuantize().domain([-percentRange, percentRange]).range(strokes),
+	radius: scaleQuantile(),
 }
 
 const hexbinner = hexbin()
 
 function updateScales({ width, height, hexRadius }) {
-	scales.shotX.range([0, width])
+	scales.shotX.range([width, 0])
 	scales.shotY.range([height, 0])
-	scales.radius.range([minHexRadius, hexRadius])
+
+	const radiusRange = radiusRangeFactors.map(f => f * hexRadius)
+	scales.radius.range(radiusRange)
 }
 
 function updateContainer({ width, height }) {
@@ -54,7 +57,7 @@ function setup() {
 	handleResize()
 }
 
-function getPercentMade(d) {
+function getHexMade(d) {
 	return d.reduce((previous, current) => {
 		const datum = current[2]
 		const madeValue = datum.made ? 1 : 0
@@ -82,7 +85,7 @@ function getWeightedAverage(d, averages, date) {
 			const zones = getZonesByDate(averages, date)
 			const percent = getPercentFromZone(zones, datum.zone)
 			const count = 1
-			previous[datum.zone] = { count, percent } 
+			previous[datum.zone] = { count, percent }
 		}
 		return previous
 	}, {})
@@ -104,11 +107,18 @@ function getLatestDate(shots) {
 
 // TODO remove
 function testFilter(data) {
-	data.shots = data.shots.filter(s => s.zone.indexOf('three') > -1) 
+	// console.log(data.shots[0])
+	// data.shots = data.shots.filter(s => +s.quarter > 3)
+	// data.shots = data.shots.filter(s => s.zone.indexOf('three') > -1)
+	// data.shots = data.shots.filter(s => +s.quarter > 3)
+	// data.shots = data.shots.filter(s => +s.zone.indexOf('three (right') > -1)
+	// console.table(data.shots)
+	// console.log(data.shots.length)
 	return data
 }
+
 function updateData(data) {
-	// data = testFilter(data)
+	data = testFilter(data)
 	const latestDate = getLatestDate(data.shots)
 
 	const points = data.shots.map(datum => ({
@@ -117,12 +127,33 @@ function updateData(data) {
 		y: scales.shotY(datum.shotY),
 	}))
 
-	const hexbinData = hexbinner(points.map(point => {
-		return [point.x, point.y, { ...point }]
-	}))
+	const hexbinData = hexbinner(points.map(point =>
+		[point.x, point.y, { ...point }]
+	))
 
-	const maxData = max(hexbinData, d => d.length)
-	scales.radius.domain([1, maxData])
+	const jenksData = hexbinData.map(d => d.length)
+	const jenksDomain = jenks(jenksData, 3)
+	scales.radius.domain(jenksDomain)
+
+	const getFill = (d) => {
+		const made = getHexMade(d)
+		const average = getWeightedAverage(d, data.averages, latestDate)
+		const percent = +((made / d.length * 1000) / 10).toFixed(2)
+		const diff = percent - average
+		const color = scales.color(diff)
+		if (d.length > 0) return color
+		return 'transparent'
+		// return color
+	}
+
+	const getStroke = (d) => {
+		const made = getHexMade(d)
+		const average = getWeightedAverage(d, data.averages, latestDate)
+		const percent = +((made / d.length * 1000) / 10).toFixed(2)
+		const diff = percent - average
+		const stroke = scales.stroke(diff)
+		return stroke
+	}
 
 	select('svg').append('g')
 		.attr('clip-path', 'url(#clip)')
@@ -132,16 +163,8 @@ function updateData(data) {
 			.attr('class', 'hexagon')
 			.attr('d', d => hexbinner.hexagon(scales.radius(d.length)))
 			.attr('transform', d => `translate(${d.x}, ${d.y})`)
-			.style('fill', d => {
-				const made = getPercentMade(d)
-				const average = getWeightedAverage(d, data.averages, latestDate)
-				const percent = +((made / d.length * 1000) / 10).toFixed(2)
-				const diff = percent - average
-				const color = scales.color(diff)
-				// console.table([{percent, average, diff, color}])
-				return color
-			})
-			.style('stroke', 'none')
+			.style('fill', d => getFill(d, latestDate))
+			.style('stroke', d => getStroke(d, latestDate))
 }
 
 export default { setup, updateData }
