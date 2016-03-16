@@ -83,7 +83,7 @@ const handleInputChange = ({ e, uniqueDates, data }) => {
 }
 
 // this gets fired when we receive data
-const handleDataLoaded = (err, rawdata) => {
+const handleDataLoaded = (err, payload) => {
 
 	if (err) {
 		// TODO: better error handling
@@ -91,8 +91,11 @@ const handleDataLoaded = (err, rawdata) => {
 		return
 	}
 
+	// set hed
+	document.querySelector('header span').textContent = payload.hed
+
 	// format the data (i.e. turn gamedate into Date, etc)
-	const data = formatData(rawdata)
+	const data = formatData(payload.data)
 
 	// get array of unique dates
 	const uniqueDates = getUniqueDates(data)
