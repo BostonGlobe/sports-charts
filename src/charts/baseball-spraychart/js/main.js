@@ -155,7 +155,7 @@ const handleDataLoaded = (err, payload) => {
 
 	const { hed, data, isChartbuilder } = payload
 	if (hed) handleNewHed(hed)
-	if (data) handleNewData(data, isChartbuilder)
+	if (data && data.length) handleNewData(data, isChartbuilder)
 
 }
 
