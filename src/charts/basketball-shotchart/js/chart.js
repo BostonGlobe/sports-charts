@@ -4,7 +4,7 @@ import { hexbin } from 'd3-hexbin'
 import { $ } from '../../../utils/dom'
 import jenks from './jenks'
 
-import { dimensions, binRatio, colors, strokes, radiusRangeFactors, percentRange } from './config'
+import { dimensions, binRatio, radiusRangeFactors, percentRange, colorClasses } from './config'
 
 const { left, right, top, bottom } = dimensions
 const courtWidth = right - left
@@ -13,8 +13,8 @@ const courtRatio = courtHeight / courtWidth
 const scales = {
 	shotX: scaleLinear().domain([left, right]),
 	shotY: scaleLinear().domain([top, bottom]),
-	color: scaleQuantize().domain([-percentRange, percentRange]).range(colors),
-	stroke: scaleQuantize().domain([-percentRange, percentRange]).range(strokes),
+	color: scaleQuantize().domain([-percentRange, percentRange]).range(colorClasses),
+	// stroke: scaleQuantize().domain([-percentRange, percentRange]).range(colorClasses),
 	radius: scaleQuantile(),
 }
 
@@ -66,14 +66,6 @@ function getHexMade(d) {
 	}, 0)
 }
 
-function getZonesByDate(averages, date) {
-	return averages.filter(day => day.date === date)[0].zones
-}
-
-function getPercentFromZone(zones, zone) {
-	return zones[zone].percent
-}
-
 function getWeightedAverage(d, averages, date) {
 	// must combine averages since multiple zones might make up a bin
 	const zoneDict = {}
@@ -82,8 +74,8 @@ function getWeightedAverage(d, averages, date) {
 		if (zoneDict[datum.zone]) {
 			zoneDict[datum.zone].count += 1
 		} else {
-			const zones = getZonesByDate(averages, date)
-			const percent = getPercentFromZone(zones, datum.zone)
+			const zones = averages.filter(day => day.date === date)[0].zones
+			const percent = zones[datum.zone].percent
 			const count = 1
 			zoneDict[datum.zone] = { count, percent }
 		}
@@ -98,13 +90,13 @@ function getWeightedAverage(d, averages, date) {
 	, 0)
 
 	const weightedAverage = +(sumPercents / count).toFixed(2)
-	console.log(weightedZones, weightedAverage)
+	// console.log(weightedZones, weightedAverage)
 	return weightedAverage
 }
 
 function getLatestDate(shots) {
-	const sorted = shots.sort((a, b) => (+b.gameDate) - (+a.gameDate))
-	return sorted[0].gameDate
+	const sorted = shots.sort((a, b) => (+a.gameDate) - (+b.gameDate))
+	return sorted.pop().gameDate
 }
 
 // TODO remove
@@ -119,11 +111,11 @@ function testFilter(data) {
 	return data
 }
 
-function updateData(data) {
-	data = testFilter(data)
-	const latestDate = getLatestDate(data.shots)
+function updateData({ averages, shots }) {
+	shots = testFilter(shots)
+	const latestDate = getLatestDate(shots)
 
-	const points = data.shots.map(datum => ({
+	const points = shots.map(datum => ({
 		...datum,
 		x: scales.shotX(datum.shotX),
 		y: scales.shotY(datum.shotY),
@@ -137,24 +129,15 @@ function updateData(data) {
 	const jenksDomain = jenks(jenksData, 3)
 	scales.radius.domain(jenksDomain)
 
-	const getFill = (d) => {
+	const getColor = (d) => {
 		const made = getHexMade(d)
-		const average = getWeightedAverage(d, data.averages, latestDate)
+		const average = getWeightedAverage(d, averages, latestDate)
 		const percent = +((made / d.length * 1000) / 10).toFixed(2)
 		const diff = percent - average
 		const color = scales.color(diff)
 		if (d.length > 0) return color
 		return 'transparent'
 		// return color
-	}
-
-	const getStroke = (d) => {
-		const made = getHexMade(d)
-		const average = getWeightedAverage(d, data.averages, latestDate)
-		const percent = +((made / d.length * 1000) / 10).toFixed(2)
-		const diff = percent - average
-		const stroke = scales.stroke(diff)
-		return stroke
 	}
 
 	select('svg').append('g')
@@ -164,14 +147,8 @@ function updateData(data) {
 		.enter().append('path')
 			.attr('class', 'hexagon')
 			.attr('d', d => hexbinner.hexagon(scales.radius(d.length)))
-		// .enter().append('circle')
-		// 	.attr('class', 'hexagon')
-		// 	.attr('cx', d => 0)
-		// 	.attr('cy', d => 0)
-		// 	.attr('r', d => scales.radius(d.length))
 			.attr('transform', d => `translate(${d.x}, ${d.y})`)
-			.style('fill', d => getFill(d, latestDate))
-			.style('stroke', d => getStroke(d, latestDate))
+			.attr('class', d => getColor(d, latestDate))
 }
 
 export default { setup, updateData }
