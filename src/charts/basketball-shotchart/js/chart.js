@@ -3,6 +3,7 @@ import { select } from 'd3-selection'
 import { hexbin } from 'd3-hexbin'
 import { $ } from '../../../utils/dom'
 import jenks from './jenks'
+import drawCourt from './drawCourt'
 
 import { dimensions, binRatio, radiusRangeFactors, percentRange, colorClasses } from './config'
 
@@ -17,7 +18,6 @@ const scales = {
 	// stroke: scaleQuantize().domain([-percentRange, percentRange]).range(colorClasses),
 	radius: scaleQuantile(),
 }
-
 const hexbinner = hexbin()
 
 function updateScales({ width, height, hexRadius }) {
@@ -42,12 +42,19 @@ function handleResize() {
 	hexbinner.radius(hexRadius)
 
 	updateScales({ width, height, hexRadius })
+	const court = select('.court')
+	const basket = select('.basket')
+	drawCourt({ court, basket, width, height })
 }
 
 function setup() {
 	// create svg and containers for vis
 	const svg = select('.chart-container').append('svg')
-	svg.append('g').attr('hexbin-group')
+
+	svg.append('g').attr('class', 'court')
+	svg.append('g').attr('class', 'hexbin')
+	svg.append('g').attr('class', 'basket')
+
 
 	svg.append('clipPath')
 		.attr('id', 'clip')
@@ -100,15 +107,15 @@ function getLatestDate(shots) {
 }
 
 // TODO remove
-function testFilter(data) {
+function testFilter(shots) {
 	// console.log(data.shots[0])
 	// data.shots = data.shots.filter(s => +s.quarter > 3)
-	// data.shots = data.shots.filter(s => s.zone.indexOf('three') > -1)
+	// shots = shots.filter(s => s.zone.indexOf('three') > -1)
 	// data.shots = data.shots.filter(s => +s.quarter > 3)
 	// data.shots = data.shots.filter(s => +s.zone.indexOf('three (right') > -1)
 	// console.table(data.shots)
 	// console.log(data.shots.length)
-	return data
+	return shots
 }
 
 function updateData({ averages, shots }) {
@@ -140,7 +147,7 @@ function updateData({ averages, shots }) {
 		// return color
 	}
 
-	select('svg').append('g')
+	select('.hexbin')
 		.attr('clip-path', 'url(#clip)')
 		.selectAll('.hexagon')
 		.data(hexbinData)

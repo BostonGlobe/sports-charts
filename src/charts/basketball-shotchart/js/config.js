@@ -5,7 +5,7 @@ const dimensions = {
 	bottom: 41.75,
 }
 
-const binRatio = 1 / 37.5
+const binRatio = 1 / 32.5
 const radiusRangeFactors = [0.25, 0.5, 0.75, 1]
 
 const distanceBinSize = 4
