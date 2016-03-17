@@ -79,6 +79,7 @@ function getWeightedAverage(d, averages, date) {
 			zoneDict[datum.zone].count += 1
 		} else {
 			const zones = averages.filter(day => day.date === date)[0].zones
+			// console.log(datum)
 			const percent = zones[datum.zone].percent
 			const count = 1
 			zoneDict[datum.zone] = { count, percent }
@@ -106,12 +107,13 @@ function getLatestDate(shots) {
 // TODO remove
 function testFilter(shots) {
 	// console.log(data.shots[0])
-	// data.shots = data.shots.filter(s => +s.quarter > 3)
+	shots = shots.filter(s => s.zone.indexOf('restricted') === -1)
+	// shots = shots.filter(s => +s.quarter > 3)
 	// shots = shots.filter(s => s.zone.indexOf('three') > -1)
-	// data.shots = data.shots.filter(s => +s.quarter > 3)
-	// data.shots = data.shots.filter(s => +s.zone.indexOf('three (right') > -1)
-	// console.table(data.shots)
-	// console.log(data.shots.length)
+	// shots = shots.filter(s => +s.quarter > 3)
+	// shots = shots.filter(s => +s.zone.indexOf('three (right') > -1)
+	// console.table(shots)
+	// console.log(shots.length)
 	return shots
 }
 

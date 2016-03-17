@@ -1,22 +1,17 @@
-import { distanceBinSize, maxDistanceBin } from './config'
-import { zones } from './zones'
+import { getZoneFromShot } from 'nba-shot-zones'
 import getJSON from 'get-json-lite'
 
 function calculateDistance(x, y) {
 	return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)).toFixed(2)
 }
 
-function calculateDistanceBin(distance) {
-	return Math.min(maxDistanceBin, Math.floor(distance / distanceBinSize))
-}
-
-function findZone(args) {
-	return zones.filter(z => z.check(args))[0].name
-}
-
 function loadAverageData(cb) {
 	const url = '../../../test-data/basketball-shotchart-averages-zones.json'
 	getJSON(url, cb)
+}
+
+function getZoneGroup(zone) {
+	return zone
 }
 
 export default function transform(data, cb) {
@@ -36,8 +31,8 @@ export default function transform(data, cb) {
 				const shotY = +datum['shot-y']
 
 				const distance = +calculateDistance(shotX, shotY)
-				const distanceBin = +calculateDistanceBin(distance)
-				const zone = findZone({ shotX, shotY, distance })
+				const zone = getZoneFromShot({ x: shotX, y: shotY })
+				const zoneGroup = getZoneGroup(zone)
 				const made = datum.event.toLowerCase().indexOf('missed') < 0
 
 				return {
@@ -52,8 +47,8 @@ export default function transform(data, cb) {
 					shotY,
 					made,
 					distance,
-					distanceBin,
 					zone,
+					zoneGroup,
 				}
 			})
 

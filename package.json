@@ -36,6 +36,7 @@
     "fontfaceobserver": "1.6.4",
     "get-json-lite": "2.0.0",
     "lodash.uniq": "4.2.0",
+    "nba-shot-zones": "^1.0.1",
     "pym-iframe-resizer": "4.0.0"
   },
   "devDependencies": {
