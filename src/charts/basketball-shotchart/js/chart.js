@@ -15,7 +15,6 @@ const scales = {
 	shotX: scaleLinear().domain([left, right]),
 	shotY: scaleLinear().domain([top, bottom]),
 	color: scaleQuantize().domain([-percentRange, percentRange]).range(colorClasses),
-	// stroke: scaleQuantize().domain([-percentRange, percentRange]).range(colorClasses),
 	radius: scaleQuantile(),
 }
 const hexbinner = hexbin()
@@ -48,13 +47,11 @@ function handleResize() {
 }
 
 function setup() {
-	// create svg and containers for vis
 	const svg = select('.chart-container').append('svg')
 
 	svg.append('g').attr('class', 'court')
 	svg.append('g').attr('class', 'hexbin')
 	svg.append('g').attr('class', 'basket')
-
 
 	svg.append('clipPath')
 		.attr('id', 'clip')

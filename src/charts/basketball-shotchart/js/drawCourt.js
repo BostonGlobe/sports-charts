@@ -51,8 +51,8 @@ export default function drawCourt({ court, basket, width, height }) {
 	const threeArc = arc()
 		.innerRadius(sz(threeFromHoop))
 		.outerRadius(sz(threeFromHoop))
-		.startAngle(-pi / 2.636)
-		.endAngle(pi / 2.636)
+		.startAngle(-pi / 2.64)
+		.endAngle(pi / 2.64)
 
 	court.append('path')
 		.attr('class', 'court-line three-arc round')
