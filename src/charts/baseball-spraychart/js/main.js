@@ -107,8 +107,8 @@ const handleNewData = (newData, isChartbuilder) => {
 
 		// create the slider start/end labels
 		const labels = {
-			start: dateFormat(data[0].gamedate),
-			end: dateFormat(data[data.length - 1].gamedate),
+			start: data.length ? dateFormat(data[0].gamedate) : '',
+			end: data.lenght ? dateFormat(data[data.length - 1].gamedate) : '',
 		}
 
 		// setup slider (set input max, set start/end labels)
@@ -155,7 +155,7 @@ const handleDataLoaded = (err, payload) => {
 
 	const { hed, data, isChartbuilder } = payload
 	if (hed) handleNewHed(hed)
-	if (data && data.length) handleNewData(data, isChartbuilder)
+	if (data) handleNewData(data, isChartbuilder)
 
 }
 
