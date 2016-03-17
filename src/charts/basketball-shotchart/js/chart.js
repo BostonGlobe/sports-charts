@@ -76,28 +76,30 @@ function getPercentFromZone(zones, zone) {
 
 function getWeightedAverage(d, averages, date) {
 	// must combine averages since multiple zones might make up a bin
-	const zonesWeighted = d.reduce((previous, current) => {
-		const datum = current[2]
-		if (previous[datum.zone]) {
-			previous[datum.zone].count += 1
-		}
-		else {
+	const zoneDict = {}
+	d.forEach(info => {
+		const datum = info[2]
+		if (zoneDict[datum.zone]) {
+			zoneDict[datum.zone].count += 1
+		} else {
 			const zones = getZonesByDate(averages, date)
 			const percent = getPercentFromZone(zones, datum.zone)
 			const count = 1
-			previous[datum.zone] = { count, percent }
+			zoneDict[datum.zone] = { count, percent }
 		}
-		return previous
-	}, {})
+	})
 
-	let count = 0
-	let total = 0
-	for (var z in zonesWeighted) {
-		count += zonesWeighted[z].count
-		total += zonesWeighted[z].count * zonesWeighted[z].percent
-	}
+	const zones = Object.keys(zoneDict)
+	const weightedZones = zones.map(zone => ({ zone, values: zoneDict[zone] }))
 
-	return +(total / count).toFixed()
+	const count = weightedZones.reduce((sum, z) => sum + z.values.count, 0)
+	const sumPercents = weightedZones.reduce((sum, z) =>
+		sum + z.values.count * z.values.percent
+	, 0)
+
+	const weightedAverage = +(sumPercents / count).toFixed(2)
+	console.log(weightedZones, weightedAverage)
+	return weightedAverage
 }
 
 function getLatestDate(shots) {
@@ -162,6 +164,11 @@ function updateData(data) {
 		.enter().append('path')
 			.attr('class', 'hexagon')
 			.attr('d', d => hexbinner.hexagon(scales.radius(d.length)))
+		// .enter().append('circle')
+		// 	.attr('class', 'hexagon')
+		// 	.attr('cx', d => 0)
+		// 	.attr('cy', d => 0)
+		// 	.attr('r', d => scales.radius(d.length))
 			.attr('transform', d => `translate(${d.x}, ${d.y})`)
 			.style('fill', d => getFill(d, latestDate))
 			.style('stroke', d => getStroke(d, latestDate))
