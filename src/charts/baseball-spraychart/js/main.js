@@ -161,4 +161,4 @@ const handleDataLoaded = (err, payload) => {
 
 // this starts the pym resizer and takes a callback.
 // the callback will fire when we receive data
-setupIframe({ handleDataLoaded })
+setupIframe(handleDataLoaded)
