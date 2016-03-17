@@ -82,26 +82,19 @@ const handleInputChange = ({ e, uniqueDates, data }) => {
 
 }
 
-// this gets fired when we receive data
-const handleDataLoaded = (err, payload) => {
+const handleNewHed = (hed) =>
+	document.querySelector('header span').textContent = hed
 
-	if (err) {
-		// TODO: better error handling
-		console.log("Oops. Look like we couldn't load this chart's data.")
-		return
-	}
-
-	// set hed
-	document.querySelector('header span').textContent = payload.hed
+const handleNewData = (newData, isChartbuilder) => {
 
 	// format the data (i.e. turn gamedate into Date, etc)
-	const data = formatData(payload.data)
+	const data = formatData(newData)
 
 	// get array of unique dates
 	const uniqueDates = getUniqueDates(data)
 
 	// if this is chartbuilder, don't animate
-	if (payload.isChartbuilder) {
+	if (isChartbuilder) {
 
 		// draw data
 		drawData({ data, detachedContainer,
@@ -148,6 +141,21 @@ const handleDataLoaded = (err, payload) => {
 		})
 
 	}
+
+}
+
+// this gets fired when we receive data
+const handleDataLoaded = (err, payload) => {
+
+	if (err) {
+		// TODO: better error handling
+		console.log("Oops. Look like we couldn't load this chart's data.")
+		return
+	}
+
+	const { hed, data, isChartbuilder } = payload
+	if (hed) handleNewHed(hed)
+	if (data) handleNewData(data, isChartbuilder)
 
 }
 
