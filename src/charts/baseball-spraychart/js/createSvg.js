@@ -6,6 +6,7 @@ const π = Math.PI
 
 const createSvg = ({ container, margins, width, height, parkSize }) => {
 
+	// dimensions are coming in doubled, for canvas. we need to halve them.
 	let { top, right, bottom, left } = margins
 	top = top / 2
 	right = right / 2

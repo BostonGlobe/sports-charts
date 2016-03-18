@@ -1,7 +1,22 @@
 import getJSON from 'get-json-lite'
 import pymIframe from 'pym-iframe-resizer'
 
-const setup = (handleDataLoaded) => {
+const setup = (handleNewData) => {
+
+	const handleDataLoaded = (err, payload) => {
+
+		if (err) {
+			// TODO: better error handling
+			console.log("Oops. Look like we couldn't load this chart's data.")
+			return
+		}
+
+		const { hed, data, isChartbuilder } = payload
+
+		if (hed) document.querySelector('header h1').textContent = hed
+		if (data) handleNewData(data, isChartbuilder)
+
+	}
 
 	const pymChild = pymIframe({})
 
