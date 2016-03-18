@@ -52,34 +52,58 @@ function handleResize() {
 }
 
 function setupKey() {
-	const freqSvg = select('.key-frequency').append('svg')
-	freqSvg.append('g')
+	select('.key-frequency')
+		.append('svg').attr('width', 0).attr('height', 0)
+			.append('g')
+
+	select('.key-average')
+		.append('svg').attr('width', 0).attr('height', 0)
+			.append('g')
+}
+
+function updateKeyFrequency(width) {
+	// freq
+	const freq = select('.key-frequency')
+	const svg = freq.select('svg')
+	const g = svg.select('g')
+
+	const range = scales.radius.range()
+	const max = range[range.length - 1]
+	const padding = max * 2
+
+	svg.attr('width', width).attr('height', padding * 2)
+	g.attr('transform', `translate(${padding / 2},${padding})`)
+
+	// bind range data to hexagons
+	const hexagons = g.selectAll('.hexagon').data(range)
+
+	// enter / update hexagons
+	hexagons.enter()
+		.append('path')
+			.attr('class', 'hexagon')
+			.attr('d', hexbinner.hexagon(0))
+		.merge(hexagons)
+		.attr('transform', (d, i) => `translate(${d * 2 + (i * d)}, 0)`)
+		.attr('d', d => hexbinner.hexagon(d))
+
+	// labels
+	// g.select('.label-fewer').data([1])
+	// 	.enter()
+	// 	.append('text')
+	// 	.text('fewer shots')
+
+	// g.append('text')
+	// 	.text('fewer shots')
+		
+}
+
+function updateKeyAverage() {
+
 }
 
 function updateKey() {
 	const width = Math.floor($('.chart-container').offsetWidth)
-
-	// freq
-	const range = scales.radius.range()
-	const freq = select('.key-frequency')
-	const freqSvg = freq.select('svg')
-	const freqG = freqSvg.select('g')
-	const freqHexagons = freqG.selectAll('.hexagon').data(range)
-
-	const freqMax = range.pop()
-	const padding = freqMax * 2
-
-	freqSvg.attr('width', width).attr('height', padding * 2)
-	freqG.attr('transform', `translate(${padding / 2},${padding})`)
-
-	freqHexagons.enter()
-		.append('path')
-			.attr('class', 'hexagon')
-			.attr('d', hexbinner.hexagon(0))
-		.merge(freqHexagons)
-		.attr('transform', (d, i) => `translate(${i * padding}, 0)`)
-		.attr('d', d => hexbinner.hexagon(d))
-
+	updateKeyFrequency(width)
 }
 
 function setup() {
