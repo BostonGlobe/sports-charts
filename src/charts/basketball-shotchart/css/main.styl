@@ -1,18 +1,19 @@
 // these should be in base / util colors.styl
 $gray-light = #ededed
 
-// $above = #ef8a62
-// $average = #ccc
-// $below = #67a9cf
+$above = #ef8a62
+$average = #ccc
+$below = #67a9cf
 
-$above = #008048
-$average = #02C664
-$below = #7EF183
+// $above = #008048
+// $average = #02C664
+// $below = #7EF183
 
 $court = rgba(#fff, 1)
 $basket = rgba(#fff, 0.75)
 $strokeWidth = 2px 
-svg 
+
+.chart-container svg 
 	background-color $gray-light
 
 .above
@@ -21,6 +22,8 @@ svg
 	fill $average
 .below
 	fill $below
+	// fill transparent
+	// stroke $above
 
 .court 
 	&-line

@@ -28,7 +28,7 @@ function updateScales({ width, height, hexRadius }) {
 }
 
 function updateContainer({ width, height }) {
-	select('svg').attr('width', width).attr('height', height)
+	select('.chart-container svg').attr('width', width).attr('height', height)
 	select('#clip').select('rect').attr('width', width).attr('height', height)
 }
 
@@ -46,6 +46,11 @@ function handleResize() {
 	drawCourt({ court, basket, width, height })
 }
 
+function setupKey() {
+	const svgFreq = select('.key-frequency').append('svg')
+	svgFreq.append('g')
+}
+
 function setup() {
 	const svg = select('.chart-container').append('svg')
 
@@ -58,6 +63,7 @@ function setup() {
 		.append('rect')
 			.attr('class', 'mesh')
 
+	setupKey()
 	handleResize()
 }
 
@@ -107,7 +113,7 @@ function getLatestDate(shots) {
 // TODO remove
 function testFilter(shots) {
 	// console.log(data.shots[0])
-	shots = shots.filter(s => s.zone.indexOf('restricted') === -1)
+	shots = shots.filter(s => s.zone.indexOf('three') > -1)
 	// shots = shots.filter(s => +s.quarter > 3)
 	// shots = shots.filter(s => s.zone.indexOf('three') > -1)
 	// shots = shots.filter(s => +s.quarter > 3)
@@ -132,8 +138,13 @@ function updateData({ averages, shots }) {
 	))
 
 	const jenksData = hexbinData.map(d => d.length)
-	const jenksDomain = jenks(jenksData, 3)
+	const jenksDomain = jenks(jenksData, radiusRangeFactors.length - 1)
 	scales.radius.domain(jenksDomain)
+	
+	jenksDomain.map(j => console.log(j, scales.radius(j)))
+	// for (var i = 1; i < 52; i++) {
+	// 	console.log(i, scales.radius(i))
+	// }
 
 	const getColor = (d) => {
 		const made = getHexMade(d)
@@ -152,7 +163,11 @@ function updateData({ averages, shots }) {
 		.data(hexbinData)
 		.enter().append('path')
 			.attr('class', 'hexagon')
-			.attr('d', d => hexbinner.hexagon(scales.radius(d.length)))
+			.attr('d', d => {
+				const r = scales.radius(d.length)
+				// console.log(d.length, r)
+				return hexbinner.hexagon(r)
+			})
 			.attr('transform', d => `translate(${d.x}, ${d.y})`)
 			.attr('class', d => getColor(d, latestDate))
 }

@@ -5,10 +5,10 @@ const dimensions = {
 	bottom: 41.75,
 }
 
-const binRatio = 1 / 50
+const binRatio = 1 / 35
 const radiusRangeFactors = [0.25, 0.5, 0.75, 1]
 
-const percentRange = 15
+const percentRange = 12
 
 const colorClasses = ['below', 'average', 'above']
 
