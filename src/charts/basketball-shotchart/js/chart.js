@@ -1,6 +1,6 @@
 import { scaleLinear, scaleQuantile, scaleQuantize } from 'd3-scale'
-import { select, selectAll } from 'd3-selection'
-import { transition } from 'd3-transition'
+import { select } from 'd3-selection'
+import 'd3-transition'
 import { hexbin } from 'd3-hexbin'
 import { $ } from '../../../utils/dom'
 import jenks from './jenks'
@@ -17,7 +17,7 @@ const scales = {
 	shotY: scaleLinear().domain([top, bottom]),
 	color: scaleQuantize().domain([-percentRange, percentRange]).range(colorClasses),
 	radius: scaleQuantile(),
-	delay: scaleQuantize(),
+	delay: scaleQuantile(),
 }
 const hexbinner = hexbin()
 
@@ -52,8 +52,34 @@ function handleResize() {
 }
 
 function setupKey() {
-	const svgFreq = select('.key-frequency').append('svg')
-	svgFreq.append('g')
+	const freqSvg = select('.key-frequency').append('svg')
+	freqSvg.append('g')
+}
+
+function updateKey() {
+	const width = Math.floor($('.chart-container').offsetWidth)
+
+	// freq
+	const range = scales.radius.range()
+	const freq = select('.key-frequency')
+	const freqSvg = freq.select('svg')
+	const freqG = freqSvg.select('g')
+	const freqHexagons = freqG.selectAll('.hexagon').data(range)
+
+	const freqMax = range.pop()
+	const padding = freqMax * 2
+
+	freqSvg.attr('width', width).attr('height', padding * 2)
+	freqG.attr('transform', `translate(${padding / 2},${padding})`)
+
+	freqHexagons.enter()
+		.append('path')
+			.attr('class', 'hexagon')
+			.attr('d', hexbinner.hexagon(0))
+		.merge(freqHexagons)
+		.attr('transform', (d, i) => `translate(${i * padding}, 0)`)
+		.attr('d', d => hexbinner.hexagon(d))
+
 }
 
 function setup() {
@@ -120,8 +146,6 @@ function testFilter(shots) {
 	// console.log(data.shots[0])
 	// shots = shots.filter(s => s.zone.indexOf('three') > -1)
 	// shots = shots.filter(s => +s.quarter > 3)
-	// shots = shots.filter(s => s.zone.indexOf('three') > -1)
-	// shots = shots.filter(s => +s.quarter > 3)
 	// shots = shots.filter(s => +s.zone.indexOf('three (right') > -1)
 	// console.table(shots)
 	// console.log(shots.length)
@@ -146,6 +170,7 @@ function updateData({ averages, shots }) {
 	const jenksDomain = jenks(jenksData, radiusRangeFactors.length - 1)
 	scales.radius.domain(jenksDomain)
 	scales.delay.domain(jenksDomain)
+	updateKey()
 
 	// jenksDomain.map(j => console.log(j, scales.radius(j)))
 
