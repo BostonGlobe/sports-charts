@@ -1,11 +1,12 @@
 import { scaleLinear, scaleQuantile, scaleQuantize } from 'd3-scale'
-import { select } from 'd3-selection'
+import { select, selectAll } from 'd3-selection'
+import { transition } from 'd3-transition'
 import { hexbin } from 'd3-hexbin'
 import { $ } from '../../../utils/dom'
 import jenks from './jenks'
 import drawCourt from './drawCourt'
 
-import { dimensions, binRatio, radiusRangeFactors, percentRange, colorClasses } from './config'
+import { dimensions, binRatio, radiusRangeFactors, delayRangeFactors, delayTime, percentRange, colorClasses } from './config'
 
 const { left, right, top, bottom } = dimensions
 const courtWidth = right - left
@@ -16,6 +17,7 @@ const scales = {
 	shotY: scaleLinear().domain([top, bottom]),
 	color: scaleQuantize().domain([-percentRange, percentRange]).range(colorClasses),
 	radius: scaleQuantile(),
+	delay: scaleQuantize(),
 }
 const hexbinner = hexbin()
 
@@ -25,6 +27,9 @@ function updateScales({ width, height, hexRadius }) {
 
 	const radiusRange = radiusRangeFactors.map(f => f * hexRadius)
 	scales.radius.range(radiusRange)
+
+	const delayRange = delayRangeFactors.map(f => f * delayTime)
+	scales.delay.range(delayRange)
 }
 
 function updateContainer({ width, height }) {
@@ -55,7 +60,7 @@ function setup() {
 	const svg = select('.chart-container').append('svg')
 
 	svg.append('g').attr('class', 'court')
-	svg.append('g').attr('class', 'hexbin')
+	svg.append('g').attr('class', 'hexbin').attr('clip-path', 'url(#clip)')
 	svg.append('g').attr('class', 'basket')
 
 	svg.append('clipPath')
@@ -113,7 +118,7 @@ function getLatestDate(shots) {
 // TODO remove
 function testFilter(shots) {
 	// console.log(data.shots[0])
-	shots = shots.filter(s => s.zone.indexOf('three') > -1)
+	// shots = shots.filter(s => s.zone.indexOf('three') > -1)
 	// shots = shots.filter(s => +s.quarter > 3)
 	// shots = shots.filter(s => s.zone.indexOf('three') > -1)
 	// shots = shots.filter(s => +s.quarter > 3)
@@ -140,11 +145,9 @@ function updateData({ averages, shots }) {
 	const jenksData = hexbinData.map(d => d.length)
 	const jenksDomain = jenks(jenksData, radiusRangeFactors.length - 1)
 	scales.radius.domain(jenksDomain)
-	
-	jenksDomain.map(j => console.log(j, scales.radius(j)))
-	// for (var i = 1; i < 52; i++) {
-	// 	console.log(i, scales.radius(i))
-	// }
+	scales.delay.domain(jenksDomain)
+
+	// jenksDomain.map(j => console.log(j, scales.radius(j)))
 
 	const getColor = (d) => {
 		const made = getHexMade(d)
@@ -157,19 +160,38 @@ function updateData({ averages, shots }) {
 		// return color
 	}
 
-	select('.hexbin')
-		.attr('clip-path', 'url(#clip)')
+	const hexagons = select('.hexbin')
 		.selectAll('.hexagon')
-		.data(hexbinData)
-		.enter().append('path')
+		.data(hexbinData, d => `${d.i}-${d.j}`)
+
+	hexagons.exit()
+		.remove()
+
+	const enterSelection = hexagons.enter()
+		.append('path')
 			.attr('class', 'hexagon')
-			.attr('d', d => {
-				const r = scales.radius(d.length)
-				// console.log(d.length, r)
-				return hexbinner.hexagon(r)
-			})
-			.attr('transform', d => `translate(${d.x}, ${d.y})`)
-			.attr('class', d => getColor(d, latestDate))
+			.attr('d', hexbinner.hexagon(0))
+
+	enterSelection.merge(hexagons)
+		.attr('transform', d => `translate(${d.x}, ${d.y})`)
+		.attr('class', d => getColor(d, latestDate))
+		.transition()
+			.duration(1500)
+			.delay(d => scales.delay(d.length))
+			.attr('d', d => hexbinner.hexagon(scales.radius(d.length)))
+
+
+	// TODO remove test plot all points
+	// select('.hexbin')
+	// 	.selectAll('circle')
+	// 	.data(points)
+	// 	.enter()
+	// 	.append('circle')
+	// 	.attr('cx', d => d.x)
+	// 	.attr('cy', d => d.y)
+	// 	.attr('r', 2)
+	// 	.style('opacity', 0.5)
+	// 	.attr('class', d => d.made ? 'above' : 'below')
 }
 
 export default { setup, updateData }
