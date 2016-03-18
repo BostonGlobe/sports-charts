@@ -13,7 +13,7 @@ const setup = (handleNewData) => {
 
 		const { hed, data, isChartbuilder } = payload
 
-		if (hed) document.querySelector('header span').textContent = hed
+		if (hed) document.querySelector('header h1').textContent = hed
 		if (data) handleNewData(data, isChartbuilder)
 
 	}
