@@ -4,23 +4,56 @@ import 'd3-transition'
 import { hexbin } from 'd3-hexbin'
 import { $ } from '../../../utils/dom'
 import jenks from './jenks'
-import drawCourt from './drawCourt'
 
-import { dimensions, binRatio, radiusRangeFactors, delayRangeFactors, delayTime, percentRange, colorClasses } from './config'
+import drawCourt from './drawCourt'
+import getWeightedAverage from './getWeightedAverage'
+
+import {
+	dimensions,
+	binRatio,
+	radiusRangeFactors,
+	delayRangeFactors,
+	delayTime,
+	percentRange,
+	colorClasses,
+} from './config'
 
 const { left, right, top, bottom } = dimensions
 const courtWidth = right - left
 const courtHeight = bottom - top
 const courtRatio = courtHeight / courtWidth
+const hexbinner = hexbin()
+
 const scales = {
-	shotX: scaleLinear().domain([left, right]),
-	shotY: scaleLinear().domain([top, bottom]),
-	color: scaleQuantize().domain([-percentRange, percentRange]).range(colorClasses),
+	shotX: scaleLinear(),
+	shotY: scaleLinear(),
+	color: scaleQuantize(),
 	radius: scaleQuantile(),
 	delay: scaleQuantile(),
 }
-const hexbinner = hexbin()
 
+// --- HELPERS ---
+
+// how many shots were made in this hex bin
+function getHexMade(d) {
+	return d.reduce((previous, current) => {
+		const datum = current[2]
+		const madeValue = datum.made ? 1 : 0
+		const next = previous + madeValue
+		return next
+	}, 0)
+}
+
+// extract the most recent date from all shots
+function getLatestDate(shots) {
+	const sorted = shots.sort((a, b) => (+a.gameDate) - (+b.gameDate))
+	return sorted[sorted.length - 1].gameDate
+}
+
+
+// --- UPDATE ---
+
+// update scale ranges that deal with screen size
 function updateScales({ width, height, hexRadius }) {
 	scales.shotX.range([width, 0])
 	scales.shotY.range([height, 0])
@@ -32,50 +65,13 @@ function updateScales({ width, height, hexRadius }) {
 	scales.delay.range(delayRange)
 }
 
+// responsive resize dom elements
 function updateContainer({ width, height }) {
 	select('.chart-container svg').attr('width', width).attr('height', height)
 	select('#clip').select('rect').attr('width', width).attr('height', height)
 }
 
-function handleResize() {
-	const width = Math.floor($('.chart-container').offsetWidth)
-	const height = Math.floor(width * courtRatio)
-	const hexRadius = Math.floor(width * binRatio)
-	updateContainer({ width, height })
-	hexbinner.size([width, height])
-	hexbinner.radius(hexRadius)
-
-	updateScales({ width, height, hexRadius })
-	const court = select('.court')
-	const basket = select('.basket')
-	drawCourt({ court, basket, width, height })
-}
-
-function setupKey() {
-	setupKeyFrequency()
-
-	select('.key-average')
-		.append('svg').attr('width', 0).attr('height', 0)
-			.append('g').attr('class', 'hex-group')
-}
-
-function setupKeyFrequency() {
-	const svg = select('.key-frequency')
-		.append('svg').attr('width', 0).attr('height', 0)
-
-	svg.append('g').attr('class', 'hex-group')
-	const labels = svg.append('g').attr('class', 'label-group')
-
-	// labels.append('text')
-	// 	.attr('class', 'before')
-	// 	.text('Fewer shots')
-
-	// labels.append('text')
-	// 	.attr('class', 'after')
-	// 	.text('More shots')
-}
-
-function updateKeyFrequency(width) {
+function updateKeyFrequency() {
 	const div = select('.key-frequency')
 	const svg = div.select('svg')
 	const g = svg.select('.hex-group')
@@ -141,65 +137,6 @@ function updateKey() {
 	updateKeyAverage(width)
 }
 
-function setup() {
-	const svg = select('.chart-container').append('svg')
-
-	svg.append('g').attr('class', 'court')
-	svg.append('g').attr('class', 'hexbin').attr('clip-path', 'url(#clip)')
-	svg.append('g').attr('class', 'basket')
-
-	svg.append('clipPath')
-		.attr('id', 'clip')
-		.append('rect')
-			.attr('class', 'mesh')
-
-	handleResize()
-	setupKey()
-}
-
-function getHexMade(d) {
-	return d.reduce((previous, current) => {
-		const datum = current[2]
-		const madeValue = datum.made ? 1 : 0
-		const next = previous + madeValue
-		return next
-	}, 0)
-}
-
-function getWeightedAverage(d, averages, date) {
-	// must combine averages since multiple zones might make up a bin
-	const zoneDict = {}
-	d.forEach(info => {
-		const datum = info[2]
-		if (zoneDict[datum.zone]) {
-			zoneDict[datum.zone].count += 1
-		} else {
-			const zones = averages.filter(day => day.date === date)[0].zones
-			// console.log(datum)
-			const percent = zones[datum.zone].percent
-			const count = 1
-			zoneDict[datum.zone] = { count, percent }
-		}
-	})
-
-	const zones = Object.keys(zoneDict)
-	const weightedZones = zones.map(zone => ({ zone, values: zoneDict[zone] }))
-
-	const count = weightedZones.reduce((sum, z) => sum + z.values.count, 0)
-	const sumPercents = weightedZones.reduce((sum, z) =>
-		sum + z.values.count * z.values.percent
-	, 0)
-
-	const weightedAverage = +(sumPercents / count).toFixed(2)
-	// console.log(weightedZones, weightedAverage)
-	return weightedAverage
-}
-
-function getLatestDate(shots) {
-	const sorted = shots.sort((a, b) => (+a.gameDate) - (+b.gameDate))
-	return sorted[sorted.length - 1].gameDate
-}
-
 // TODO remove
 function testFilter(shots) {
 	// console.log(data.shots[0])
@@ -228,6 +165,7 @@ function updateData({ averages, shots }) {
 	const jenksData = hexbinData.map(d => d.length)
 	const jenksDomain = jenks(jenksData, radiusRangeFactors.length - 1)
 
+	// if we don't have a jenks domain it means there weren't enough data points
 	if (!jenksDomain) return false
 
 	scales.radius.domain(jenksDomain)
@@ -238,7 +176,7 @@ function updateData({ averages, shots }) {
 
 	const getColor = (d) => {
 		const made = getHexMade(d)
-		const average = getWeightedAverage(d, averages, latestDate)
+		const average = getWeightedAverage({ datum: d, averages, date: latestDate })
 		const percent = +((made / d.length * 1000) / 10).toFixed(2)
 		const diff = percent - average
 		const color = scales.color(diff)
@@ -267,7 +205,6 @@ function updateData({ averages, shots }) {
 			.delay(d => scales.delay(d.length))
 			.attr('d', d => hexbinner.hexagon(scales.radius(d.length)))
 
-
 	// TODO remove test plot all points
 	// select('.hexbin')
 	// 	.selectAll('circle')
@@ -279,6 +216,76 @@ function updateData({ averages, shots }) {
 	// 	.attr('r', 2)
 	// 	.style('opacity', 0.5)
 	// 	.attr('class', d => d.made ? 'above' : 'below')
+	return true
+}
+
+
+// --- SETUP ---
+
+function setupDOM() {
+	const svg = select('.chart-container').append('svg')
+
+	svg.append('g').attr('class', 'court')
+	svg.append('g').attr('class', 'hexbin').attr('clip-path', 'url(#clip)')
+	svg.append('g').attr('class', 'basket')
+
+	svg.append('clipPath')
+		.attr('id', 'clip')
+		.append('rect')
+			.attr('class', 'mesh')
+}
+
+function setupScales() {
+	scales.shotX.domain([left, right])
+	scales.shotY.domain([top, bottom])
+	scales.color
+		.domain([-percentRange, percentRange])
+		.range(colorClasses)
+}
+
+function setupKey() {
+	setupKeyFrequency()
+
+	select('.key-average')
+		.append('svg').attr('width', 0).attr('height', 0)
+			.append('g').attr('class', 'hex-group')
+}
+
+function setupKeyFrequency() {
+	const svg = select('.key-frequency')
+		.append('svg').attr('width', 0).attr('height', 0)
+
+	svg.append('g').attr('class', 'hex-group')
+	const labels = svg.append('g').attr('class', 'label-group')
+
+	// labels.append('text')
+	// 	.attr('class', 'before')
+	// 	.text('Fewer shots')
+
+	// labels.append('text')
+	// 	.attr('class', 'after')
+	// 	.text('More shots')
+}
+
+function handleResize() {
+	const width = Math.floor($('.chart-container').offsetWidth)
+	const height = Math.floor(width * courtRatio)
+	const hexRadius = Math.floor(width * binRatio)
+	updateContainer({ width, height })
+	hexbinner.size([width, height])
+	hexbinner.radius(hexRadius)
+
+	updateScales({ width, height, hexRadius })
+	const court = select('.court')
+	const basket = select('.basket')
+	drawCourt({ court, basket, width, height })
+}
+
+function setup() {
+	setupDOM()
+	setupScales()
+	setupKey()
+	handleResize()
 }
 
 export default { setup, updateData }
