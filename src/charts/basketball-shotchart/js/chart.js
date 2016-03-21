@@ -83,40 +83,6 @@ function updateContainer({ width, height }) {
 	select('#clip').select('rect').attr('width', width).attr('height', height)
 }
 
-function updateKeyFrequency() {
-	const div = select('.key-frequency')
-	const svg = div.select('svg')
-	const g = svg.select('.hex-group')
-
-	const range = scales.radius.range()
-	const max = range[range.length - 1]
-	const padding = max * 2
-
-	const height = max * 3
-
-	svg.attr('width', padding * 4).attr('height', height)
-	g.attr('transform', `translate(${padding / 2}, ${height / 2})`)
-
-	$('.key-container.frequency .before').style.lineHeight = `${height}px`
-	$('.key-container.frequency .after').style.lineHeight = `${height}px`
-
-	// labelGroup.attr('transform', `translate(0,${padding * 2})`)
-	// labelGroup.select('.after')
-	// 	.attr('transform', `translate(${padding * 2},${max / 2})`)
-
-	// bind range data to hexagons
-	const hexagons = g.selectAll('.hexagon').data(range)
-
-	// enter / update hexagons
-	hexagons.enter()
-		.append('path')
-			.attr('class', 'hexagon')
-			.attr('d', hexbinner.hexagon(0))
-		.merge(hexagons)
-		.attr('transform', (d, i) => `translate(${d * 2 + (i * d)}, 0)`)
-		.attr('d', d => hexbinner.hexagon(d))
-}
-
 function updateKeyAverage() {
 	const div = select('.key-average')
 	const svg = div.select('svg')
@@ -144,8 +110,38 @@ function updateKeyAverage() {
 			.attr('class', d => `hexagon ${d}`)
 			.attr('d', hexbinner.hexagon(0))
 		.merge(hexagons)
-		.attr('transform', (d, i) => `translate(${(i * padding) + sz}, 0)`)
+		.attr('transform', (d, i) => `translate(${i * sz * 2 + sz}, 0)`)
 		.attr('d', hexbinner.hexagon(sz))
+}
+
+function updateKeyFrequency() {
+	const div = select('.key-frequency')
+	const svg = div.select('svg')
+	const g = svg.select('.hex-group')
+
+	const range = scales.radius.range()
+	const max = range[range.length - 1]
+	const padding = max * 2
+
+	const height = max * 3
+
+	svg.attr('width', padding * 4).attr('height', height)
+	g.attr('transform', `translate(${padding / 2}, ${height / 2})`)
+
+	$('.key-container.frequency .before').style.lineHeight = `${height}px`
+	$('.key-container.frequency .after').style.lineHeight = `${height}px`
+
+	// bind range data to hexagons
+	const hexagons = g.selectAll('.hexagon').data(range)
+
+	// enter / update hexagons
+	hexagons.enter()
+		.append('path')
+			.attr('class', 'hexagon')
+			.attr('d', hexbinner.hexagon(0))
+		.merge(hexagons)
+		.attr('transform', (d, i) => `translate(${(i + 1) * d + d}, 0)`)
+		.attr('d', d => hexbinner.hexagon(d))
 }
 
 function updateKey() {
