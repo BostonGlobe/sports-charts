@@ -1,6 +1,5 @@
 // these should be in base / util colors.styl
-$gray-pale = #ededed
-$gray-secondary = #858585
+@require('../../../base/css/variables.styl')
 
 $above = #ef8a62
 $average = #ccc
@@ -21,10 +20,15 @@ $strokeWidth = 2px
 	&-container
 		height 100%
 		overflow hidden
+		clear both
 		> * 
 			float left
 		p 
 			vertical-align middle	
+			color $gray-secondary
+			text-transform uppercase
+			font-size 0.75em
+
 	&-frequency
 		.hexagon
 			fill $gray-secondary

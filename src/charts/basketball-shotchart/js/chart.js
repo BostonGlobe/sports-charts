@@ -87,18 +87,18 @@ function updateKeyFrequency() {
 	const div = select('.key-frequency')
 	const svg = div.select('svg')
 	const g = svg.select('.hex-group')
-	const labelGroup = svg.select('.label-group')
 
 	const range = scales.radius.range()
 	const max = range[range.length - 1]
 	const padding = max * 2
 
-	svg.attr('width', padding * 4).attr('height', padding * 2)
-	g.attr('transform', `translate(${padding / 2},${padding})`)
+	const height = max * 3
 
-	$('.key-container .before').style.lineHeight = `${padding * 2}px`
-	$('.key-container .after').style.lineHeight = `${padding * 2}px`
-	// $('.key-container p').style.height = `${padding * 2}px`
+	svg.attr('width', padding * 4).attr('height', height)
+	g.attr('transform', `translate(${padding / 2}, ${height / 2})`)
+
+	$('.key-container.frequency .before').style.lineHeight = `${height}px`
+	$('.key-container.frequency .after').style.lineHeight = `${height}px`
 
 	// labelGroup.attr('transform', `translate(0,${padding * 2})`)
 	// labelGroup.select('.after')
@@ -117,7 +117,7 @@ function updateKeyFrequency() {
 		.attr('d', d => hexbinner.hexagon(d))
 }
 
-function updateKeyAverage(width) {
+function updateKeyAverage() {
 	const div = select('.key-average')
 	const svg = div.select('svg')
 	const g = svg.select('.hex-group')
@@ -127,8 +127,13 @@ function updateKeyAverage(width) {
 	const sz = radiusRange[radiusRange.length - 1]
 	const padding = sz * 2
 
-	svg.attr('width', width).attr('height', padding * 2)
-	g.attr('transform', `translate(${padding / 2},${padding})`)
+	const height = sz * 3
+
+	svg.attr('width', padding * 4).attr('height', height)
+	g.attr('transform', `translate(${padding / 2},${height / 2})`)
+
+	$('.key-container.average .before').style.lineHeight = `${height}px`
+	$('.key-container.average .after').style.lineHeight = `${height}px`
 
 	// bind range data to hexagons
 	const hexagons = g.selectAll('.hexagon').data(range)
