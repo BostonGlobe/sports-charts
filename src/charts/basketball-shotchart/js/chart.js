@@ -52,27 +52,49 @@ function handleResize() {
 }
 
 function setupKey() {
-	select('.key-frequency')
-		.append('svg').attr('width', 0).attr('height', 0)
-			.append('g')
+	setupKeyFrequency()
 
 	select('.key-average')
 		.append('svg').attr('width', 0).attr('height', 0)
-			.append('g')
+			.append('g').attr('class', 'hex-group')
+}
+
+function setupKeyFrequency() {
+	const svg = select('.key-frequency')
+		.append('svg').attr('width', 0).attr('height', 0)
+
+	svg.append('g').attr('class', 'hex-group')
+	const labels = svg.append('g').attr('class', 'label-group')
+
+	// labels.append('text')
+	// 	.attr('class', 'before')
+	// 	.text('Fewer shots')
+
+	// labels.append('text')
+	// 	.attr('class', 'after')
+	// 	.text('More shots')
 }
 
 function updateKeyFrequency(width) {
-	// freq
-	const freq = select('.key-frequency')
-	const svg = freq.select('svg')
-	const g = svg.select('g')
+	const div = select('.key-frequency')
+	const svg = div.select('svg')
+	const g = svg.select('.hex-group')
+	const labelGroup = svg.select('.label-group')
 
 	const range = scales.radius.range()
 	const max = range[range.length - 1]
 	const padding = max * 2
 
-	svg.attr('width', width).attr('height', padding * 2)
+	svg.attr('width', padding * 4).attr('height', padding * 2)
 	g.attr('transform', `translate(${padding / 2},${padding})`)
+
+	$('.key-container .before').style.lineHeight = `${padding * 2}px`
+	$('.key-container .after').style.lineHeight = `${padding * 2}px`
+	// $('.key-container p').style.height = `${padding * 2}px`
+
+	// labelGroup.attr('transform', `translate(0,${padding * 2})`)
+	// labelGroup.select('.after')
+	// 	.attr('transform', `translate(${padding * 2},${max / 2})`)
 
 	// bind range data to hexagons
 	const hexagons = g.selectAll('.hexagon').data(range)
@@ -85,25 +107,38 @@ function updateKeyFrequency(width) {
 		.merge(hexagons)
 		.attr('transform', (d, i) => `translate(${d * 2 + (i * d)}, 0)`)
 		.attr('d', d => hexbinner.hexagon(d))
-
-	// labels
-	// g.select('.label-fewer').data([1])
-	// 	.enter()
-	// 	.append('text')
-	// 	.text('fewer shots')
-
-	// g.append('text')
-	// 	.text('fewer shots')
-		
 }
 
-function updateKeyAverage() {
+function updateKeyAverage(width) {
+	const div = select('.key-average')
+	const svg = div.select('svg')
+	const g = svg.select('.hex-group')
 
+	const range = scales.color.range()
+	const radiusRange = scales.radius.range()
+	const sz = radiusRange[radiusRange.length - 1]
+	const padding = sz * 2
+
+	svg.attr('width', width).attr('height', padding * 2)
+	g.attr('transform', `translate(${padding / 2},${padding})`)
+
+	// bind range data to hexagons
+	const hexagons = g.selectAll('.hexagon').data(range)
+
+	// enter / update hexagons
+	hexagons.enter()
+		.append('path')
+			.attr('class', d => `hexagon ${d}`)
+			.attr('d', hexbinner.hexagon(0))
+		.merge(hexagons)
+		.attr('transform', (d, i) => `translate(${(i * padding) + sz}, 0)`)
+		.attr('d', hexbinner.hexagon(sz))
 }
 
 function updateKey() {
 	const width = Math.floor($('.chart-container').offsetWidth)
 	updateKeyFrequency(width)
+	updateKeyAverage(width)
 }
 
 function setup() {
@@ -118,8 +153,8 @@ function setup() {
 		.append('rect')
 			.attr('class', 'mesh')
 
-	setupKey()
 	handleResize()
+	setupKey()
 }
 
 function getHexMade(d) {

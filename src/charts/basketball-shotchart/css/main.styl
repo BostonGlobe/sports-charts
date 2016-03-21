@@ -1,5 +1,6 @@
 // these should be in base / util colors.styl
-$gray-light = #ededed
+$gray-pale = #ededed
+$gray-secondary = #858585
 
 $above = #ef8a62
 $average = #ccc
@@ -14,12 +15,19 @@ $basket = rgba(#fff, 0.75)
 $strokeWidth = 2px 
 
 .chart-container svg 
-	background-color $gray-light
+	background-color $gray-pale
 
 .key 
+	&-container
+		height 100%
+		overflow hidden
+		> * 
+			float left
+		p 
+			vertical-align middle	
 	&-frequency
 		.hexagon
-			fill #888
+			fill $gray-secondary
 
 .above
 	fill $above
@@ -52,3 +60,11 @@ $strokeWidth = 2px
 	stroke $basket
 	stroke-width $strokeWidth
 	fill transparent
+
+.label-group
+	text 
+		fill green
+		&.before
+			text-anchor end
+		&.after
+			text-anchor start

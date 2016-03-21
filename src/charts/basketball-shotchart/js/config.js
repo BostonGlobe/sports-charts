@@ -5,7 +5,7 @@ const dimensions = {
 	bottom: 41.75,
 }
 
-const binRatio = 1 / 35
+const binRatio = 1 / 27.5
 const radiusRangeFactors = [0.25, 0.5, 0.75, 1]
 const delayRangeFactors = [0.8, 0.6, 0.4, 0]
 const delayTime = 2500
