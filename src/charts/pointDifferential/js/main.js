@@ -37,7 +37,12 @@ const detachedContainer = document.createElement('custom')
 // and redraw the canvas
 // timer(() => drawCanvas({ canvas, detachedContainer }))
 
-const handleNewData = (newData) => {
+const handleNewPayload = (err, payload) => {
+
+	const { hed } = payload
+	const newData = payload.data
+
+	document.querySelector('header h1').textContent = hed
 
 	// format the data (i.e. turn gamedate into Date, etc)
 	const data = formatData(newData)
@@ -51,4 +56,4 @@ const handleNewData = (newData) => {
 
 }
 
-setupIframe(handleNewData)
+setupIframe(handleNewPayload)
