@@ -5,14 +5,17 @@ $above = #ef8a62
 $average = #ccc
 $below = #67a9cf
 
-$above = #008048
-$average = #02C664
-$below = #7EF183
+// $above = #008048
+// $average = #02C664
+// $below = #7EF183
 
 $court = rgba(#fff, 1)
 $basket = rgba(#fff, 0.75)
 $strokeWidth = 2px 
 
+.display-none 
+	display none
+	
 .chart-container svg 
 	background-color $gray-pale
 
@@ -64,3 +67,19 @@ $strokeWidth = 2px
 	stroke $basket
 	stroke-width $strokeWidth
 	fill transparent
+
+// TODO move to base?
+.explainer
+	a 
+		display block
+		color $gray-secondary
+		text-align right
+		line-height 1.8
+		font-size 0.8em
+
+	p 
+		color $gray-secondary
+		font-family $sans
+		font-size 0.8em
+		font-weight 300
+		line-height 1.6

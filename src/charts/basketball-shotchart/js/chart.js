@@ -2,7 +2,7 @@ import { scaleLinear, scaleQuantile, scaleQuantize } from 'd3-scale'
 import { select } from 'd3-selection'
 import 'd3-transition'
 import { hexbin } from 'd3-hexbin'
-import { $ } from '../../../utils/dom'
+import { $, addClass, removeClass, hasClass } from '../../../utils/dom'
 import jenks from './jenks'
 
 import drawCourt from './drawCourt'
@@ -172,18 +172,19 @@ function updateDOM({ hexbinData, averages, date }) {
 			.duration(1500)
 			.delay(d => scales.delay(d.length))
 			.attr('d', d => hexbinner.hexagon(scales.radius(d.length)))
+}
 
-	// TODO remove test plot all points
-	// select('.hexbin')
-	// 	.selectAll('circle')
-	// 	.data(points)
-	// 	.enter()
-	// 	.append('circle')
-	// 	.attr('cx', d => d.x)
-	// 	.attr('cy', d => d.y)
-	// 	.attr('r', 2)
-	// 	.style('opacity', 0.5)
-	// 	.attr('class', d => d.made ? 'above' : 'below')
+function plotAll(points) {
+	select('.hexbin')
+		.selectAll('circle')
+		.data(points)
+		.enter()
+		.append('circle')
+		.attr('cx', d => d.x)
+		.attr('cy', d => d.y)
+		.attr('r', 2)
+		.style('opacity', 0.5)
+		.attr('class', d => d.made ? 'above' : 'below')
 }
 
 // TODO remove
@@ -226,6 +227,8 @@ function updateData({ averages, shots }) {
 	// make updates
 	updateKey()
 	updateDOM({ hexbinData, averages, date })
+	// TODO remove
+	// plotAll(points)
 	return true
 }
 
@@ -254,27 +257,30 @@ function setupScales() {
 }
 
 function setupKey() {
-	setupKeyFrequency()
+	select('.key-frequency')
+		.append('svg').attr('width', 0).attr('height', 0)
+		.append('g').attr('class', 'hex-group')
 
 	select('.key-average')
 		.append('svg').attr('width', 0).attr('height', 0)
 			.append('g').attr('class', 'hex-group')
 }
 
-function setupKeyFrequency() {
-	const svg = select('.key-frequency')
-		.append('svg').attr('width', 0).attr('height', 0)
-
-	svg.append('g').attr('class', 'hex-group')
-	const labels = svg.append('g').attr('class', 'label-group')
-
-	// labels.append('text')
-	// 	.attr('class', 'before')
-	// 	.text('Fewer shots')
-
-	// labels.append('text')
-	// 	.attr('class', 'after')
-	// 	.text('More shots')
+function setupExplainer() {
+	$('.explainer a').addEventListener('click', e => {
+		e.preventDefault()
+		const p = $('.explainer p')
+		const a = $('.explainer a')
+		const hidden = hasClass(p, 'display-none')
+		if (hidden) {
+			removeClass(p, 'display-none')
+			a.textContent = 'Close'
+		} else {
+			addClass(p, 'display-none')
+			a.textContent = 'How is this chart calculated?'
+		}
+		return false
+	})
 }
 
 function handleResize() {
@@ -295,6 +301,7 @@ function setup() {
 	setupDOM()
 	setupScales()
 	setupKey()
+	setupExplainer()
 	handleResize()
 }
 
