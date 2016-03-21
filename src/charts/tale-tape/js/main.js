@@ -9,7 +9,7 @@ const handleNewPayload = (err, payload) => {
 		return
 	}
 
-	const { data, timeframe, sport } = payload
+	const { data, sport } = payload
 
 	// convenience variables
 	const container = $('.chart-container')
@@ -21,8 +21,6 @@ const handleNewPayload = (err, payload) => {
 	$('header h1.players').innerHTML = data[0].values.map(p =>
 		`<a href='http://www.google.com' target='_blank'>${p.player}</a>`
 	).join(' vs ')
-
-	$('header h1.timeframe span').innerHTML = timeframe
 
 	// populate bars
 	container.innerHTML = data.map(d => {
