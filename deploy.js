@@ -9,7 +9,7 @@ const username = argv.u
 const version = argv.v || 'patch'
 
 function displayUploadScript(charts) {
-	const files = (c) => `charts/${c}/index.html charts/${c}/bundle.css charts/${c}/bundle.js`
+	const files = (c) => `charts/${c}/index.html charts/${c}/bundle.css charts/${c}/main.js charts/${c}/main.js.map`
 	const command = `
 		upload ${charts.map(files).join(' ')} chart-base.css chart-base.js
 	`.trim()

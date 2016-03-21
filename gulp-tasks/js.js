@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const rename = require('gulp-rename')
 const webpackStream = require('webpack-stream')
+const named = require('vinyl-named')
 const plumber = require('gulp-plumber')
 const report = require('../report-error.js')
 const argv = require('yargs').argv
@@ -15,16 +16,16 @@ const dest = { dev: `dev/${chartPath}`, prod: `dist/${chartPath}` }
 
 gulp.task('js-chart-dev', () =>
 	gulp.src(src)
+	.pipe(named())
 	.pipe(plumber({ errorHandler: report }))
 	.pipe(webpackStream(config.dev))
-	.pipe(rename('bundle.js'))
 	.pipe(gulp.dest(dest.dev))
 )
 
 gulp.task('js-chart-prod', () =>
 	gulp.src(src)
+	.pipe(named())
 	.pipe(webpackStream(config.prod))
-	.pipe(rename('bundle.js'))
 	.pipe(gulp.dest(dest.prod))
 )
 
