@@ -1,16 +1,16 @@
-export default function getWeightedAverage({ datum, averages, date }) {
+export default function getWeightedAverage({ d, averages, date }) {
 	// must combine averages since multiple zones might make up a bin
 	const zoneDict = {}
-	datum.forEach(info => {
-		const datum = info[2]
-		if (zoneDict[datum.zone]) {
-			zoneDict[datum.zone].count += 1
+	d.forEach(info => {
+		const d = info[2]
+		if (zoneDict[d.zone]) {
+			zoneDict[d.zone].count += 1
 		} else {
 			const zones = averages.filter(day => day.date === date)[0].zones
-			// console.log(datum)
-			const percent = zones[datum.zone].percent
+			// console.log(d)
+			const percent = zones[d.zone].percent
 			const count = 1
-			zoneDict[datum.zone] = { count, percent }
+			zoneDict[d.zone] = { count, percent }
 		}
 	})
 

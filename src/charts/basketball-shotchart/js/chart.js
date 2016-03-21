@@ -50,6 +50,18 @@ function getLatestDate(shots) {
 	return sorted[sorted.length - 1].gameDate
 }
 
+// calculate bin avg. vs. league avg. and return proper color
+function getColor({ d, averages, date }) {
+	const made = getHexMade(d)
+	const average = getWeightedAverage({ d, averages, date })
+	const percent = +((made / d.length * 1000) / 10).toFixed(2)
+	const diff = percent - average
+	const color = scales.color(diff)
+	if (d.length > 0) return color
+	return 'transparent'
+	// return color
+}
+
 
 // --- UPDATE ---
 
@@ -137,69 +149,24 @@ function updateKey() {
 	updateKeyAverage(width)
 }
 
-// TODO remove
-function testFilter(shots) {
-	// console.log(data.shots[0])
-	// shots = shots.filter(s => s.zone.indexOf('three') > -1)
-	// shots = shots.filter(s => +s.quarter > 3)
-	// shots = shots.filter(s => +s.zone.indexOf('three (right') > -1)
-	// console.table(shots)
-	// console.log(shots.length)
-	return shots
-}
-
-function updateData({ averages, shots }) {
-	shots = testFilter(shots)
-	const latestDate = getLatestDate(shots)
-
-	const points = shots.map(datum => ({
-		...datum,
-		x: scales.shotX(datum.shotX),
-		y: scales.shotY(datum.shotY),
-	}))
-
-	const hexbinData = hexbinner(points.map(point =>
-		[point.x, point.y, { ...point }]
-	))
-
-	const jenksData = hexbinData.map(d => d.length)
-	const jenksDomain = jenks(jenksData, radiusRangeFactors.length - 1)
-
-	// if we don't have a jenks domain it means there weren't enough data points
-	if (!jenksDomain) return false
-
-	scales.radius.domain(jenksDomain)
-	scales.delay.domain(jenksDomain)
-	updateKey()
-
-	// jenksDomain.map(j => console.log(j, scales.radius(j)))
-
-	const getColor = (d) => {
-		const made = getHexMade(d)
-		const average = getWeightedAverage({ datum: d, averages, date: latestDate })
-		const percent = +((made / d.length * 1000) / 10).toFixed(2)
-		const diff = percent - average
-		const color = scales.color(diff)
-		if (d.length > 0) return color
-		return 'transparent'
-		// return color
-	}
-
+function updateDOM({ hexbinData, averages, date }) {
+	// bind data and set key
 	const hexagons = select('.hexbin')
 		.selectAll('.hexagon')
 		.data(hexbinData, d => `${d.i}-${d.j}`)
 
-	hexagons.exit()
-		.remove()
+	hexagons.exit().remove()
 
+	// create new hexagon paths
 	const enterSelection = hexagons.enter()
 		.append('path')
 			.attr('class', 'hexagon')
 			.attr('d', hexbinner.hexagon(0))
 
+	// position, color, and scale all hexagons
 	enterSelection.merge(hexagons)
 		.attr('transform', d => `translate(${d.x}, ${d.y})`)
-		.attr('class', d => getColor(d, latestDate))
+		.attr('class', d => getColor({ d, averages, date }))
 		.transition()
 			.duration(1500)
 			.delay(d => scales.delay(d.length))
@@ -216,6 +183,48 @@ function updateData({ averages, shots }) {
 	// 	.attr('r', 2)
 	// 	.style('opacity', 0.5)
 	// 	.attr('class', d => d.made ? 'above' : 'below')
+}
+
+// TODO remove
+function testFilter(shots) {
+	// console.log(data.shots[0])
+	// shots = shots.filter(s => s.zone.indexOf('three') > -1)
+	// shots = shots.filter(s => +s.quarter > 3)
+	// shots = shots.filter(s => +s.zone.indexOf('three (right') > -1)
+	// console.table(shots)
+	// console.log(shots.length)
+	return shots
+}
+
+function updateData({ averages, shots }) {
+	shots = testFilter(shots) // TODO remove
+	const date = getLatestDate(shots)
+
+	// get x,y coords for each shot
+	const points = shots.map(shot => ({
+		...shot,
+		x: scales.shotX(shot.shotX),
+		y: scales.shotY(shot.shotY),
+	}))
+
+	// bin data into hexes
+	const hexbinData = hexbinner(points.map(point =>
+		[point.x, point.y, { ...point }]
+	))
+
+	// create natural breaks for color scale
+	const jenksData = hexbinData.map(d => d.length)
+	const jenksDomain = jenks(jenksData, radiusRangeFactors.length - 1)
+
+	// if we don't have a jenks domain it means there weren't enough data points
+	if (!jenksDomain) return false
+
+	scales.radius.domain(jenksDomain)
+	scales.delay.domain(jenksDomain)
+
+	// make updates
+	updateKey()
+	updateDOM({ hexbinData, averages, date })
 	return true
 }
 
