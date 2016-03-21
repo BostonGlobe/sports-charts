@@ -1,6 +1,6 @@
 {
   "name": "sports-charts",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Charts for Sports section",
   "scripts": {
     "lint": "eslint src"
