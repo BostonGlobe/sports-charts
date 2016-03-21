@@ -197,7 +197,7 @@ function getWeightedAverage(d, averages, date) {
 
 function getLatestDate(shots) {
 	const sorted = shots.sort((a, b) => (+a.gameDate) - (+b.gameDate))
-	return sorted.pop().gameDate
+	return sorted[sorted.length - 1].gameDate
 }
 
 // TODO remove
@@ -227,6 +227,9 @@ function updateData({ averages, shots }) {
 
 	const jenksData = hexbinData.map(d => d.length)
 	const jenksDomain = jenks(jenksData, radiusRangeFactors.length - 1)
+
+	if (!jenksDomain) return false
+
 	scales.radius.domain(jenksDomain)
 	scales.delay.domain(jenksDomain)
 	updateKey()
