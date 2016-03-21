@@ -1,0 +1,52 @@
+{
+	"hed": "tale of the tape",
+	"timeframe": "2015 season",
+	"sport": "baseball",
+	"data": [
+		{
+			"measure": "Earned running average",
+			"values": [
+				{
+					"player": "Wade Miley",
+					"team": "Red",
+					"value": 4.46
+				},
+				{
+					"player": "Jeff Locke",
+					"team": "Black",
+					"value": 3.67
+				}
+			]
+		},
+		{
+			"measure": "Home runs per 9 innings",
+			"values": [
+				{
+					"player": "Wade Miley",
+					"team": "Red",
+					"value": 0.3
+				},
+				{
+					"player": "Jeff Locke",
+					"team": "Black",
+					"value": 1.0
+				}
+			]
+		},
+		{
+			"measure": "Walks",
+			"values": [
+				{
+					"player": "Wade Miley",
+					"team": "Red",
+					"value": 11
+				},
+				{
+					"player": "Jeff Locke",
+					"team": "Black",
+					"value": 6
+				}
+			]
+		}
+	]
+}

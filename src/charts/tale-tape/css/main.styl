@@ -1,0 +1,51 @@
+@require './../../../base/css/variables.styl'
+@require './../../../base/css/base.styl'
+
+$sports = {
+	baseball: $redsox-secondary
+}
+
+
+
+header h1
+
+	line-height 1.25
+
+	&.players a
+		color $gray-secondary
+
+	&.timeframe span
+		color $gray-tertiary
+
+
+
+.chart-container
+
+	li.measure
+
+		p.name
+			span
+				text-transform uppercase
+				color $gray-tertiary
+				font-size $label-size
+
+		ul.values
+
+			li
+				text-align right
+				line-height 1.25
+				background $gray-secondary
+				span
+					font-size $label-size
+					color white
+					padding-right 0.1em
+
+
+
+for sport, color in $sports
+	.chart-container.{sport}
+		li.measure ul.values li:first-child
+			background color
+	header.{sport}
+		h1.players a:first-child
+			color color
