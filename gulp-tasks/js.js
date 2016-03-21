@@ -25,7 +25,10 @@ gulp.task('js-chart-dev', () =>
 gulp.task('js-chart-prod', () =>
 	gulp.src(src)
 	.pipe(named())
-	.pipe(webpackStream(config.prod))
+	.pipe(webpackStream(Object.assign(
+		{},
+		config.prod,
+		{ devtool: 'source-map' })))
 	.pipe(gulp.dest(dest.prod))
 )
 
