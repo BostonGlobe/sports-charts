@@ -149,8 +149,6 @@ const handleNewPayload = (err, payload) => {
 		return
 	}
 
-	console.log('handling new payload')
-
 	const { hed, data, isChartbuilder } = payload
 
 	if (hed) document.querySelector('header h1').textContent = hed
