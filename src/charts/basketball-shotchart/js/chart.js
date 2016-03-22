@@ -32,6 +32,10 @@ const scales = {
 	delay: scaleQuantile(),
 }
 
+let windowWidth = 0
+
+const data = {}
+
 // --- HELPERS ---
 
 // how many shots were made in this hex bin
@@ -151,6 +155,7 @@ function updateKey() {
 }
 
 function updateDOM({ hexbinData, averages, date }) {
+	$('.hexbin').innerHTML = ''
 	// bind data and set key
 	const hexagons = select('.hexbin')
 		.selectAll('.hexagon')
@@ -198,8 +203,7 @@ function testFilter(shots) {
 	return shots
 }
 
-function updateData({ averages, shots }) {
-	shots = testFilter(shots) // TODO remove
+function updateBins({ averages, shots }) {
 	const date = getLatestDate(shots)
 
 	// get x,y coords for each shot
@@ -230,6 +234,14 @@ function updateData({ averages, shots }) {
 	// TODO remove
 	// plotAll(points)
 	return true
+}
+
+function updateData({ averages, shots }) {
+	// make it global so we can reuse on resize
+	data.shots = testFilter(shots) // TODO remove
+	data.averages = averages
+
+	updateBins(data)
 }
 
 
@@ -284,17 +296,31 @@ function setupExplainer() {
 }
 
 function handleResize() {
-	const width = Math.floor($('.chart-container').offsetWidth)
-	const height = Math.floor(width * courtRatio)
-	const hexRadius = Math.floor(width * binRatio)
-	updateContainer({ width, height })
-	hexbinner.size([width, height])
-	hexbinner.radius(hexRadius)
+	if (windowWidth !== window.innerWidth) {
+		windowWidth = window.innerWidth
 
-	updateScales({ width, height, hexRadius })
-	const court = select('.court')
-	const basket = select('.basket')
-	drawCourt({ court, basket, width, height })
+		const width = Math.floor($('.chart-container').offsetWidth)
+		const height = Math.floor(width * courtRatio)
+		const hexRadius = Math.floor(width * binRatio)
+		updateContainer({ width, height })
+		hexbinner.size([width, height])
+		hexbinner.radius(hexRadius)
+
+		updateScales({ width, height, hexRadius })
+		const court = select('.court')
+		const basket = select('.basket')
+
+		// clear court
+		$('.court').innerHTML = ''
+		$('.basket').innerHTML = ''
+		drawCourt({ court, basket, width, height })
+
+		if (data.shots) updateBins(data)
+	}
+}
+
+function setupResize() {
+	window.addEventListener('resize', handleResize)
 }
 
 function setup() {
@@ -302,6 +328,7 @@ function setup() {
 	setupScales()
 	setupKey()
 	setupExplainer()
+	setupResize()
 	handleResize()
 }
 
