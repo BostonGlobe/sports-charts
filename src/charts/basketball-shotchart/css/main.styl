@@ -1,13 +1,7 @@
 // these should be in base / util colors.styl
 @require('../../../base/css/variables.styl')
 
-$above = #ef8a62
-$average = #ccc
-$below = #67a9cf
-
-// $above = #008048
-// $average = #02C664
-// $below = #7EF183
+$celtics-team = #008048
 
 $court = rgba(#fff, 1)
 $basket = rgba(#fff, 0.75)
@@ -16,9 +10,6 @@ $strokeWidth = 2px
 .display-none 
 	display none
 
-svg path 
-	shape-rendering crispEdges
-	
 .chart-container svg 
 	background-color $gray-pale
 
@@ -39,14 +30,27 @@ svg path
 		.hexagon
 			fill $gray-secondary
 
+.pattern-fill
+	fill $celtics-team
+					
 .above
-	fill $above
+	fill $celtics-team
+	stroke $celtics-team
+
 .average
-	fill $average
+	stroke $celtics-team
+	&.bin-radius-10
+		fill url(#pattern-stripe-10)
+	&.bin-radius-12
+		fill url(#pattern-stripe-12)
+
 .below
-	fill $below
-	// fill transparent
-	// stroke $above
+	fill transparent
+	stroke $celtics-team
+
+.below-threshold
+	fill transparent
+	stroke transparent
 
 .court 
 	&-line

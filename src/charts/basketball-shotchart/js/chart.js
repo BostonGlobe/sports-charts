@@ -1,21 +1,20 @@
-import { scaleLinear, scaleQuantile, scaleQuantize } from 'd3-scale'
+import { scaleLinear, scaleOrdinal, scaleQuantize } from 'd3-scale'
 import { select } from 'd3-selection'
 import 'd3-transition'
 import { hexbin } from 'd3-hexbin'
 import { $, addClass, removeClass, hasClass } from '../../../utils/dom'
-import jenks from './jenks'
 
 import drawCourt from './drawCourt'
 import getWeightedAverage from './getWeightedAverage'
 
 import {
 	dimensions,
-	binRatio,
-	radiusRangeFactors,
-	delayRangeFactors,
-	delayTime,
+	binRadius,
+	delayRange,
+	transitionDuration,
 	percentRange,
 	colorClasses,
+	minShotsThreshold,
 } from './config'
 
 const { left, right, top, bottom } = dimensions
@@ -28,8 +27,7 @@ const scales = {
 	shotX: scaleLinear(),
 	shotY: scaleLinear(),
 	color: scaleQuantize(),
-	radius: scaleQuantile(),
-	delay: scaleQuantile(),
+	delay: scaleOrdinal().domain(colorClasses).range(delayRange),
 }
 
 let windowWidth = 0
@@ -56,29 +54,25 @@ function getLatestDate(shots) {
 
 // calculate bin avg. vs. league avg. and return proper color
 function getColor({ d, averages, date }) {
-	const made = getHexMade(d)
-	const average = getWeightedAverage({ d, averages, date })
-	const percent = +((made / d.length * 1000) / 10).toFixed(2)
-	const diff = percent - average
-	const color = scales.color(diff)
-	if (d.length > 0) return color
-	return 'transparent'
-	// return color
+	if (d.length > minShotsThreshold) {
+		const made = getHexMade(d)
+		const average = getWeightedAverage({ d, averages, date })
+		const percent = +((made / d.length * 1000) / 10).toFixed(2)
+		const diff = percent - average
+		const color = scales.color(diff)
+		return `${color} bin-radius-${binRadius}`
+	}
+
+	return 'below-threshold'
 }
 
 
 // --- UPDATE ---
 
 // update scale ranges that deal with screen size
-function updateScales({ width, height, hexRadius }) {
+function updateScales({ width, height }) {
 	scales.shotX.range([width, 0])
 	scales.shotY.range([height, 0])
-
-	const radiusRange = radiusRangeFactors.map(f => f * hexRadius)
-	scales.radius.range(radiusRange)
-
-	const delayRange = delayRangeFactors.map(f => f * delayTime)
-	scales.delay.range(delayRange)
 }
 
 // responsive resize dom elements
@@ -87,16 +81,14 @@ function updateContainer({ width, height }) {
 	select('#clip').select('rect').attr('width', width).attr('height', height)
 }
 
-function updateKeyAverage() {
+function updateKey() {
 	const div = select('.key-average')
 	const svg = div.select('svg')
 	const g = svg.select('.hex-group')
 
 	const range = scales.color.range()
-	const radiusRange = scales.radius.range()
-	const sz = radiusRange[radiusRange.length - 1]
+	const sz = binRadius - 1
 	const padding = sz * 2
-
 	const height = sz * 3
 
 	svg.attr('width', padding * 4).attr('height', height)
@@ -111,47 +103,11 @@ function updateKeyAverage() {
 	// enter / update hexagons
 	hexagons.enter()
 		.append('path')
-			.attr('class', d => `hexagon ${d}`)
+			.attr('class', d => `hexagon ${d} bin-radius-${binRadius}`)
 			.attr('d', hexbinner.hexagon(0))
 		.merge(hexagons)
 		.attr('transform', (d, i) => `translate(${i * sz * 2 + sz}, 0)`)
 		.attr('d', hexbinner.hexagon(sz))
-}
-
-function updateKeyFrequency() {
-	const div = select('.key-frequency')
-	const svg = div.select('svg')
-	const g = svg.select('.hex-group')
-
-	const range = scales.radius.range()
-	const max = range[range.length - 1]
-	const padding = max * 2
-
-	const height = max * 3
-
-	svg.attr('width', padding * 4).attr('height', height)
-	g.attr('transform', `translate(${padding / 2}, ${height / 2})`)
-
-	$('.key-container.frequency .before').style.lineHeight = `${height}px`
-	$('.key-container.frequency .after').style.lineHeight = `${height}px`
-
-	// bind range data to hexagons
-	const hexagons = g.selectAll('.hexagon').data(range)
-
-	// enter / update hexagons
-	hexagons.enter()
-		.append('path')
-			.attr('class', 'hexagon')
-			.attr('d', hexbinner.hexagon(0))
-		.merge(hexagons)
-		.attr('transform', (d, i) => `translate(${(i + 1) * d + d}, 0)`)
-		.attr('d', d => hexbinner.hexagon(d))
-}
-
-function updateKey() {
-	const width = Math.floor($('.chart-container').offsetWidth)
-	updateKeyFrequency(width)
-	updateKeyAverage(width)
 }
 
 function updateDOM({ hexbinData, averages, date }) {
@@ -174,9 +130,13 @@ function updateDOM({ hexbinData, averages, date }) {
 		.attr('transform', d => `translate(${d.x}, ${d.y})`)
 		.attr('class', d => getColor({ d, averages, date }))
 		.transition()
-			.duration(1500)
-			.delay(d => scales.delay(d.length))
-			.attr('d', d => hexbinner.hexagon(scales.radius(d.length)))
+			.duration(transitionDuration)
+			.delay(d => {
+				const className = getColor({ d, averages, date }).split(' ')[0]
+				if (className === 'below-threshold') return 0
+				return scales.delay(className)
+			})
+			.attr('d', hexbinner.hexagon(binRadius - 1))
 }
 
 function plotAll(points) {
@@ -218,18 +178,7 @@ function updateBins({ averages, shots }) {
 		[point.x, point.y, { ...point }]
 	))
 
-	// create natural breaks for color scale
-	const jenksData = hexbinData.map(d => d.length)
-	const jenksDomain = jenks(jenksData, radiusRangeFactors.length - 1)
-
-	// if we don't have a jenks domain it means there weren't enough data points
-	if (!jenksDomain) return false
-
-	scales.radius.domain(jenksDomain)
-	scales.delay.domain(jenksDomain)
-
 	// make updates
-	updateKey()
 	updateDOM({ hexbinData, averages, date })
 	// TODO remove
 	// plotAll(points)
@@ -268,13 +217,12 @@ function setupScales() {
 }
 
 function setupKey() {
-	select('.key-frequency')
-		.append('svg').attr('width', 0).attr('height', 0)
-		.append('g').attr('class', 'hex-group')
-
 	select('.key-average')
 		.append('svg').attr('width', 0).attr('height', 0)
 			.append('g').attr('class', 'hex-group')
+
+	// update key too
+	updateKey()
 }
 
 function setupExplainer() {
@@ -300,12 +248,11 @@ function handleResize() {
 
 		const width = Math.floor($('.chart-container').offsetWidth)
 		const height = Math.floor(width * courtRatio)
-		const hexRadius = Math.floor(width * binRatio)
 		updateContainer({ width, height })
 		hexbinner.size([width, height])
-		hexbinner.radius(hexRadius)
+		hexbinner.radius(binRadius)
 
-		updateScales({ width, height, hexRadius })
+		updateScales({ width, height })
 		const court = select('.court')
 		const basket = select('.basket')
 

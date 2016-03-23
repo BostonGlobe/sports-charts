@@ -4,17 +4,10 @@
 
 <main>
 	<div class='key benton-cond-regular'>
-		<!-- <p class='key-label'>Effectivness</p> -->
 		<div class='key-container average'>
-			<p class='before'>Below average</p>
+			<p class='before'>Below league avg.</p>
 			<div class='key-average'></div>
-			<p class='after'>Above average</p>
-		</div>
-		<!-- <p class='key-label'>Frequency</p> -->
-		<div class='key-container frequency'>
-			<p class='before'>Fewer shots</p>
-			<div class='key-frequency'></div>
-			<p class='after'>More shots</p>
+			<p class='after'>Above league avg.</p>
 		</div>
 	</div>
 	<div class='chart-container'></div>
@@ -24,3 +17,25 @@
 			Individuals field goals are grouped together to create hexagonal bins that represent the frequency of a given location. Field goal percentage is then calculated for each bin. The color is determined by comparing the bin's field goal percentage to the league average of the zone the bin falls within. Zones include three in the paint, five for midrange, and for three point field goals. 
 	</div>
 </main>
+
+<svg>
+	<defs>
+		<pattern id="pattern-stripe-10" 
+			width="4" height="4" 
+			patternUnits="userSpaceOnUse"
+			patternTransform="rotate(120)">
+			<rect width="1" height="4" transform="translate(0,0)" class='pattern-fill'></rect>
+		</pattern>
+	</defs>
+</svg>
+
+<svg>
+	<defs>
+		<pattern id="pattern-stripe-12" 
+			width="5" height="5" 
+			patternUnits="userSpaceOnUse"
+			patternTransform="rotate(120)">
+			<rect width="1" height="5" transform="translate(0,0)" class='pattern-fill'></rect>
+		</pattern>
+	</defs>
+</svg>
