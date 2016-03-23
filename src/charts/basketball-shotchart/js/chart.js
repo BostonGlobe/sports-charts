@@ -240,7 +240,6 @@ function updateData({ averages, shots }) {
 	// make it global so we can reuse on resize
 	data.shots = testFilter(shots) // TODO remove
 	data.averages = averages
-
 	updateBins(data)
 }
 
