@@ -3,12 +3,12 @@ import chart from './chart'
 
 chart.setup()
 
-const handleNewData = (data, isChartbuilder) => {
-	if (data.shots) chart.updateData(data)
+const handleNewData = ({ averages, rows }, isChartbuilder) => {
+	if (rows.length) chart.updateData({ averages, shots: rows })
 }
 
 const handleNewPayload = (err, payload) => {
-
+	console.log({ err, payload })
 	if (err) {
 		// TODO: better error handling
 		console.log("Oops. Look like we couldn't load this chart's data.")
