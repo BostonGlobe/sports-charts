@@ -53,10 +53,8 @@ const setup = ({ handleNewPayload }) => {
 	const parsed = parse(window.location.search)
 	const env = parsed.env || 'prod'
 
-	if (env === 'chartbuilder') chartbuilder({ pymChild, handleNewPayload })
-	else if (env === 'dev') dev({ pymChild, handleNewPayload })
-	else prod({ pymChild, handleNewPayload })
-
+	const options = { chartbuilder, dev, prod }
+	options[env]({ pymChild, handleNewPayload })
 }
 
 export default setup
