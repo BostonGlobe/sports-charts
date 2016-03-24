@@ -39,7 +39,7 @@
 			<script>
 				(function() {
 					var chart = '<!-- chart -->';
-					var html = 'dev/charts/' + chart + '/index.html';
+					var html = 'dev/charts/' + chart + '/index.html?env=dev';
 					var pymParent = new pym.Parent('globe-graphic-iframe-1', html, {});
 
 					// chartifier
