@@ -2,11 +2,16 @@ import getJSON from 'get-json-lite'
 import pymIframe from 'pym-iframe-resizer'
 import { parse } from 'query-string'
 import 'promis'
+import { $ } from './dom'
+
+const displayHed = hed => $('.hed').textContent = hed
 
 const chartbuilder = ({ pymChild, handleNewPayload }) => {
 	// listen to chartifier for data
 	pymChild.onMessage('receive-data', d => {
 		const data = { ...JSON.parse(d), isChartbuilder: true }
+		const { hed } = data
+		displayHed(hed)
 		handleNewPayload(data)
 	})
 	pymChild.sendMessage('request-data', true)
@@ -17,7 +22,12 @@ const dev = ({ pymChild, handleNewPayload }) => {
 		pymChild.onMessage('enter-view', resolve)
 	)
 	const handleNewPayloadPromise = new Promise((resolve) =>
-		pymChild.onMessage('receive-data', d => resolve(JSON.parse(d)))
+		pymChild.onMessage('receive-data', d => {
+			const data = JSON.parse(d)
+			const { hed } = data
+			displayHed(hed)
+			resolve(data)
+		})
 	)
 
 	Promise.all([enterViewPromise, handleNewPayloadPromise])
@@ -32,11 +42,13 @@ const prod = ({ pymChild, handleNewPayload }) => {
 		pymChild.onMessage('enter-view', resolve)
 	)
 	const handleNewPayloadPromise = new Promise((resolve) =>
-		pymChild.onMessage('receive-data-url', url => {
-			getJSON(url, (err, response) => {
-				resolve(response)
+		pymChild.onMessage('receive-data-url', url =>
+			getJSON(url, (err, data) => {
+				const { hed } = data
+				displayHed(hed)
+				resolve(data)
 			})
-		})
+		)
 	)
 
 	Promise.all([enterViewPromise, handleNewPayloadPromise])
