@@ -1,6 +1,7 @@
 import getJSON from 'get-json-lite'
 import pymIframe from 'pym-iframe-resizer'
 import { parse } from 'query-string'
+import 'promis'
 
 const chartbuilder = ({ pymChild, handleNewPayload }) => {
 	// listen to chartifier for data
