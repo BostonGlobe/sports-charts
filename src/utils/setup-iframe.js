@@ -1,7 +1,7 @@
 import getJSON from 'get-json-lite'
 import pymIframe from 'pym-iframe-resizer'
 
-const setup = (handleNewPayload) => {
+const setup = ({ handleNewPayload, handleEnterView }) => {
 
 	const pymChild = pymIframe({})
 
@@ -14,6 +14,9 @@ const setup = (handleNewPayload) => {
 	pymChild.onMessage('receive-data-url', url =>
 		getJSON(url, handleNewPayload))
 	pymChild.sendMessage('request-data-url', true)
+
+	// handle iframe entering view
+	pymChild.onMessage('enter-view', handleEnterView)
 
 }
 

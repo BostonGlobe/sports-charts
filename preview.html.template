@@ -31,12 +31,12 @@
 
 			<!-- (BEGIN) globe graphic iframe -->
 
-			<div id='globe-graphic-iframe-1' style='margin: 20px 0;'></div>
+			<div id='globe-graphic-iframe-1' class='igraphic-chart' style='margin: 20px 0;'></div>
 
-			<script src='https://apps.bostonglobe.com/common/js/pym/pym-0.4.5.min.js' type='text/javascript'></script>
+			<script src='https://apps.bostonglobe.com/common/js/pym/pym-0.4.5.min.js'></script>
+			<script src='https://apps.bostonglobe.com/common/js/enter-view/enter-view-0.0.3.min.js'></script>
 
 			<script>
-
 				(function() {
 					var chart = '<!-- chart -->';
 					var html = 'dev/charts/' + chart + '/index.html';
@@ -44,6 +44,15 @@
 
 					// chartifier
 					pymParent.onMessage('request-data', function() {
+
+						enterView({
+						    selector: '.igraphic-chart',
+						    offset: '50%',
+						    trigger: function(el) {
+						        pymParent.sendMessage('enter-view', true);
+						    }
+						});
+
 						var data = <!-- data -->;
 						pymParent.sendMessage('receive-data', JSON.stringify(data));
 					});
