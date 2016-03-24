@@ -1,6 +1,7 @@
 import { scaleLinear, scaleOrdinal, scaleQuantize } from 'd3-scale'
 import { select } from 'd3-selection'
 import 'd3-transition'
+import { easeQuadOut } from 'd3-ease'
 import { hexbin } from 'd3-hexbin'
 import { $, addClass, removeClass, hasClass } from '../../../utils/dom'
 
@@ -50,8 +51,8 @@ function getHexMade(d) {
 }
 
 // extract the most recent date from all shots
-function getLatestDate(shots) {
-	const sorted = shots.sort((a, b) => (+a.gameDate) - (+b.gameDate))
+function getLatestDate(rows) {
+	const sorted = rows.sort((a, b) => (+a.gameDate) - (+b.gameDate))
 	return sorted[sorted.length - 1].gameDate
 }
 
@@ -172,6 +173,7 @@ function updateDOM({ hexbinData, averages, date }) {
 		.attr('class', d => getColor({ d, averages, date }))
 		.transition()
 			.duration(transitionDuration)
+			.ease(easeQuadOut)
 			.delay(d => {
 				const className = getColor({ d, averages, date }).split(' ')[0]
 				if (className === 'below-threshold') return 0
@@ -194,21 +196,21 @@ function plotAll(points) {
 }
 
 // TODO remove
-function testFilter(shots) {
-	// console.log(data.shots[0])
-	// shots = shots.filter(s => s.zone.indexOf('three') > -1)
-	// shots = shots.filter(s => +s.quarter > 3)
-	// shots = shots.filter(s => +s.zone.indexOf('three (right') > -1)
-	// console.table(shots)
-	// console.log(shots.length)
-	return shots
+function testFilter(rows) {
+	// console.log(data.rows[0])
+	// rows = rows.filter(s => s.zone.indexOf('three') > -1)
+	// rows = rows.filter(s => +s.quarter > 3)
+	// rows = rows.filter(s => +s.zone.indexOf('three (right') > -1)
+	// console.table(rows)
+	// console.log(rows.length)
+	return rows
 }
 
-function updateBins({ averages, shots }) {
-	const date = getLatestDate(shots)
+function updateBins({ averages, rows }) {
+	const date = getLatestDate(rows)
 
 	// get x,y coords for each shot
-	const points = shots.map(shot => ({
+	const points = rows.map(shot => ({
 		...shot,
 		x: scales.shotX(shot.shotX),
 		y: scales.shotY(shot.shotY),
@@ -226,13 +228,13 @@ function updateBins({ averages, shots }) {
 	return true
 }
 
-function updateData({ averages, shots }) {
+function updateData({ averages, rows }) {
 	// make it global so we can reuse on resize
-	data.shots = testFilter(shots) // TODO remove
+	data.rows = testFilter(rows) // TODO remove
 	data.averages = averages
 	updateBins(data)
 
-	const date = getLatestDate(shots)
+	const date = getLatestDate(rows)
 	updateSubhed(date)
 }
 
@@ -306,7 +308,7 @@ function handleResize() {
 		$('.basket').innerHTML = ''
 		drawCourt({ court, basket, width, height })
 
-		if (data.shots) updateBins(data)
+		if (data.rows) updateBins(data)
 	}
 }
 
