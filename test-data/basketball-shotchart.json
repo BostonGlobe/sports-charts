@@ -1,5 +1,5 @@
 {
-  "hed": "Custom hed",
+  "hed": "Stephen Curry 2015-16",
   "data": {
     "averages": [
       {
@@ -9678,7 +9678,7 @@
         }
       }
     ],
-    "shots": [
+    "rows": [
       {
         "season": "201516",
         "gameDate": "20151027",
