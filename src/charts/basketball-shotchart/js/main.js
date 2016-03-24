@@ -4,7 +4,7 @@ import chart from './chart'
 chart.setup()
 
 const handleNewData = ({ averages, rows }, isChartbuilder) => {
-	if (rows.length) chart.updateData({ averages, shots: rows })
+	if (rows) chart.updateData({ averages, shots: rows })
 }
 
 const handleNewPayload = (err, payload) => {
