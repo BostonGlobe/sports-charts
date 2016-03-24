@@ -45,7 +45,7 @@ const prod = ({ pymChild, handleNewPayload }) => {
 	pymChild.sendMessage('request-data-url', true)
 }
 
-const setup = ({ handleNewPayload }) => {
+const setup = handleNewPayload => {
 
 	const pymChild = pymIframe({})
 

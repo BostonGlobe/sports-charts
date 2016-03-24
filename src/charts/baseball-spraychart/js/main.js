@@ -141,13 +141,7 @@ const handleNewData = (newData, isChartbuilder) => {
 
 }
 
-const handleNewPayload = (err, payload) => {
-
-	if (err) {
-		// TODO: better error handling
-		console.log("Oops. Look like we couldn't load this chart's data.")
-		return
-	}
+const handleNewPayload = (payload) => {
 
 	const { hed, rows, isChartbuilder } = payload
 
