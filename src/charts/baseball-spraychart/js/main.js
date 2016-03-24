@@ -142,12 +142,8 @@ const handleNewData = (newData, isChartbuilder) => {
 }
 
 const handleNewPayload = (payload) => {
-
-	const { hed, rows, isChartbuilder } = payload
-
-	if (hed) document.querySelector('header h1').textContent = hed
+	const { rows, isChartbuilder } = payload
 	if (rows) handleNewData(rows, isChartbuilder)
-
 }
 
 // this starts the pym resizer and takes a callback.

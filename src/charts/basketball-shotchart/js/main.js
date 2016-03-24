@@ -8,11 +8,8 @@ const handleNewData = ({ rows, metadata }) => {
 }
 
 const handleNewPayload = (payload) => {
-	const { rows, metadata, hed, isChartbuilder } = payload
-
-	if (hed) document.querySelector('header h1').textContent = hed
+	const { rows, metadata, isChartbuilder } = payload
 	if (rows) handleNewData({ rows, metadata, isChartbuilder })
-
 }
 
 setupIframe(handleNewPayload)
