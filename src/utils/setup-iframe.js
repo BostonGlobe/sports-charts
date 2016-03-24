@@ -6,7 +6,7 @@ import 'promis'
 const chartbuilder = ({ pymChild, handleNewPayload }) => {
 	// listen to chartifier for data
 	pymChild.onMessage('receive-data', d => {
-		const data = { ...d, isChartbuilder: true }
+		const data = { ...JSON.parse(d), isChartbuilder: true }
 		handleNewPayload(data)
 	})
 	pymChild.sendMessage('request-data', true)
