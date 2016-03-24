@@ -232,7 +232,7 @@ function updateData({ averages, shots }) {
 	data.averages = averages
 	updateBins(data)
 
-	const date = getLatestDate(shots) 
+	const date = getLatestDate(shots)
 	updateSubhed(date)
 }
 
