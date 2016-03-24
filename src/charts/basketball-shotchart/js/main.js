@@ -3,15 +3,15 @@ import chart from './chart'
 
 chart.setup()
 
-const handleNewData = ({ averages, rows }, isChartbuilder) => {
-	if (rows) chart.updateData({ averages, rows }, isChartbuilder)
+const handleNewData = ({ rows, metadata }) => {
+	if (rows) chart.updateData({ averages: metadata, rows })
 }
 
 const handleNewPayload = (payload) => {
-	const { data, hed, isChartbuilder } = payload
+	const { rows, metadata, hed, isChartbuilder } = payload
 
 	if (hed) document.querySelector('header h1').textContent = hed
-	if (data) handleNewData(data, isChartbuilder)
+	if (rows) handleNewData({ rows, metadata, isChartbuilder })
 
 }
 
