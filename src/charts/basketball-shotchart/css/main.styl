@@ -13,6 +13,10 @@ $strokeWidth = 2px
 .chart-container svg 
 	background-color $gray-pale
 
+.pattern-container svg 
+	width 0
+	height 0
+
 .key 
 	&-container
 		height 100%
@@ -39,10 +43,7 @@ $strokeWidth = 2px
 
 .average
 	stroke $celtics-team
-	&.bin-radius-10
-		fill url(#pattern-stripe-10)
-	&.bin-radius-12
-		fill url(#pattern-stripe-12)
+	fill url(#pattern-average) transparent
 
 .below
 	fill transparent

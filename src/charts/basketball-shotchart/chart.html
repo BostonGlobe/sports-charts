@@ -14,28 +14,9 @@
 	<div class='explainer'>
 		<a href='#'>How is this chart calculated?</a>
 		<p class='display-none'>
-			Individuals field goals are grouped together to create hexagonal bins that represent the frequency of a given location. Field goal percentage is then calculated for each bin. The color is determined by comparing the bin's field goal percentage to the league average of the zone the bin falls within. Zones include three in the paint, five for midrange, and for three point field goals. 
+			Individuals field goals are grouped together into bins based on proximity. The color is determined by comparing the bin’s overall field goal percentage of makes and misses to the league average of the zone the bin falls within (eg. “left corner three”). There 14 zones, including three in the paint, five for midrange field goals, and six for three point field goals. Bins with less than four shots are excluded from this graphic.
+		</p>
 	</div>
 </main>
 
-<svg>
-	<defs>
-		<pattern id="pattern-stripe-10" 
-			width="4" height="4" 
-			patternUnits="userSpaceOnUse"
-			patternTransform="rotate(120)">
-			<rect width="1" height="4" transform="translate(0,0)" class='pattern-fill'></rect>
-		</pattern>
-	</defs>
-</svg>
-
-<svg>
-	<defs>
-		<pattern id="pattern-stripe-12" 
-			width="5" height="5" 
-			patternUnits="userSpaceOnUse"
-			patternTransform="rotate(120)">
-			<rect width="1" height="5" transform="translate(0,0)" class='pattern-fill'></rect>
-		</pattern>
-	</defs>
-</svg>
+<div class='pattern-container'></div>

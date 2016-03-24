@@ -1,6 +1,5 @@
 const dimensions = { left: -25, right: 25, top: -5.25, bottom: 41.75 }
-const binRadius = 10
-// const binRadius = 12
+const binRatio = 1 / 30
 const transitionDuration = 1500
 const delayRange = [transitionDuration * 2, transitionDuration, 0]
 const percentRange = 12
@@ -9,7 +8,7 @@ const minShotsThreshold = 3
 
 export {
 	dimensions,
-	binRadius,
+	binRatio,
 	delayRange,
 	transitionDuration,
 	percentRange,

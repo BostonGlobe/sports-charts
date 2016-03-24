@@ -9,7 +9,7 @@ import getWeightedAverage from './getWeightedAverage'
 
 import {
 	dimensions,
-	binRadius,
+	binRatio,
 	delayRange,
 	transitionDuration,
 	percentRange,
@@ -35,6 +35,9 @@ let windowWidth = 0
 const data = {}
 
 // --- HELPERS ---
+function getBinRadius() {
+	return Math.floor(windowWidth * binRatio)
+}
 
 // how many shots were made in this hex bin
 function getHexMade(d) {
@@ -60,12 +63,11 @@ function getColor({ d, averages, date }) {
 		const percent = +((made / d.length * 1000) / 10).toFixed(2)
 		const diff = percent - average
 		const color = scales.color(diff)
-		return `${color} bin-radius-${binRadius}`
+		return `${color} bin-radius-${getBinRadius()}`
 	}
 
 	return 'below-threshold'
 }
-
 
 // --- UPDATE ---
 
@@ -81,12 +83,35 @@ function updateContainer({ width, height }) {
 	select('#clip').select('rect').attr('width', width).attr('height', height)
 }
 
+function updatePattern() {
+	$('.pattern-container').innerHTML = ''
+	const binRadius = getBinRadius()
+	const patternSize = Math.floor((binRadius - 1) / 2)
+
+	const pattern = select('.pattern-container')
+		.append('svg')
+		.append('defs')
+		.append('pattern')
+			.attr('id', 'pattern-average')
+			.attr('width', patternSize)
+			.attr('height', patternSize)
+			.attr('patternUnits', 'userSpaceOnUse')
+			.attr('patternTransform', 'rotate(120)')
+
+	pattern.append('rect')
+		.attr('class', 'pattern-fill')
+		.attr('width', 1)
+		.attr('height', patternSize)
+		.attr('transform', 'translate(0,0)')
+}
+
 function updateKey() {
 	const div = select('.key-average')
 	const svg = div.select('svg')
 	const g = svg.select('.hex-group')
 
 	const range = scales.color.range()
+	const binRadius = getBinRadius()
 	const sz = binRadius - 1
 	const padding = sz * 2
 	const height = sz * 3
@@ -136,7 +161,7 @@ function updateDOM({ hexbinData, averages, date }) {
 				if (className === 'below-threshold') return 0
 				return scales.delay(className)
 			})
-			.attr('d', hexbinner.hexagon(binRadius - 1))
+			.attr('d', hexbinner.hexagon(getBinRadius() - 1))
 }
 
 function plotAll(points) {
@@ -220,9 +245,6 @@ function setupKey() {
 	select('.key-average')
 		.append('svg').attr('width', 0).attr('height', 0)
 			.append('g').attr('class', 'hex-group')
-
-	// update key too
-	updateKey()
 }
 
 function setupExplainer() {
@@ -248,9 +270,13 @@ function handleResize() {
 
 		const width = Math.floor($('.chart-container').offsetWidth)
 		const height = Math.floor(width * courtRatio)
+
 		updateContainer({ width, height })
+		updatePattern()
+		updateKey()
+
 		hexbinner.size([width, height])
-		hexbinner.radius(binRadius)
+		hexbinner.radius(getBinRadius())
 
 		updateScales({ width, height })
 		const court = select('.court')
@@ -274,8 +300,11 @@ function setup() {
 	setupScales()
 	setupKey()
 	setupExplainer()
-	setupResize()
+
+	// things we can do once we know width
 	handleResize()
+	setupResize()
+	updateKey()
 }
 
 export default { setup, updateData }
