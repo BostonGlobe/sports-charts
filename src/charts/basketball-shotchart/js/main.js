@@ -4,7 +4,8 @@ import chart from './chart'
 chart.setup()
 
 const handleNewData = ({ rows, metadata }) => {
-	if (rows) chart.updateData({ averages: metadata, rows })
+	const { averages } = metadata
+	if (rows) chart.updateData({ averages, rows })
 }
 
 const handleNewPayload = (payload) => {
