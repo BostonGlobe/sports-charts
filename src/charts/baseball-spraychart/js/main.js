@@ -149,10 +149,10 @@ const handleNewPayload = (err, payload) => {
 		return
 	}
 
-	const { hed, data, isChartbuilder } = payload
+	const { hed, rows, isChartbuilder } = payload
 
 	if (hed) document.querySelector('header h1').textContent = hed
-	if (data) handleNewData(data, isChartbuilder)
+	if (rows) handleNewData(rows, isChartbuilder)
 
 }
 
