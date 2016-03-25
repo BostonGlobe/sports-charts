@@ -46,11 +46,11 @@
 					pymParent.onMessage('request-data', function() {
 
 						enterView({
-						    selector: '.igraphic-chart',
-						    offset: '50%',
-						    trigger: function(el) {
-						        pymParent.sendMessage('enter-view', true);
-						    }
+							selector: '.igraphic-chart',
+							offset: '50%',
+							trigger: function(el) {
+								pymParent.sendMessage('enter-view', true);
+							}
 						});
 
 						var data = <!-- data -->;
