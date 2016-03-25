@@ -5,7 +5,7 @@ chart.setup()
 
 const handleNewData = ({ rows, metadata }) => {
 	const { averages } = metadata
-	if (rows) chart.updateData({ averages, rows })
+	if (rows && averages) chart.updateData({ averages, rows })
 }
 
 const handleNewPayload = (payload) => {
