@@ -74,20 +74,6 @@ function getColor({ d, averages, date }) {
 
 // --- UPDATE ---
 
-function updateSubhed(str) {
-	if (str && str.length) {
-		const year = +str.substring(0, 4)
-		const month = +str.substring(4, 6) - 1
-		const day = +str.substring(6, 8)
-
-		const d = new Date(year, month, day)
-		const dateString = d.toDateString()
-		const split = dateString.split(' ')
-		const output = `${split[1]}. ${+split[2]}`
-		$('.subhed span').textContent = `through ${output}`
-	}
-}
-
 // update scale ranges that deal with screen size
 function updateScales({ width, height }) {
 	scales.shotX.range([width, 0])
@@ -233,9 +219,6 @@ function updateData({ averages, rows }) {
 	data.rows = testFilter(rows) // TODO remove
 	data.averages = averages
 	updateBins(data)
-
-	const date = getLatestDate(rows)
-	updateSubhed(date)
 }
 
 
