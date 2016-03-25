@@ -4,14 +4,16 @@ import { parse } from 'query-string'
 import 'promis'
 import { $ } from './dom'
 
-const displayHed = hed => $('.hed').textContent = hed
+const displayHeader = ({ hed, subhed }) => {
+	$('.hed').textContent = hed
+	$('.subhed').textContent = subhed
+}
 
 const chartbuilder = ({ pymChild, handleNewPayload }) => {
 	// listen to chartifier for data
 	pymChild.onMessage('receive-data', d => {
 		const data = { ...JSON.parse(d), isChartbuilder: true }
-		const { hed } = data
-		displayHed(hed)
+		displayHeader(data)
 		handleNewPayload(data)
 	})
 	pymChild.sendMessage('request-data', true)
@@ -24,8 +26,7 @@ const dev = ({ pymChild, handleNewPayload }) => {
 	const handleNewPayloadPromise = new Promise((resolve) =>
 		pymChild.onMessage('receive-data', d => {
 			const data = JSON.parse(d)
-			const { hed } = data
-			displayHed(hed)
+			displayHeader(data)
 			resolve(data)
 		})
 	)
@@ -44,8 +45,7 @@ const prod = ({ pymChild, handleNewPayload }) => {
 	const handleNewPayloadPromise = new Promise((resolve) =>
 		pymChild.onMessage('receive-data-url', url =>
 			getJSON(url, (err, data) => {
-				const { hed } = data
-				displayHed(hed)
+				displayHeader(data)
 				resolve(data)
 			})
 		)
