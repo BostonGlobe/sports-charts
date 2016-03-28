@@ -5,7 +5,8 @@ $sports = {
 	baseball: $redsox-secondary
 }
 
-
+html
+	max-width 300px
 
 header h1
 
@@ -13,8 +14,6 @@ header h1
 
 	&.players a
 		color $gray-secondary
-
-
 
 .chart-container
 
@@ -36,8 +35,6 @@ header h1
 					font-size $label-size
 					color white
 					padding-right 0.1em
-
-
 
 for sport, color in $sports
 	.chart-container.{sport}
