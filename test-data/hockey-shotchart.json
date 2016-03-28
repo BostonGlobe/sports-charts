@@ -2,17 +2,20 @@
 	"hed": "Boston Bruins 2015-16",
 	"subhed": "All shots through Mar. 3",
 	"rows": [
-	  {
-	  	"gameDate": 20151008,
-	  	"opponent": "wpg",
-	  	"home": true,
-	  	"goal": true,
-	  	"period": 1,
-	  	"time": "14:24",
-	  	"player": "David Krejci",
-	  	"playerX": 164,
-	  	"playerY": 41,
-	  	"powerPlay": false
-	  }
+		{
+			"season": 201516,
+			"gameDate": "20151008",
+			"team": "bos",
+			"opponent": "wpg",
+			"home": true,
+			"period": 1,
+			"time": "19:18",
+			"player": "Loui Eriksson",
+			"x": 20,
+			"y": 30,
+			"powerPlay": false,
+			"made": false,
+			"distance": 58.73
+		}
 	]
 }
