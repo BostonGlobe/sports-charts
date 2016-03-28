@@ -33,9 +33,12 @@ const scales = {
 
 let windowWidth = 0
 
+// global storage for data
 const data = {}
 
+
 // --- HELPERS ---
+
 function getBinRadius() {
 	return Math.floor(windowWidth * binRatio)
 }
@@ -52,7 +55,7 @@ function getHexMade(d) {
 
 // extract the most recent date from all shots
 function getLatestDate(rows) {
-	const sorted = rows.sort((a, b) => (+a.gameDate) - (+b.gameDate))
+	const sorted = rows.sort((a, b) => a.gameDate - b.gameDate)
 	return sorted[sorted.length - 1].gameDate
 }
 
@@ -70,7 +73,6 @@ function getColor({ d, averages, date }) {
 	return 'below-threshold'
 }
 
-// function stripLeadingZero()
 
 // --- UPDATE ---
 
@@ -86,6 +88,7 @@ function updateContainer({ width, height }) {
 	select('#clip').select('rect').attr('width', width).attr('height', height)
 }
 
+// create new stripe svg pattern for hex fills
 function updatePattern() {
 	$('.pattern-container').innerHTML = ''
 	const binRadius = getBinRadius()
@@ -108,6 +111,7 @@ function updatePattern() {
 		.attr('transform', 'translate(0,0)')
 }
 
+// create chart key with matching size and fills
 function updateKey() {
 	const div = select('.key-average')
 	const svg = div.select('svg')
@@ -138,6 +142,7 @@ function updateKey() {
 		.attr('d', hexbinner.hexagon(sz))
 }
 
+// render hexagons to chart
 function updateDOM({ hexbinData, averages, date }) {
 	$('.hexbin').innerHTML = ''
 	// bind data and set key
@@ -168,30 +173,7 @@ function updateDOM({ hexbinData, averages, date }) {
 			.attr('d', hexbinner.hexagon(getBinRadius() - 1))
 }
 
-function plotAll(points) {
-	select('.hexbin')
-		.selectAll('circle')
-		.data(points)
-		.enter()
-		.append('circle')
-		.attr('cx', d => d.x)
-		.attr('cy', d => d.y)
-		.attr('r', 2)
-		.style('opacity', 0.5)
-		.attr('class', d => d.made ? 'above' : 'below')
-}
-
-// TODO remove
-function testFilter(rows) {
-	// console.log(data.rows[0])
-	// rows = rows.filter(s => s.zone.indexOf('three') > -1)
-	// rows = rows.filter(s => +s.quarter > 3)
-	// rows = rows.filter(s => +s.zone.indexOf('three (right') > -1)
-	// console.table(rows)
-	// console.log(rows.length)
-	return rows
-}
-
+// compute new aggregation of points to bins
 function updateBins({ averages, rows }) {
 	const date = getLatestDate(rows)
 
@@ -209,21 +191,21 @@ function updateBins({ averages, rows }) {
 
 	// make updates
 	updateDOM({ hexbinData, averages, date })
-	// TODO remove
-	// plotAll(points)
 	return true
 }
 
-function updateData({ averages, rows }) {
+// make averages global for resize computations and update bins
+function updateData({ rows, averages }) {
 	// make it global so we can reuse on resize
-	data.rows = testFilter(rows) // TODO remove
 	data.averages = averages
+	data.rows = rows
 	updateBins(data)
 }
 
 
 // --- SETUP ---
 
+// add containers to dom
 function setupDOM() {
 	const svg = select('.chart-container').append('svg')
 
@@ -237,6 +219,7 @@ function setupDOM() {
 			.attr('class', 'mesh')
 }
 
+// basic domain/range for scales
 function setupScales() {
 	scales.shotX.domain([left, right])
 	scales.shotY.domain([top, bottom])
@@ -245,12 +228,14 @@ function setupScales() {
 		.range(colorClasses)
 }
 
+// setup dom for key
 function setupKey() {
 	select('.key-average')
 		.append('svg').attr('width', 0).attr('height', 0)
 			.append('g').attr('class', 'hex-group')
 }
 
+// setup event for toggling explainer text
 function setupExplainer() {
 	$('.explainer a').addEventListener('click', e => {
 		e.preventDefault()
@@ -268,6 +253,7 @@ function setupExplainer() {
 	})
 }
 
+// handle resize
 function handleResize() {
 	if (windowWidth !== window.innerWidth) {
 		windowWidth = window.innerWidth
@@ -295,10 +281,12 @@ function handleResize() {
 	}
 }
 
+// listen for resize event
 function setupResize() {
 	window.addEventListener('resize', handleResize)
 }
 
+// initialize chart
 function setup() {
 	setupDOM()
 	setupScales()
