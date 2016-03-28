@@ -5,7 +5,7 @@ import { dimensions } from './config'
 
 const { left, right, top, bottom } = dimensions
 const rinkWidth = bottom - top
-const rinkHeight = right - left
+// const rinkHeight = right - left
 
 const sz = scaleLinear().domain([0, rinkWidth])
 const pi = Math.PI
@@ -42,7 +42,6 @@ export default function drawRink({ rink, width, height }) {
 		.attr('rx', sz(cornerRadius))
 		.attr('ry', sz(cornerRadius))
 
-	console.log(11, sz(11))
 	// goal line
 	rink.append('rect')
 		.attr('class', 'rink-rect rink-goal-line')
@@ -98,7 +97,7 @@ export default function drawRink({ rink, width, height }) {
 		.attr('cy', height - sz(faceoffOffsetY))
 		.attr('r', sz(faceoffRadius))
 
-	// spots 
+	// spots
 	rink.append('circle')
 		.attr('class', 'rink-circle-fill faceoff faceoff-center')
 		.attr('cx', center)
