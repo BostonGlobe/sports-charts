@@ -180,8 +180,8 @@ function updateBins({ averages, rows }) {
 	// get x,y coords for each shot
 	const points = rows.map(shot => ({
 		...shot,
-		x: scales.shotX(shot.shotX),
-		y: scales.shotY(shot.shotY),
+		x: scales.shotX(shot.x),
+		y: scales.shotY(shot.y),
 	}))
 
 	// bin data into hexes
