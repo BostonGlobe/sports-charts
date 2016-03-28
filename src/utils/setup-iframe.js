@@ -5,8 +5,8 @@ import 'promis'
 import { $ } from './dom'
 
 const displayHeader = ({ hed, subhed }) => {
-	$('.hed').textContent = hed
-	$('.subhed').textContent = subhed
+	if ($('.hed')) $('.hed').textContent = hed
+	if ($('.subhed')) $('.subhed').textContent = subhed
 }
 
 const chartbuilder = ({ pymChild, handleNewPayload }) => {
