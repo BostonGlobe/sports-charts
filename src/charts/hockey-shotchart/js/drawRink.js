@@ -4,19 +4,33 @@ import { scaleLinear } from 'd3-scale'
 import { dimensions } from './config'
 
 const { left, right, top, bottom } = dimensions
-const rinkWidth = right - left
-const rinkHeight = bottom - top
+const rinkWidth = bottom - top
+const rinkHeight = right - left
 
 const sz = scaleLinear().domain([0, rinkWidth])
 const pi = Math.PI
 const cornerRadius = 14
-const thinLine = 1
-const thickLineMultiple = 6
-const goalLineFromTop = right - 11
-const blueLineFromTop = right - 64
+const thinLine = 2
+const thickLine = 6
+const spotRadius = 1
+const goalLine = 11
+const blueLineFromTop = 25
+const creaseWidth = 8
+const creaseHeight = 4.5
+const faceoffRadius = 15
+const faceoffOffsetX = 22
+const faceoffOffsetY = goalLine + 20
 
 export default function drawRink({ rink, width, height }) {
 	sz.range([0, width])
+
+	const center = width / 2
+
+	const creaseArc = arc()
+		.innerRadius(sz(6))
+		.outerRadius(sz(6))
+		.startAngle(-pi / 4)
+		.endAngle(pi / 4)
 
 	// entire ice surface
 	rink.append('rect')
@@ -28,24 +42,80 @@ export default function drawRink({ rink, width, height }) {
 		.attr('rx', sz(cornerRadius))
 		.attr('ry', sz(cornerRadius))
 
+	console.log(11, sz(11))
 	// goal line
 	rink.append('rect')
-		.attr('class', 'rink-goal-line')
+		.attr('class', 'rink-rect rink-goal-line')
 		.attr('x', 0)
-		.attr('y', sz(goalLineFromTop))
+		.attr('y', height - sz(11))
 		.attr('width', width)
 		.attr('height', thinLine)
 
 	// blue line
 	rink.append('rect')
-		.attr('class', 'rink-goal-line')
+		.attr('class', 'rink-rect rink-blue-line')
 		.attr('x', 0)
 		.attr('y', sz(blueLineFromTop))
 		.attr('width', width)
-		.attr('height', thinLine * thickLineMultiple)
+		.attr('height', thickLine)
 
-	// rink.append('line')
-	// 	.attr('class', 'court-line three-left-corner round')
+	// crease
+	rink.append('line')
+		.attr('class', 'rink-line crease-line')
+		.attr('x1', center - sz(creaseWidth / 2))
+		.attr('y1', height - sz(goalLine))
+		.attr('x2', center - sz(creaseWidth / 2))
+		.attr('y2', height - sz(goalLine + creaseHeight))
+
+	rink.append('line')
+		.attr('class', 'rink-line crease-line')
+		.attr('x1', center + sz(creaseWidth / 2))
+		.attr('y1', height - sz(goalLine))
+		.attr('x2', center + sz(creaseWidth / 2))
+		.attr('y2', height - sz(goalLine + creaseHeight))
+
+	rink.append('path')
+		.attr('class', 'rink-line crease-arc')
+		.attr('d', creaseArc)
+		.attr('transform', `translate(${center},${height - sz(goalLine)})`)
+
+	// faceoff circles
+	rink.append('circle')
+		.attr('class', 'rink-circle faceoff faceoff-center')
+		.attr('cx', center)
+		.attr('cy', 0)
+		.attr('r', sz(faceoffRadius))
+
+	rink.append('circle')
+		.attr('class', 'rink-circle faceoff faceoff-left')
+		.attr('cx', center - sz(faceoffOffsetX))
+		.attr('cy', height - sz(faceoffOffsetY))
+		.attr('r', sz(faceoffRadius))
+
+	rink.append('circle')
+		.attr('class', 'rink-circle faceoff faceoff-right')
+		.attr('cx', center + sz(faceoffOffsetX))
+		.attr('cy', height - sz(faceoffOffsetY))
+		.attr('r', sz(faceoffRadius))
+
+	// spots 
+	rink.append('circle')
+		.attr('class', 'rink-circle-fill faceoff faceoff-center')
+		.attr('cx', center)
+		.attr('cy', 0)
+		.attr('r', sz(spotRadius))
+
+	rink.append('circle')
+		.attr('class', 'rink-circle-fill faceoff faceoff-left')
+		.attr('cx', center - sz(faceoffOffsetX))
+		.attr('cy', height - sz(faceoffOffsetY))
+		.attr('r', sz(spotRadius))
+
+	rink.append('circle')
+		.attr('class', 'rink-circle-fill faceoff faceoff-right')
+		.attr('cx', center + sz(faceoffOffsetX))
+		.attr('cy', height - sz(faceoffOffsetY))
+		.attr('r', sz(spotRadius))
 	// 	.attr('x1', sz(cornerThreeFromEdge.x))
 	// 	.attr('y1', height)
 	// 	.attr('x2', sz(cornerThreeFromEdge.x))

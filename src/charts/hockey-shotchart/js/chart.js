@@ -11,8 +11,8 @@ import {
 } from './config'
 
 const { left, right, top, bottom } = dimensions
-const rinkWidth = right - left
-const rinkHeight = bottom - top
+const rinkWidth = bottom - top
+const rinkHeight = right - left
 const rinkRatio = rinkHeight / rinkWidth
 
 const scales = {

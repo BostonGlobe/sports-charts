@@ -1,13 +1,26 @@
 @require './../../../base/css/variables.styl'
 
-$lineFill = #fff
+$lineColor = #fff
 
 .rink
 	&-bg 
 		fill $gray-pale
 		
-	&-goal-line
-		fill $lineFill
+	&-line
+		stroke $lineColor
+		stroke-width 2px
+	
+	&-rect
+		fill $lineColor
+	
+	&-circle 
+		fill transparent 
+		stroke-width 2px 
+		stroke $lineColor
+	
+	&-circle-fill
+		fill $lineColor
+		stroke-width 0
 
 .shot 
 	fill red
