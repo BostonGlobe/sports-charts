@@ -19,7 +19,8 @@ const createSvg = ({ container, margins, width, height, parkSize }) => {
 	const svg = select(container).append('svg')
 		.attr('width', newWidth + left + right)
 		.attr('height', newHeight + top + bottom)
-		.attr('viewBox', [0, 0, newWidth + left + right, newHeight + top + bottom].join(' '))
+		.attr('viewBox',
+			[0, 0, newWidth + left + right, newHeight + top + bottom].join(' '))
 		.attr('preserveAspectRatio', 'xMidYMid')
 
 	const g = svg.append('g')
