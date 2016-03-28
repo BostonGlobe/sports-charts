@@ -36,6 +36,9 @@ const drawData = ({ svg, data, detachedContainer, scales }) => {
 
 	svg.select('g.axes--y')
 		.call(axisY)
+		.selectAll('g.tick')
+		.classed('baseline', d => d === 0)
+		.attr('transform', d => `translate(0, ${y(d) - (d < 0 ? 1 : 0)})`)
 
 	svg.select('g.axes--x text.label')
 		.text(extent(data, d => d.gamedate).map(dateFormat).join(' ‐ '))
