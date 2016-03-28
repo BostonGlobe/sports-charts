@@ -1,0 +1,31 @@
+@require './../../../base/css/variables.styl'
+@require './../../../base/css/base.styl'
+
+svg
+	display block
+	.bars
+		shape-rendering crispEdges
+	.axes
+		&--x
+			text.label
+				font-size $label-size
+		&--y
+			path, line
+				fill none
+				stroke $gray-tertiary
+				shape-rendering crispEdges
+				stroke-dasharray 1, 6
+				&.domain
+					display none
+			text
+				fill $gray-tertiary
+				font-size $unitlabel-size
+				text-transform uppercase
+
+canvas
+	display block
+	width 100%
+	position absolute
+	top 0
+	left 0
+	image-rendering pixelated

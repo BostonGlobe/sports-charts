@@ -1,0 +1,1463 @@
+{
+	"hed": "run differential: last 10 games",
+	"rows": [
+		{
+			"gamedate": "20150406",
+			"gamedate-display": "Mon., April 6",
+			"gameno": 1,
+			"index": 0,
+			"opp": "@Phi",
+			"outcome": "W, 8-0",
+			"run-differential": 8
+		},
+		{
+			"gamedate": "20150408",
+			"gamedate-display": "Wed., April 8",
+			"gameno": 2,
+			"index": 1,
+			"opp": "@Phi",
+			"outcome": "L, 4-2",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150409",
+			"gamedate-display": "Thu., April 9",
+			"gameno": 3,
+			"index": 2,
+			"opp": "@Phi",
+			"outcome": "W, 6-2",
+			"run-differential": 4
+		},
+		{
+			"gamedate": "20150410",
+			"gamedate-display": "Fri., April 10",
+			"gameno": 4,
+			"index": 3,
+			"opp": "@NYY",
+			"outcome": "W, 6-5",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150411",
+			"gamedate-display": "Sat., April 11",
+			"gameno": 5,
+			"index": 4,
+			"opp": "@NYY",
+			"outcome": "W, 8-4",
+			"run-differential": 4
+		},
+		{
+			"gamedate": "20150412",
+			"gamedate-display": "Sun., April 12",
+			"gameno": 6,
+			"index": 5,
+			"opp": "@NYY",
+			"outcome": "L, 14-4",
+			"run-differential": -10
+		},
+		{
+			"gamedate": "20150413",
+			"gamedate-display": "Mon., April 13",
+			"gameno": 7,
+			"index": 6,
+			"opp": "Was",
+			"outcome": "W, 9-4",
+			"run-differential": 5
+		},
+		{
+			"gamedate": "20150414",
+			"gamedate-display": "Tue., April 14",
+			"gameno": 8,
+			"index": 7,
+			"opp": "Was",
+			"outcome": "W, 8-7",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150415",
+			"gamedate-display": "Wed., April 15",
+			"gameno": 9,
+			"index": 8,
+			"opp": "Was",
+			"outcome": "L, 10-5",
+			"run-differential": -5
+		},
+		{
+			"gamedate": "20150417",
+			"gamedate-display": "Fri., April 17",
+			"gameno": 10,
+			"index": 9,
+			"opp": "Bal",
+			"outcome": "W, 3-2",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150418",
+			"gamedate-display": "Sat., April 18",
+			"gameno": 11,
+			"index": 10,
+			"opp": "Bal",
+			"outcome": "L, 4-1",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150419",
+			"gamedate-display": "Sun., April 19",
+			"gameno": 12,
+			"index": 11,
+			"opp": "Bal",
+			"outcome": "L, 8-3",
+			"run-differential": -5
+		},
+		{
+			"gamedate": "20150420",
+			"gamedate-display": "Mon., April 20",
+			"gameno": 13,
+			"index": 12,
+			"opp": "Bal",
+			"outcome": "W, 7-1",
+			"run-differential": 6
+		},
+		{
+			"gamedate": "20150421",
+			"gamedate-display": "Tue., April 21",
+			"gameno": 14,
+			"index": 13,
+			"opp": "@TB",
+			"outcome": "W, 1-0",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150422",
+			"gamedate-display": "Wed., April 22",
+			"gameno": 15,
+			"index": 14,
+			"opp": "@TB",
+			"outcome": "L, 7-5",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150423",
+			"gamedate-display": "Thu., April 23",
+			"gameno": 16,
+			"index": 15,
+			"opp": "@TB",
+			"outcome": "L, 2-1",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150424",
+			"gamedate-display": "Fri., April 24",
+			"gameno": 17,
+			"index": 16,
+			"opp": "@Bal",
+			"outcome": "W, 7-5",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150425",
+			"gamedate-display": "Sat., April 25",
+			"gameno": 18,
+			"index": 17,
+			"opp": "@Bal",
+			"outcome": "L, 5-4",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150426",
+			"gamedate-display": "Sun., April 26",
+			"gameno": 19,
+			"index": 18,
+			"opp": "@Bal",
+			"outcome": "L, 18-7",
+			"run-differential": -11
+		},
+		{
+			"gamedate": "20150427",
+			"gamedate-display": "Mon., April 27",
+			"gameno": 20,
+			"index": 19,
+			"opp": "Tor",
+			"outcome": "W, 6-5",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150428",
+			"gamedate-display": "Tue., April 28",
+			"gameno": 21,
+			"index": 20,
+			"opp": "Tor",
+			"outcome": "L, 11-8",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150429",
+			"gamedate-display": "Wed., April 29",
+			"gameno": 22,
+			"index": 21,
+			"opp": "Tor",
+			"outcome": "W, 4-1",
+			"run-differential": 3
+		},
+		{
+			"gamedate": "20150501",
+			"gamedate-display": "Fri., May 1",
+			"gameno": 23,
+			"index": 22,
+			"opp": "NYY",
+			"outcome": "L, 3-2",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150502",
+			"gamedate-display": "Sat., May 2",
+			"gameno": 24,
+			"index": 23,
+			"opp": "NYY",
+			"outcome": "L, 4-2",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150503",
+			"gamedate-display": "Sun., May 3",
+			"gameno": 25,
+			"index": 24,
+			"opp": "NYY",
+			"outcome": "L, 8-5",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150504",
+			"gamedate-display": "Mon., May 4",
+			"gameno": 26,
+			"index": 25,
+			"opp": "TB",
+			"outcome": "L, 5-1",
+			"run-differential": -4
+		},
+		{
+			"gamedate": "20150505",
+			"gamedate-display": "Tue., May 5",
+			"gameno": 27,
+			"index": 26,
+			"opp": "TB",
+			"outcome": "W, 2-0",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150506",
+			"gamedate-display": "Wed., May 6",
+			"gameno": 28,
+			"index": 27,
+			"opp": "TB",
+			"outcome": "L, 5-3",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150508",
+			"gamedate-display": "Fri., May 8",
+			"gameno": 29,
+			"index": 28,
+			"opp": "@Tor",
+			"outcome": "L, 7-0",
+			"run-differential": -7
+		},
+		{
+			"gamedate": "20150509",
+			"gamedate-display": "Sat., May 9",
+			"gameno": 30,
+			"index": 29,
+			"opp": "@Tor",
+			"outcome": "L, 7-1",
+			"run-differential": -6
+		},
+		{
+			"gamedate": "20150510",
+			"gamedate-display": "Sun., May 10",
+			"gameno": 31,
+			"index": 30,
+			"opp": "@Tor",
+			"outcome": "W, 6-3",
+			"run-differential": 3
+		},
+		{
+			"gamedate": "20150511",
+			"gamedate-display": "Mon., May 11",
+			"gameno": 32,
+			"index": 31,
+			"opp": "@Oak",
+			"outcome": "W, 5-4",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150512",
+			"gamedate-display": "Tue., May 12",
+			"gameno": 33,
+			"index": 32,
+			"opp": "@Oak",
+			"outcome": "L, 9-2",
+			"run-differential": -7
+		},
+		{
+			"gamedate": "20150513",
+			"gamedate-display": "Wed., May 13",
+			"gameno": 34,
+			"index": 33,
+			"opp": "@Oak",
+			"outcome": "W, 2-0",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150514",
+			"gamedate-display": "Thu., May 14",
+			"gameno": 35,
+			"index": 34,
+			"opp": "@Sea",
+			"outcome": "W, 2-1",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150515",
+			"gamedate-display": "Fri., May 15",
+			"gameno": 36,
+			"index": 35,
+			"opp": "@Sea",
+			"outcome": "L, 2-1",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150516",
+			"gamedate-display": "Sat., May 16",
+			"gameno": 37,
+			"index": 36,
+			"opp": "@Sea",
+			"outcome": "W, 4-2",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150517",
+			"gamedate-display": "Sun., May 17",
+			"gameno": 38,
+			"index": 37,
+			"opp": "@Sea",
+			"outcome": "L, 5-0",
+			"run-differential": -5
+		},
+		{
+			"gamedate": "20150519",
+			"gamedate-display": "Tue., May 19",
+			"gameno": 39,
+			"index": 38,
+			"opp": "Tex",
+			"outcome": "W, 4-3",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150520",
+			"gamedate-display": "Wed., May 20",
+			"gameno": 40,
+			"index": 39,
+			"opp": "Tex",
+			"outcome": "L, 2-1",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150521",
+			"gamedate-display": "Thu., May 21",
+			"gameno": 41,
+			"index": 40,
+			"opp": "Tex",
+			"outcome": "L, 3-1",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150522",
+			"gamedate-display": "Fri., May 22",
+			"gameno": 42,
+			"index": 41,
+			"opp": "LAA",
+			"outcome": "L, 12-5",
+			"run-differential": -7
+		},
+		{
+			"gamedate": "20150523",
+			"gamedate-display": "Sat., May 23",
+			"gameno": 43,
+			"index": 42,
+			"opp": "LAA",
+			"outcome": "W, 8-3",
+			"run-differential": 5
+		},
+		{
+			"gamedate": "20150524",
+			"gamedate-display": "Sun., May 24",
+			"gameno": 44,
+			"index": 43,
+			"opp": "LAA",
+			"outcome": "W, 6-1",
+			"run-differential": 5
+		},
+		{
+			"gamedate": "20150525",
+			"gamedate-display": "Mon., May 25",
+			"gameno": 45,
+			"index": 44,
+			"opp": "@Min",
+			"outcome": "L, 7-2",
+			"run-differential": -5
+		},
+		{
+			"gamedate": "20150526",
+			"gamedate-display": "Tue., May 26",
+			"gameno": 46,
+			"index": 45,
+			"opp": "@Min",
+			"outcome": "L, 2-1",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150527",
+			"gamedate-display": "Wed., May 27",
+			"gameno": 47,
+			"index": 46,
+			"opp": "@Min",
+			"outcome": "L, 6-4",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150528",
+			"gamedate-display": "Thu., May 28",
+			"gameno": 48,
+			"index": 47,
+			"opp": "@Tex",
+			"outcome": "W, 5-1",
+			"run-differential": 4
+		},
+		{
+			"gamedate": "20150529",
+			"gamedate-display": "Fri., May 29",
+			"gameno": 49,
+			"index": 48,
+			"opp": "@Tex",
+			"outcome": "L, 7-4",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150530",
+			"gamedate-display": "Sat., May 30",
+			"gameno": 50,
+			"index": 49,
+			"opp": "@Tex",
+			"outcome": "L, 8-0",
+			"run-differential": -8
+		},
+		{
+			"gamedate": "20150531",
+			"gamedate-display": "Sun., May 31",
+			"gameno": 51,
+			"index": 50,
+			"opp": "@Tex",
+			"outcome": "L, 4-3",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150602",
+			"gamedate-display": "Tue., June 2",
+			"gameno": 52,
+			"index": 51,
+			"opp": "Min",
+			"outcome": "W, 1-0",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150603",
+			"gamedate-display": "Wed., June 3",
+			"gameno": 53,
+			"index": 52,
+			"opp": "Min",
+			"outcome": "W, 6-3",
+			"run-differential": 3
+		},
+		{
+			"gamedate": "20150603",
+			"gamedate-display": "Wed., June 3",
+			"gameno": 54,
+			"index": 53,
+			"opp": "Min",
+			"outcome": "L, 2-0",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150604",
+			"gamedate-display": "Thu., June 4",
+			"gameno": 55,
+			"index": 54,
+			"opp": "Min",
+			"outcome": "L, 8-4",
+			"run-differential": -4
+		},
+		{
+			"gamedate": "20150605",
+			"gamedate-display": "Fri., June 5",
+			"gameno": 56,
+			"index": 55,
+			"opp": "Oak",
+			"outcome": "W, 4-2",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150606",
+			"gamedate-display": "Sat., June 6",
+			"gameno": 57,
+			"index": 56,
+			"opp": "Oak",
+			"outcome": "W, 4-2",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150607",
+			"gamedate-display": "Sun., June 7",
+			"gameno": 58,
+			"index": 57,
+			"opp": "Oak",
+			"outcome": "W, 7-4",
+			"run-differential": 3
+		},
+		{
+			"gamedate": "20150609",
+			"gamedate-display": "Tue., June 9",
+			"gameno": 59,
+			"index": 58,
+			"opp": "@Bal",
+			"outcome": "L, 1-0",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150610",
+			"gamedate-display": "Wed., June 10",
+			"gameno": 60,
+			"index": 59,
+			"opp": "@Bal",
+			"outcome": "L, 5-2",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150611",
+			"gamedate-display": "Thu., June 11",
+			"gameno": 61,
+			"index": 60,
+			"opp": "@Bal",
+			"outcome": "L, 6-5",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150612",
+			"gamedate-display": "Fri., June 12",
+			"gameno": 62,
+			"index": 61,
+			"opp": "Tor",
+			"outcome": "L, 13-10",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150613",
+			"gamedate-display": "Sat., June 13",
+			"gameno": 63,
+			"index": 62,
+			"opp": "Tor",
+			"outcome": "L, 5-4",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150614",
+			"gamedate-display": "Sun., June 14",
+			"gameno": 64,
+			"index": 63,
+			"opp": "Tor",
+			"outcome": "L, 13-5",
+			"run-differential": -8
+		},
+		{
+			"gamedate": "20150615",
+			"gamedate-display": "Mon., June 15",
+			"gameno": 65,
+			"index": 64,
+			"opp": "Atl",
+			"outcome": "L, 4-2",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150616",
+			"gamedate-display": "Tue., June 16",
+			"gameno": 66,
+			"index": 65,
+			"opp": "Atl",
+			"outcome": "W, 9-4",
+			"run-differential": 5
+		},
+		{
+			"gamedate": "20150617",
+			"gamedate-display": "Wed., June 17",
+			"gameno": 67,
+			"index": 66,
+			"opp": "@Atl",
+			"outcome": "L, 5-2",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150618",
+			"gamedate-display": "Thu., June 18",
+			"gameno": 68,
+			"index": 67,
+			"opp": "@Atl",
+			"outcome": "W, 5-2",
+			"run-differential": 3
+		},
+		{
+			"gamedate": "20150619",
+			"gamedate-display": "Fri., June 19",
+			"gameno": 69,
+			"index": 68,
+			"opp": "@KC",
+			"outcome": "W, 7-3",
+			"run-differential": 4
+		},
+		{
+			"gamedate": "20150620",
+			"gamedate-display": "Sat., June 20",
+			"gameno": 70,
+			"index": 69,
+			"opp": "@KC",
+			"outcome": "L, 7-4",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150621",
+			"gamedate-display": "Sun., June 21",
+			"gameno": 71,
+			"index": 70,
+			"opp": "@KC",
+			"outcome": "W, 13-2",
+			"run-differential": 11
+		},
+		{
+			"gamedate": "20150623",
+			"gamedate-display": "Tue., June 23",
+			"gameno": 72,
+			"index": 71,
+			"opp": "Bal",
+			"outcome": "L, 6-4",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150624",
+			"gamedate-display": "Wed., June 24",
+			"gameno": 73,
+			"index": 72,
+			"opp": "Bal",
+			"outcome": "W, 5-1",
+			"run-differential": 4
+		},
+		{
+			"gamedate": "20150625",
+			"gamedate-display": "Thu., June 25",
+			"gameno": 74,
+			"index": 73,
+			"opp": "Bal",
+			"outcome": "L, 8-6",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150626",
+			"gamedate-display": "Fri., June 26",
+			"gameno": 75,
+			"index": 74,
+			"opp": "@TB",
+			"outcome": "W, 4-3",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150627",
+			"gamedate-display": "Sat., June 27",
+			"gameno": 76,
+			"index": 75,
+			"opp": "@TB",
+			"outcome": "L, 4-1",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150628",
+			"gamedate-display": "Sun., June 28",
+			"gameno": 77,
+			"index": 76,
+			"opp": "@TB",
+			"outcome": "W, 5-3",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150629",
+			"gamedate-display": "Mon., June 29",
+			"gameno": 78,
+			"index": 77,
+			"opp": "@Tor",
+			"outcome": "W, 3-1",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150630",
+			"gamedate-display": "Tue., June 30",
+			"gameno": 79,
+			"index": 78,
+			"opp": "@Tor",
+			"outcome": "W, 4-3",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150701",
+			"gamedate-display": "Wed., July 1",
+			"gameno": 80,
+			"index": 79,
+			"opp": "@Tor",
+			"outcome": "L, 11-2",
+			"run-differential": -9
+		},
+		{
+			"gamedate": "20150702",
+			"gamedate-display": "Thu., July 2",
+			"gameno": 81,
+			"index": 80,
+			"opp": "@Tor",
+			"outcome": "W, 12-6",
+			"run-differential": 6
+		},
+		{
+			"gamedate": "20150703",
+			"gamedate-display": "Fri., July 3",
+			"gameno": 82,
+			"index": 81,
+			"opp": "Hou",
+			"outcome": "L, 12-8",
+			"run-differential": -4
+		},
+		{
+			"gamedate": "20150704",
+			"gamedate-display": "Sat., July 4",
+			"gameno": 83,
+			"index": 82,
+			"opp": "Hou",
+			"outcome": "W, 6-1",
+			"run-differential": 5
+		},
+		{
+			"gamedate": "20150705",
+			"gamedate-display": "Sun., July 5",
+			"gameno": 84,
+			"index": 83,
+			"opp": "Hou",
+			"outcome": "W, 5-4",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150707",
+			"gamedate-display": "Tue., July 7",
+			"gameno": 85,
+			"index": 84,
+			"opp": "Mia",
+			"outcome": "W, 4-3",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150708",
+			"gamedate-display": "Wed., July 8",
+			"gameno": 86,
+			"index": 85,
+			"opp": "Mia",
+			"outcome": "W, 6-3",
+			"run-differential": 3
+		},
+		{
+			"gamedate": "20150710",
+			"gamedate-display": "Fri., July 10",
+			"gameno": 87,
+			"index": 86,
+			"opp": "NYY",
+			"outcome": "L, 5-1",
+			"run-differential": -4
+		},
+		{
+			"gamedate": "20150711",
+			"gamedate-display": "Sat., July 11",
+			"gameno": 88,
+			"index": 87,
+			"opp": "NYY",
+			"outcome": "W, 5-3",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150712",
+			"gamedate-display": "Sun., July 12",
+			"gameno": 89,
+			"index": 88,
+			"opp": "NYY",
+			"outcome": "L, 8-6",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150717",
+			"gamedate-display": "Fri., July 17",
+			"gameno": 90,
+			"index": 89,
+			"opp": "@LAA",
+			"outcome": "L, 1-0",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150718",
+			"gamedate-display": "Sat., July 18",
+			"gameno": 91,
+			"index": 90,
+			"opp": "@LAA",
+			"outcome": "L, 3-0",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150720",
+			"gamedate-display": "Mon., July 20",
+			"gameno": 92,
+			"index": 91,
+			"opp": "@LAA",
+			"outcome": "L, 11-1",
+			"run-differential": -10
+		},
+		{
+			"gamedate": "20150720",
+			"gamedate-display": "Mon., July 20",
+			"gameno": 93,
+			"index": 92,
+			"opp": "@LAA",
+			"outcome": "L, 7-3",
+			"run-differential": -4
+		},
+		{
+			"gamedate": "20150721",
+			"gamedate-display": "Tue., July 21",
+			"gameno": 94,
+			"index": 93,
+			"opp": "@Hou",
+			"outcome": "L, 8-3",
+			"run-differential": -5
+		},
+		{
+			"gamedate": "20150722",
+			"gamedate-display": "Wed., July 22",
+			"gameno": 95,
+			"index": 94,
+			"opp": "@Hou",
+			"outcome": "L, 4-2",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150723",
+			"gamedate-display": "Thu., July 23",
+			"gameno": 96,
+			"index": 95,
+			"opp": "@Hou",
+			"outcome": "L, 5-4",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150724",
+			"gamedate-display": "Fri., July 24",
+			"gameno": 97,
+			"index": 96,
+			"opp": "Det",
+			"outcome": "W, 2-1",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150725",
+			"gamedate-display": "Sat., July 25",
+			"gameno": 98,
+			"index": 97,
+			"opp": "Det",
+			"outcome": "L, 5-1",
+			"run-differential": -4
+		},
+		{
+			"gamedate": "20150726",
+			"gamedate-display": "Sun., July 26",
+			"gameno": 99,
+			"index": 98,
+			"opp": "Det",
+			"outcome": "W, 11-1",
+			"run-differential": 10
+		},
+		{
+			"gamedate": "20150727",
+			"gamedate-display": "Mon., July 27",
+			"gameno": 100,
+			"index": 99,
+			"opp": "CWS",
+			"outcome": "L, 10-8",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150728",
+			"gamedate-display": "Tue., July 28",
+			"gameno": 101,
+			"index": 100,
+			"opp": "CWS",
+			"outcome": "L, 9-4",
+			"run-differential": -5
+		},
+		{
+			"gamedate": "20150729",
+			"gamedate-display": "Wed., July 29",
+			"gameno": 102,
+			"index": 101,
+			"opp": "CWS",
+			"outcome": "L, 9-2",
+			"run-differential": -7
+		},
+		{
+			"gamedate": "20150730",
+			"gamedate-display": "Thu., July 30",
+			"gameno": 103,
+			"index": 102,
+			"opp": "CWS",
+			"outcome": "W, 8-2",
+			"run-differential": 6
+		},
+		{
+			"gamedate": "20150731",
+			"gamedate-display": "Fri., July 31",
+			"gameno": 104,
+			"index": 103,
+			"opp": "TB",
+			"outcome": "W, 7-5",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150801",
+			"gamedate-display": "Sat., Aug. 1",
+			"gameno": 105,
+			"index": 104,
+			"opp": "TB",
+			"outcome": "W, 11-7",
+			"run-differential": 4
+		},
+		{
+			"gamedate": "20150802",
+			"gamedate-display": "Sun., Aug. 2",
+			"gameno": 106,
+			"index": 105,
+			"opp": "TB",
+			"outcome": "L, 4-3",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150804",
+			"gamedate-display": "Tue., Aug. 4",
+			"gameno": 107,
+			"index": 106,
+			"opp": "@NYY",
+			"outcome": "L, 13-3",
+			"run-differential": -10
+		},
+		{
+			"gamedate": "20150805",
+			"gamedate-display": "Wed., Aug. 5",
+			"gameno": 108,
+			"index": 107,
+			"opp": "@NYY",
+			"outcome": "W, 2-1",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150806",
+			"gamedate-display": "Thu., Aug. 6",
+			"gameno": 109,
+			"index": 108,
+			"opp": "@NYY",
+			"outcome": "L, 2-1",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150807",
+			"gamedate-display": "Fri., Aug. 7",
+			"gameno": 110,
+			"index": 109,
+			"opp": "@Det",
+			"outcome": "W, 7-2",
+			"run-differential": 5
+		},
+		{
+			"gamedate": "20150808",
+			"gamedate-display": "Sat., Aug. 8",
+			"gameno": 111,
+			"index": 110,
+			"opp": "@Det",
+			"outcome": "L, 7-6",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150809",
+			"gamedate-display": "Sun., Aug. 9",
+			"gameno": 112,
+			"index": 111,
+			"opp": "@Det",
+			"outcome": "W, 7-2",
+			"run-differential": 5
+		},
+		{
+			"gamedate": "20150811",
+			"gamedate-display": "Tue., Aug. 11",
+			"gameno": 113,
+			"index": 112,
+			"opp": "@Mia",
+			"outcome": "L, 5-4",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150812",
+			"gamedate-display": "Wed., Aug. 12",
+			"gameno": 114,
+			"index": 113,
+			"opp": "@Mia",
+			"outcome": "L, 14-6",
+			"run-differential": -8
+		},
+		{
+			"gamedate": "20150814",
+			"gamedate-display": "Fri., Aug. 14",
+			"gameno": 115,
+			"index": 114,
+			"opp": "Sea",
+			"outcome": "W, 15-1",
+			"run-differential": 14
+		},
+		{
+			"gamedate": "20150815",
+			"gamedate-display": "Sat., Aug. 15",
+			"gameno": 116,
+			"index": 115,
+			"opp": "Sea",
+			"outcome": "W, 22-10",
+			"run-differential": 12
+		},
+		{
+			"gamedate": "20150816",
+			"gamedate-display": "Sun., Aug. 16",
+			"gameno": 117,
+			"index": 116,
+			"opp": "Sea",
+			"outcome": "L, 10-8",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150817",
+			"gamedate-display": "Mon., Aug. 17",
+			"gameno": 118,
+			"index": 117,
+			"opp": "Cle",
+			"outcome": "L, 8-2",
+			"run-differential": -6
+		},
+		{
+			"gamedate": "20150818",
+			"gamedate-display": "Tue., Aug. 18",
+			"gameno": 119,
+			"index": 118,
+			"opp": "Cle",
+			"outcome": "W, 9-1",
+			"run-differential": 8
+		},
+		{
+			"gamedate": "20150819",
+			"gamedate-display": "Wed., Aug. 19",
+			"gameno": 120,
+			"index": 119,
+			"opp": "Cle",
+			"outcome": "W, 6-4",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150820",
+			"gamedate-display": "Thu., Aug. 20",
+			"gameno": 121,
+			"index": 120,
+			"opp": "KC",
+			"outcome": "W, 4-1",
+			"run-differential": 3
+		},
+		{
+			"gamedate": "20150821",
+			"gamedate-display": "Fri., Aug. 21",
+			"gameno": 122,
+			"index": 121,
+			"opp": "KC",
+			"outcome": "W, 7-2",
+			"run-differential": 5
+		},
+		{
+			"gamedate": "20150822",
+			"gamedate-display": "Sat., Aug. 22",
+			"gameno": 123,
+			"index": 122,
+			"opp": "KC",
+			"outcome": "L, 6-3",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150823",
+			"gamedate-display": "Sun., Aug. 23",
+			"gameno": 124,
+			"index": 123,
+			"opp": "KC",
+			"outcome": "L, 8-6",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150824",
+			"gamedate-display": "Mon., Aug. 24",
+			"gameno": 125,
+			"index": 124,
+			"opp": "@CWS",
+			"outcome": "W, 5-4",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150825",
+			"gamedate-display": "Tue., Aug. 25",
+			"gameno": 126,
+			"index": 125,
+			"opp": "@CWS",
+			"outcome": "L, 5-4",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150826",
+			"gamedate-display": "Wed., Aug. 26",
+			"gameno": 127,
+			"index": 126,
+			"opp": "@CWS",
+			"outcome": "W, 3-0",
+			"run-differential": 3
+		},
+		{
+			"gamedate": "20150828",
+			"gamedate-display": "Fri., Aug. 28",
+			"gameno": 128,
+			"index": 127,
+			"opp": "@NYM",
+			"outcome": "W, 6-4",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150829",
+			"gamedate-display": "Sat., Aug. 29",
+			"gameno": 129,
+			"index": 128,
+			"opp": "@NYM",
+			"outcome": "W, 3-1",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150830",
+			"gamedate-display": "Sun., Aug. 30",
+			"gameno": 130,
+			"index": 129,
+			"opp": "@NYM",
+			"outcome": "L, 5-4",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150831",
+			"gamedate-display": "Mon., Aug. 31",
+			"gameno": 131,
+			"index": 130,
+			"opp": "NYY",
+			"outcome": "W, 4-3",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150901",
+			"gamedate-display": "Tue., Sept. 1",
+			"gameno": 132,
+			"index": 131,
+			"opp": "NYY",
+			"outcome": "L, 3-1",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150902",
+			"gamedate-display": "Wed., Sept. 2",
+			"gameno": 133,
+			"index": 132,
+			"opp": "NYY",
+			"outcome": "L, 13-8",
+			"run-differential": -5
+		},
+		{
+			"gamedate": "20150904",
+			"gamedate-display": "Fri., Sept. 4",
+			"gameno": 134,
+			"index": 133,
+			"opp": "Phi",
+			"outcome": "W, 7-5",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150905",
+			"gamedate-display": "Sat., Sept. 5",
+			"gameno": 135,
+			"index": 134,
+			"opp": "Phi",
+			"outcome": "W, 9-2",
+			"run-differential": 7
+		},
+		{
+			"gamedate": "20150906",
+			"gamedate-display": "Sun., Sept. 6",
+			"gameno": 136,
+			"index": 135,
+			"opp": "Phi",
+			"outcome": "W, 6-2",
+			"run-differential": 4
+		},
+		{
+			"gamedate": "20150907",
+			"gamedate-display": "Mon., Sept. 7",
+			"gameno": 137,
+			"index": 136,
+			"opp": "Tor",
+			"outcome": "W, 11-4",
+			"run-differential": 7
+		},
+		{
+			"gamedate": "20150908",
+			"gamedate-display": "Tue., Sept. 8",
+			"gameno": 138,
+			"index": 137,
+			"opp": "Tor",
+			"outcome": "L, 5-1",
+			"run-differential": -4
+		},
+		{
+			"gamedate": "20150909",
+			"gamedate-display": "Wed., Sept. 9",
+			"gameno": 139,
+			"index": 138,
+			"opp": "Tor",
+			"outcome": "W, 10-4",
+			"run-differential": 6
+		},
+		{
+			"gamedate": "20150911",
+			"gamedate-display": "Fri., Sept. 11",
+			"gameno": 140,
+			"index": 139,
+			"opp": "@TB",
+			"outcome": "L, 8-4",
+			"run-differential": -4
+		},
+		{
+			"gamedate": "20150912",
+			"gamedate-display": "Sat., Sept. 12",
+			"gameno": 141,
+			"index": 140,
+			"opp": "@TB",
+			"outcome": "W, 10-4",
+			"run-differential": 6
+		},
+		{
+			"gamedate": "20150913",
+			"gamedate-display": "Sun., Sept. 13",
+			"gameno": 142,
+			"index": 141,
+			"opp": "@TB",
+			"outcome": "W, 2-0",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150914",
+			"gamedate-display": "Mon., Sept. 14",
+			"gameno": 143,
+			"index": 142,
+			"opp": "@Bal",
+			"outcome": "L, 2-0",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150915",
+			"gamedate-display": "Tue., Sept. 15",
+			"gameno": 144,
+			"index": 143,
+			"opp": "@Bal",
+			"outcome": "L, 6-5",
+			"run-differential": -1
+		},
+		{
+			"gamedate": "20150916",
+			"gamedate-display": "Wed., Sept. 16",
+			"gameno": 145,
+			"index": 144,
+			"opp": "@Bal",
+			"outcome": "W, 10-1",
+			"run-differential": 9
+		},
+		{
+			"gamedate": "20150918",
+			"gamedate-display": "Fri., Sept. 18",
+			"gameno": 146,
+			"index": 145,
+			"opp": "@Tor",
+			"outcome": "L, 6-1",
+			"run-differential": -5
+		},
+		{
+			"gamedate": "20150919",
+			"gamedate-display": "Sat., Sept. 19",
+			"gameno": 147,
+			"index": 146,
+			"opp": "@Tor",
+			"outcome": "W, 7-6",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150920",
+			"gamedate-display": "Sun., Sept. 20",
+			"gameno": 148,
+			"index": 147,
+			"opp": "@Tor",
+			"outcome": "W, 4-3",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150921",
+			"gamedate-display": "Mon., Sept. 21",
+			"gameno": 149,
+			"index": 148,
+			"opp": "TB",
+			"outcome": "W, 8-7",
+			"run-differential": 1
+		},
+		{
+			"gamedate": "20150922",
+			"gamedate-display": "Tue., Sept. 22",
+			"gameno": 150,
+			"index": 149,
+			"opp": "TB",
+			"outcome": "L, 5-2",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20150923",
+			"gamedate-display": "Wed., Sept. 23",
+			"gameno": 151,
+			"index": 150,
+			"opp": "TB",
+			"outcome": "L, 6-2",
+			"run-differential": -4
+		},
+		{
+			"gamedate": "20150924",
+			"gamedate-display": "Thu., Sept. 24",
+			"gameno": 152,
+			"index": 151,
+			"opp": "TB",
+			"outcome": "L, 4-2",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20150925",
+			"gamedate-display": "Fri., Sept. 25",
+			"gameno": 153,
+			"index": 152,
+			"opp": "Bal",
+			"outcome": "W, 7-0",
+			"run-differential": 7
+		},
+		{
+			"gamedate": "20150926",
+			"gamedate-display": "Sat., Sept. 26",
+			"gameno": 154,
+			"index": 153,
+			"opp": "Bal",
+			"outcome": "W, 8-0",
+			"run-differential": 8
+		},
+		{
+			"gamedate": "20150927",
+			"gamedate-display": "Sun., Sept. 27",
+			"gameno": 155,
+			"index": 154,
+			"opp": "Bal",
+			"outcome": "W, 2-0",
+			"run-differential": 2
+		},
+		{
+			"gamedate": "20150928",
+			"gamedate-display": "Mon., Sept. 28",
+			"gameno": 156,
+			"index": 155,
+			"opp": "@NYY",
+			"outcome": "W, 5-1",
+			"run-differential": 4
+		},
+		{
+			"gamedate": "20150929",
+			"gamedate-display": "Tue., Sept. 29",
+			"gameno": 157,
+			"index": 156,
+			"opp": "@NYY",
+			"outcome": "W, 10-4",
+			"run-differential": 6
+		},
+		{
+			"gamedate": "20150930",
+			"gamedate-display": "Wed., Sept. 30",
+			"gameno": 158,
+			"index": 157,
+			"opp": "@NYY",
+			"outcome": "W, 9-5",
+			"run-differential": 4
+		},
+		{
+			"gamedate": "20151001",
+			"gamedate-display": "Thu., Oct. 1",
+			"gameno": 159,
+			"index": 158,
+			"opp": "@NYY",
+			"outcome": "L, 4-1",
+			"run-differential": -3
+		},
+		{
+			"gamedate": "20151002",
+			"gamedate-display": "Fri., Oct. 2",
+			"gameno": 160,
+			"index": 159,
+			"opp": "@Cle",
+			"outcome": "L, 8-2",
+			"run-differential": -6
+		},
+		{
+			"gamedate": "20151003",
+			"gamedate-display": "Sat., Oct. 3",
+			"gameno": 161,
+			"index": 160,
+			"opp": "@Cle",
+			"outcome": "L, 2-0",
+			"run-differential": -2
+		},
+		{
+			"gamedate": "20151004",
+			"gamedate-display": "Sun., Oct. 4",
+			"gameno": 162,
+			"index": 161,
+			"opp": "@Cle",
+			"outcome": "L, 3-1",
+			"run-differential": -2
+		}
+	]
+}
