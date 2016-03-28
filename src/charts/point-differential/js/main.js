@@ -22,7 +22,7 @@ const svg = createSvg({ container, margins, width, height })
 const handleNewPayload = ({ rows, isChartbuilder }) => {
 
 	// format the data (i.e. turn gamedate into Date, etc)
-	const data = formatData(rows).slice(-10)
+	const data = formatData(rows)
 
 	const scales = createScales({ width, height, data })
 
