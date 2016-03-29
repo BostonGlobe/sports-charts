@@ -7,7 +7,7 @@ This creates a new directory **src/charts/chart-name** where all code should be 
 
 ## Development
 Start local server: `gulp --chart chart-name`
-See more [detailed instructions](detailed-instructions).
+See more [detailed instructions](#detailed-instructions).
 
 ## Deploy
 #### Single chart
