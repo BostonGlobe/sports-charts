@@ -3,12 +3,11 @@
 ## How to make new chart
 `make CHART=chart-name`
 
-* This creates a new directory (**src/charts/chart-name**) where all code should be placed.
-* It also creates a new testing data file (**test-data/chart-name.json**). Put your sample data here.
-* Any js modules you create that could be useful to other charts should be placed in **src/utils**.
+This creates a new directory **src/charts/chart-name** where all code should be placed. It also creates a new testing data file **test-data/chart-name.json**.
 
 ## Development
-* Start local server: `gulp --chart chart-name`
+Start local server: `gulp --chart chart-name`
+See more [detailed instructions](detailed-instructions).
 
 ## Deploy
 #### Single chart
@@ -33,8 +32,9 @@ Available fonts:
 <p class='benton-regular'>I love the sports ball.</p>
 ```
 
-### Basketball shotchart
-Extracting sample data from raw data: 
-```
-csvcut -c season,gamedate,opponent,home-away,event,quarter,time,player,shot-x,shot-y nbashotchart-gs.csv | csvgrep -c player -m "Stephen Curry" | csvjson > curry.json
-```
+## Detailed instructions
+* HTML that applies to all charts (eg. header) is **src/base/index.html**.
+* Any js modules you create that could be useful to other charts should be placed in **src/utils**.
+* Same goes for css, but located at **src/base/css**. This is the place for variables and mixins as well.
+* The chart relies on two libraries outside of the iframe, [pym.js](https://github.com/nprapps/pym.js) and [enter-view](https://github.com/russellgoldenberg/enter-view).
+* Changes to the parent html page for development should be made to **preview.html.template**.
