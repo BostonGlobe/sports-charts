@@ -18,6 +18,23 @@
 			"powerPlay": false,
 			"made": false,
 			"distance": 58.73
+		},
+		{
+			"season": 201516,
+			"gameDate": "20151008",
+			"teamLocation": "Boston",
+			"teamNickname": "Bruins",
+			"opponentLocation": "Winnipeg",
+			"opponentNickname": "Jets",
+			"home": true,
+			"period": 1,
+			"time": "19:18",
+			"player": "Loui Eriksson",
+			"x": 55,
+			"y": 76,
+			"powerPlay": false,
+			"made": true,
+			"distance": 58.73
 		}
 	]
 }

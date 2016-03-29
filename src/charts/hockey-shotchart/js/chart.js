@@ -63,7 +63,7 @@ function updateDOM(rows) {
 	// position, color, and scale all circles
 	enterSelection.merge(shots)
 		.attr('transform', d => {
-			// confusing i know
+			// confusing, I know.
 			const y = scales.shotX(d.x)
 			const x = scales.shotY(d.y)
 			return `translate(${x}, ${y})`
@@ -71,16 +71,19 @@ function updateDOM(rows) {
 		.attr('r', 5)
 		.attr('cx', 0)
 		.attr('cy', 0)
-		// 	.attr('class', d => getColor({ d, averages, date }))
-	// 	.transition()
-	// 		.duration(transitionDuration)
-	// 		.ease(easeQuadOut)
-	// 		.delay(d => {
-	// 			const className = getColor({ d, averages, date }).split(' ')[0]
-	// 			if (className === 'below-threshold') return 0
-	// 			return scales.delay(className)
-	// 		})
-	// 		.attr('d', hexbinner.hexagon(getBinRadius() - 1))
+		.attr('class', d => {
+			const className = d.made ? 'made' : 'missed'
+			return `shot ${className}`
+		})
+		// .transition()
+		// 	.duration(transitionDuration)
+		// 	.ease(easeQuadOut)
+		// 	.delay(d => {
+		// 		const className = getColor({ d, averages, date }).split(' ')[0]
+		// 		if (className === 'below-threshold') return 0
+		// 		return scales.delay(className)
+		// 	})
+		// 	.attr('d', hexbinner.hexagon(getBinRadius() - 1))
 }
 
 // make averages global for resize computations and update bins
