@@ -2,11 +2,14 @@ import getJSON from 'get-json-lite'
 import pymIframe from 'pym-iframe-resizer'
 import { parse } from 'query-string'
 import 'promis'
-import { $ } from './dom'
+import { $, addClass } from './dom'
 
 const displayHeader = ({ hed, subhed }) => {
-	if ($('.hed')) $('.hed').textContent = hed
-	if ($('.subhed')) $('.subhed').textContent = subhed
+	if (hed) $('.hed').textContent = hed
+	else addClass($('.hed'), 'display-none')
+
+	if (subhed) $('.subhed').textContent = subhed
+	else addClass($('.subhed'), 'display-none')
 }
 
 const chartbuilder = ({ pymChild, handleNewPayload }) => {
