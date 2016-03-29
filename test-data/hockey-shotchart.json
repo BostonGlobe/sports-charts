@@ -5,8 +5,10 @@
 		{
 			"season": 201516,
 			"gameDate": "20151008",
-			"team": "bos",
-			"opponent": "wpg",
+			"teamLocation": "Boston",
+			"teamNickname": "Bruins",
+			"opponentLocation": "Winnipeg",
+			"opponentNickname": "Jets",
 			"home": true,
 			"period": 1,
 			"time": "19:18",
