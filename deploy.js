@@ -24,12 +24,12 @@ function runProdScripts() {
 	shell.exec('git push')
 	shell.exec(`gulp prod-base -u ${username}`)
 
-	// const charts = fs.readdirSync('src/charts')
-	// const command = charts.map(c => `gulp prod --chart ${c} -u ${username.trim()}`).join(';')
+	const charts = fs.readdirSync('src/charts')
+	const command = charts.map(c => `gulp prod --chart ${c} -u ${username.trim()}`).join(';')
 
-	// console.log('\n-- prod command --')
-	// console.log(command)
-	// shell.exec(command, () => displayUploadScript(charts))
+	console.log('\n-- prod command --')
+	console.log(command)
+	shell.exec(command, () => displayUploadScript(charts))
 }
 
 if (username) runProdScripts()
