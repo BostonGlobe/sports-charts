@@ -10,6 +10,7 @@ import {
 	shotRadius,
 	transitionDuration,
 	transitionDelay,
+	missedOpacity,
 } from './config'
 
 const { left, right, top, bottom } = dimensions
@@ -76,10 +77,11 @@ function updateDOM(rows) {
 			const className = d.made ? 'made' : 'missed'
 			return `shot ${className}`
 		})
+		.style('opacity', 0)
 		.transition()
 			.duration(transitionDuration)
 			.delay(d => d.made ? 0 : transitionDelay)
-			.style('opacity', 1)
+			.style('opacity', d => d.made ? 1 : missedOpacity)
 }
 
 // make averages global for resize computations and update bins
