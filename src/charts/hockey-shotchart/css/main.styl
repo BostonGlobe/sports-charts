@@ -1,0 +1,34 @@
+@require './../../../base/css/variables.styl'
+
+$lineColor = #fff
+$bruins-primary = #FFA300
+$bruins-team = #333333
+.rink
+	&-bg 
+		fill $gray-pale
+		
+	&-line
+		stroke $lineColor
+		stroke-width 2px
+	
+	&-rect
+		fill $lineColor
+	
+	&-circle 
+		fill transparent 
+		stroke-width 2px 
+		stroke $lineColor
+	
+	&-circle-fill
+		fill $lineColor
+		stroke-width 0
+
+.shot 
+	stroke $bruins-team
+	stroke-width 2px
+	shape-rendering cripseEdges
+	&.made 
+		fill $bruins-primary
+	&.missed 
+		fill transparent
+		// fill $bruins-team
