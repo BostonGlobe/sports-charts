@@ -3,6 +3,31 @@
 $lineColor = #fff
 $bruins-primary = #FFA300
 $bruins-team = #333333
+
+.key 
+	width 100% 
+	overflow hidden
+	margin-bottom 0.5em
+	li
+		float left
+		line-height 1
+		display block
+		margin-right 0.5em
+		span
+			display inline-block
+			width 8px
+			height 8px
+			vertical-align middle
+			border-radius 4px
+			&.made
+				background $bruins-primary
+				border 1px solid $bruins-team
+			&.missed
+				background $bruins-team
+				border 1px solid $bruins-team
+				opacity 0.25
+
+
 .rink
 	&-bg 
 		fill $gray-pale
