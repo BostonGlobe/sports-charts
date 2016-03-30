@@ -20,7 +20,6 @@ gulp.task('ssh-chart', (cb) => {
 })
 
 gulp.task('ssh-base', (cb) => {
-	console.log(argv)
 	const username = argv.u
 
 	if (username) {
