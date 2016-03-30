@@ -24,11 +24,17 @@ $bruins-team = #333333
 		stroke-width 0
 
 .shot 
-	stroke $bruins-team
-	stroke-width 2px
+	// stroke-width 2px
+	stroke-width 0
 	shape-rendering cripseEdges
+	opacity 0
 	&.made 
+		stroke $bruins-team
 		fill $bruins-primary
-	&.missed 
-		fill transparent
 		// fill $bruins-team
+	&.missed 
+		stroke none
+		fill transparent
+		fill $bruins-team
+		fill #999
+		// fill $bruins-primary

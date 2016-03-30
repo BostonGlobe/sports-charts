@@ -1,13 +1,15 @@
-import { scaleLinear, scaleOrdinal, scaleQuantize } from 'd3-scale'
+import { scaleLinear, scaleQuantize } from 'd3-scale'
 import { select } from 'd3-selection'
 import 'd3-transition'
-import { easeQuadOut } from 'd3-ease'
-import { $, addClass, removeClass, hasClass } from '../../../utils/dom'
+import { $ } from '../../../utils/dom'
 
 import drawRink from './drawRink'
 
 import {
 	dimensions,
+	shotRadius,
+	transitionDuration,
+	transitionDelay,
 } from './config'
 
 const { left, right, top, bottom } = dimensions
@@ -46,7 +48,6 @@ function updateKey() {
 
 // render hexagons to chart
 function updateDOM(rows) {
-	console.log(rows)
 	$('.shots').innerHTML = ''
 	// bind data and set key
 	const shots = select('.shots')
@@ -68,29 +69,26 @@ function updateDOM(rows) {
 			const x = scales.shotY(d.y)
 			return `translate(${x}, ${y})`
 		})
-		.attr('r', 5)
+		.attr('r', shotRadius)
 		.attr('cx', 0)
 		.attr('cy', 0)
 		.attr('class', d => {
 			const className = d.made ? 'made' : 'missed'
 			return `shot ${className}`
 		})
-		// .transition()
-		// 	.duration(transitionDuration)
-		// 	.ease(easeQuadOut)
-		// 	.delay(d => {
-		// 		const className = getColor({ d, averages, date }).split(' ')[0]
-		// 		if (className === 'below-threshold') return 0
-		// 		return scales.delay(className)
-		// 	})
-		// 	.attr('d', hexbinner.hexagon(getBinRadius() - 1))
+		.transition()
+			.duration(transitionDuration)
+			.delay(d => d.made ? 0 : transitionDelay)
+			.style('opacity', 1)
 }
 
 // make averages global for resize computations and update bins
 function updateData({ rows }) {
+	// sort rows by made / missed for rendering ordering
+	const sortedRows = rows.sort((a, b) => a.made - b.made)
 	// make it global so we can reuse on resize
-	data.rows = rows
-	updateDOM(rows)
+	data.rows = sortedRows
+	updateDOM(sortedRows)
 }
 
 
