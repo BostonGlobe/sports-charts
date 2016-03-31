@@ -20,6 +20,8 @@ const creaseHeight = 4.5
 const faceoffRadius = 15
 const faceoffOffsetX = 22
 const faceoffOffsetY = goalLine + 20
+const netWidth = 6
+const netDepth = 3.66
 
 export default function drawRink({ rink, width, height }) {
 	sz.range([0, width])
@@ -115,92 +117,21 @@ export default function drawRink({ rink, width, height }) {
 		.attr('cx', center + sz(faceoffOffsetX))
 		.attr('cy', height - sz(faceoffOffsetY))
 		.attr('r', sz(spotRadius))
-	// 	.attr('x1', sz(cornerThreeFromEdge.x))
-	// 	.attr('y1', height)
-	// 	.attr('x2', sz(cornerThreeFromEdge.x))
-	// 	.attr('y2', sz(courtHeight - cornerThreeFromEdge.y))
 
-	// // three right corner
-	// court.append('line')
-	// 	.attr('class', 'court-line three-left-corner round')
-	// 	.attr('x1', sz(courtWidth - cornerThreeFromEdge.x))
-	// 	.attr('y1', height)
-	// 	.attr('x2', sz(courtWidth - cornerThreeFromEdge.x))
-	// 	.attr('y2', sz(courtHeight - cornerThreeFromEdge.y))
+	// net
+	rink.append('rect')
+		.attr('class', 'rink-rect rink-net')
+		.attr('x', center - sz(netWidth / 2))
+		.attr('y', height - sz(goalLine))
+		.attr('width', sz(netWidth))
+		.attr('height', sz(netDepth / 2))
 
-	// // paint
-	// court.append('rect')
-	// 	.attr('class', 'court-shape paint')
-	// 	.attr('x', sz(courtWidth / 2 - paintWidth / 2))
-	// 	.attr('y', sz(courtHeight - freeThrowLine))
-	// 	.attr('width', sz(paintWidth))
-	// 	.attr('height', sz(freeThrowLine))
-
-	// // three point arc
-	// const threeArc = arc()
-	// 	.innerRadius(sz(threeFromHoop))
-	// 	.outerRadius(sz(threeFromHoop))
-	// 	.startAngle(-pi / 2.64)
-	// 	.endAngle(pi / 2.64)
-
-	// court.append('path')
-	// 	.attr('class', 'court-line three-arc round')
-	// 	.attr('d', threeArc)
-	// 	.attr('transform', `translate(${sz(courtWidth / 2)},${sz(courtHeight - hoopY)})`)
-
-	// // free throw arc
-	// const freeThrowArc = arc()
-	// 	.innerRadius(sz(freeThrowRadius))
-	// 	.outerRadius(sz(freeThrowRadius))
-	// 	.startAngle(-pi / 2)
-	// 	.endAngle(pi / 2)
-
-	// court.append('path')
-	// 	.attr('class', 'court-line free-throw-arc')
-	// 	.attr('d', freeThrowArc)
-	// 	.attr('transform', `translate(${sz(courtWidth / 2)},${sz(courtHeight - freeThrowLine)})`)
-
-	// // free throw arc under
-	// const freeThrowArcUnder = arc()
-	// 	.innerRadius(sz(freeThrowRadius))
-	// 	.outerRadius(sz(freeThrowRadius))
-	// 	.startAngle(pi / 2)
-	// 	.endAngle(pi * 1.5)
-
-	// const dashes = () => `${sz(1.292)},`.repeat(12)
-	// // console.log(dashes())
-	// court.append('path')
-	// 	.attr('class', 'court-line free-throw-arc-under')
-	// 	.attr('d', freeThrowArcUnder)
-	// 	// .attr('stroke-dasharray', `${sz(1)},${sz(1)}`)
-	// 	.attr('transform', `translate(${sz(courtWidth / 2)},${sz(courtHeight - freeThrowLine)})`)
-
-	// // half court
-	// court.append('circle')
-	// 	.attr('class', 'court-shape half-court-outer')
-	// 	.attr('cx', sz(courtWidth / 2))
-	// 	.attr('cy', 0)
-	// 	.attr('r', sz(halfCourtOuterRadius))
-
-	// court.append('circle')
-	// 	.attr('class', 'court-shape half-court-inner')
-	// 	.attr('cx', sz(courtWidth / 2))
-	// 	.attr('cy', 0)
-	// 	.attr('r', sz(halfCourtInnerRadius))
-
-	// // backboard
-	// basket.append('line')
-	// 	.attr('class', 'backboard')
-	// 	.attr('x1', sz(courtWidth / 2 - backboardWidth / 2))
-	// 	.attr('y1', sz(courtHeight - hoopY - backboardFromHoop))
-	// 	.attr('x2', sz(courtWidth / 2 + backboardWidth / 2))
-	// 	.attr('y2', sz(courtHeight - hoopY - backboardFromHoop))
-
-	// // hoop
-	// basket.append('circle')
-	// 	.attr('class', 'hoop')
-	// 	.attr('cx', sz(courtWidth / 2))
-	// 	.attr('cy', sz(courtHeight - hoopY))
-	// 	.attr('r', sz(hoopRadius))
+	rink.append('rect')
+		.attr('class', 'rink-rect rink-net')
+		.attr('x', center - sz(netWidth / 2))
+		.attr('y', height - sz(goalLine))
+		.attr('rx', sz(netWidth / 4))
+		.attr('width', sz(netWidth))
+		.attr('height', sz(netDepth))
 
 }
