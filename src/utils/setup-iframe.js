@@ -5,11 +5,11 @@ import 'promis'
 import { $, addClass } from './dom'
 
 const displayHeader = ({ hed, subhed }) => {
-	if (hed) $('.hed').textContent = hed
-	else addClass($('.hed'), 'display-none')
+	if (hed) $('.chart-top--hed').textContent = hed
+	else addClass($('.chart-top--hed'), 'display-none')
 
-	if (subhed) $('.subhed').textContent = subhed
-	else addClass($('.subhed'), 'display-none')
+	if (subhed) $('.chart-top--subhed').textContent = subhed
+	else addClass($('.chart-top--subhed'), 'display-none')
 }
 
 const chartbuilder = ({ pymChild, handleNewPayload }) => {

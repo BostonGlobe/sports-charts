@@ -237,10 +237,10 @@ function setupKey() {
 
 // setup event for toggling explainer text
 function setupExplainer() {
-	$('.explainer a').addEventListener('click', e => {
+	$('.chart-explainer a').addEventListener('click', e => {
 		e.preventDefault()
-		const p = $('.explainer p')
-		const a = $('.explainer a')
+		const p = $('.chart-explainer p')
+		const a = $('.chart-explainer a')
 		const hidden = hasClass(p, 'display-none')
 		if (hidden) {
 			removeClass(p, 'display-none')

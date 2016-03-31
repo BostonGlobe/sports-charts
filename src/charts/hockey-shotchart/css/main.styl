@@ -1,24 +1,26 @@
 @require './../../../base/css/variables.styl'
+@require './../../../base/css/helpers.styl'
 
 $lineColor = #fff
-$bruins-primary = #FFA300
-$bruins-team = #333333
 
 .key 
 	width 100% 
-	overflow hidden
+	clearfix()
 	margin-bottom 0.5em
 	li
 		float left
-		line-height 1
+		line-height 1.5
 		display block
 		margin-right 0.5em
+		color $gray-secondary
+		text-transform uppercase
+		font-size 0.8em
 		span
 			display inline-block
 			width 8px
 			height 8px
-			vertical-align middle
 			border-radius 4px
+			transform translateY(-1px)
 			&.made
 				background $bruins-primary
 				border 1px solid $bruins-team
