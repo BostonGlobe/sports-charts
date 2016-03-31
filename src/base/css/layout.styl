@@ -1,23 +1,53 @@
-*, *:before, *:after
-	color $text
+$prefix = chart
 
-header
-	border-top solid $text 0.225em
-	padding-top 0.5em
-	margin-bottom 1em
-	h1
-		text-transform uppercase
-		font-size $header-1-size
-	h2
-		text-transform uppercase
-		font-size $header-1-size
-		color $gray-secondary
+// Main Class
+.{$prefix}
+	position relative
+	padding-bottom 1em
+	border-bottom solid $text 1px
 
-.chart-container
+// Container
+.{$prefix}-container
 	width 100%
 	position relative
 
-main
+// Header
+.{$prefix}-hed
+	border-top solid $text 0.225em
+	padding-top 0.5em
+	margin-bottom 1em
+	&--hed
+		text-transform uppercase
+		font-size $header-1-size
+		color $text
+	&--subhed
+		margin-top 0.5em
+		font-size $header-2-size
+		color $gray-secondary
+		span
+			color currentColor
+
+// Main Content
+.{$prefix}-content
 	padding-bottom 1em
 	border-bottom solid $text 1px
+
+// Explainer
+.{$prefix}-explainer
+	a 
+		display block
+		color $gray-secondary
+		text-align right
+		line-height 1.8
+		font-size 0.8em
+	p 
+		color $gray-secondary
+		font-family $sans
+		font-size 0.8em
+		font-weight 300
+		line-height 1.6
+
+// Default Hide (non-accessible)
+.display-none
+	hidden()
 
