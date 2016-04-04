@@ -8,7 +8,7 @@ import createSvg from './createSvg.js'
 import createCanvas from './createCanvas.js'
 import drawData from './drawData.js'
 import drawCanvas from './drawCanvas.js'
-import formatData from './formatData.js'
+import sortData from './sortData.js'
 import getUniqueDates from './getUniqueDates.js'
 import createSlider from './../../../utils/slider/createSlider.js'
 import setupSlider from './../../../utils/slider/setupSlider.js'
@@ -84,8 +84,8 @@ const handleInputChange = ({ e, uniqueDates, data }) => {
 
 const handleNewData = (newData, isChartbuilder) => {
 
-	// format the data (i.e. turn gamedate into Date, etc)
-	const data = formatData(newData)
+	// sort data by gamedate
+	const data = sortData(newData)
 
 	// get array of unique dates
 	const uniqueDates = getUniqueDates(data)
@@ -100,7 +100,7 @@ const handleNewData = (newData, isChartbuilder) => {
 	} else {
 
 		// show slider
-		removeClass(sliderContainer, 'displayNone')
+		removeClass(sliderContainer, 'display-none')
 
 		// create the slider start/end labels
 		const labels = {

@@ -29,7 +29,7 @@ uniqueDates, sliderContainer }) => {
 
 	// JOIN
 	const circles = dataContainer.selectAll('custom.circle')
-		.data(filteredData, d => d.index)
+		.data(filteredData, d => d.id)
 
 	// EXIT
 	circles.exit()
