@@ -3,7 +3,12 @@ import pymIframe from 'pym-iframe-resizer'
 import { parse } from 'query-string'
 import 'promis'
 import { $, addClass } from './dom'
-import convertData from './convertData.js'
+import { convertData } from 'chartbuilder-charts'
+
+const convertPayload = (data) => ({
+	...data,
+	rows: convertData({ data: data.rows, types: data.metadata.types }),
+})
 
 const displayHeader = ({ hed, subhed }) => {
 	if (hed) $('.chart-top--hed').textContent = hed
@@ -18,7 +23,7 @@ const chartbuilder = ({ pymChild, handleNewPayload }) => {
 	pymChild.onMessage('receive-data', d => {
 		const data = { ...JSON.parse(d), isChartbuilder: true }
 		displayHeader(data)
-		handleNewPayload(convertData(data))
+		handleNewPayload(convertPayload(data))
 	})
 	pymChild.sendMessage('request-data', true)
 }
@@ -36,7 +41,7 @@ const dev = ({ pymChild, handleNewPayload }) => {
 	)
 
 	Promise.all([enterViewPromise, handleNewPayloadPromise])
-		.then(value => handleNewPayload(convertData(value.pop())))
+		.then(value => handleNewPayload(convertPayload(value.pop())))
 		.catch(err => console.error(err))
 
 	pymChild.sendMessage('request-data', true)
@@ -56,7 +61,7 @@ const prod = ({ pymChild, handleNewPayload }) => {
 	)
 
 	Promise.all([enterViewPromise, handleNewPayloadPromise])
-		.then(value => handleNewPayload(convertData(value.pop())))
+		.then(value => handleNewPayload(convertPayload(value.pop())))
 		.catch(err => console.error(err))
 
 	pymChild.sendMessage('request-data-url', true)

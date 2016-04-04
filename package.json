@@ -25,6 +25,7 @@
     "url": "https://github.com/BostonGlobe/sports-charts/issues"
   },
   "dependencies": {
+    "chartbuilder-charts": "^1.2.12",
     "d3-array": "0.7.1",
     "d3-axis": "^0.3.0",
     "d3-ease": "^0.7.0",
@@ -37,7 +38,6 @@
     "d3-transition": "0.2.8",
     "fontfaceobserver": "1.6.4",
     "get-json-lite": "2.0.0",
-    "lodash.mapvalues": "^4.3.0",
     "lodash.uniq": "4.2.0",
     "nba-shot-zones": "^1.0.1",
     "promis": "^1.1.4",
