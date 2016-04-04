@@ -25,7 +25,7 @@
     "url": "https://github.com/BostonGlobe/sports-charts/issues"
   },
   "dependencies": {
-    "chartbuilder-charts": "^1.2.12",
+    "chartbuilder-charts": "^1.2.13",
     "d3-array": "0.7.1",
     "d3-axis": "^0.3.0",
     "d3-ease": "^0.7.0",
