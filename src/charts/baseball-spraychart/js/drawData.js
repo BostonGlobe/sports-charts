@@ -11,16 +11,16 @@ import setSliderTooltip from './../../../utils/slider/setSliderTooltip.js'
 // create date formatting function
 const dateFormat = timeFormat('%b. %e')
 
-const drawData = ({ data, detachedContainer, scales, gamedate,
+const drawData = ({ data, detachedContainer, scales, gamedatetime,
 uniqueDates, sliderContainer }) => {
 
-	// if we have a gamedate, then only show data up to that gamedate
-	const filteredData = gamedate ?
-		data.filter(x => x.gamedate <= gamedate) :
+	// if we have a gamedatetime, then only show data up to that gamedatetime
+	const filteredData = gamedatetime ?
+		data.filter(x => x.gamedatetime <= gamedatetime) :
 		data
 
 	const DELAY = 0
-	const DURATION = gamedate ? 300 : 500
+	const DURATION = gamedatetime ? 300 : 500
 
 	const { x, y, origin } = scales
 
@@ -50,16 +50,16 @@ uniqueDates, sliderContainer }) => {
 			Double: colors.redsox2,
 			Triple: colors.redsox2,
 			'Home run': colors.redsox1,
-		}[d.description] || colors.gray3))
+		}[d.event] || colors.gray3))
 		.attr('fillStyle', d => ({
 			Out: colors.gray3,
 			Single: colors.graypale,
 			Double: colors.redsox2,
 			Triple: colors.redsox2,
 			'Home run': colors.redsox1,
-		}[d.description] || 'white'))
-		.attr('isHalf', d => d.description === 'Double')
-		.attr('r', d => d.description === 'Home run' ? 8 : 5)
+		}[d.event] || 'white'))
+		.attr('isHalf', d => d.event === 'Double')
+		.attr('r', d => d.event === 'Home run' ? 8 : 5)
 		.attr('cx', origin.x)
 		.attr('cy', origin.y)
 		.attr('opacity', 0)
@@ -71,14 +71,14 @@ uniqueDates, sliderContainer }) => {
 		.attr('opacity', 1)
 		.on('start', (d) => {
 
-			// if we don't have a gamedate (which means this is called at the
+			// if we don't have a gamedatetime (which means this is called at the
 			// beginning), then we should, at the start of every transition,
 			// set the slider to this datum's time
-			if (!gamedate) {
+			if (!gamedatetime) {
 
-				const time = d.gamedate.getTime()
+				const time = d.gamedatetime.getTime()
 				const index = uniqueDates.indexOf(time)
-				const text = dateFormat(d.gamedate)
+				const text = dateFormat(d.gamedatetime)
 
 				setSlider({ container: sliderContainer, value: index + 1 })
 				setSliderTooltip({ container: sliderContainer, text, index })

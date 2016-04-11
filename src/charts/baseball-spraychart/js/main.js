@@ -70,21 +70,21 @@ const handleInputChange = ({ e, uniqueDates, data }) => {
 
 	// get the slider position
 	const { value } = e.target
-	const gamedate = uniqueDates[value - 1]
+	const gamedatetime = uniqueDates[value - 1]
 
-	const text = dateFormat(new Date(gamedate))
+	const text = dateFormat(new Date(gamedatetime))
 
 	// setSlider({ container: sliderContainer, value })
 	setSliderTooltip({ container: sliderContainer, text, index: value - 1 })
 
 	// draw data based on slider input
-	drawData({ data, detachedContainer, scales, gamedate, uniqueDates })
+	drawData({ data, detachedContainer, scales, gamedatetime, uniqueDates })
 
 }
 
 const handleNewData = (newData, isChartbuilder) => {
 
-	// sort data by gamedate
+	// sort data by gamedatetime
 	const data = sortData(newData)
 
 	// get array of unique dates
@@ -104,8 +104,8 @@ const handleNewData = (newData, isChartbuilder) => {
 
 		// create the slider start/end labels
 		const labels = {
-			start: data.length ? dateFormat(data[0].gamedate) : '',
-			end: data.length ? dateFormat(data[data.length - 1].gamedate) : '',
+			start: data.length ? dateFormat(data[0].gamedatetime) : '',
+			end: data.length ? dateFormat(data[data.length - 1].gamedatetime) : '',
 		}
 
 		// setup slider (set input max, set start/end labels)
@@ -142,7 +142,7 @@ const handleNewData = (newData, isChartbuilder) => {
 }
 
 const handleNewPayload = (payload) => {
-	const { rows, isChartbuilder } = payload
+	let { rows, isChartbuilder } = payload
 	if (rows) handleNewData(rows, isChartbuilder)
 }
 

@@ -4,14 +4,14 @@ const π = Math.PI
 
 const createScales = ({ parkSize, height }) => {
 
-	// start creating scales. first: zones to angles.
-	// each zone is represented by one of the 26 letters
-	const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+	// start creating scales. first: directions to angles.
+	// each direction is represented by one of the 26 letters
+	const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.toLowerCase().split('')
 
-	// 22 zones: π/2, or 90 deg
-	// 2 zones: π/22
+	// 22 directions: π/2, or 90 deg
+	// 2 directions: π/22
 	// finally we rotate everything by π/4 counterclockwise
-	const zoneToAngle = scalePoint()
+	const directionToAngle = scalePoint()
 		.domain(letters)
 		.range([π / 4 + 2 * π / 4 + π / 22, π / 4 - π / 22])
 
@@ -28,8 +28,8 @@ const createScales = ({ parkSize, height }) => {
 	// convert from polar to cartesian coordinates,
 	// but still ensure that we stay in the distance domain, whatever that is
 	const convertFromPolarToCartesian = (d) => {
-		const { distance, zone } = d
-		const angle = zoneToAngle(zone)
+		const { distance, direction } = d
+		const angle = directionToAngle(direction)
 		const x = distance * Math.cos(angle)
 		const y = distance * Math.sin(angle)
 		return { x, y }
@@ -51,8 +51,8 @@ const createScales = ({ parkSize, height }) => {
 
 	// setup origin helper constant
 	const origin = {
-		x: x({ distance: 0, zone: 'A' }),
-		y: y({ distance: 0, zone: 'A' }),
+		x: x({ distance: 0, direction: 'a' }),
+		y: y({ distance: 0, direction: 'a' }),
 	}
 
 	return { x, y, origin }
