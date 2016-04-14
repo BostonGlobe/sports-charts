@@ -53,12 +53,12 @@ export default function drawRink({ rink, width, height }) {
 		.attr('height', thinLine)
 
 	// blue line
-	rink.append('rect')
-		.attr('class', 'rink-rect rink-blue-line')
-		.attr('x', 0)
-		.attr('y', sz(blueLineFromTop))
-		.attr('width', width)
-		.attr('height', thickLine)
+	// rink.append('rect')
+	// 	.attr('class', 'rink-rect rink-blue-line')
+	// 	.attr('x', 0)
+	// 	.attr('y', sz(blueLineFromTop))
+	// 	.attr('width', width)
+	// 	.attr('height', thickLine)
 
 	// crease
 	rink.append('line')
@@ -81,11 +81,11 @@ export default function drawRink({ rink, width, height }) {
 		.attr('transform', `translate(${center},${height - sz(goalLine)})`)
 
 	// faceoff circles
-	rink.append('circle')
-		.attr('class', 'rink-circle faceoff faceoff-center')
-		.attr('cx', center)
-		.attr('cy', 0)
-		.attr('r', sz(faceoffRadius))
+	// rink.append('circle')
+	// 	.attr('class', 'rink-circle faceoff faceoff-center')
+	// 	.attr('cx', center)
+	// 	.attr('cy', 0)
+	// 	.attr('r', sz(faceoffRadius))
 
 	rink.append('circle')
 		.attr('class', 'rink-circle faceoff faceoff-left')
@@ -100,11 +100,11 @@ export default function drawRink({ rink, width, height }) {
 		.attr('r', sz(faceoffRadius))
 
 	// spots
-	rink.append('circle')
-		.attr('class', 'rink-circle-fill faceoff faceoff-center')
-		.attr('cx', center)
-		.attr('cy', 0)
-		.attr('r', sz(spotRadius))
+	// rink.append('circle')
+	// 	.attr('class', 'rink-circle-fill faceoff faceoff-center')
+	// 	.attr('cx', center)
+	// 	.attr('cy', 0)
+	// 	.attr('r', sz(spotRadius))
 
 	rink.append('circle')
 		.attr('class', 'rink-circle-fill faceoff faceoff-left')

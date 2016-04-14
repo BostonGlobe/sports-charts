@@ -15,7 +15,7 @@ import {
 
 const { left, right, top, bottom } = dimensions
 const rinkWidth = bottom - top
-const rinkHeight = right - left
+const rinkHeight = right - 25 - left
 const rinkRatio = rinkHeight / rinkWidth
 
 const scales = {
