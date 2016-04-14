@@ -1,51 +1,1783 @@
 {
-  "rows": [
-    {
-      "distance": "383",
-      "gamedatetime": "04/05/2016 13:10",
-      "event": "Home run",
-      "direction": "t",
-      "id": "AVQGdqytvN0TLidJY_yl"
-    },
-    {
-      "distance": "423",
-      "gamedatetime": "04/06/2016 18:10",
-      "event": "Home run",
-      "direction": "r",
-      "id": "AVQGdqy0vN0TLidJY_7j"
-    }
-  ],
-  "metadata": {
-    "types": {
-      "on-base-after": "integer",
-      "batted-ball-type": "string",
-      "gamedatetime": "date",
-      "batter-team-location": "string",
-      "distance": "integer",
-      "pitcher-team-location": "string",
-      "event": "string",
-      "pitcher-team-final-score": "integer",
-      "balls": "integer",
-      "pitchcount": "integer",
-      "strikes": "integer",
-      "pitcher-team-alignment": "string",
-      "batter-team-final-score": "integer",
-      "batting-slot": "integer",
-      "inning": "integer",
-      "batter": "string",
-      "pitcher": "string",
-      "batter-team-nickname": "string",
-      "on-base-before": "integer",
-      "outs": "integer",
-      "venue": "string",
-      "direction": "string",
-      "batter-hand": "string",
-      "batted-ball-velocity": "string",
-      "batter-team-alignment": "string",
-      "gameno": "integer",
-      "pitcher-hand": "string",
-      "pitcher-team-nickname": "string",
-      "id": "string"
-    }
-  }
+	"hed": "no hed - see chartbuilder",
+	"mappings": [
+		{
+			"_type": "hockey-shotchart",
+			"types": {
+				"event": "string",
+				"gamedate": "date",
+				"goalie-x": "integer",
+				"goalie-y": "integer",
+				"home-away": "string",
+				"id": "string",
+				"opponent-location": "string",
+				"opponent-nickname": "string",
+				"period": "integer",
+				"player": "string",
+				"player-sort": "string",
+				"player-x": "integer",
+				"player-y": "integer",
+				"puck-x": "integer",
+				"puck-y": "integer",
+				"season": "integer",
+				"special-shot": "string",
+				"strength": "boolean",
+				"strength-type": "string",
+				"team-location": "string",
+				"team-nickname": "string",
+				"time": "string"
+			}
+		},
+		{
+			"_type": "baseball-spraychart",
+			"types": {
+				"balls": "integer",
+				"batted-ball-type": "string",
+				"batted-ball-velocity": "string",
+				"batter": "string",
+				"batter-hand": "string",
+				"batter-team-alignment": "string",
+				"batter-team-final-score": "integer",
+				"batter-team-location": "string",
+				"batter-team-nickname": "string",
+				"batting-slot": "integer",
+				"direction": "string",
+				"distance": "integer",
+				"event": "string",
+				"gamedatetime": "date",
+				"gameno": "integer",
+				"id": "string",
+				"inning": "integer",
+				"on-base-after": "integer",
+				"on-base-before": "integer",
+				"outs": "integer",
+				"pitchcount": "integer",
+				"pitcher": "string",
+				"pitcher-hand": "string",
+				"pitcher-team-alignment": "string",
+				"pitcher-team-final-score": "integer",
+				"pitcher-team-location": "string",
+				"pitcher-team-nickname": "string",
+				"strikes": "integer",
+				"venue": "string"
+			}
+		}
+	],
+	"rows": [
+		{
+			"_type": "baseball-spraychart",
+			"direction": "u",
+			"distance": "368",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 22:05",
+			"id": "AVQMAdHqVW4SmNPtOedh"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "f",
+			"distance": "380",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 14:10",
+			"id": "AVQMAdHqVW4SmNPtOeeG"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "364",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 21:40",
+			"id": "AVQMAdHsVW4SmNPtOeiU"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "412",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 21:40",
+			"id": "AVQMAdHsVW4SmNPtOeiV"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "x",
+			"distance": "366",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 21:40",
+			"id": "AVQMAdHsVW4SmNPtOeig"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "391",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 21:40",
+			"id": "AVQMAdHsVW4SmNPtOei0"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "354",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 19:10",
+			"id": "AVQMAdHsVW4SmNPtOejE"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "383",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 19:10",
+			"id": "AVQMAdHsVW4SmNPtOejJ"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "386",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 13:10",
+			"id": "AVQMAdHtVW4SmNPtOekn"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "x",
+			"distance": "355",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 16:15",
+			"id": "AVQMAdHtVW4SmNPtOelT"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "s",
+			"distance": "384",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 13:05",
+			"id": "AVQMAdHtVW4SmNPtOem8"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "s",
+			"distance": "408",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 20:05",
+			"id": "AVQMAdHuVW4SmNPtOeom"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "p",
+			"distance": "431",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 21:40",
+			"id": "AVQMAdHvVW4SmNPtOerb"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "430",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 21:40",
+			"id": "AVQMAdHvVW4SmNPtOern"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "414",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 18:10",
+			"id": "AVQMAdHwVW4SmNPtOeuS"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "l",
+			"distance": "417",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 13:40",
+			"id": "AVQMAdHwVW4SmNPtOeui"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "396",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 16:55",
+			"id": "AVQMAdHyVW4SmNPtOe1A"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "430",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 15:40",
+			"id": "AVQMAdHyVW4SmNPtOe19"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "o",
+			"distance": "390",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 19:05",
+			"id": "AVQMAdHyVW4SmNPtOe2w"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "g",
+			"distance": "372",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 19:05",
+			"id": "AVQMAdHyVW4SmNPtOe3N"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "k",
+			"distance": "392",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 19:05",
+			"id": "AVQMAdHyVW4SmNPtOe3Y"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "k",
+			"distance": "412",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 16:05",
+			"id": "AVQMAdHyVW4SmNPtOe4P"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "391",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 12:35",
+			"id": "AVQMAdHzVW4SmNPtOe6X"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "375",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 16:10",
+			"id": "AVQMAdH0VW4SmNPtOe_G"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "x",
+			"distance": "339",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:07",
+			"id": "AVQMAdH0VW4SmNPtOfCn"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "x",
+			"distance": "359",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:35",
+			"id": "AVQMAdH0VW4SmNPtOfDl"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "404",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:10",
+			"id": "AVQMAdH1VW4SmNPtOfEM"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "f",
+			"distance": "368",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 22:15",
+			"id": "AVQMAdH1VW4SmNPtOfF3"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "l",
+			"distance": "401",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 21:05",
+			"id": "AVQMAdH1VW4SmNPtOfHz"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "m",
+			"distance": "426",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 19:10",
+			"id": "AVQMAdH1VW4SmNPtOfLA"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "l",
+			"distance": "420",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 13:10",
+			"id": "AVQMAdH2VW4SmNPtOfOP"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "402",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 19:10",
+			"id": "AVQMAdH2VW4SmNPtOfOl"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "399",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:35",
+			"id": "AVQMAdH2VW4SmNPtOfRw"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "401",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 14:10",
+			"id": "AVQMAdH2VW4SmNPtOfUB"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "376",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH2VW4SmNPtOfU6"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "405",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:07",
+			"id": "AVQMAdH2VW4SmNPtOfVi"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "388",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:10",
+			"id": "AVQMAdH2VW4SmNPtOfWd"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "381",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:05",
+			"id": "AVQMAdH3VW4SmNPtOfY8"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "452",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH3VW4SmNPtOfZq"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "c",
+			"distance": "395",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH3VW4SmNPtOfaL"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "412",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 14:05",
+			"id": "AVQMAdH3VW4SmNPtOfbb"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "359",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 20:05",
+			"id": "AVQMAdH3VW4SmNPtOffM"
+		},
+		{
+			"_type": "hockey-shotchart",
+			"event": "Shot",
+			"id": "AVQMAdH3VW4SmNPtOfju",
+			"player": "Torey Krug"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "399",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 14:10",
+			"id": "AVQMAdHqVW4SmNPtOeeh"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "o",
+			"distance": "408",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 16:10",
+			"id": "AVQMAdHrVW4SmNPtOef-"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "372",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 22:05",
+			"id": "AVQMAdHtVW4SmNPtOen9"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "381",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 20:05",
+			"id": "AVQMAdHuVW4SmNPtOeop"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "415",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 21:40",
+			"id": "AVQMAdHvVW4SmNPtOert"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "c",
+			"distance": "359",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:05",
+			"id": "AVQMAdHvVW4SmNPtOetY"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "c",
+			"distance": "365",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:05",
+			"id": "AVQMAdHwVW4SmNPtOevN"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "n",
+			"distance": "420",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:05",
+			"id": "AVQMAdHwVW4SmNPtOevr"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "375",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 22:05",
+			"id": "AVQMAdHwVW4SmNPtOewO"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "390",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 15:40",
+			"id": "AVQMAdHyVW4SmNPtOe1Y"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "f",
+			"distance": "361",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 13:10",
+			"id": "AVQMAdHyVW4SmNPtOe2K"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "o",
+			"distance": "406",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 13:10",
+			"id": "AVQMAdHyVW4SmNPtOe2h"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "k",
+			"distance": "428",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 13:10",
+			"id": "AVQMAdHyVW4SmNPtOe2p"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "430",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 22:05",
+			"id": "AVQMAdHyVW4SmNPtOe3m"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "g",
+			"distance": "415",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 16:05",
+			"id": "AVQMAdHyVW4SmNPtOe4g"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "c",
+			"distance": "345",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 16:05",
+			"id": "AVQMAdHzVW4SmNPtOe4w"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "t",
+			"distance": "366",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 15:35",
+			"id": "AVQMAdHzVW4SmNPtOe5S"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "389",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 12:35",
+			"id": "AVQMAdHzVW4SmNPtOe59"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "m",
+			"distance": "416",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 12:35",
+			"id": "AVQMAdHzVW4SmNPtOe6L"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "414",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 16:35",
+			"id": "AVQMAdHzVW4SmNPtOe8N"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "410",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:05",
+			"id": "AVQMAdHzVW4SmNPtOe9P"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "k",
+			"distance": "407",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:05",
+			"id": "AVQMAdHzVW4SmNPtOe9j"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "391",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:05",
+			"id": "AVQMAdHzVW4SmNPtOe9l"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "382",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:05",
+			"id": "AVQMAdHzVW4SmNPtOe9m"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "372",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 13:10",
+			"id": "AVQMAdH0VW4SmNPtOfAG"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "417",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 20:15",
+			"id": "AVQMAdH0VW4SmNPtOfAs"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "l",
+			"distance": "401",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:10",
+			"id": "AVQMAdH0VW4SmNPtOfDt"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "397",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 13:10",
+			"id": "AVQMAdH1VW4SmNPtOfJF"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "u",
+			"distance": "391",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 13:10",
+			"id": "AVQMAdH1VW4SmNPtOfJg"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "u",
+			"distance": "428",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 19:10",
+			"id": "AVQMAdH1VW4SmNPtOfK_"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "353",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 13:07",
+			"id": "AVQMAdH1VW4SmNPtOfML"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "411",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 20:10",
+			"id": "AVQMAdH2VW4SmNPtOfQC"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "m",
+			"distance": "442",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 20:10",
+			"id": "AVQMAdH2VW4SmNPtOfQh"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "410",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 14:15",
+			"id": "AVQMAdH2VW4SmNPtOfTc"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "o",
+			"distance": "405",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:35",
+			"id": "AVQMAdH2VW4SmNPtOfVy"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "m",
+			"distance": "430",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:35",
+			"id": "AVQMAdH2VW4SmNPtOfV6"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "x",
+			"distance": "388",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH3VW4SmNPtOfaR"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "357",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 14:05",
+			"id": "AVQMAdH3VW4SmNPtOfb1"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "376",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 15:05",
+			"id": "AVQMAdH3VW4SmNPtOfia"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "397",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 14:10",
+			"id": "AVQMAdHqVW4SmNPtOeeA"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "t",
+			"distance": "372",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 16:05",
+			"id": "AVQMAdHqVW4SmNPtOefd"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "p",
+			"distance": "418",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 16:05",
+			"id": "AVQMAdHqVW4SmNPtOefe"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "m",
+			"distance": "408",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 16:10",
+			"id": "AVQMAdHrVW4SmNPtOegH"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "354",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 13:05",
+			"id": "AVQMAdHtVW4SmNPtOenG"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "385",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 22:05",
+			"id": "AVQMAdHtVW4SmNPtOeni"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "413",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 21:40",
+			"id": "AVQMAdHvVW4SmNPtOerk"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "s",
+			"distance": "390",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 13:40",
+			"id": "AVQMAdHwVW4SmNPtOeut"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "405",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:05",
+			"id": "AVQMAdHwVW4SmNPtOevZ"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "420",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:05",
+			"id": "AVQMAdHwVW4SmNPtOevd"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "385",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:05",
+			"id": "AVQMAdHwVW4SmNPtOevk"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "390",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:05",
+			"id": "AVQMAdHxVW4SmNPtOezd"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "369",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 21:10",
+			"id": "AVQMAdHxVW4SmNPtOez6"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "388",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 21:10",
+			"id": "AVQMAdHxVW4SmNPtOe0P"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "395",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 16:55",
+			"id": "AVQMAdHxVW4SmNPtOe0e"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "403",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 12:35",
+			"id": "AVQMAdHzVW4SmNPtOe6D"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "363",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 12:35",
+			"id": "AVQMAdHzVW4SmNPtOe6H"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "k",
+			"distance": "402",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 12:35",
+			"id": "AVQMAdHzVW4SmNPtOe6U"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "385",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 16:05",
+			"id": "AVQMAdHzVW4SmNPtOe7J"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "p",
+			"distance": "422",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 16:35",
+			"id": "AVQMAdHzVW4SmNPtOe8G"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "375",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 21:40",
+			"id": "AVQMAdHzVW4SmNPtOe9I"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "416",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 20:10",
+			"id": "AVQMAdH0VW4SmNPtOfBT"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "t",
+			"distance": "382",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 20:10",
+			"id": "AVQMAdH0VW4SmNPtOfBX"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "l",
+			"distance": "396",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 22:10",
+			"id": "AVQMAdH0VW4SmNPtOfB1"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "397",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:07",
+			"id": "AVQMAdH0VW4SmNPtOfCf"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "402",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:35",
+			"id": "AVQMAdH0VW4SmNPtOfDb"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "c",
+			"distance": "372",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:35",
+			"id": "AVQMAdH0VW4SmNPtOfDe"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "395",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 22:15",
+			"id": "AVQMAdH1VW4SmNPtOfFs"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "u",
+			"distance": "374",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 14:10",
+			"id": "AVQMAdH1VW4SmNPtOfI9"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "404",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 19:15",
+			"id": "AVQMAdH1VW4SmNPtOfKY"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "367",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 19:10",
+			"id": "AVQMAdH1VW4SmNPtOfLG"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "t",
+			"distance": "402",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 21:10",
+			"id": "AVQMAdH1VW4SmNPtOfLz"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "403",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 13:07",
+			"id": "AVQMAdH2VW4SmNPtOfMX"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "c",
+			"distance": "370",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 16:05",
+			"id": "AVQMAdH2VW4SmNPtOfPV"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "s",
+			"distance": "402",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 14:15",
+			"id": "AVQMAdH2VW4SmNPtOfTZ"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "397",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 14:10",
+			"id": "AVQMAdH2VW4SmNPtOfTw"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "395",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:35",
+			"id": "AVQMAdH2VW4SmNPtOfWV"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "s",
+			"distance": "367",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:10",
+			"id": "AVQMAdH2VW4SmNPtOfW3"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "k",
+			"distance": "419",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH3VW4SmNPtOfag"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "365",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH3VW4SmNPtOfa0"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "395",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 13:10",
+			"id": "AVQMAdH3VW4SmNPtOfcW"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "366",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 20:05",
+			"id": "AVQMAdH3VW4SmNPtOffq"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "379",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 19:05",
+			"id": "AVQMAdH3VW4SmNPtOfgt"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "390",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 16:15",
+			"id": "AVQMAdH3VW4SmNPtOfjf"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "397",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 14:10",
+			"id": "AVQMAdHqVW4SmNPtOeeS"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "l",
+			"distance": "407",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 14:10",
+			"id": "AVQMAdHqVW4SmNPtOeei"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "s",
+			"distance": "378",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 16:10",
+			"id": "AVQMAdHrVW4SmNPtOegs"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "408",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 22:05",
+			"id": "AVQMAdHsVW4SmNPtOej2"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "399",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 20:10",
+			"id": "AVQMAdHtVW4SmNPtOel5"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "444",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 19:10",
+			"id": "AVQMAdHvVW4SmNPtOerC"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "k",
+			"distance": "403",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 19:10",
+			"id": "AVQMAdHvVW4SmNPtOerD"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "378",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 21:40",
+			"id": "AVQMAdHvVW4SmNPtOerr"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "t",
+			"distance": "418",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 19:10",
+			"id": "AVQMAdHvVW4SmNPtOesf"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "n",
+			"distance": "408",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:05",
+			"id": "AVQMAdHvVW4SmNPtOetI"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "431",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 18:10",
+			"id": "AVQMAdHwVW4SmNPtOetq"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "423",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 18:10",
+			"id": "AVQMAdHwVW4SmNPtOeuD"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "384",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 18:10",
+			"id": "AVQMAdHwVW4SmNPtOeuE"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "u",
+			"distance": "364",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 14:05",
+			"id": "AVQMAdHxVW4SmNPtOew4"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "415",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 15:40",
+			"id": "AVQMAdHyVW4SmNPtOe1O"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "c",
+			"distance": "380",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 22:05",
+			"id": "AVQMAdHyVW4SmNPtOe3i"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "x",
+			"distance": "340",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 16:05",
+			"id": "AVQMAdHyVW4SmNPtOe4d"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "p",
+			"distance": "402",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:05",
+			"id": "AVQMAdHzVW4SmNPtOe9W"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "t",
+			"distance": "427",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 20:10",
+			"id": "AVQMAdH0VW4SmNPtOfA1"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "o",
+			"distance": "420",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 20:10",
+			"id": "AVQMAdH0VW4SmNPtOfA3"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "p",
+			"distance": "421",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 19:35",
+			"id": "AVQMAdH0VW4SmNPtOfDm"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "c",
+			"distance": "401",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 16:10",
+			"id": "AVQMAdH1VW4SmNPtOfGT"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "447",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 16:10",
+			"id": "AVQMAdH1VW4SmNPtOfGZ"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "373",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 14:10",
+			"id": "AVQMAdH1VW4SmNPtOfIf"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "356",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 14:10",
+			"id": "AVQMAdH1VW4SmNPtOfI1"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "384",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 19:15",
+			"id": "AVQMAdH1VW4SmNPtOfKL"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "408",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 19:15",
+			"id": "AVQMAdH1VW4SmNPtOfKM"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "u",
+			"distance": "372",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 19:10",
+			"id": "AVQMAdH1VW4SmNPtOfLM"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "400",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 20:10",
+			"id": "AVQMAdH2VW4SmNPtOfP7"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "381",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:35",
+			"id": "AVQMAdH2VW4SmNPtOfRp"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "t",
+			"distance": "378",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:35",
+			"id": "AVQMAdH2VW4SmNPtOfX7"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "g",
+			"distance": "373",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:10",
+			"id": "AVQMAdH3VW4SmNPtOfYd"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "393",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:05",
+			"id": "AVQMAdH3VW4SmNPtOfZF"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "e",
+			"distance": "366",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH3VW4SmNPtOfZp"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "401",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH3VW4SmNPtOfa2"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "399",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 20:10",
+			"id": "AVQMAdH3VW4SmNPtOffy"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "390",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 20:10",
+			"id": "AVQMAdH3VW4SmNPtOfge"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "g",
+			"distance": "400",
+			"event": "Home run",
+			"gamedatetime": "04/03/2016 16:05",
+			"id": "AVQMAdHpVW4SmNPtOecT"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "u",
+			"distance": "380",
+			"event": "Home run",
+			"gamedatetime": "04/03/2016 16:05",
+			"id": "AVQMAdHpVW4SmNPtOecZ"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "377",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 14:10",
+			"id": "AVQMAdHqVW4SmNPtOeeg"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "385",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 16:10",
+			"id": "AVQMAdHrVW4SmNPtOef7"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "g",
+			"distance": "393",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 16:10",
+			"id": "AVQMAdHrVW4SmNPtOegL"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "428",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 21:40",
+			"id": "AVQMAdHsVW4SmNPtOeic"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "l",
+			"distance": "412",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 19:10",
+			"id": "AVQMAdHsVW4SmNPtOejT"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "g",
+			"distance": "384",
+			"event": "Home run",
+			"gamedatetime": "04/04/2016 19:10",
+			"id": "AVQMAdHsVW4SmNPtOejZ"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "n",
+			"distance": "408",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 22:05",
+			"id": "AVQMAdHsVW4SmNPtOej6"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "u",
+			"distance": "368",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 22:05",
+			"id": "AVQMAdHsVW4SmNPtOekR"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "t",
+			"distance": "383",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 13:10",
+			"id": "AVQMAdHtVW4SmNPtOelF"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "i",
+			"distance": "413",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 20:05",
+			"id": "AVQMAdHtVW4SmNPtOeoR"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "f",
+			"distance": "393",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 20:05",
+			"id": "AVQMAdHuVW4SmNPtOeoq"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "c",
+			"distance": "345",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 19:05",
+			"id": "AVQMAdHuVW4SmNPtOepK"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "369",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 19:10",
+			"id": "AVQMAdHuVW4SmNPtOeqe"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "g",
+			"distance": "398",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 19:10",
+			"id": "AVQMAdHvVW4SmNPtOeq2"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "366",
+			"event": "Home run",
+			"gamedatetime": "04/05/2016 19:10",
+			"id": "AVQMAdHvVW4SmNPtOesz"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "u",
+			"distance": "372",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 18:10",
+			"id": "AVQMAdHwVW4SmNPtOetu"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "c",
+			"distance": "350",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:05",
+			"id": "AVQMAdHwVW4SmNPtOevy"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "405",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 14:05",
+			"id": "AVQMAdHwVW4SmNPtOeww"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "414",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 14:05",
+			"id": "AVQMAdHxVW4SmNPtOexP"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "p",
+			"distance": "417",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 14:05",
+			"id": "AVQMAdHxVW4SmNPtOexc"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "s",
+			"distance": "383",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:10",
+			"id": "AVQMAdHxVW4SmNPtOeyU"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "g",
+			"distance": "385",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 19:10",
+			"id": "AVQMAdHxVW4SmNPtOeyW"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "f",
+			"distance": "360",
+			"event": "Home run",
+			"gamedatetime": "04/06/2016 15:40",
+			"id": "AVQMAdHyVW4SmNPtOe1x"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "x",
+			"distance": "375",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 16:05",
+			"id": "AVQMAdHyVW4SmNPtOe4Q"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "s",
+			"distance": "381",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 21:40",
+			"id": "AVQMAdHzVW4SmNPtOe8W"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "k",
+			"distance": "393",
+			"event": "Home run",
+			"gamedatetime": "04/07/2016 21:40",
+			"id": "AVQMAdHzVW4SmNPtOe8e"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "q",
+			"distance": "382",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 22:05",
+			"id": "AVQMAdH0VW4SmNPtOe-O"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "v",
+			"distance": "348",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 22:10",
+			"id": "AVQMAdH0VW4SmNPtOfB0"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "w",
+			"distance": "365",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 22:10",
+			"id": "AVQMAdH0VW4SmNPtOfCE"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "402",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 16:10",
+			"id": "AVQMAdH1VW4SmNPtOfGe"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "f",
+			"distance": "397",
+			"event": "Home run",
+			"gamedatetime": "04/08/2016 16:10",
+			"id": "AVQMAdH1VW4SmNPtOfG1"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "l",
+			"distance": "403",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 14:10",
+			"id": "AVQMAdH1VW4SmNPtOfIx"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "k",
+			"distance": "393",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 19:10",
+			"id": "AVQMAdH1VW4SmNPtOfK2"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "420",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 21:10",
+			"id": "AVQMAdH1VW4SmNPtOfLl"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "381",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 16:05",
+			"id": "AVQMAdH2VW4SmNPtOfPG"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "s",
+			"distance": "399",
+			"event": "Home run",
+			"gamedatetime": "04/09/2016 20:10",
+			"id": "AVQMAdH2VW4SmNPtOfP-"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "o",
+			"distance": "420",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 15:35",
+			"id": "AVQMAdH2VW4SmNPtOfSo"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "d",
+			"distance": "345",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH2VW4SmNPtOfUt"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "r",
+			"distance": "403",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 13:10",
+			"id": "AVQMAdH2VW4SmNPtOfYX"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "p",
+			"distance": "413",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:05",
+			"id": "AVQMAdH3VW4SmNPtOfY-"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "h",
+			"distance": "417",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH3VW4SmNPtOfaQ"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "f",
+			"distance": "410",
+			"event": "Home run",
+			"gamedatetime": "04/10/2016 16:10",
+			"id": "AVQMAdH3VW4SmNPtOfas"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "m",
+			"distance": "434",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 14:05",
+			"id": "AVQMAdH3VW4SmNPtOfb0"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "s",
+			"distance": "384",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 13:10",
+			"id": "AVQMAdH3VW4SmNPtOfcE"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "k",
+			"distance": "408",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 22:05",
+			"id": "AVQMAdH3VW4SmNPtOfd4"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "p",
+			"distance": "402",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 22:10",
+			"id": "AVQMAdH3VW4SmNPtOfe8"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "j",
+			"distance": "411",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 19:10",
+			"id": "AVQMAdH3VW4SmNPtOfhn"
+		},
+		{
+			"_type": "baseball-spraychart",
+			"direction": "x",
+			"distance": "339",
+			"event": "Home run",
+			"gamedatetime": "04/11/2016 19:10",
+			"id": "AVQMAdH3VW4SmNPtOfh4"
+		},
+		{
+			"_type": "hockey-shotchart",
+			"event": "Shot",
+			"id": "AVQMAdH3VW4SmNPtOfjt",
+			"player": "Loui Eriksson"
+		},
+		{
+			"_type": "hockey-shotchart",
+			"event": "Shot",
+			"id": "AVQMAdH3VW4SmNPtOfjv",
+			"player": "Ryan Spooner"
+		}
+	],
+	"subhed": "no subhed - see chartbuilder"
 }
