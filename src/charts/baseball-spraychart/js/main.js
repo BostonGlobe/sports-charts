@@ -142,7 +142,6 @@ const handleNewData = (newData, isChartbuilder) => {
 }
 
 const handleNewPayload = (payload) => {
-	// console.log(JSON.stringify(payload, null, 2))
 	let { rows, isChartbuilder } = payload
 	if (rows) handleNewData(rows, isChartbuilder)
 }
