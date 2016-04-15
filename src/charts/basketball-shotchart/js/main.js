@@ -3,14 +3,11 @@ import chart from './chart'
 
 chart.setup()
 
-const handleNewData = ({ rows, metadata }) => {
-	const { averages } = metadata
-	if (rows && averages) chart.updateData({ averages, rows })
-}
+const handleNewData = (rows) => chart.updateData(rows)
 
 const handleNewPayload = (payload) => {
-	const { rows, metadata, isChartbuilder } = payload
-	if (rows) handleNewData({ rows, metadata, isChartbuilder })
+	const { rows } = payload
+	if (rows) handleNewData(rows)
 }
 
 setupIframe(handleNewPayload)

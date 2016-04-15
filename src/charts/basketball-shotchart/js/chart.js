@@ -160,7 +160,7 @@ function updateDOM({ hexbinData, averages, date }) {
 
 	// position, color, and scale all hexagons
 	enterSelection.merge(hexagons)
-		.attr('transform', d => `translate(${d.x}, ${d.y})`)
+		.attr('transform', d => `translate(${d.shotX}, ${d.shotY})`)
 		.attr('class', d => getColor({ d, averages, date }))
 		.transition()
 			.duration(transitionDuration)
@@ -180,13 +180,13 @@ function updateBins({ averages, rows }) {
 	// get x,y coords for each shot
 	const points = rows.map(shot => ({
 		...shot,
-		x: scales.shotX(shot.x),
-		y: scales.shotY(shot.y),
+		shotX: scales.shotX(shot.shotX),
+		shotY: scales.shotY(shot.shotY),
 	}))
 
 	// bin data into hexes
 	const hexbinData = hexbinner(points.map(point =>
-		[point.x, point.y, { ...point }]
+		[point.shotX, point.shotY, { ...point }]
 	))
 
 	// make updates
@@ -195,10 +195,11 @@ function updateBins({ averages, rows }) {
 }
 
 // make averages global for resize computations and update bins
-function updateData({ rows, averages }) {
+function updateData(rows) {
 	// make it global so we can reuse on resize
-	data.averages = averages
-	data.rows = rows
+	data.averages = rows.filter(r => r._type === 'basketball-averages')
+	data.rows = rows.filter(r => r._type === 'basketball-shotchart')
+	console.log(data)
 	updateBins(data)
 }
 
