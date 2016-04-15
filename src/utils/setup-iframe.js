@@ -3,11 +3,11 @@ import pymIframe from 'pym-iframe-resizer'
 import { parse } from 'query-string'
 import 'promis'
 import { $, addClass } from './dom'
-import { convertData } from 'chartbuilder-charts'
+import { convertRows } from 'chartbuilder-charts'
 
-const convertPayload = (data) => ({
-	...data,
-	rows: convertData({ data: data.rows, types: data.metadata.types }),
+const convertPayload = ({ rows, mappings, ...other }) => ({
+	...other,
+	rows: convertRows({ rows, mappings }),
 })
 
 const displayHeader = ({ hed, subhed }) => {
