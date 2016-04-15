@@ -19,8 +19,8 @@ const rinkHeight = right - left
 const rinkRatio = rinkHeight / rinkWidth
 
 const scales = {
-	shotX: scaleLinear(),
-	shotY: scaleLinear(),
+	playerX: scaleLinear(),
+	playerY: scaleLinear(),
 	color: scaleQuantize(),
 }
 
@@ -33,8 +33,8 @@ const data = {}
 
 // update scale ranges that deal with screen size
 function updateScales({ width, height }) {
-	scales.shotX.range([height, 0])
-	scales.shotY.range([0, width])
+	scales.playerX.range([height, 0])
+	scales.playerY.range([0, width])
 }
 
 // responsive resize dom elements
@@ -66,8 +66,8 @@ function updateDOM(rows) {
 	enterSelection.merge(shots)
 		.attr('transform', d => {
 			// confusing, I know.
-			const y = scales.shotX(d.x)
-			const x = scales.shotY(d.y)
+			const y = scales.playerX(d.playerX)
+			const x = scales.playerY(d.playerY)
 			return `translate(${x}, ${y})`
 		})
 		.attr('r', shotRadius)
@@ -106,8 +106,8 @@ function setupDOM() {
 
 // basic domain/range for scales
 function setupScales() {
-	scales.shotX.domain([left, right])
-	scales.shotY.domain([top, bottom])
+	scales.playerX.domain([left, right])
+	scales.playerY.domain([top, bottom])
 }
 
 // setup dom for key
