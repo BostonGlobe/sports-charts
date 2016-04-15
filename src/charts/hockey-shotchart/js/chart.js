@@ -85,7 +85,7 @@ function updateDOM(rows) {
 }
 
 // make averages global for resize computations and update bins
-function updateData({ rows }) {
+function updateData(rows) {
 	// sort rows by made / missed for rendering ordering
 	const sortedRows = rows.sort((a, b) => a.made - b.made)
 	// make it global so we can reuse on resize
