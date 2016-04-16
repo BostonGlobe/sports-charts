@@ -34,7 +34,7 @@
 			<div id='globe-graphic-iframe-1' class='igraphic-chart' style='margin: 20px 0;'></div>
 
 			<script src='https://apps.bostonglobe.com/common/js/pym/pym-0.4.5.min.js'></script>
-			<script src='https://apps.bostonglobe.com/common/js/enter-view/enter-view-0.0.3.min.js'></script>
+			<script src='https://apps.bostonglobe.com/common/js/enter-view/enter-view-0.1.0.min.js'></script>
 
 			<script>
 				(function() {
