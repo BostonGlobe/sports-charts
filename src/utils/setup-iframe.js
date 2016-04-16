@@ -1,9 +1,9 @@
+import 'promis'
 import getJSON from 'get-json-lite'
 import pymIframe from 'pym-iframe-resizer'
 import { parse } from 'query-string'
-import 'promis'
 import { $, addClass } from './dom'
-import { convertRows } from 'chartbuilder-charts'
+import convertRows from './convertRows'
 
 const convertPayload = ({ rows, mappings, ...other }) => ({
 	...other,
