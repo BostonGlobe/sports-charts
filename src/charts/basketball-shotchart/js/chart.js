@@ -54,17 +54,17 @@ function getHexMade(d) {
 }
 
 // extract the most recent date from all shots
-function getLatestDate(rows) {
-	const sorted = rows.sort((a, b) => a.gameDate - b.gameDate)
-	return sorted[sorted.length - 1].gameDate
-}
+// function getLatestDate(rows) {
+// 	const sorted = rows.sort((a, b) => a.gameDateTime - b.gameDateTime)
+// 	return sorted[sorted.length - 1].gameDateTime
+// }
 
 // calculate bin avg. vs. league avg. and return proper color
-function getColor({ d, averages, date }) {
-	if (d.length > minShotsThreshold) {
-		const made = getHexMade(d)
-		const average = getWeightedAverage({ d, averages, date })
-		const percent = +((made / d.length * 1000) / 10).toFixed(2)
+function getColor({ hex, averages }) {
+	if (hex.length > minShotsThreshold) {
+		const made = getHexMade(hex)
+		const average = getWeightedAverage({ hex, averages })
+		const percent = +((made / hex.length * 1000) / 10).toFixed(2)
 		const diff = percent - average
 		const color = scales.color(diff)
 		return `${color} bin-radius-${getBinRadius()}`
@@ -160,13 +160,13 @@ function updateDOM({ hexbinData, averages, date }) {
 
 	// position, color, and scale all hexagons
 	enterSelection.merge(hexagons)
-		.attr('transform', d => `translate(${d.shotX}, ${d.shotY})`)
-		.attr('class', d => getColor({ d, averages, date }))
+		.attr('transform', hex => `translate(${hex.x}, ${hex.y})`)
+		.attr('class', hex => getColor({ hex, averages }))
 		.transition()
 			.duration(transitionDuration)
 			.ease(easeQuadOut)
-			.delay(d => {
-				const className = getColor({ d, averages, date }).split(' ')[0]
+			.delay(hex => {
+				const className = getColor({ hex, averages }).split(' ')[0]
 				if (className === 'below-threshold') return 0
 				return scales.delay(className)
 			})
@@ -175,22 +175,21 @@ function updateDOM({ hexbinData, averages, date }) {
 
 // compute new aggregation of points to bins
 function updateBins({ averages, rows }) {
-	const date = getLatestDate(rows)
 
 	// get x,y coords for each shot
 	const points = rows.map(shot => ({
 		...shot,
-		shotX: scales.shotX(shot.shotX),
-		shotY: scales.shotY(shot.shotY),
+		x: scales.shotX(shot.shotX),
+		y: scales.shotY(shot.shotY),
 	}))
 
 	// bin data into hexes
 	const hexbinData = hexbinner(points.map(point =>
-		[point.shotX, point.shotY, { ...point }]
+		[point.x, point.y, { ...point }]
 	))
 
 	// make updates
-	updateDOM({ hexbinData, averages, date })
+	updateDOM({ hexbinData, averages })
 	return true
 }
 
@@ -199,7 +198,6 @@ function updateData(rows) {
 	// make it global so we can reuse on resize
 	data.averages = rows.filter(r => r._type === 'basketball-averages')
 	data.rows = rows.filter(r => r._type === 'basketball-shotchart')
-	console.log(data)
 	updateBins(data)
 }
 
