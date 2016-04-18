@@ -7,6 +7,7 @@ gulp.task('prod', (cb) => {
 		'html-chart-prod',
 		'css-chart-prod',
 		'js-chart-prod',
+		'chmod-prod',
 		'ssh-chart',
 		cb
 	)
@@ -17,6 +18,7 @@ gulp.task('prod-base', (cb) => {
 		'clean-base',
 		'css-base-prod',
 		'js-base-prod',
+		'chmod-prod',
 		'ssh-base',
 		cb
 	)
