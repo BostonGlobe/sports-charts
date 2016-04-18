@@ -1,5 +1,5 @@
 {
-    "hed": "Chart does not have hed function",
+    "hed": "Red Sox run differential",
     "mappings": {
         "gameDate": "date",
         "gameno": "integer",
@@ -122,5 +122,5 @@
             "teamNickname": "Red Sox"
         }
     ],
-    "subhed": "Chart does not have subhed function"
+    "subhed": "Last 10 games"
 }
