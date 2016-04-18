@@ -1,6 +1,6 @@
 import setupIframe from '../../../utils/setup-iframe'
 import { $ } from '../../../utils/dom.js'
-import formatData from './formatData.js'
+import sortData from './sortData.js'
 import createSvg from './createSvg.js'
 import drawData from './drawData.js'
 import createScales from './createScales.js'
@@ -21,9 +21,10 @@ const svg = createSvg({ container, margins, width, height })
 
 const handleNewPayload = ({ rows, isChartbuilder }) => {
 
-	// format the data (i.e. turn gamedate into Date, etc)
-	const data = formatData(rows)
+	// sort data
+	const data = sortData(rows)
 
+	// create scales
 	const scales = createScales({ width, height, data })
 
 	// draw data

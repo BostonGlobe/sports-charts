@@ -3,7 +3,7 @@ import { max } from 'd3-array'
 
 const createScales = ({ width, height, data }) => {
 
-	const maxY = max(data, d => Math.abs(d['run-differential']))
+	const maxY = max(data, d => Math.abs(d.runDifferential))
 
 	return {
 

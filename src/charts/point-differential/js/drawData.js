@@ -13,7 +13,7 @@ const drawData = ({ svg, data, detachedContainer, scales }) => {
 
 	// JOIN
 	const bars = svg.select('g.bars').selectAll('rect')
-		.data(data, d => d.index)
+		.data(data, d => d.id)
 
 	// EXIT
 	bars.exit()
@@ -22,10 +22,10 @@ const drawData = ({ svg, data, detachedContainer, scales }) => {
 	// ENTER
 	bars.enter().append('rect')
 		.attr('x', d => x(d.gameno))
-		.attr('y', d => Math.min(y(d['run-differential']), y(0)))
+		.attr('y', d => Math.min(y(d.runDifferential), y(0)))
 		.attr('width', x.bandwidth())
-		.attr('height', d => Math.abs(y(d['run-differential']) - y(0)))
-		.style('fill', d => d['run-differential'] > 0 ?
+		.attr('height', d => Math.abs(y(d.runDifferential) - y(0)))
+		.style('fill', d => d.runDifferential > 0 ?
 			colors['redsox-secondary'] :
 			colors['gray-secondary'])
 
@@ -41,7 +41,7 @@ const drawData = ({ svg, data, detachedContainer, scales }) => {
 		.attr('transform', d => `translate(0, ${y(d) - (d < 0 ? 1 : 0)})`)
 
 	svg.select('g.axes--x text.label')
-		.text(extent(data, d => d.gamedate).map(dateFormat).join(' ‐ '))
+		.text(extent(data, d => d.gameDate).map(dateFormat).join(' ‐ '))
 
 }
 
