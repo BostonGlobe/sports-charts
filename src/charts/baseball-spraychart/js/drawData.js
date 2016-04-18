@@ -11,16 +11,16 @@ import setSliderTooltip from './../../../utils/slider/setSliderTooltip.js'
 // create date formatting function
 const dateFormat = timeFormat('%b. %e')
 
-const drawData = ({ data, detachedContainer, scales, gamedatetime,
+const drawData = ({ data, detachedContainer, scales, gameDateTime,
 uniqueDates, sliderContainer }) => {
 
-	// if we have a gamedatetime, then only show data up to that gamedatetime
-	const filteredData = gamedatetime ?
-		data.filter(x => x.gamedatetime <= gamedatetime) :
+	// if we have a gameDateTime, then only show data up to that gameDateTime
+	const filteredData = gameDateTime ?
+		data.filter(x => x.gameDateTime <= gameDateTime) :
 		data
 
 	const DELAY = 0
-	const DURATION = gamedatetime ? 300 : 500
+	const DURATION = gameDateTime ? 300 : 500
 
 	const { x, y, origin } = scales
 
@@ -71,14 +71,14 @@ uniqueDates, sliderContainer }) => {
 		.attr('opacity', 1)
 		.on('start', (d) => {
 
-			// if we don't have a gamedatetime (which means this is called at the
+			// if we don't have a gameDateTime (which means this is called at the
 			// beginning), then we should, at the start of every transition,
 			// set the slider to this datum's time
-			if (!gamedatetime) {
+			if (!gameDateTime) {
 
-				const time = d.gamedatetime.getTime()
+				const time = d.gameDateTime.getTime()
 				const index = uniqueDates.indexOf(time)
-				const text = dateFormat(d.gamedatetime)
+				const text = dateFormat(d.gameDateTime)
 
 				setSlider({ container: sliderContainer, value: index + 1 })
 				setSliderTooltip({ container: sliderContainer, text, index })
