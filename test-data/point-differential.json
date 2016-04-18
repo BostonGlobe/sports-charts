@@ -1,95 +1,137 @@
 {
-	"hed": "run differential: last 10 games",
-	"rows": [
-		{
-			"gamedate": "20150925",
-			"gamedate-display": "Fri., Sept. 25",
-			"gameno": 153,
-			"index": 152,
-			"opp": "Bal",
-			"outcome": "W, 7-0",
-			"run-differential": 7
-		},
-		{
-			"gamedate": "20150926",
-			"gamedate-display": "Sat., Sept. 26",
-			"gameno": 154,
-			"index": 153,
-			"opp": "Bal",
-			"outcome": "W, 8-0",
-			"run-differential": 8
-		},
-		{
-			"gamedate": "20150927",
-			"gamedate-display": "Sun., Sept. 27",
-			"gameno": 155,
-			"index": 154,
-			"opp": "Bal",
-			"outcome": "W, 2-0",
-			"run-differential": 2
-		},
-		{
-			"gamedate": "20150928",
-			"gamedate-display": "Mon., Sept. 28",
-			"gameno": 156,
-			"index": 155,
-			"opp": "@NYY",
-			"outcome": "W, 5-1",
-			"run-differential": 4
-		},
-		{
-			"gamedate": "20150929",
-			"gamedate-display": "Tue., Sept. 29",
-			"gameno": 157,
-			"index": 156,
-			"opp": "@NYY",
-			"outcome": "W, 10-4",
-			"run-differential": 6
-		},
-		{
-			"gamedate": "20150930",
-			"gamedate-display": "Wed., Sept. 30",
-			"gameno": 158,
-			"index": 157,
-			"opp": "@NYY",
-			"outcome": "W, 9-5",
-			"run-differential": 4
-		},
-		{
-			"gamedate": "20151001",
-			"gamedate-display": "Thu., Oct. 1",
-			"gameno": 159,
-			"index": 158,
-			"opp": "@NYY",
-			"outcome": "L, 4-1",
-			"run-differential": -3
-		},
-		{
-			"gamedate": "20151002",
-			"gamedate-display": "Fri., Oct. 2",
-			"gameno": 160,
-			"index": 159,
-			"opp": "@Cle",
-			"outcome": "L, 8-2",
-			"run-differential": -6
-		},
-		{
-			"gamedate": "20151003",
-			"gamedate-display": "Sat., Oct. 3",
-			"gameno": 161,
-			"index": 160,
-			"opp": "@Cle",
-			"outcome": "L, 2-0",
-			"run-differential": -2
-		},
-		{
-			"gamedate": "20151004",
-			"gamedate-display": "Sun., Oct. 4",
-			"gameno": 162,
-			"index": 161,
-			"opp": "@Cle",
-			"outcome": "L, 3-1",
-			"run-differential": -2
-		}
-	]
+    "hed": "Chart does not have hed function",
+    "mappings": {
+        "gameDate": "date",
+        "gameno": "integer",
+        "id": "string",
+        "opp": "string",
+        "outcome": "string",
+        "runDifferential": "integer",
+        "teamLocation": "string",
+        "teamNickname": "string"
+    },
+    "rows": [
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/05/2016",
+            "gameno": "1",
+            "id": "AVQqdDX39ilYSCdaLOZV",
+            "opp": "@Cle",
+            "outcome": "W, 6-2",
+            "runDifferential": "4",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        },
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/08/2016",
+            "gameno": "3",
+            "id": "AVQqdDX39ilYSCdaLOZX",
+            "opp": "@Tor",
+            "outcome": "W, 8-7",
+            "runDifferential": "1",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        },
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/09/2016",
+            "gameno": "4",
+            "id": "AVQqdDX39ilYSCdaLOZY",
+            "opp": "@Tor",
+            "outcome": "W, 8-4",
+            "runDifferential": "4",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        },
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/10/2016",
+            "gameno": "5",
+            "id": "AVQqdDX39ilYSCdaLOZZ",
+            "opp": "@Tor",
+            "outcome": "L, 3-0",
+            "runDifferential": "-3",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        },
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/12/2016",
+            "gameno": "7",
+            "id": "AVQqdDX39ilYSCdaLOZb",
+            "opp": "Bal",
+            "outcome": "L, 9-5",
+            "runDifferential": "-4",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        },
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/06/2016",
+            "gameno": "2",
+            "id": "AVQqdDX39ilYSCdaLOZW",
+            "opp": "@Cle",
+            "outcome": "L, 7-6",
+            "runDifferential": "-1",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        },
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/17/2016",
+            "gameno": "11",
+            "id": "AVQqdDX39ilYSCdaLOZf",
+            "opp": "Tor",
+            "outcome": "L, 5-3",
+            "runDifferential": "-2",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        },
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/11/2016",
+            "gameno": "6",
+            "id": "AVQqdDX39ilYSCdaLOZa",
+            "opp": "Bal",
+            "outcome": "L, 9-7",
+            "runDifferential": "-2",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        },
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/13/2016",
+            "gameno": "8",
+            "id": "AVQqdDX39ilYSCdaLOZc",
+            "opp": "Bal",
+            "outcome": "W, 4-2",
+            "runDifferential": "2",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        },
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/15/2016",
+            "gameno": "9",
+            "id": "AVQqdDX39ilYSCdaLOZd",
+            "opp": "Tor",
+            "outcome": "W, 5-3",
+            "runDifferential": "2",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        },
+        {
+            "_type": "baseball-point-differential",
+            "gameDate": "04/16/2016",
+            "gameno": "10",
+            "id": "AVQqdDX39ilYSCdaLOZe",
+            "opp": "Tor",
+            "outcome": "W, 4-2",
+            "runDifferential": "2",
+            "teamLocation": "Boston",
+            "teamNickname": "Red Sox"
+        }
+    ],
+    "subhed": "Chart does not have subhed function"
 }
