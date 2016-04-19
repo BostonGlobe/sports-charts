@@ -1,8 +1,7 @@
 import { $ } from '../../../utils/dom.js'
-import { timeParse, timeFormat } from 'd3-time-format'
+import { timeFormat } from 'd3-time-format'
 import chart from './chart'
 
-const dateParse = timeParse('%Y%m%d')
 const dateFormat = timeFormat('%b. %e')
 
 const getStreak = (r, index, rows) => {
@@ -34,11 +33,10 @@ const cleanRows = (rows) =>
 			...r,
 			won: r.outcome.split(', ')[0],
 			score: r.outcome.split(', ')[1],
-			gamedate: dateFormat(dateParse(r.gamedate)),
 			where: r.opp.indexOf('@') === 0 ? '@' : 'vs',
 			opponentAbbr: r.opp.replace('@', ''),
 		}))
-		.sort((a, b) => a.gamedate < b.gamedate)
+		.sort((a, b) => b.gameDate - a.gameDate)
 		.map(getStreak)
 
 const updateData = (rows) => {
@@ -55,7 +53,7 @@ const updateData = (rows) => {
 					<td>${r.score}</td>
 					<td>${r.where}</td>
 					<td>${r.opponentAbbr}</td>
-					<td>${r.gamedate}</td>
+					<td>${dateFormat(r.gameDate)}</td>
 				</tr>
 			`
 		})
