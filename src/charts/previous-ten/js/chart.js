@@ -47,16 +47,18 @@ const updateData = (rows) => {
 	const team = rows[0].teamNickname
 
 	const games = clean
-		.map(r => `
-			<tr class='${r.streak}'>
-				<td>${r.won}</td>
-				<td>${r.score}</td>
-				<td>${r.where}</td>
-				<td>${r.opponentAbbr}</td>
-				<td>${r.gamedate}</td>
-			</tr>
+		.map(r => {
+			const winLossClass = r.won === 'W' ? 'win' : 'loss'
+			return `
+				<tr class='${r.streak} ${winLossClass}'>
+					<td>${r.won}</td>
+					<td>${r.score}</td>
+					<td>${r.where}</td>
+					<td>${r.opponentAbbr}</td>
+					<td>${r.gamedate}</td>
+				</tr>
 			`
-		)
+		})
 
 	const table = `
 		<table class='previous-ten' summary='A table that has win/loss, score, opponent team, and game date across the top and the previous ${rows.length} games for ${team}.'>
