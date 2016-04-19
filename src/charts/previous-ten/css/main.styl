@@ -6,6 +6,7 @@
 	display block
 	tbody
 		padding-left 0.5em
+		color $text
 	tr
 		display flex
 		justify-content space-between
@@ -26,7 +27,9 @@
 		td
 			display block
 			flex 1
-	.win
+	.loss
+		color $gray-secondary
+	.win:before, .win:after, .win td:first-child
 		color $redsox-primary
 	.streak-next:after
 		bottom 0
