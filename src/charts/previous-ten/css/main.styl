@@ -1,6 +1,36 @@
 @require './../../../base/css/variables.styl'
 
-.previous-ten
+.previous-ten, tbody
 	width 100%
-	td 
+	position relative
+	display block
+	tbody
+		padding-left 0.5em
+	tr
+		display flex
+		justify-content space-between
 		line-height 2
+		position relative
+		border-left 1px solid transparent
+		&:before
+			content '\2022'
+			padding-right 1em
+			transform translateX(-3.25px)
+		&:not(.streak-none):after
+			content ''
+			display block
+			position absolute
+			left 0
+			height 50%
+			border-left 1px solid currentColor
+		td
+			display block
+			flex 1
+	.win
+		color $redsox-primary
+	.streak-next:after
+		bottom 0
+	.streak-prev:after
+		top 0
+	.streak-next.streak-prev:after
+		height 100%
