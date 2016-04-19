@@ -1,51 +1,17 @@
-@require './../../../base/css/variables.styl'
-@require './../../../base/css/helpers.styl'
-
 $lineColor = #fff
-
-.key 
-	width 100% 
-	clearfix()
-	margin-bottom 0.5em
-	li
-		float left
-		line-height 1.5
-		display block
-		margin-right 1em
-		color $gray-secondary
-		text-transform uppercase
-		font-size 0.8em
-		span
-			display inline-block
-			width 8px
-			height 8px
-			border-radius 4px
-			transform translateY(-1px)
-			&.made
-				background $bruins-primary
-				border 1px solid $bruins-team
-			&.missed
-				background $bruins-team
-				border 1px solid $bruins-team
-				opacity 0.25
-
 
 .rink
 	&-bg 
-		fill $gray-pale
-		
+		fill $gray-pale	
 	&-line
 		stroke $lineColor
-		stroke-width 2px
-	
+		stroke-width 2px	
 	&-rect
-		fill $lineColor
-	
+		fill $lineColor	
 	&-circle 
 		fill transparent 
 		stroke-width 2px 
 		stroke $lineColor
-	
 	&-circle-fill
 		fill $lineColor
 		stroke-width 0

@@ -1,0 +1,28 @@
+.key 
+	list-style(none)
+	width 100%
+	margin-bottom 1em
+	display flex
+	&__item:not(:last-child)
+		padding-right 1em
+	&__label
+		display block
+		font-size $unitlabel-size
+		text-transform uppercase
+		color $text
+		&:after
+			content ''
+			display inline-block
+			width 10px
+			height 10px
+			border-radius 50%
+			border-width 1px
+			border-style solid
+			margin-left 0.5em
+		&--made:after
+			background-color $bruins-primary
+			border-color $bruins-team
+		&--missed:after
+			background-color $bruins-team
+			border-color $bruins-team
+			opacity 0.25
