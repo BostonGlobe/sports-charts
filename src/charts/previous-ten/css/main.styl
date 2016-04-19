@@ -1,5 +1,3 @@
-@require './../../../base/css/variables.styl'
-
 .previous-ten, tbody
 	width 100%
 	position relative
@@ -24,16 +22,14 @@
 			left 0
 			height 50%
 			border-left 1px solid currentColor
-		td
-			display block
-			flex 1
-	.loss
-		color $gray-secondary
-	.win:before, .win:after, .win td:first-child
-		color $redsox-primary
-	.streak-next:after
-		bottom 0
-	.streak-prev:after
-		top 0
-	.streak-next.streak-prev:after
-		height 100%
+	td
+		display block
+		flex 1
+.loss
+	color $gray-secondary
+.streak-next:after
+	bottom 0
+.streak-prev:after
+	top 0
+.streak-next.streak-prev:after
+	height 100%

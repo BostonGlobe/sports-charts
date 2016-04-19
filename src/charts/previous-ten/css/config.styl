@@ -1,0 +1,24 @@
+//=======================
+// Dependencies
+//=======================
+@require './../../../base/css/variables.styl'
+@require './../../../base/css/helpers.styl'
+
+//=======================
+// Chart Mod Variables
+//=======================
+$chart-name = previous-ten
+
+#chart--{$chart-name}
+	@require './main.styl'
+	// Sport specific colors
+	$sports = {
+		baseball: $redsox-primary
+		basketball: $celtics-primary
+		hockey: $bruins-primary
+		football: $patriots-primary
+	}
+	for sport, color in $sports
+		&.chart--{sport}
+			.win:before, .win:after, .win td:first-child
+				color color
