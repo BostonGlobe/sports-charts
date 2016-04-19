@@ -16,21 +16,15 @@ rhythm(scale)
 		margin-bottom: ($root-lh / $em-size)
 		
 		if $em-size < 1.5em
-			line-height: unit((($root-lh * 1.5) / $em-size), '')
+			line-height: unit((($root-lh * 1) / $em-size), '')
 
 		if $em-size > 1.5em
-			line-height: unit((($root-lh * 2) / $em-size), '')
+			line-height: unit((($root-lh * 1.5) / $em-size), '')
 			
 		if $em-size > 3em
-			line-height: unit((($root-lh * 3) / $em-size), '')
+			line-height: unit((($root-lh * 2) / $em-size), '')
 	else
 		error('Not a defined scale')
-
-// grid-overlay($px-offset = false)
-// 	background-image: linear-gradient(to bottom,#0ff 0,rgba(255,255,255,0)1px)
-// 	background-size: 100% ($root-lh)em
-// 	if $px-offset
-// 		background-position: 0 unit($px-offset, 'px')
     
 //=======================
 // Font Stacks & Weights
@@ -83,10 +77,6 @@ img-content(img)
 	height image-size($assets-path + img)[1]
 	background url($assets-path + img) no-repeat 50%
 
-// Using Unicode
-uni-content(content = yay)
-	content \'content\'
-
 //=======================
 // Hide
 //=======================
@@ -102,7 +92,7 @@ hidden(type = false)
 		display none
 
 //===============================
-// Center Vertical + Horizontal
+// Center Vertical
 //===============================
 // Put this on the parent element
 center(type, child = false)
@@ -117,11 +107,9 @@ center(type, child = false)
 			position relative
 			top 50%
 			transform translateY(-50%)
-			text-align center
 	else if type == absolute
 		position relative
 		> .{child}
 			position absolute
 			top 50%
 			width 100%
-			text-align center

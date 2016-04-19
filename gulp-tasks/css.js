@@ -8,7 +8,7 @@ const report = require('../report-error.js')
 const argv = require('yargs').argv
 
 const chartPath = `charts/${argv.chart}`
-const src = `src/${chartPath}/css/main.styl`
+const src = `src/${chartPath}/css/config.styl`
 const dest = { dev: `dev/${chartPath}`, prod: `dist/${chartPath}` }
 
 gulp.task('css-chart-dev', () =>
