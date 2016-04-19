@@ -1,7 +1,7 @@
 import { timer } from 'd3-timer'
 import { timeFormat } from 'd3-time-format'
 
-import setupIframe from '../../../utils/setup-iframe'
+import { setupIframe, track } from '../../../utils/setup-iframe'
 import { $, removeClass } from '../../../utils/dom.js'
 import createScales from './createScales.js'
 import createSvg from './createSvg.js'
@@ -20,6 +20,7 @@ const sliderContainer = $('.slider-container')
 const dateFormat = timeFormat('%b. %e')
 let handleInput = (e) => e
 const onInput = (e) => handleInput(e)
+let tracked = false
 
 // create slider
 createSlider({ container: sliderContainer, onInput })
@@ -61,7 +62,10 @@ let initialTimer
 
 // handle input change (draw data, set tooltip)
 const handleInputChange = ({ e, uniqueDates, data }) => {
-
+	if (!tracked) {
+		track('Click')
+		tracked = true
+	}
 	// stop the timer, if it's running
 	// why do we need this? well, if the user updates the slider
 	// during initial animation, we need to stop the animation

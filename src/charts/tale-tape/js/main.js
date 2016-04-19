@@ -1,4 +1,4 @@
-import setupIframe from '../../../utils/setup-iframe'
+import { setupIframe } from '../../../utils/setup-iframe'
 import { $, addClass } from '../../../utils/dom.js'
 
 const handleNewPayload = (err, payload) => {

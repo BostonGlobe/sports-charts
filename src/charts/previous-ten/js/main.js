@@ -1,4 +1,4 @@
-import setupIframe from '../../../utils/setup-iframe'
+import { setupIframe } from '../../../utils/setup-iframe'
 import chart from './chart'
 
 const handleNewData = (rows) => chart.updateData(rows)

@@ -5,6 +5,8 @@ import { parse } from 'query-string'
 import { $, addClass } from './dom'
 import convertRows from './convertRows'
 
+let pymChild = null
+
 const convertPayload = ({ rows, mappings, ...other }) => ({
 	...other,
 	rows: convertRows({ rows, mappings }),
@@ -18,7 +20,7 @@ const displayHeader = ({ hed, subhed }) => {
 	else addClass($('.chart-top--subhed'), 'display-none')
 }
 
-const chartbuilder = ({ pymChild, handleNewPayload }) => {
+const chartbuilder = handleNewPayload => {
 	// listen to chartifier for data
 	pymChild.onMessage('receive-data', d => {
 		const data = { ...JSON.parse(d), isChartbuilder: true }
@@ -28,7 +30,7 @@ const chartbuilder = ({ pymChild, handleNewPayload }) => {
 	pymChild.sendMessage('request-data', true)
 }
 
-const dev = ({ pymChild, handleNewPayload }) => {
+const dev = handleNewPayload => {
 	const enterViewPromise = new Promise((resolve) =>
 		pymChild.onMessage('enter-view', resolve)
 	)
@@ -47,7 +49,7 @@ const dev = ({ pymChild, handleNewPayload }) => {
 	pymChild.sendMessage('request-data', true)
 }
 
-const prod = ({ pymChild, handleNewPayload }) => {
+const prod = handleNewPayload => {
 	const enterViewPromise = new Promise((resolve) =>
 		pymChild.onMessage('enter-view', resolve)
 	)
@@ -67,16 +69,20 @@ const prod = ({ pymChild, handleNewPayload }) => {
 	pymChild.sendMessage('request-data-url', true)
 }
 
-const setup = handleNewPayload => {
+const setupIframe = handleNewPayload => {
 
-	const pymChild = pymIframe({})
+	pymChild = pymIframe({})
 
 	// determine environment (chartbuilder, dev, prod [default])
 	const parsed = parse(window.location.search)
 	const env = parsed.env || 'prod'
 
 	const options = { chartbuilder, dev, prod }
-	options[env]({ pymChild, handleNewPayload })
+	options[env](handleNewPayload)
 }
 
-export default setup
+const track = value => {
+	if (pymChild) pymChild.sendMessage('omniture-track', value)
+}
+
+export { setupIframe, track }
