@@ -113,7 +113,7 @@ function updatePattern() {
 
 // create chart key with matching size and fills
 function updateKey() {
-	const div = select('.key-average')
+	const div = select('.key__bins')
 	const svg = div.select('svg')
 	const g = svg.select('.hex-group')
 
@@ -126,8 +126,8 @@ function updateKey() {
 	svg.attr('width', padding * 4).attr('height', height)
 	g.attr('transform', `translate(${padding / 2},${height / 2})`)
 
-	$('.key-container.average .before').style.lineHeight = `${height}px`
-	$('.key-container.average .after').style.lineHeight = `${height}px`
+	$('.key__before').style.lineHeight = `${height}px`
+	$('.key__after').style.lineHeight = `${height}px`
 
 	// bind range data to hexagons
 	const hexagons = g.selectAll('.hexagon').data(range)
@@ -229,7 +229,7 @@ function setupScales() {
 
 // setup dom for key
 function setupKey() {
-	select('.key-average')
+	select('.key__bins')
 		.append('svg').attr('width', 0).attr('height', 0)
 			.append('g').attr('class', 'hex-group')
 }

@@ -1,5 +1,6 @@
 {
     "hed": "Chart does not have hed function",
+    "sport": "hockey",
     "mappings": {
         "gameDate": "date",
         "gameno": "integer",

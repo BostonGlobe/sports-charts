@@ -20,11 +20,16 @@ const displayHeader = ({ hed, subhed }) => {
 	else addClass($('.chart-top--subhed'), 'display-none')
 }
 
+const addSportClass = ({ sport }) => {
+	addClass($('main'), `chart--${sport}`)
+}
+
 const chartbuilder = handleNewPayload => {
 	// listen to chartifier for data
 	pymChild.onMessage('receive-data', d => {
 		const data = { ...JSON.parse(d), isChartbuilder: true }
 		displayHeader(data)
+		addSportClass(data)
 		handleNewPayload(convertPayload(data))
 	})
 	pymChild.sendMessage('request-data', true)
@@ -38,6 +43,7 @@ const dev = handleNewPayload => {
 		pymChild.onMessage('receive-data', d => {
 			const data = JSON.parse(d)
 			displayHeader(data)
+			addSportClass(data)
 			resolve(data)
 		})
 	)
@@ -57,6 +63,7 @@ const prod = handleNewPayload => {
 		pymChild.onMessage('receive-data-url', url =>
 			getJSON(url, (err, data) => {
 				displayHeader(data)
+				addSportClass(data)
 				resolve(data)
 			})
 		)
