@@ -7,9 +7,9 @@ export default function getWeightedAverage({ hex, averages }) {
 		if (zoneDict[datum.zone]) {
 			zoneDict[datum.zone].count += 1
 		} else {
-			// this was old way, but now we assume it is the only item in array
-			// const zones = averages.filter(day => day.date === date)[0].zones
-			const zones = averages[0].zones
+			// sort desc by gameDate and return first
+			const sorted = averages.sort((a, b) => b.gameDate - a.gameDate)
+			const zones = sorted[0].zones
 			const percent = zones[datum.zone].percent
 			const count = 1
 			zoneDict[datum.zone] = { count, percent }
