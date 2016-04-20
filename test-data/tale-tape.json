@@ -1,52 +1,55 @@
 {
-	"hed": "tale of the tape",
-	"timeframe": "2015 season",
-	"sport": "baseball",
-	"data": [
+	"groupBy": "batter",
+	"hed": "Chart does not have hed function",
+	"mappings": {
+		"balls": "integer",
+		"battedBallType": "string",
+		"battedBallVelocity": "string",
+		"batter": "string",
+		"batterHand": "string",
+		"batterTeamAlignment": "string",
+		"batterTeamFinalScore": "integer",
+		"batterTeamLocation": "string",
+		"batterTeamNickname": "string",
+		"battingSlot": "integer",
+		"direction": "string",
+		"distance": "float",
+		"event": "string",
+		"gameDateTime": "date",
+		"gameno": "integer",
+		"id": "string",
+		"inning": "integer",
+		"onBaseAfter": "integer",
+		"onBaseBefore": "integer",
+		"outs": "integer",
+		"pitchcount": "integer",
+		"pitcher": "string",
+		"pitcherHand": "string",
+		"pitcherTeamAlignment": "string",
+		"pitcherTeamFinalScore": "integer",
+		"pitcherTeamLocation": "string",
+		"pitcherTeamNickname": "string",
+		"strikes": "integer",
+		"venue": "string"
+	},
+	"rows": [
 		{
-			"measure": "Earned running average",
-			"values": [
-				{
-					"player": "Wade Miley",
-					"team": "Red",
-					"value": 4.46
-				},
-				{
-					"player": "Jeff Locke",
-					"team": "Black",
-					"value": 3.67
-				}
-			]
+			"_type": "baseball-spraychart",
+			"balls": "0",
+			"batter": "David Ortiz",
+			"id": "AVQ0UvNl9ilYSCdako3c",
+			"outs": "2",
+			"strikes": "1"
 		},
 		{
-			"measure": "Home runs per 9 innings",
-			"values": [
-				{
-					"player": "Wade Miley",
-					"team": "Red",
-					"value": 0.3
-				},
-				{
-					"player": "Jeff Locke",
-					"team": "Black",
-					"value": 1.0
-				}
-			]
-		},
-		{
-			"measure": "Walks",
-			"values": [
-				{
-					"player": "Wade Miley",
-					"team": "Red",
-					"value": 11
-				},
-				{
-					"player": "Jeff Locke",
-					"team": "Black",
-					"value": 6
-				}
-			]
+			"_type": "baseball-spraychart",
+			"balls": "1",
+			"batter": "Dustin Pedroia",
+			"id": "AVQ0UvNk9ilYSCdakois",
+			"outs": "1",
+			"strikes": "1"
 		}
-	]
+	],
+	"sport": "baseball",
+	"subhed": "Chart does not have subhed function"
 }

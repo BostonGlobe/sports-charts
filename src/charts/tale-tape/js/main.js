@@ -1,50 +1,74 @@
 import { setupIframe } from '../../../utils/setup-iframe'
 import { $, addClass } from '../../../utils/dom.js'
 
-const handleNewPayload = (err, payload) => {
+// convenience variables
+const container = $('.chart-container')
 
-	if (err) {
-		// TODO: better error handling
-		console.log("Oops. Look like we couldn't load this chart's data.")
-		return
-	}
+const handleNewData = ({ rows, groupBy, isChartbuilder }) => {
 
-	const { data, sport } = payload
+	// first get the compareBy fields
+	const { _type, id, [groupBy]: value, ...other } = rows[0]
 
-	// convenience variables
-	const container = $('.chart-container')
+	const compareBy = Object.keys(other)
 
-	addClass(container, sport)
-	addClass($('header'), sport)
+	const result = [
+		{
+			key: 'balls',
+			values: [
+				{
+					key: 'David Ortiz',
+					value: 0.4,
+					width: 40,
+				},
+				{
+					key: 'Dustin Pedroia',
+					value: 1,
+					width: 100,
+				},
+			],
+		},
+		{
+			key: 'outs',
+			values: [
+				{
+					key: 'David Ortiz',
+					value: 3,
+					width: 100,
+				},
+				{
+					key: 'Dustin Pedroia',
+					value: 1,
+					width: 33,
+				},
+			],
+		}
+	]
 
-	// populate hed
-	$('header h1.players').innerHTML = data[0].values.map(p =>
-		`<a href='http://www.google.com' target='_blank'>${p.player}</a>`
-	).join(' vs ')
-
-	// populate bars
-	container.innerHTML = data.map(d => {
-
-		const values = d.values.map(p => p.value).sort((a, b) => a - b)
-		const max = values[1]
-
-		return `
-		<li class='measure'>
-
-			<p class='name'><span>${d.measure}</span></p>
+	container.innerHTML = result.map(({ key, values }) =>
+		`<li class='measure'>
+			<p class='name'><span>${key}</span></p>
 			<ul class='values'>
-				${d.values.map(p =>
-					`<li style='width: ${Math.round(100*p.value/max)}%'>
-						<span>${p.value}<span>
-					</li>`
+				${values.map(p =>
+					`<li style='width: ${p.width}%'>
+					<span class='${p.width < 50 ? 'outside' : 'inside'}'>${p.value}</span></li>`
 				).join('')}
 			</ul>
+		</li>`).join('')
 
-		<li>
-		`
+	// const { data, sport } = payload
 
-	}).join('')
+	// addClass(container, sport)
+	// addClass($('header'), sport)
 
+	// // populate hed
+	// $('header h1.players').innerHTML = data[0].values.map(p =>
+	// 	`<a href='http://www.google.com' target='_blank'>${p.player}</a>`
+	// ).join(' vs ')
+
+}
+
+const handleNewPayload = (payload) => {
+	if (payload.rows) handleNewData(payload)
 }
 
 setupIframe(handleNewPayload)

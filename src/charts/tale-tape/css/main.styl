@@ -1,17 +1,19 @@
-$sports = {
-	baseball: $redsox-secondary
-}
+// $sports = {
+// 	baseball: $redsox-secondary
+// }
 
-header h1
+// header h1
 
-	line-height 1.25
+// 	line-height 1.25
 
-	&.players a
-		color $gray-secondary
+// 	&.players a
+// 		color $gray-secondary
 
 .chart-container
 
 	li.measure
+
+		margin-top 1em
 
 		p.name
 			span
@@ -25,15 +27,25 @@ header h1
 				text-align right
 				line-height 1.25
 				background $gray-secondary
+				min-width 3px
 				span
 					font-size $label-size
-					color white
-					padding-right 0.1em
+					display inline-block
 
-for sport, color in $sports
-	.chart-container.{sport}
-		li.measure ul.values li:first-child
-			background color
-	header.{sport}
-		h1.players a:first-child
-			color color
+					&.inside
+						padding-right 0.2em
+						color $text
+
+					&.outside
+						color $text
+						padding-left 0.2em
+						transform translateX(100%)
+
+				&:first-child
+					span
+						&.inside
+							color white
+
+// 	header.{sport}
+// 		h1.players a:first-child
+// 			color color
