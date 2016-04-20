@@ -9,7 +9,7 @@
 //=======================
 $chart-name = tale-tape
 
-.chart--{$chart-name}
+.chart
 	@require './main.styl'
 	$sports = {
 		baseball: $redsox-secondary
@@ -17,9 +17,12 @@ $chart-name = tale-tape
 		football: $patriots-secondary
 		hockey: $bruins-secondary
 	}
+
 	for sport, color in $sports
 		&.chart--{sport}
 			li.measure ul.values li:first-child
 				background color
 				span
 					color color
+			.chart-top--hed span.player:first-child
+				color color

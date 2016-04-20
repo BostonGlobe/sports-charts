@@ -23,14 +23,14 @@ const displayHeader = ({ hed, subhed }) => {
 	if (subhed) {
 		$('.chart-top--subhed').textContent = subhed
 		removeClass($('.chart-top--subhed'), 'display-none')
-	} 
+	}
 	else {
-		addClass($('.chart-top--subhed'), 'display-none')	
+		addClass($('.chart-top--subhed'), 'display-none')
 	}
 }
 
 const addSportClass = ({ sport }) => {
-	addClass($('main'), `chart--${sport}`)
+	addClass($('#globe-graphic-container > .chart'), `chart--${sport}`)
 }
 
 const chartbuilder = handleNewPayload => {
