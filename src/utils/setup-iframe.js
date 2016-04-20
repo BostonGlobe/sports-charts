@@ -13,19 +13,22 @@ const convertPayload = ({ rows, mappings, ...other }) => ({
 })
 
 const displayHeader = ({ hed, subhed }) => {
+	const hedEl = $('.chart-top--hed')
+	const subhedEl = $('.chart-top--subhed')
+	const hide = 'display-none'
+
 	if (hed) {
-		$('.chart-top--hed').textContent = hed
-		removeClass($('.chart-top--hed'), 'display-none')
+		hedEl.textContent = hed
+		removeClass(hedEl, hide)
 	} else {
-		addClass($('.chart-top--hed'), 'display-none')
+		addClass(hedEl, hide)
 	}
 
 	if (subhed) {
-		$('.chart-top--subhed').textContent = subhed
-		removeClass($('.chart-top--subhed'), 'display-none')
-	} 
-	else {
-		addClass($('.chart-top--subhed'), 'display-none')	
+		subhedEl.textContent = subhed
+		removeClass(subhedEl, hide)
+	} else {
+		addClass(subhedEl, hide)
 	}
 }
 
