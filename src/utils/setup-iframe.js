@@ -2,7 +2,7 @@ import 'promis'
 import getJSON from 'get-json-lite'
 import pymIframe from 'pym-iframe-resizer'
 import { parse } from 'query-string'
-import { $, addClass } from './dom'
+import { $, addClass, removeClass } from './dom'
 import convertRows from './convertRows'
 
 let pymChild = null
@@ -13,11 +13,20 @@ const convertPayload = ({ rows, mappings, ...other }) => ({
 })
 
 const displayHeader = ({ hed, subhed }) => {
-	if (hed) $('.chart-top--hed').textContent = hed
-	else addClass($('.chart-top--hed'), 'display-none')
+	if (hed) {
+		$('.chart-top--hed').textContent = hed
+		removeClass($('.chart-top--hed'), 'display-none')
+	} else {
+		addClass($('.chart-top--hed'), 'display-none')
+	}
 
-	if (subhed) $('.chart-top--subhed').textContent = subhed
-	else addClass($('.chart-top--subhed'), 'display-none')
+	if (subhed) {
+		$('.chart-top--subhed').textContent = subhed
+		removeClass($('.chart-top--subhed'), 'display-none')
+	} 
+	else {
+		addClass($('.chart-top--subhed'), 'display-none')	
+	}
 }
 
 const addSportClass = ({ sport }) => {
