@@ -14,6 +14,7 @@
 				font-size $label-size
 
 		ul.values
+			padding-right 2.5em
 
 			li
 				text-align right
@@ -23,17 +24,6 @@
 				span
 					font-size $label-size
 					display inline-block
-
-					&.inside
-						padding-right 0.2em
-						color white
-
-					&.outside
-						color $text
-						padding-left 0.2em
-						transform translateX(100%)
-
-				&:first-child
-					span
-						&.inside
-							color white
+					color $text
+					padding-left 0.2em
+					transform translateX(100%)

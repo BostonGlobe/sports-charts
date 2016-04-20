@@ -34,8 +34,7 @@ const handleNewData = ({ rows, groupBy, isChartbuilder }) => {
 			<p class='name'><span>${key}</span></p>
 			<ul class='values'>
 				${values.map(p =>
-					`<li style='width: ${p.width}%'>
-					<span class='${p.width < 50 ? 'outside' : 'inside'}'>${p.value}</span></li>`
+					`<li style='width: ${p.width}%'><span>${p.value}</span></li>`
 				).join('')}
 			</ul>
 		</li>`).join('')
