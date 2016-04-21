@@ -1,5 +1,5 @@
 {
-    "hed": "",
+    "hed": "this is the hed",
     "mappings": {
         "balls": "integer",
         "battedBallType": "string",
