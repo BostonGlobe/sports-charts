@@ -39,13 +39,6 @@ const handleNewData = ({ rows, groupBy, isChartbuilder }) => {
 			</ul>
 		</li>`).join('')
 
-	// // populate hed
-	// $('.chart-top--hed').innerHTML = rows
-	// 	.map(r => `<span class='player'>${r[groupBy]}</span>`)
-	// 	.join('<span> vs </span>')
-
-	// $('.chart-top--subhed').innerHTML = '2015 season'
-
 }
 
 const handleNewPayload = (payload) => {
