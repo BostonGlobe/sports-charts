@@ -39,7 +39,7 @@ const addSportClass = ({ sport }) => {
 const chartbuilder = handleNewPayload => {
 	// listen to chartifier for data
 	pymChild.onMessage('receive-data', d => {
-		const data = { ...JSON.parse(d), isChartbuilder: true }
+		const data = { ...JSON.parse(d)._source.payload, isChartbuilder: true }
 		displayHeader(data)
 		addSportClass(data)
 		handleNewPayload(convertPayload(data))
@@ -53,7 +53,7 @@ const dev = handleNewPayload => {
 	)
 	const handleNewPayloadPromise = new Promise((resolve) =>
 		pymChild.onMessage('receive-data', d => {
-			const data = JSON.parse(d)
+			const data = JSON.parse(d)._source.payload
 			displayHeader(data)
 			addSportClass(data)
 			resolve(data)
@@ -73,7 +73,8 @@ const prod = handleNewPayload => {
 	)
 	const handleNewPayloadPromise = new Promise((resolve) =>
 		pymChild.onMessage('receive-data-url', url =>
-			getJSON(url, (err, data) => {
+			getJSON(url, (err, json) => {
+				const data = json._source.payload
 				displayHeader(data)
 				addSportClass(data)
 				resolve(data)
