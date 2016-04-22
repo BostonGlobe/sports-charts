@@ -2,8 +2,9 @@ import 'promis'
 import getJSON from 'get-json-lite'
 import pymIframe from 'pym-iframe-resizer'
 import { parse } from 'query-string'
-import { $, addClass, removeClass } from './dom'
-import convertRows from './convertRows'
+import { $, addClass, removeClass } from './dom.js'
+import convertRows from './convertRows.js'
+import decode from './decode.js'
 
 let pymChild = null
 
@@ -18,14 +19,14 @@ const displayHeader = ({ hed, subhed }) => {
 	const hide = 'display-none'
 
 	if (hed) {
-		hedEl.textContent = hed
+		hedEl.innerHTML = decode(hed)
 		removeClass(hedEl, hide)
 	} else {
 		addClass(hedEl, hide)
 	}
 
 	if (subhed) {
-		subhedEl.textContent = subhed
+		subhedEl.innerHTML = decode(subhed)
 		removeClass(subhedEl, hide)
 	} else {
 		addClass(subhedEl, hide)
