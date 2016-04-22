@@ -1,55 +1,59 @@
 {
-	"groupBy": "batter",
-	"hed": "Chart does not have hed function",
-	"mappings": {
-		"balls": "integer",
-		"battedBallType": "string",
-		"battedBallVelocity": "string",
-		"batter": "string",
-		"batterHand": "string",
-		"batterTeamAlignment": "string",
-		"batterTeamFinalScore": "integer",
-		"batterTeamLocation": "string",
-		"batterTeamNickname": "string",
-		"battingSlot": "integer",
-		"direction": "string",
-		"distance": "float",
-		"event": "string",
-		"gameDateTime": "date",
-		"gameno": "integer",
-		"id": "string",
-		"inning": "integer",
-		"onBaseAfter": "integer",
-		"onBaseBefore": "integer",
-		"outs": "integer",
-		"pitchcount": "integer",
-		"pitcher": "string",
-		"pitcherHand": "string",
-		"pitcherTeamAlignment": "string",
-		"pitcherTeamFinalScore": "integer",
-		"pitcherTeamLocation": "string",
-		"pitcherTeamNickname": "string",
-		"strikes": "integer",
-		"venue": "string"
-	},
-	"rows": [
-		{
-			"_type": "baseball-spraychart",
-			"balls": "0",
-			"batter": "David Ortiz",
-			"id": "AVQ0UvNl9ilYSCdako3c",
-			"outs": "3",
-			"strikes": "1"
-		},
-		{
-			"_type": "baseball-spraychart",
-			"balls": "1",
-			"batter": "Dustin Pedroia",
-			"id": "AVQ0UvNk9ilYSCdakois",
-			"outs": "1",
-			"strikes": "1"
+	"_source": {
+		"payload": {
+			"groupBy": "batter",
+			"hed": "&#60;span class=&#39;player&#39;&#62;David Ortiz&#60;/span&#62;&#60;span class=&#39;vs&#39;&#62;vs&#60;/span&#62;&#60;span class=&#39;player&#39;&#62;Dustin Pedroia&#60;/span&#62;",
+			"mappings": {
+				"balls": "integer",
+				"battedBallType": "string",
+				"battedBallVelocity": "string",
+				"batter": "string",
+				"batterHand": "string",
+				"batterTeamAlignment": "string",
+				"batterTeamFinalScore": "integer",
+				"batterTeamLocation": "string",
+				"batterTeamNickname": "string",
+				"battingSlot": "integer",
+				"direction": "string",
+				"distance": "float",
+				"event": "string",
+				"gameDateTime": "date",
+				"gameno": "integer",
+				"id": "string",
+				"inning": "integer",
+				"onBaseAfter": "integer",
+				"onBaseBefore": "integer",
+				"outs": "integer",
+				"pitchcount": "integer",
+				"pitcher": "string",
+				"pitcherHand": "string",
+				"pitcherTeamAlignment": "string",
+				"pitcherTeamFinalScore": "integer",
+				"pitcherTeamLocation": "string",
+				"pitcherTeamNickname": "string",
+				"strikes": "integer",
+				"venue": "string"
+			},
+			"rows": [
+				{
+					"_type": "baseball-spraychart",
+					"balls": "0",
+					"batter": "David Ortiz",
+					"id": "AVQ0UvNl9ilYSCdako3c",
+					"outs": "3",
+					"strikes": "1"
+				},
+				{
+					"_type": "baseball-spraychart",
+					"balls": "1",
+					"batter": "Dustin Pedroia",
+					"id": "AVQ0UvNk9ilYSCdakois",
+					"outs": "1",
+					"strikes": "1"
+				}
+			],
+			"sport": "baseball",
+			"subhed": "Chart does not have subhed function"
 		}
-	],
-	"sport": "baseball",
-	"subhed": "Chart does not have subhed function"
+	}
 }
