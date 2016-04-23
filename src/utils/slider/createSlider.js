@@ -24,6 +24,8 @@ const createSlider = ({ container, onInput }) => {
 	// turn slider into fancy slider
 	fancySlider.init(container)
 
+	return input
+
 }
 
 export default createSlider

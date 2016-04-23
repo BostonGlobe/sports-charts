@@ -14,6 +14,8 @@ const dateFormat = timeFormat('%b. %e')
 const drawData = ({ data, detachedContainer, scales, gameDateTime,
 uniqueDates, sliderContainer }) => {
 
+	if (!scales) return
+
 	// if we have a gameDateTime, then only show data up to that gameDateTime
 	const filteredData = gameDateTime ?
 		data.filter(x => x.gameDateTime <= gameDateTime) :

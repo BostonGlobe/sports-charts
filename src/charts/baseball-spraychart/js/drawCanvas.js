@@ -4,6 +4,8 @@ const π = Math.PI
 
 const drawCanvas = ({ canvas, detachedContainer }) => {
 
+	if (!canvas) return
+
 	const { width, height } = canvas
 
 	const c = canvas.getContext('2d')

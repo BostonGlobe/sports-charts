@@ -88,6 +88,8 @@ const createSvg = ({ container, margins, width, height, parkSize }) => {
 		.attr('transform',
 			`rotate(-45) translate(${parkScale(10)}, -${parkScale(10)})`)
 
+	return svg
+
 }
 
 export default createSvg
