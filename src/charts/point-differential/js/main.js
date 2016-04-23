@@ -12,7 +12,6 @@ const container = $('.chart-container')
 const margins = { top: 10, right: 0, bottom: 40, left: 25 }
 let svg
 let g
-let setupResize
 let scales
 let data
 
@@ -45,8 +44,8 @@ const handleNewPayload = ({ rows }) => {
 	// sort data
 	data = sortData(rows)
 
-	setupResize = () => window.addEventListener('resize', handleResize)
-	setupResize()
+	window.addEventListener('resize', handleResize)
+	handleResize()
 
 }
 

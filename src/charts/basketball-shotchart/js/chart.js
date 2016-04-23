@@ -143,7 +143,7 @@ function updateKey() {
 }
 
 // render hexagons to chart
-function updateDOM({ hexbinData, averages, date }) {
+function updateDOM({ hexbinData, averages }) {
 	$('.hexbin').innerHTML = ''
 	// bind data and set key
 	const hexagons = select('.hexbin')

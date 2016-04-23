@@ -3,7 +3,7 @@ import { arc } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
 import { dimensions } from './config'
 
-const { left, right, top, bottom } = dimensions
+const { top, bottom } = dimensions
 const rinkWidth = bottom - top
 // const rinkHeight = right - left
 
