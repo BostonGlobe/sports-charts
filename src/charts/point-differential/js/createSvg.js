@@ -34,7 +34,7 @@ const createSvg = ({ container, margins, width, height }) => {
 	g.append('g')
 		.attr('class', 'bars')
 
-	return g
+	return { svg, g }
 
 }
 
