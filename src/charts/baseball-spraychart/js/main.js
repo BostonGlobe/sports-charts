@@ -76,11 +76,16 @@ const handleResize = () => {
 
 	detachedContainer = document.createElement('custom')
 
-	// draw data based on slider position
-	drawData({ data, detachedContainer, scales, gameDateTime, uniqueDates })
+	// only draw data based on slider position if the timer has stopped
+	if (initialTimer && !initialTimer._call) {
 
-	// draw canvas based on the data we just drew above
-	drawCanvas({ canvas, detachedContainer })
+		// draw data based on slider position
+		drawData({ data, detachedContainer, scales, gameDateTime, uniqueDates, sliderContainer })
+
+		// draw canvas based on the data we just drew above
+		drawCanvas({ canvas, detachedContainer })
+
+	}
 
 }
 
@@ -126,8 +131,8 @@ const handleNewData = (newData, isChartbuilder) => {
 	// get array of unique dates
 	uniqueDates = getUniqueDates(data)
 
-	setupResize = () => window.addEventListener('resize', handleResize)
-	setupResize()
+	window.addEventListener('resize', handleResize)
+	handleResize()
 
 	// if this is chartbuilder, don't animate
 	if (isChartbuilder) {
