@@ -1,13 +1,12 @@
 import { $ } from '../../../utils/dom.js'
 import { timeFormat } from 'd3-time-format'
-import chart from './chart'
 
 const dateFormat = timeFormat('%b. %e')
 
 const getStreak = (r, index, rows) => {
 	// possibilities:
 	// start, end, middle, alone
-	const indexPrev = index - 1 
+	const indexPrev = index - 1
 	const indexAfter = index + 1
 	const prev = index === 0
 		? ''
@@ -23,7 +22,7 @@ const getStreak = (r, index, rows) => {
 
 	return {
 		...r,
-		streak
+		streak,
 	}
 }
 

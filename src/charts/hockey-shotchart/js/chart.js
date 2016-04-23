@@ -42,10 +42,9 @@ function updateContainer({ width, height }) {
 	select('.chart-container svg').attr('width', width).attr('height', height)
 }
 
-// create chart key with matching size and fills
-function updateKey() {
-
-}
+// // create chart key with matching size and fills
+// function updateKey() {
+// }
 
 // render hexagons to chart
 function updateDOM(rows) {
@@ -110,12 +109,12 @@ function setupScales() {
 	scales.playerY.domain([top, bottom])
 }
 
-// setup dom for key
-function setupKey() {
-	select('.key-average')
-		.append('svg').attr('width', 0).attr('height', 0)
-			.append('g').attr('class', 'hex-group')
-}
+// // setup dom for key
+// function setupKey() {
+// 	select('.key-average')
+// 		.append('svg').attr('width', 0).attr('height', 0)
+// 			.append('g').attr('class', 'hex-group')
+// }
 
 // handle resize
 function handleResize() {

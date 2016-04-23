@@ -78,7 +78,7 @@ export default function drawCourt({ court, basket, width, height }) {
 		.startAngle(pi / 2)
 		.endAngle(pi * 1.5)
 
-	const dashes = () => `${sz(1.292)},`.repeat(12)
+	// const dashes = () => `${sz(1.292)},`.repeat(12)
 	// console.log(dashes())
 	court.append('path')
 		.attr('class', 'court-line free-throw-arc-under')
