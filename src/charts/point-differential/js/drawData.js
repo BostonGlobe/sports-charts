@@ -7,7 +7,7 @@ const dateFormat = timeFormat('%b. %e')
 
 import colors from './../../../utils/colors.js'
 
-const drawData = ({ svg, data, detachedContainer, scales }) => {
+const drawData = ({ svg, data, scales }) => {
 
 	const { x, y } = scales
 

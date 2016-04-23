@@ -19,10 +19,10 @@ let data
 const handleResize = () => {
 
 	// get the chart container outside width
-	let { offsetWidth } = container
+	const { offsetWidth } = container
 
 	const width = offsetWidth - margins.left - margins.right
-	const height = width * 3/4
+	const height = width * 3 / 4
 
 	// if it exists, remove svg first
 	svg && svg.remove()
@@ -40,7 +40,7 @@ const handleResize = () => {
 
 }
 
-const handleNewPayload = ({ rows, isChartbuilder }) => {
+const handleNewPayload = ({ rows }) => {
 
 	// sort data
 	data = sortData(rows)

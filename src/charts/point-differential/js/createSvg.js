@@ -27,7 +27,7 @@ const createSvg = ({ container, margins, width, height }) => {
 		.attr('transform', `translate(0, ${height})`)
 	.append('text')
 		.classed('label', true)
-		.attr('transform', `translate(${width/2}, ${bottom})`)
+		.attr('transform', `translate(${width / 2}, ${bottom})`)
 		.attr('text-anchor', 'middle')
 		.attr('dy', -4)
 

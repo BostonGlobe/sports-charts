@@ -1,10 +1,10 @@
 import { setupIframe } from '../../../utils/setup-iframe'
-import { $, addClass } from '../../../utils/dom.js'
+import { $ } from '../../../utils/dom.js'
 
 // convenience variables
 const container = $('.chart-container')
 
-const handleNewData = ({ rows, groupBy, isChartbuilder }) => {
+const handleNewData = ({ rows, groupBy }) => {
 
 	// first get the compareBy fields
 	const { _type, id, [groupBy]: value, ...other } = rows[0]
@@ -15,7 +15,7 @@ const handleNewData = ({ rows, groupBy, isChartbuilder }) => {
 			values: rows.map(r => ({
 				key: r[groupBy],
 				value: r[d],
-			}))
+			})),
 		}))
 		.map(d => ({
 			...d,
@@ -25,7 +25,7 @@ const handleNewData = ({ rows, groupBy, isChartbuilder }) => {
 			...d,
 			values: d.values.map(v => ({
 				...v,
-				width: Math.round(100*v.value/d.max),
+				width: Math.round(100 * v.value / d.max),
 			})),
 		}))
 
