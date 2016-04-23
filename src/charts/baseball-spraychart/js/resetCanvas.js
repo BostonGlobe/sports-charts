@@ -15,7 +15,7 @@ const resetCanvas = ({ container, margins, width, height }) => {
 	const ctx = canvas.getContext('2d')
 
 	// reset transform
-	ctx.setTransform(1, 0, 0, 1, 0, 0);
+	ctx.setTransform(1, 0, 0, 1, 0, 0)
 
 	// make room for margins
 	ctx.translate(left + width / 2, top)

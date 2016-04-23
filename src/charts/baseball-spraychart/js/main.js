@@ -29,7 +29,6 @@ let scales
 let data
 let uniqueDates
 let sliderInput
-let setupResize
 
 // create a custom container that will not be drawn to DOM,
 // but will be used to hold the data elements
@@ -52,10 +51,9 @@ const handleResize = () => {
 
 	// get the chart container outside width
 	let { offsetWidth } = chartContainer
-	console.log(offsetWidth)
 	offsetWidth = offsetWidth * 2
 
-	// get the chart dimensions	
+	// get the chart dimensions
 	const width = offsetWidth - margins.left - margins.right
 	const height = Math.sqrt(Math.pow(offsetWidth, 2) / 2) -
 		margins.top - margins.bottom
@@ -183,7 +181,7 @@ const handleNewData = (newData, isChartbuilder) => {
 }
 
 const handleNewPayload = (payload) => {
-	let { rows, isChartbuilder } = payload
+	const { rows, isChartbuilder } = payload
 	if (rows) handleNewData(rows, isChartbuilder)
 }
 
