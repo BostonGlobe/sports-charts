@@ -37,7 +37,12 @@ const addSportClass = ({ sport }) => {
 	addClass($('#globe-graphic-container > .chart'), `chart--${sport}`)
 }
 
+const showChartVersion = () => {
+	removeClass($('.chart-version'), 'display-none')
+}
+
 const chartbuilder = handleNewPayload => {
+	showChartVersion()
 	// listen to chartifier for data
 	pymChild.onMessage('receive-data', d => {
 		const data = { ...JSON.parse(d), isChartbuilder: true }
@@ -49,6 +54,7 @@ const chartbuilder = handleNewPayload => {
 }
 
 const dev = handleNewPayload => {
+	showChartVersion()
 	const enterViewPromise = new Promise((resolve) =>
 		pymChild.onMessage('enter-view', resolve)
 	)

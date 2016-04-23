@@ -3,7 +3,8 @@ const replace = require('gulp-replace')
 const fs = require('fs')
 const argv = require('yargs').argv
 const rename = require('gulp-rename')
-const version = require('../package.json').version.replace(/\./g, '')
+const version = require('../package.json').version
+const versionNoDots = version.replace(/\./g, '')
 
 const chartPath = `charts/${argv.chart}`
 const src = 'src/base/index.html'
@@ -22,6 +23,7 @@ gulp.task('html-preview', () => {
 gulp.task('html-chart-dev', () => {
 	const html = fs.readFileSync(`src/${chartPath}/chart.html`)
 	return gulp.src(src)
+		.pipe(replace('<!-- chart-version -->', `v${version}`))
 		.pipe(replace('<!-- chart -->', html))
 		.pipe(replace('<!-- root-div -->',
 			`<div class='chart chart--${argv.chart}'>`))
@@ -33,13 +35,14 @@ gulp.task('html-chart-prod', () => {
 	const timestamp = Math.floor(Date.now() / 6000)
 	const appsPath = '//apps.bostonglobe.com/sports'
 	return gulp.src(src)
+		.pipe(replace('<!-- chart-version -->', `v${version}`))
 		.pipe(replace('<!-- chart -->', html))
 		.pipe(replace('<!-- root-div -->',
 			`<div class='chart chart--${argv.chart}'>`))
 		.pipe(replace(/\?v=chart/g, `?v=${timestamp}`))
 		.pipe(replace('../../chart-base.css?v=base',
-			`../chart-base.css?v=${version}`))
+			`../chart-base.css?v=${versionNoDots}`))
 		.pipe(replace('../../chart-base.js?v=base',
-			`../chart-base.js?v=${version}`))
+			`../chart-base.js?v=${versionNoDots}`))
 		.pipe(gulp.dest(dest.prod))
 })
