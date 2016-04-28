@@ -1,6 +1,7 @@
 import { setupIframe } from '../../../utils/setup-iframe'
 import { $ } from '../../../utils/dom.js'
 import formatValue from './../../../utils/formatValue.js'
+import formatKey from './../../../utils/formatKey.js'
 
 // convenience variables
 const container = $('.chart-container')
@@ -24,6 +25,7 @@ const handleNewData = ({ rows, groupBy }) => {
 		}))
 		.map(d => ({
 			...d,
+			display: formatKey({ key: d.key, _type: rows[0]._type }),
 			values: d.values.map(v => ({
 				...v,
 				width: Math.round(100 * v.value / d.max),
@@ -35,9 +37,9 @@ const handleNewData = ({ rows, groupBy }) => {
 			})),
 		}))
 
-	container.innerHTML = data.map(({ key, values }) =>
+	container.innerHTML = data.map(({ display, values }) =>
 		`<li class='measure'>
-			<p class='name'><span>${key}</span></p>
+			<p class='name'><span>${display}</span></p>
 			<ul class='values'>
 				${values.map(p =>
 					`<li style='width: ${p.width}%'><span>${p.display}</span></li>`
