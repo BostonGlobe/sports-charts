@@ -43,8 +43,7 @@ const margins = { top: 10, right: 10, bottom: 10, left: 10 }
 // for now we will say our ballpark max distance is 443
 const parkSize = 443
 
-// listen for resize event
-const handleResize = () => {
+const drawGrid = () => {
 
 	// if it exists, remove svg first
 	svg && svg.remove()
@@ -65,6 +64,15 @@ const handleResize = () => {
 	// this will hold the ballpark, infield, diamond, grid, etc
 	svg = createSvg({ container: svgContainer, margins, width, height,
 		parkSize })
+
+	return { width, height }
+
+}
+
+// listen for resize event
+const handleResize = () => {
+
+	const { width, height } = drawGrid()
 
 	// reset canvas element
 	canvas = resetCanvas({ container: canvasContainer, margins, width,
@@ -124,13 +132,17 @@ const handleInputChange = (e) => {
 
 }
 
-const handleNewData = (newData, isChartbuilder) => {
+const setNewData = (newData) => {
 
 	// sort data by gameDateTime
 	data = sortData(newData)
 
 	// get array of unique dates
 	uniqueDates = getUniqueDates(data)
+
+}
+
+const drawChart = (newData, isChartbuilder) => {
 
 	// if this is chartbuilder, don't animate
 	if (isChartbuilder) {
@@ -190,10 +202,19 @@ const handleNewData = (newData, isChartbuilder) => {
 }
 
 const handleNewPayload = (payload) => {
-	const { rows, isChartbuilder } = payload
-	if (rows) handleNewData(rows, isChartbuilder)
+	const { rows } = payload
+	if (rows) {
+		setNewData(rows)
+		drawGrid(rows)
+	}
 }
 
-// this starts the pym resizer and takes a callback.
-// the callback will fire when we receive data
-setupIframe(handleNewPayload)
+const handleEnterView = (payload) => {
+	const { rows, isChartbuilder } = payload
+	if (rows) {
+		setNewData(rows)
+		drawChart(rows, isChartbuilder)
+	}
+}
+
+setupIframe({ handleNewPayload, handleEnterView })
