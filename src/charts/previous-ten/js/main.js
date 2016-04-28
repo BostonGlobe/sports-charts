@@ -8,4 +8,7 @@ const handleNewPayload = (payload) => {
 	if (rows) handleNewData(rows)
 }
 
-setupIframe(handleNewPayload)
+const handleEnterView = () => {
+}
+
+setupIframe({ handleNewPayload, handleEnterView })
