@@ -41,19 +41,21 @@ const showChartVersion = () => {
 	removeClass($('.chart-version'), 'display-none')
 }
 
-const chartbuilder = handleNewPayload => {
+const chartbuilder = ({ handleNewPayload, handleEnterView }) => {
 	showChartVersion()
 	// listen to chartifier for data
 	pymChild.onMessage('receive-data', d => {
 		const data = { ...JSON.parse(d), isChartbuilder: true }
-		displayHeader(data)
-		addSportClass(data)
-		handleNewPayload(convertPayload(data))
+		const payload = convertPayload(data)
+		displayHeader(payload)
+		addSportClass(payload)
+		handleNewPayload(payload)
+		handleEnterView(payload)
 	})
 	pymChild.sendMessage('request-data', true)
 }
 
-const dev = handleNewPayload => {
+const dev = ({ handleNewPayload, handleEnterView }) => {
 	showChartVersion()
 	const enterViewPromise = new Promise((resolve) =>
 		pymChild.onMessage('enter-view', resolve)
@@ -61,20 +63,22 @@ const dev = handleNewPayload => {
 	const handleNewPayloadPromise = new Promise((resolve) =>
 		pymChild.onMessage('receive-data', d => {
 			const data = JSON.parse(d)._source.payload
-			displayHeader(data)
-			addSportClass(data)
-			resolve(data)
+			const payload = convertPayload(data)
+			displayHeader(payload)
+			addSportClass(payload)
+			handleNewPayload(payload)
+			resolve(payload)
 		})
 	)
 
 	Promise.all([enterViewPromise, handleNewPayloadPromise])
-		.then(value => handleNewPayload(convertPayload(value.pop())))
+		.then(value => handleEnterView(value.pop()))
 		.catch(err => console.error(err))
 
 	pymChild.sendMessage('request-data', true)
 }
 
-const prod = handleNewPayload => {
+const prod = ({ handleNewPayload, handleEnterView }) => {
 	const enterViewPromise = new Promise((resolve) =>
 		pymChild.onMessage('enter-view', resolve)
 	)
@@ -82,21 +86,26 @@ const prod = handleNewPayload => {
 		pymChild.onMessage('receive-data-url', url =>
 			getJSON(url, (err, json) => {
 				const data = json._source.payload
+				const payload = convertPayload(data)
 				displayHeader(data)
 				addSportClass(data)
+				handleNewPayload(payload)
 				resolve(data)
 			})
 		)
 	)
 
 	Promise.all([enterViewPromise, handleNewPayloadPromise])
-		.then(value => handleNewPayload(convertPayload(value.pop())))
+		.then(value => handleEnterView(value.pop()))
 		.catch(err => console.error(err))
 
 	pymChild.sendMessage('request-data-url', true)
 }
 
-const setupIframe = handleNewPayload => {
+// setupIframe will take an object of functions:
+// handleNewPayload will get fired immediately on new data
+// handleEnterView will get fired when enter view happens
+const setupIframe = ({ handleNewPayload, handleEnterView }) => {
 
 	pymChild = pymIframe({})
 
@@ -105,7 +114,7 @@ const setupIframe = handleNewPayload => {
 	const env = parsed.env || 'prod'
 
 	const options = { chartbuilder, dev, prod }
-	options[env](handleNewPayload)
+	options[env]({ handleNewPayload, handleEnterView })
 }
 
 const track = value => {
