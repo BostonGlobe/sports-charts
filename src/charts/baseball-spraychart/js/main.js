@@ -70,20 +70,25 @@ const handleResize = () => {
 	canvas = resetCanvas({ container: canvasContainer, margins, width,
 		height })
 
-	// get the slider position
-	const { value } = sliderInput
-	const gameDateTime = uniqueDates[value - 1]
-
 	detachedContainer = document.createElement('custom')
 
-	// only draw data based on slider position if the timer has stopped
-	if (initialTimer && !initialTimer._call) {
+	if (uniqueDates && data) {
 
-		// draw data based on slider position
-		drawData({ data, detachedContainer, scales, gameDateTime, uniqueDates, sliderContainer })
+		// get the slider position
+		const { value } = sliderInput
+		const gameDateTime = uniqueDates[value - 1]
 
-		// draw canvas based on the data we just drew above
-		drawCanvas({ canvas, detachedContainer })
+		// only draw data based on slider position if the timer has stopped
+		if (initialTimer && !initialTimer._call) {
+
+			// draw data based on slider position
+			drawData({ data, detachedContainer, scales, gameDateTime,
+				uniqueDates, sliderContainer })
+
+			// draw canvas based on the data we just drew above
+			drawCanvas({ canvas, detachedContainer })
+
+		}
 
 	}
 
@@ -123,6 +128,9 @@ const handleInputChange = (e) => {
 
 }
 
+window.addEventListener('resize', handleResize)
+handleResize()
+
 const handleNewData = (newData, isChartbuilder) => {
 
 	// sort data by gameDateTime
@@ -131,11 +139,18 @@ const handleNewData = (newData, isChartbuilder) => {
 	// get array of unique dates
 	uniqueDates = getUniqueDates(data)
 
-	window.addEventListener('resize', handleResize)
-	handleResize()
-
 	// if this is chartbuilder, don't animate
 	if (isChartbuilder) {
+
+		// if the timer doesn't exist, start and stop it right away,
+		// so data can be drawn
+		if (!initialTimer) {
+
+			initialTimer = timer(() => {
+				initialTimer.stop()
+			})
+
+		}
 
 		// draw data
 		drawData({ data, detachedContainer,
@@ -149,7 +164,8 @@ const handleNewData = (newData, isChartbuilder) => {
 		// create the slider start/end labels
 		const labels = {
 			start: data.length ? dateFormat(data[0].gameDateTime) : '',
-			end: data.length ? dateFormat(data[data.length - 1].gameDateTime) : '',
+			end: data.length ?
+				dateFormat(data[data.length - 1].gameDateTime) : '',
 		}
 
 		// setup slider (set input max, set start/end labels)
