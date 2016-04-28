@@ -72,23 +72,19 @@ const handleResize = () => {
 
 	detachedContainer = document.createElement('custom')
 
-	if (uniqueDates && data) {
+	// get the slider position
+	const { value } = sliderInput
+	const gameDateTime = uniqueDates[value - 1]
 
-		// get the slider position
-		const { value } = sliderInput
-		const gameDateTime = uniqueDates[value - 1]
+	// only draw data based on slider position if the timer has stopped
+	if (initialTimer && !initialTimer._call) {
 
-		// only draw data based on slider position if the timer has stopped
-		if (initialTimer && !initialTimer._call) {
+		// draw data based on slider position
+		drawData({ data, detachedContainer, scales, gameDateTime,
+			uniqueDates, sliderContainer })
 
-			// draw data based on slider position
-			drawData({ data, detachedContainer, scales, gameDateTime,
-				uniqueDates, sliderContainer })
-
-			// draw canvas based on the data we just drew above
-			drawCanvas({ canvas, detachedContainer })
-
-		}
+		// draw canvas based on the data we just drew above
+		drawCanvas({ canvas, detachedContainer })
 
 	}
 
@@ -128,9 +124,6 @@ const handleInputChange = (e) => {
 
 }
 
-window.addEventListener('resize', handleResize)
-handleResize()
-
 const handleNewData = (newData, isChartbuilder) => {
 
 	// sort data by gameDateTime
@@ -142,21 +135,16 @@ const handleNewData = (newData, isChartbuilder) => {
 	// if this is chartbuilder, don't animate
 	if (isChartbuilder) {
 
-		// if the timer doesn't exist, start and stop it right away,
-		// so data can be drawn
-		if (!initialTimer) {
-
-			initialTimer = timer(() => {
-				initialTimer.stop()
-			})
-
-		}
+		handleResize()
 
 		// draw data
 		drawData({ data, detachedContainer,
 			scales, uniqueDates, sliderContainer })
 
 	} else {
+
+		window.addEventListener('resize', handleResize)
+		handleResize()
 
 		// show slider
 		removeClass(sliderContainer, 'display-none')
