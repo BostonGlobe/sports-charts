@@ -53,4 +53,7 @@ const handleNewPayload = (payload) => {
 	if (payload.rows) handleNewData(payload)
 }
 
-setupIframe(handleNewPayload)
+const handleEnterView = () => {
+}
+
+setupIframe({ handleNewPayload, handleEnterView })
