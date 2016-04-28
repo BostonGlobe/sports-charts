@@ -39,6 +39,9 @@ const handleResize = () => {
 
 }
 
+const handleEnterView = () => {
+}
+
 const handleNewPayload = ({ rows }) => {
 
 	// sort data
@@ -49,4 +52,4 @@ const handleNewPayload = ({ rows }) => {
 
 }
 
-setupIframe(handleNewPayload)
+setupIframe({ handleNewPayload, handleEnterView })
