@@ -1,13 +1,11 @@
 import { setupIframe } from '../../../utils/setup-iframe'
 import chart from './chart'
 
-chart.setup()
+const handleNewPayload = () => chart.setup()
 
-const handleNewData = (rows) => chart.updateData(rows)
-
-const handleNewPayload = (payload) => {
+const handleEnterView = (payload) => {
 	const { rows } = payload
-	if (rows) handleNewData(rows)
+	if (rows) chart.updateData(rows)
 }
 
-setupIframe(handleNewPayload)
+setupIframe({ handleNewPayload, handleEnterView })
