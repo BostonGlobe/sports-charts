@@ -87,10 +87,10 @@ const prod = ({ handleNewPayload, handleEnterView }) => {
 			getJSON(url, (err, json) => {
 				const data = json._source.payload
 				const payload = convertPayload(data)
-				displayHeader(data)
-				addSportClass(data)
+				displayHeader(payload)
+				addSportClass(payload)
 				handleNewPayload(payload)
-				resolve(data)
+				resolve(payload)
 			})
 		)
 	)
