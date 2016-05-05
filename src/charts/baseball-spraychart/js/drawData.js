@@ -12,7 +12,7 @@ import setSliderTooltip from './../../../utils/slider/setSliderTooltip.js'
 const dateFormat = timeFormat('%b. %e')
 
 const drawData = ({ data, detachedContainer, scales, gameDateTime,
-uniqueDates, sliderContainer }) => {
+uniqueDates, sliderContainer, isChartbuilder }) => {
 
 	if (!scales) return
 
@@ -22,7 +22,7 @@ uniqueDates, sliderContainer }) => {
 		data
 
 	const DELAY = 0
-	const DURATION = gameDateTime ? 300 : 500
+	const DURATION = isChartbuilder ? 0 : gameDateTime ? 300 : 500
 
 	const { x, y, origin } = scales
 

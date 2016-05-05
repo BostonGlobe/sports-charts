@@ -29,6 +29,7 @@ let scales
 let data
 let uniqueDates
 let sliderInput
+let isChartbuilder
 
 // create a custom container that will not be drawn to DOM,
 // but will be used to hold the data elements
@@ -89,7 +90,7 @@ const handleResize = () => {
 
 		// draw data based on slider position
 		drawData({ data, detachedContainer, scales, gameDateTime,
-			uniqueDates, sliderContainer })
+			uniqueDates, sliderContainer, isChartbuilder })
 
 		// draw canvas based on the data we just drew above
 		drawCanvas({ canvas, detachedContainer })
@@ -128,7 +129,8 @@ const handleInputChange = (e) => {
 	setSliderTooltip({ container: sliderContainer, text, index: value - 1 })
 
 	// draw data based on slider input
-	drawData({ data, detachedContainer, scales, gameDateTime, uniqueDates })
+	drawData({ data, detachedContainer, scales, gameDateTime, uniqueDates,
+		isChartbuilder })
 
 }
 
@@ -142,7 +144,7 @@ const setNewData = (newData) => {
 
 }
 
-const drawChart = (newData, isChartbuilder) => {
+const drawChart = (newData) => {
 
 	// if this is chartbuilder, don't animate
 	if (isChartbuilder) {
@@ -150,7 +152,7 @@ const drawChart = (newData, isChartbuilder) => {
 		handleResize()
 
 		// draw data
-		drawData({ data, detachedContainer,
+		drawData({ data, detachedContainer, isChartbuilder,
 			scales, uniqueDates, sliderContainer })
 
 	} else {
@@ -187,7 +189,7 @@ const drawChart = (newData, isChartbuilder) => {
 				// draw data
 				// in other words, draw an array of one more datum
 				drawData({ data: data.slice(0, ++dataIndex), detachedContainer,
-					scales, uniqueDates, sliderContainer })
+					scales, uniqueDates, sliderContainer, isChartbuilder })
 
 			} else {
 
@@ -210,10 +212,11 @@ const handleNewPayload = (payload) => {
 }
 
 const handleEnterView = (payload) => {
-	const { rows, isChartbuilder } = payload
+	const { rows } = payload
+	isChartbuilder = payload.isChartbuilder
 	if (rows) {
 		setNewData(rows)
-		drawChart(rows, isChartbuilder)
+		drawChart(rows)
 	}
 }
 
