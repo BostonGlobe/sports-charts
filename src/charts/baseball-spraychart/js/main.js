@@ -41,7 +41,7 @@ sliderInput = createSlider({ container: sliderContainer, onInput })
 const margins = { top: 10, right: 10, bottom: 10, left: 10 }
 
 // for now we will say our ballpark max distance is 443
-const parkSize = 443
+const parkSize = 460
 
 const drawGrid = () => {
 
