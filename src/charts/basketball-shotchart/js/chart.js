@@ -206,7 +206,7 @@ function updateData(rows) {
 
 // add containers to dom
 function setupDOM() {
-	const svg = select('.chart-container').append('svg')
+	const svg = select('.chart-container').select('svg')
 
 	svg.append('g').attr('class', 'court')
 	svg.append('g').attr('class', 'hexbin').attr('clip-path', 'url(#clip)')
