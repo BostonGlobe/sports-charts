@@ -11,12 +11,14 @@ import {
 	transitionDuration,
 	transitionDelay,
 	missedOpacity,
+	distanceFromBlueLine,
 } from './config'
 
 const { left, right, top, bottom } = dimensions
 const rinkWidth = bottom - top
 const rinkHeight = right - left
 const rinkRatio = rinkHeight / rinkWidth
+const withoutBlueLinePercent = (rinkHeight - distanceFromBlueLine) / rinkHeight
 
 const scales = {
 	playerX: scaleLinear(),
@@ -39,7 +41,7 @@ function updateScales({ width, height }) {
 
 // responsive resize dom elements
 function updateContainer({ width, height }) {
-	select('.chart-container svg').attr('width', width).attr('height', height)
+	select('.chart-container svg').attr('width', width).attr('height', height * withoutBlueLinePercent)
 }
 
 // // create chart key with matching size and fills
@@ -99,8 +101,12 @@ function updateData(rows) {
 function setupDOM() {
 	const svg = select('.chart-container').select('svg')
 
-	svg.append('g').attr('class', 'rink')
-	svg.append('g').attr('class', 'shots')
+	const outer = svg.append('g')
+		.attr('class', 'outer-rink')
+
+	outer.append('g').attr('class', 'rink')
+	outer.append('g').attr('class', 'shots')
+
 }
 
 // basic domain/range for scales
@@ -128,11 +134,12 @@ function handleResize() {
 		// updateKey()
 
 		updateScales({ width, height })
+		const outer = select('.outer-rink')
 		const rink = select('.rink')
 
 		// clear rink
 		$('.rink').innerHTML = ''
-		drawRink({ rink, width, height })
+		drawRink({ outer, rink, width, height })
 
 		if (data.rows) updateDOM(data.rows)
 	}

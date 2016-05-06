@@ -3,6 +3,7 @@ const shotRadius = 4
 const transitionDuration = 1500
 const transitionDelay = 1000
 const missedOpacity = 0.25
+const distanceFromBlueLine = 25
 
 export {
 	dimensions,
@@ -10,4 +11,5 @@ export {
 	transitionDuration,
 	transitionDelay,
 	missedOpacity,
+	distanceFromBlueLine,
 }

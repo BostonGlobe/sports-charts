@@ -23,7 +23,7 @@ const faceoffOffsetY = goalLine + 20
 const netWidth = 6
 const netDepth = 3.66
 
-export default function drawRink({ rink, width, height }) {
+export default function drawRink({ outer, rink, width, height }) {
 	sz.range([0, width])
 
 	const center = width / 2
@@ -34,6 +34,7 @@ export default function drawRink({ rink, width, height }) {
 		.startAngle(-pi / 4)
 		.endAngle(pi / 4)
 
+	outer.attr('transform', `translate(0,-${sz(blueLineFromTop)})`)
 	// entire ice surface
 	rink.append('rect')
 		.attr('class', 'rink-bg')
