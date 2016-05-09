@@ -554,6 +554,7 @@
 			],
 			"hed": "Rays, 2016",
 			"subhed": "Home runs",
+			"subhedExtra": " (178)",
 			"mappings": {
 				"id": "string",
 				"balls": "integer",

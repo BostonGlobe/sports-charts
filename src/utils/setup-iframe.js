@@ -13,7 +13,7 @@ const convertPayload = ({ rows, mappings, ...other }) => ({
 	rows: convertRows({ rows, mappings }),
 })
 
-const displayHeader = ({ hed, subhed }) => {
+const displayHeader = ({ hed, subhed, subhedExtra = '' }) => {
 	const hedEl = $('.chart-top--hed')
 	const subhedEl = $('.chart-top--subhed')
 	const hide = 'display-none'
@@ -26,7 +26,7 @@ const displayHeader = ({ hed, subhed }) => {
 	}
 
 	if (subhed) {
-		subhedEl.innerHTML = decode(subhed)
+		subhedEl.innerHTML = `${decode(subhed)}${decode(subhedExtra)}`
 		removeClass(subhedEl, hide)
 	} else {
 		addClass(subhedEl, hide)
