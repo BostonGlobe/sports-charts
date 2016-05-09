@@ -1,14 +1,37 @@
 const options = [
+
 	{
-		_type: 'baseball-spraychart',
-		key: 'balls',
-		format: 'balls hit',
+		_type: 'baseball-season-pitchers',
+		key: 'era',
+		format: 'ERA',
 	},
 	{
-		_type: 'baseball-spraychart',
-		key: 'outs',
-		format: 'outs per % by 9',
+		_type: 'baseball-season-pitchers',
+		key: 'walksAndHitsPerInningPct',
+		format: 'WHIP',
 	},
+	{
+		_type: 'baseball-season-pitchers',
+		key: 'strikeoutsPerNine',
+		format: 'K/9',
+	},
+
+	{
+		_type: 'baseball-season-batters',
+		key: 'avg',
+		format: 'Avg',
+	},
+	{
+		_type: 'baseball-season-batters',
+		key: 'obp',
+		format: 'OBP',
+	},
+	{
+		_type: 'baseball-season-batters',
+		key: 'ops',
+		format: 'OPS',
+	},
+
 ]
 
 export default ({ key, _type }) => {
