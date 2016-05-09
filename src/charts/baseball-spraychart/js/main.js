@@ -208,9 +208,6 @@ const handleNewPayload = (payload) => {
 	if (rows) {
 		setNewData(rows)
 		drawGrid(rows)
-		const hed = $('.chart-top--subhed')
-		const oldHtml = hed.innerHTML
-		hed.innerHTML = `${oldHtml} (${rows.length})`
 	}
 }
 
