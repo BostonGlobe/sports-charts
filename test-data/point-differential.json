@@ -2,6 +2,7 @@
 	"_source": {
 		"payload": {
 			"hed": "Red Sox run differential",
+			"sport": "baseball",
 			"mappings": {
 				"gameDate": "date",
 				"gameno": "integer",

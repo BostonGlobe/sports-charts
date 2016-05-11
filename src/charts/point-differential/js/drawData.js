@@ -5,8 +5,6 @@ import { extent } from 'd3-array'
 
 const dateFormat = timeFormat('%b. %e')
 
-import colors from './../../../utils/colors.js'
-
 const drawData = ({ svg, data, scales }) => {
 
 	const { x, y } = scales
@@ -25,9 +23,7 @@ const drawData = ({ svg, data, scales }) => {
 		.attr('y', d => Math.min(y(d.runDifferential), y(0)))
 		.attr('width', x.bandwidth())
 		.attr('height', d => Math.abs(y(d.runDifferential) - y(0)))
-		.style('fill', d => d.runDifferential > 0 ?
-			colors['redsox-secondary'] :
-			colors['gray-secondary'])
+		.classed('positive', d => d.runDifferential > 0)
 
 	const axisY = axisLeft(y)
 		.tickSize(-x.range()[1])
