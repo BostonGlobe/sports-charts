@@ -15,17 +15,17 @@ $chart-name = point-differential
 .chart--{$chart-name}
 	@require './main.styl'
 	$sports = {
-		baseball: $redsox-secondary
-		basketball: $celtics-secondary
-		football: $patriots-secondary
-		hockey: $bruins-secondary
+		baseball: lighten($redsox-secondary, 5)
+		basketball: lighten($celtics-secondary, 5)
+		football: lighten($patriots-secondary, 5)
+		hockey: lighten($bruins-secondary, 5)
 	}
 	for sport, color in $sports
 		&.chart--{sport}
 			svg g.bars rect
 				fill lighten($gray-tertiary, 5)
 				&.positive
-					fill lighten($redsox-secondary, 5)
+					fill color
 
 			li.measure ul.values li:first-child
 				background lighten(color, 5)
