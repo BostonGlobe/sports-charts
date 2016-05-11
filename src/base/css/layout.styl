@@ -1,5 +1,8 @@
 $prefix = chart
 
+body
+	position relative
+
 // Main Class
 .{$prefix}
 	position relative
@@ -29,13 +32,13 @@ $prefix = chart
 
 // Explainer
 .{$prefix}-explainer
-	a 
+	a
 		display block
 		color $gray-secondary
 		text-align right
 		line-height 1.8
 		font-size 0.8em
-	p 
+	p
 		color $gray-secondary
 		font-family $sans
 		font-size 0.8em
@@ -45,11 +48,11 @@ $prefix = chart
 // Default Hide (non-accessible)
 .display-none
 	hidden()
-	
+
 // Version
 .chart-version
+	position absolute
 	color $gray-secondary
 	font-size $notes-size
-	text-align right
-	margin-top 0.25em
-	
+	bottom 0
+	right 0
