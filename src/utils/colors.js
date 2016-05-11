@@ -1,7 +1,7 @@
 const colors = {
 
 	redsox1: '#ff0048',
-	redsox2: '#ff6666',
+	redsox2: '#ff4646',
 	redsox3: '#ffa7a7',
 	redsoxbg: '#ffe6e6',
 	redsoxtm: '#b83039',
@@ -13,7 +13,7 @@ const colors = {
 	graypale: '#ededed',
 
 	'redsox-primary': '#ff0048',
-	'redsox-secondary': '#ff6666',
+	'redsox-secondary': '#ff4646',
 	'redsox-tertiary': '#ffa7a7',
 	'redsox-bg': '#ffe6e6',
 	'redsox-team': '#b83039',
