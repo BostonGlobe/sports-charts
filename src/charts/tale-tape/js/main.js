@@ -21,7 +21,7 @@ const handleNewData = ({ rows, groupBy }) => {
 		}))
 		.map(d => ({
 			...d,
-			max: d.values.map(v => v.value).sort().slice(-1)[0],
+			max: d.values.map(v => v.value).sort((a, b) => a < b)[0],
 		}))
 		.map(d => ({
 			...d,
