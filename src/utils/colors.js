@@ -8,7 +8,7 @@ const colors = {
 
 	gray1: '#333333',
 	gray2: '#858585',
-	gray3: '#aeaeae',
+	gray3: '#8e8e8e',
 	graybg: '#e1e1e1',
 	graypale: '#ededed',
 
@@ -20,7 +20,7 @@ const colors = {
 
 	'gray-primary': '#333333',
 	'gray-secondary': '#858585',
-	'gray-tertiary': '#aeaeae',
+	'gray-tertiary': '#8e8e8e',
 	'gray-bg': '#e1e1e1',
 	'gray-pale': '#ededed',
 
