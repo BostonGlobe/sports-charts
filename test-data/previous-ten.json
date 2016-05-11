@@ -2,7 +2,7 @@
 	"_source": {
 		"payload": {
 			"hed": "Chart does not have hed function",
-			"sport": "hockey",
+			"sport": "baseball",
 			"mappings": {
 				"gameDate": "date",
 				"gameno": "integer",
