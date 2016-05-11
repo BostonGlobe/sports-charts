@@ -8,9 +8,8 @@ import colors from './../../../utils/colors.js'
 import setSlider from './../../../utils/slider/setSlider.js'
 import setSliderTooltip from './../../../utils/slider/setSliderTooltip.js'
 
-colors['redsox-strongest'] = '#a2002e'
-colors['redsox-secondary'] = '#ff2828'
-colors['gray-tertiary'] = '#7f7f7f'
+colors['redsox-secondary-on-grey'] = '#ff2828'
+colors['gray-tertiary-on-grey'] = '#7f7f7f'
 
 // create date formatting function
 const dateFormat = timeFormat('%b. %e')
@@ -51,17 +50,17 @@ uniqueDates, sliderContainer, isChartbuilder }) => {
 	circles.enter().append('custom')
 		.attr('class', 'circle')
 		.attr('strokeStyle', d => ({
-			Out: colors['gray-tertiary'],
-			Single: colors['redsox-secondary'],
-			Double: colors['redsox-secondary'],
-			Triple: colors['redsox-secondary'],
-			'Home run': colors['redsox-strongest'],
-		}[d.event] || colors['gray-tertiary']))
+			Out: colors['gray-tertiary-on-grey'],
+			Single: colors['redsox-secondary-on-grey'],
+			Double: colors['redsox-secondary-on-grey'],
+			Triple: colors['redsox-secondary-on-grey'],
+			'Home run': colors['redsox-primary'],
+		}[d.event] || colors['gray-tertiary-on-grey']))
 		.attr('fillStyle', d => ({
-			Out: colors['gray-tertiary'],
+			Out: colors['gray-tertiary-on-grey'],
 			Single: colors.graypale,
-			Double: colors['redsox-secondary'],
-			Triple: colors['redsox-secondary'],
+			Double: colors['redsox-secondary-on-grey'],
+			Triple: colors['redsox-secondary-on-grey'],
 			'Home run': colors['redsox-primary'],
 		}[d.event] || 'white'))
 		.attr('isHalf', d => d.event === 'Double')
