@@ -34,7 +34,7 @@ const drawCanvas = ({ canvas, detachedContainer }) => {
 		const opacity = node.attr('opacity')
 
 		c.globalAlpha = opacity
-		c.lineWidth = 1
+		c.lineWidth = 2
 
 		if (isHalf) {
 

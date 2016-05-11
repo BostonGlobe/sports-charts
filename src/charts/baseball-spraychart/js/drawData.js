@@ -8,6 +8,10 @@ import colors from './../../../utils/colors.js'
 import setSlider from './../../../utils/slider/setSlider.js'
 import setSliderTooltip from './../../../utils/slider/setSliderTooltip.js'
 
+colors.redsox0 = '#a2002e'
+colors.redsox2 = '#ff2828'
+colors.gray3 = '#7f7f7f'
+
 // create date formatting function
 const dateFormat = timeFormat('%b. %e')
 
@@ -51,7 +55,7 @@ uniqueDates, sliderContainer, isChartbuilder }) => {
 			Single: colors.redsox2,
 			Double: colors.redsox2,
 			Triple: colors.redsox2,
-			'Home run': colors.redsox1,
+			'Home run': colors.redsox0,
 		}[d.event] || colors.gray3))
 		.attr('fillStyle', d => ({
 			Out: colors.gray3,
@@ -61,7 +65,7 @@ uniqueDates, sliderContainer, isChartbuilder }) => {
 			'Home run': colors.redsox1,
 		}[d.event] || 'white'))
 		.attr('isHalf', d => d.event === 'Double')
-		.attr('r', d => d.event === 'Home run' ? 8 : 5)
+		.attr('r', d => d.event === 'Home run' ? 9 : 6)
 		.attr('cx', origin.x)
 		.attr('cy', origin.y)
 		.attr('opacity', 0)
