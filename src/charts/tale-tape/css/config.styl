@@ -11,16 +11,19 @@ $chart-name = tale-tape
 
 .chart--{$chart-name}
 	@require './main.styl'
+	$sports-fill = {
+		baseball: $redsox-secondary-as-fill
+	}
 	$sports = {
 		baseball: $redsox-secondary
-		basketball: $celtics-secondary
-		football: $patriots-secondary
-		hockey: $bruins-secondary
 	}
+	for sport, color in $sports-fill
+		&.chart--{sport}
+			li.measure ul.values li:first-child
+				background color
 	for sport, color in $sports
 		&.chart--{sport}
 			li.measure ul.values li:first-child
-				background lighten(color, 5)
 				span
 					color color
 			.chart-top--hed span.player:first-child

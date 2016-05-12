@@ -1,26 +1,27 @@
 $lineColor = #fff
-	
+$bruins-primary-with-grey-stroke = #ffa300
+
 .rink
-	&-bg 
-		fill $gray-pale	
+	&-bg
+		fill $gray-pale
 	&-line
 		stroke $lineColor
-		stroke-width 2px	
+		stroke-width 2px
 	&-rect
-		fill $lineColor	
-	&-circle 
-		fill transparent 
-		stroke-width 2px 
+		fill $lineColor
+	&-circle
+		fill transparent
+		stroke-width 2px
 		stroke $lineColor
 	&-circle-fill
 		fill $lineColor
 		stroke-width 0
 
-.shot 
+.shot
 	shape-rendering cripseEdges
-	&.made 
+	&.made
 		stroke $bruins-team
-		fill $bruins-primary
-	&.missed 
+		fill $bruins-primary-with-grey-stroke
+	&.missed
 		stroke $bruins-team
 		fill $bruins-team

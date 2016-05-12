@@ -12,10 +12,7 @@ $chart-name = previous-ten
 .chart--{$chart-name}
 	@require './main.styl'
 	$sports = {
-		baseball: $redsox-primary
-		basketball: $celtics-primary
-		football: $patriots-primary
-		hockey: $bruins-primary
+		baseball: $redsox-secondary
 	}
 	for sport, color in $sports
 		&.chart--{sport}
