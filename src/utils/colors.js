@@ -8,8 +8,8 @@ const colors = {
 	'redsox-team': '#b83039',
 
 	'gray-primary': '#333333',
-	'gray-secondary': '#757575',
-	'gray-tertiary': '#707070',
+	'gray-secondary': '#858585',
+	'gray-tertiary': '#8e8e8e',
 	'gray-bg': '#e1e1e1',
 	'gray-pale': '#ededed',
 
