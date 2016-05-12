@@ -57,8 +57,12 @@ const drawCanvas = ({ canvas, detachedContainer }) => {
 			// fill and stroke a circle
 			c.beginPath()
 			c.arc(cx, cy, r, 0, 2 * π)
-			c.fillStyle = fillStyle
-			c.fill()
+
+			if (fillStyle !== 'none') {
+				c.fillStyle = fillStyle
+				c.fill()
+			}
+
 			c.strokeStyle = strokeStyle
 			c.stroke()
 			c.closePath()

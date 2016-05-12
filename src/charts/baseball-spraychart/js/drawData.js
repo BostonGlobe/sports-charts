@@ -55,7 +55,9 @@ uniqueDates, sliderContainer, isChartbuilder }) => {
 		}[d.event] || colors['gray-tertiary']))
 		.attr('fillStyle', d => ({
 			Out: colors['gray-tertiary'],
-			Single: colors.graypale,
+			Single: 'none',
+			Sacrifice: 'none',
+			'Sacrifice fly': 'none',
 			Double: colors['redsox-secondary-as-fill'],
 			Triple: colors['redsox-secondary-as-fill'],
 			'Home run': colors['redsox-primary'],
