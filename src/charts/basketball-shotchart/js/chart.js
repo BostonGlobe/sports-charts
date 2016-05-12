@@ -143,7 +143,7 @@ function updateKey() {
 }
 
 // render hexagons to chart
-function updateDOM({ hexbinData, averages }) {
+function updateDOM({ hexbinData, averages, isChartbuilder }) {
 	$('.hexbin').innerHTML = ''
 	// bind data and set key
 	const hexagons = select('.hexbin')
@@ -163,18 +163,20 @@ function updateDOM({ hexbinData, averages }) {
 		.attr('transform', hex => `translate(${hex.x}, ${hex.y})`)
 		.attr('class', hex => getColor({ hex, averages }))
 		.transition()
-			.duration(transitionDuration)
+			.duration(isChartbuilder ? 0 : transitionDuration)
 			.ease(easeQuadOut)
 			.delay(hex => {
 				const className = getColor({ hex, averages }).split(' ')[0]
 				if (className === 'below-threshold') return 0
-				return scales.delay(className)
+				return isChartbuilder ? 0 : scales.delay(className)
 			})
 			.attr('d', hexbinner.hexagon(getBinRadius() - 1))
 }
 
 // compute new aggregation of points to bins
-function updateBins({ averages, rows }) {
+function updateBins({ data, isChartbuilder }) {
+
+	const { averages, rows } = data
 
 	// get x,y coords for each shot
 	const points = rows.map(shot => ({
@@ -189,16 +191,16 @@ function updateBins({ averages, rows }) {
 	))
 
 	// make updates
-	updateDOM({ hexbinData, averages })
+	updateDOM({ hexbinData, averages, isChartbuilder })
 	return true
 }
 
 // make averages global for resize computations and update bins
-function updateData(rows) {
+function updateData({ rows, isChartbuilder }) {
 	// make it global so we can reuse on resize
 	data.averages = rows.filter(r => r._type === 'basketball-averages')
 	data.rows = rows.filter(r => r._type === 'basketball-shotchart')
-	updateBins(data)
+	updateBins({ data, isChartbuilder })
 }
 
 
