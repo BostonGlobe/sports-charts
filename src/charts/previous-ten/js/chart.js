@@ -1,7 +1,5 @@
 import { $ } from '../../../utils/dom.js'
-import { timeFormat } from 'd3-time-format'
-
-const dateFormat = timeFormat('%b. %e')
+import dateline from 'dateline'
 
 const getStreak = (r, index, rows) => {
 	// possibilities:
@@ -52,7 +50,7 @@ const updateData = (rows) => {
 					<td>${r.score}</td>
 					<td>${r.where}</td>
 					<td>${r.opponentAbbr}</td>
-					<td>${dateFormat(r.gameDate)}</td>
+					<td>${dateline(r.gameDate).getAPDate()}</td>
 				</tr>
 			`
 		})

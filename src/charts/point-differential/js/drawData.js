@@ -1,9 +1,7 @@
-import { timeFormat } from 'd3-time-format'
+import dateline from 'dateline'
 import { axisLeft } from 'd3-axis'
 import { select } from 'd3-selection'
 import { extent } from 'd3-array'
-
-const dateFormat = timeFormat('%b. %e')
 
 const drawData = ({ svg, data, scales }) => {
 
@@ -37,7 +35,9 @@ const drawData = ({ svg, data, scales }) => {
 		.attr('transform', d => `translate(0, ${y(d) - (d < 0 ? 1 : 0)})`)
 
 	svg.select('g.axes--x text.label')
-		.text(extent(data, d => d.gameDate).map(dateFormat).join(' ‐ '))
+		.text(extent(data, d => d.gameDate)
+			.map(d => dateline(d).getAPDate())
+			.join(' ‐ '))
 
 }
 

@@ -1,5 +1,5 @@
 import { timer } from 'd3-timer'
-import { timeFormat } from 'd3-time-format'
+import dateline from 'dateline'
 
 import { setupIframe, track } from '../../../utils/setup-iframe'
 import { $, removeClass } from '../../../utils/dom.js'
@@ -19,7 +19,6 @@ const chartContainer = $('.chart-container')
 const svgContainer = chartContainer.querySelector('.svg-container')
 const canvasContainer = chartContainer.querySelector('.canvas-container')
 const sliderContainer = $('.slider-container')
-const dateFormat = timeFormat('%b. %e')
 let handleInput = (e) => e
 const onInput = (e) => handleInput(e)
 let tracked = false
@@ -122,9 +121,9 @@ const handleInputChange = (e) => {
 
 	// get the slider position
 	const { value } = e.target
-	const gameDateTime = uniqueDates[value - 1]
+	const gameDateTime = new Date(uniqueDates[value - 1])
 
-	const text = dateFormat(new Date(gameDateTime))
+	const text = dateline(gameDateTime).getAPDate()
 
 	setSliderTooltip({ container: sliderContainer, text, index: value - 1 })
 
@@ -165,9 +164,9 @@ const drawChart = (newData) => {
 
 		// create the slider start/end labels
 		const labels = {
-			start: data.length ? dateFormat(data[0].gameDateTime) : '',
+			start: data.length ? dateline(data[0].gameDateTime).getAPDate() : '',
 			end: data.length ?
-				dateFormat(data[data.length - 1].gameDateTime) : '',
+				dateline(data[data.length - 1].gameDateTime).getAPDate() : '',
 		}
 
 		// setup slider (set input max, set start/end labels)

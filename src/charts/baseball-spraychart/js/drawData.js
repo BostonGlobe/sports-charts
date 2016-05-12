@@ -1,15 +1,12 @@
 import { select } from 'd3-selection'
+import dateline from 'dateline'
 
 // eslint-disable-next-line no-unused-vars
 import { transition } from 'd3-transition'
-import { timeFormat } from 'd3-time-format'
 
 import colors from './../../../utils/colors.js'
 import setSlider from './../../../utils/slider/setSlider.js'
 import setSliderTooltip from './../../../utils/slider/setSliderTooltip.js'
-
-// create date formatting function
-const dateFormat = timeFormat('%b. %e')
 
 const drawData = ({ data, detachedContainer, scales, gameDateTime,
 uniqueDates, sliderContainer, isChartbuilder }) => {
@@ -82,7 +79,7 @@ uniqueDates, sliderContainer, isChartbuilder }) => {
 
 				const time = d.gameDateTime.getTime()
 				const index = uniqueDates.indexOf(time)
-				const text = dateFormat(d.gameDateTime)
+				const text = dateline(d.gameDateTime).getAPDate()
 
 				setSlider({ container: sliderContainer, value: index + 1 })
 				setSliderTooltip({ container: sliderContainer, text, index })
