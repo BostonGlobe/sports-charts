@@ -6,12 +6,13 @@ import formatKey from './../../../utils/formatKey.js'
 // convenience variables
 const container = $('.chart-container')
 
-const handleNewData = ({ rows, groupBy }) => {
+const handleNewData = ({ rows, groupBy, orderBy }) => {
 
 	// first get the compareBy fields
 	const { _type, id, [groupBy]: value, ...other } = rows[0]
 
 	const data = Object.keys(other)
+		.sort((b, a) => orderBy.indexOf(a) < orderBy.indexOf(b))
 		.map(d => ({
 			key: d,
 			values: rows.map(r => ({
