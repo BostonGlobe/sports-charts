@@ -41,12 +41,18 @@ const showChartVersion = () => {
 	removeClass($('.chart-version'), 'display-none')
 }
 
+const addMetaInfo = ({ payloadLength = '', payloadLengthGzipped = '' }) => {
+	$('.chart-version .meta-info').innerHTML =
+		` / ${payloadLength} / ${payloadLengthGzipped}`
+}
+
 const chartbuilder = ({ handleNewPayload, handleEnterView }) => {
 	showChartVersion()
 	// listen to chartifier for data
 	pymChild.onMessage('receive-data', d => {
 		const data = { ...JSON.parse(d), isChartbuilder: true }
 		const payload = convertPayload(data)
+		addMetaInfo(payload)
 		displayHeader(payload)
 		addSportClass(payload)
 		handleNewPayload(payload)
@@ -64,6 +70,7 @@ const dev = ({ handleNewPayload, handleEnterView }) => {
 		pymChild.onMessage('receive-data', d => {
 			const data = JSON.parse(d)._source.payload
 			const payload = convertPayload(data)
+			addMetaInfo(payload)
 			displayHeader(payload)
 			addSportClass(payload)
 			handleNewPayload(payload)
