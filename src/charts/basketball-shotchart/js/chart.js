@@ -37,6 +37,19 @@ const globalData = {}
 
 
 // --- HELPERS ---
+function plotAll(points) {
+	select('.hexbin')
+		.selectAll('circle')
+		.data(points)
+		.enter()
+		.append('circle')
+		.attr('cx', d => d.x)
+		.attr('cy', d => d.y)
+		.attr('r', 4)
+		.style('opacity', 1)
+		.style('stroke', 'red')
+		.style('fill', d => d.made ? 'black' : 'white')
+}
 
 function getBinRadius() {
 	return Math.floor(windowWidth * binRatio)
@@ -191,6 +204,9 @@ function updateBins() {
 
 	// make updates
 	updateDOM({ hexbinData, averages })
+
+	// debug
+	plotAll(points)
 	return true
 }
 

@@ -4,7 +4,7 @@ const transitionDuration = 1000
 const delayRange = [transitionDuration * 2, transitionDuration, 0]
 const percentRange = 12
 const colorClasses = ['below', 'average', 'above']
-const minShotsThreshold = 2
+const minShotsThreshold = 1
 
 export {
 	dimensions,
