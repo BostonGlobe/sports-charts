@@ -27,9 +27,8 @@ const scales = {
 }
 
 let windowWidth = 0
-
-// global storage for data
-const data = {}
+let globalChartbuilder = false
+const globalData = {}
 
 // --- UPDATE ---
 
@@ -49,12 +48,12 @@ function updateContainer({ width, height }) {
 // }
 
 // render hexagons to chart
-function updateDOM(rows) {
+function updateDOM() {
 	$('.shots').innerHTML = ''
 	// bind data and set key
 	const shots = select('.shots')
 		.selectAll('.shot')
-		.data(rows)
+		.data(globalData.rows)
 
 	shots.exit().remove()
 
@@ -80,18 +79,19 @@ function updateDOM(rows) {
 		})
 		.style('opacity', 0)
 		.transition()
-			.duration(transitionDuration)
-			.delay(d => d.made ? 0 : transitionDelay)
+			.duration(globalChartbuilder ? 0 : transitionDuration)
+			.delay(d => d.made ? 0 : (globalChartbuilder ? 0 : transitionDelay))
 			.style('opacity', d => d.made ? 1 : missedOpacity)
 }
 
 // make averages global for resize computations and update bins
-function updateData(rows) {
+function updateData({ rows, isChartbuilder }) {
 	// sort rows by made / missed for rendering ordering
 	const sortedRows = rows.sort((a, b) => a.made - b.made)
 	// make it global so we can reuse on resize
-	data.rows = sortedRows
-	updateDOM(sortedRows)
+	globalData.rows = sortedRows
+	globalChartbuilder = isChartbuilder
+	updateDOM()
 }
 
 
@@ -141,7 +141,7 @@ function handleResize() {
 		$('.rink').innerHTML = ''
 		drawRink({ outer, rink, width, height })
 
-		if (data.rows) updateDOM(data.rows)
+		if (globalData.rows) updateDOM()
 	}
 }
 
