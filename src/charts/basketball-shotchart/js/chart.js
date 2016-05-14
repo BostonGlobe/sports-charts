@@ -32,15 +32,27 @@ const scales = {
 }
 
 let windowWidth = 0
-
-// global storage for data
-const data = {}
+let globalChartbuilder = false
+const globalData = {}
 
 
 // --- HELPERS ---
+// function debugPoints(points) {
+// 	select('.hexbin')
+// 		.selectAll('circle')
+// 		.data(points)
+// 		.enter()
+// 		.append('circle')
+// 		.attr('cx', d => d.x)
+// 		.attr('cy', d => d.y)
+// 		.attr('r', 4)
+// 		.style('opacity', 1)
+// 		.style('stroke', 'red')
+// 		.style('fill', d => d.made ? 'black' : 'white')
+// }
 
 function getBinRadius() {
-	return Math.floor(windowWidth * binRatio)
+	return windowWidth * binRatio
 }
 
 // how many shots were made in this hex bin
@@ -143,7 +155,7 @@ function updateKey() {
 }
 
 // render hexagons to chart
-function updateDOM({ hexbinData, averages, isChartbuilder }) {
+function updateDOM({ hexbinData, averages }) {
 	$('.hexbin').innerHTML = ''
 	// bind data and set key
 	const hexagons = select('.hexbin')
@@ -163,20 +175,20 @@ function updateDOM({ hexbinData, averages, isChartbuilder }) {
 		.attr('transform', hex => `translate(${hex.x}, ${hex.y})`)
 		.attr('class', hex => getColor({ hex, averages }))
 		.transition()
-			.duration(isChartbuilder ? 0 : transitionDuration)
+			.duration(globalChartbuilder ? 0 : transitionDuration)
 			.ease(easeQuadOut)
 			.delay(hex => {
 				const className = getColor({ hex, averages }).split(' ')[0]
 				if (className === 'below-threshold') return 0
-				return isChartbuilder ? 0 : scales.delay(className)
+				return globalChartbuilder ? 0 : scales.delay(className)
 			})
 			.attr('d', hexbinner.hexagon(getBinRadius() - 1))
 }
 
 // compute new aggregation of points to bins
-function updateBins({ data, isChartbuilder }) {
+function updateBins() {
 
-	const { averages, rows } = data
+	const { averages, rows } = globalData
 
 	// get x,y coords for each shot
 	const points = rows.map(shot => ({
@@ -191,16 +203,21 @@ function updateBins({ data, isChartbuilder }) {
 	))
 
 	// make updates
-	updateDOM({ hexbinData, averages, isChartbuilder })
+	updateDOM({ hexbinData, averages })
+
+	// debug
+	// debugPoints(points)
+
 	return true
 }
 
 // make averages global for resize computations and update bins
 function updateData({ rows, isChartbuilder }) {
 	// make it global so we can reuse on resize
-	data.averages = rows.filter(r => r._type === 'basketball-averages')
-	data.rows = rows.filter(r => r._type === 'basketball-shotchart')
-	updateBins({ data, isChartbuilder })
+	globalData.averages = rows.filter(r => r._type === 'basketball-averages')
+	globalData.rows = rows.filter(r => r._type === 'basketball-shotchart')
+	globalChartbuilder = isChartbuilder
+	updateBins()
 }
 
 
@@ -278,7 +295,7 @@ function handleResize() {
 		$('.basket').innerHTML = ''
 		drawCourt({ court, basket, width, height })
 
-		if (data.rows) updateBins(data)
+		if (globalData.rows) updateBins()
 	}
 }
 
