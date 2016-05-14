@@ -37,22 +37,22 @@ const globalData = {}
 
 
 // --- HELPERS ---
-function plotAll(points) {
-	select('.hexbin')
-		.selectAll('circle')
-		.data(points)
-		.enter()
-		.append('circle')
-		.attr('cx', d => d.x)
-		.attr('cy', d => d.y)
-		.attr('r', 4)
-		.style('opacity', 1)
-		.style('stroke', 'red')
-		.style('fill', d => d.made ? 'black' : 'white')
-}
+// function debugPoints(points) {
+// 	select('.hexbin')
+// 		.selectAll('circle')
+// 		.data(points)
+// 		.enter()
+// 		.append('circle')
+// 		.attr('cx', d => d.x)
+// 		.attr('cy', d => d.y)
+// 		.attr('r', 4)
+// 		.style('opacity', 1)
+// 		.style('stroke', 'red')
+// 		.style('fill', d => d.made ? 'black' : 'white')
+// }
 
 function getBinRadius() {
-	return Math.floor(windowWidth * binRatio)
+	return windowWidth * binRatio
 }
 
 // how many shots were made in this hex bin
@@ -206,7 +206,8 @@ function updateBins() {
 	updateDOM({ hexbinData, averages })
 
 	// debug
-	plotAll(points)
+	// debugPoints(points)
+
 	return true
 }
 
