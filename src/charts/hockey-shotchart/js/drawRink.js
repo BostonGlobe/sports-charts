@@ -54,12 +54,12 @@ export default function drawRink({ outer, rink, width, height }) {
 		.attr('height', thinLine)
 
 	// blue line
-	rink.append('rect')
-		.attr('class', 'rink-rect rink-blue-line')
-		.attr('x', 0)
-		.attr('y', sz(blueLineFromTop))
-		.attr('width', width)
-		.attr('height', thickLine)
+	// rink.append('rect')
+	// 	.attr('class', 'rink-rect rink-blue-line')
+	// 	.attr('x', 0)
+	// 	.attr('y', sz(blueLineFromTop))
+	// 	.attr('width', width)
+	// 	.attr('height', thickLine)
 
 	// crease
 	rink.append('line')
