@@ -29,6 +29,7 @@ let data
 let uniqueDates
 let sliderInput
 let isChartbuilder
+let globalWidth
 
 // create a custom container that will not be drawn to DOM,
 // but will be used to hold the data elements
@@ -48,13 +49,9 @@ const drawGrid = () => {
 	// if it exists, remove svg first
 	svg && svg.remove()
 
-	// get the chart container outside width
-	let { offsetWidth } = chartContainer
-	offsetWidth = offsetWidth * 2
-
 	// get the chart dimensions
-	const width = offsetWidth - margins.left - margins.right
-	const height = Math.sqrt(Math.pow(offsetWidth, 2) / 2) -
+	const width = (globalWidth * 2) - margins.left - margins.right
+	const height = Math.sqrt(Math.pow(globalWidth * 2, 2) / 2) -
 		margins.top - margins.bottom
 
 	// create scales
@@ -145,10 +142,12 @@ const setNewData = (newData) => {
 
 const drawChart = (newData) => {
 
+	handleResizeSafely = handleResize
+
 	// if this is chartbuilder, don't animate
 	if (isChartbuilder) {
 
-		handleResize()
+		handleResizeSafely()
 
 		// draw data
 		drawData({ data, detachedContainer, isChartbuilder,
@@ -156,8 +155,7 @@ const drawChart = (newData) => {
 
 	} else {
 
-		window.addEventListener('resize', handleResize)
-		handleResize()
+		handleResizeSafely()
 
 		// show slider
 		removeClass(sliderContainer, 'display-none')
@@ -219,4 +217,13 @@ const handleEnterView = (payload) => {
 	}
 }
 
-setupIframe({ handleNewPayload, handleEnterView })
+let handleResizeSafely = () => {}
+
+let resizeEvent = (width) => {
+
+	globalWidth = width
+	handleResizeSafely()
+
+}
+
+setupIframe({ handleNewPayload, handleEnterView, resizeEvent })
