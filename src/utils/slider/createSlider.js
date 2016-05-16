@@ -20,6 +20,7 @@ const createSlider = ({ container, onInput }) => {
 	const input = container.querySelector('input')
 
 	input.addEventListener('input', onInput)
+	input.addEventListener('change', onInput)
 
 	// turn slider into fancy slider
 	fancySlider.init(container)
