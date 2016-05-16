@@ -4,7 +4,7 @@ import 'd3-transition'
 import { easeQuadOut } from 'd3-ease'
 import { hexbin } from 'd3-hexbin'
 import { $, addClass, removeClass, hasClass } from '../../../utils/dom'
-
+import colors from '../../../utils/colors'
 import drawCourt from './drawCourt'
 import getWeightedAverage from './getWeightedAverage'
 
@@ -29,6 +29,13 @@ const scales = {
 	shotY: scaleLinear(),
 	color: scaleQuantize(),
 	delay: scaleOrdinal().domain(colorClasses).range(delayRange),
+}
+
+const fills = {
+	above: colors['celtics-team'],
+	average: 'url(#pattern-average)',
+	below: 'transparent',
+	'below-threshold': 'transparent',
 }
 
 let windowWidth = 0
@@ -142,6 +149,8 @@ function updateKey() {
 	hexagons.enter()
 		.append('path')
 			.attr('class', d => `hexagon ${d} bin-radius-${binRadius}`)
+			.style('fill', d => fills[d])
+			.style('stroke', colors['celtics-team'])
 			.attr('d', hexbinner.hexagon(0))
 		.merge(hexagons)
 		.attr('transform', (d, i) => `translate(${i * sz * 2 + sz}, 0)`)
@@ -168,6 +177,14 @@ function updateDOM({ hexbinData, averages }) {
 	enterSelection.merge(hexagons)
 		.attr('transform', hex => `translate(${hex.x}, ${hex.y})`)
 		.attr('class', hex => getColor({ hex, averages }))
+		.style('fill', hex => {
+			const cat = getColor({ hex, averages }).split(' ')[0]
+			return fills[cat]
+		})
+		.style('stroke', hex => {
+			const cat = getColor({ hex, averages }).split(' ')[0]
+			return cat === 'below-threshold' ? 'transparent' : colors['celtics-team']
+		})
 		.transition()
 			.duration(globalChartbuilder ? 0 : transitionDuration)
 			.ease(easeQuadOut)

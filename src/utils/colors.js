@@ -7,6 +7,8 @@ const colors = {
 	'redsox-bg': '#ffe6e6',
 	'redsox-team': '#b83039',
 
+	'celtics-team': '#008048',
+
 	'gray-primary': '#333333',
 	'gray-secondary': '#858585',
 	'gray-tertiary': '#8e8e8e',
