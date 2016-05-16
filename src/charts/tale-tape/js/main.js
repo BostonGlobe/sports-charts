@@ -12,7 +12,7 @@ const handleNewData = ({ rows, groupBy, orderBy }) => {
 	const { _type, id, [groupBy]: value, ...other } = rows[0]
 
 	const data = Object.keys(other)
-		.sort((b, a) => orderBy.indexOf(a) < orderBy.indexOf(b))
+		.sort((a, b) => orderBy.indexOf(a) - orderBy.indexOf(b))
 		.map(d => ({
 			key: d,
 			values: rows.map(r => ({
@@ -22,7 +22,7 @@ const handleNewData = ({ rows, groupBy, orderBy }) => {
 		}))
 		.map(d => ({
 			...d,
-			max: d.values.map(v => v.value).sort((a, b) => a < b)[0],
+			max: d.values.map(v => v.value).sort((a, b) => b - a)[0],
 		}))
 		.map(d => ({
 			...d,
