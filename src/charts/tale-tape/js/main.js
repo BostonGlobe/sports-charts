@@ -42,8 +42,12 @@ const handleNewData = ({ rows, groupBy, orderBy }) => {
 		`<li class='measure'>
 			<p class='name'><span>${display}</span></p>
 			<ul class='values'>
-				${values.map(p =>
-					`<li style='width: ${p.width}%'><span>${p.display}</span></li>`
+				${values.map(p => `
+					<li style='width: ${p.width}%'>
+						<span class='spacer'>&nbsp;</span>
+						<span class='number'>${p.display}</span>
+					</li>
+					`
 				).join('')}
 			</ul>
 		</li>`).join('')
