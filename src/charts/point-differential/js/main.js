@@ -13,14 +13,12 @@ const margins = { top: 10, right: 0, bottom: 40, left: 25 }
 let svg
 let g
 let scales
-let data
+let data = []
+let globalWidth = 300
 
 const handleResize = () => {
 
-	// get the chart container outside width
-	const { offsetWidth } = container
-
-	const width = offsetWidth - margins.left - margins.right
+	const width = globalWidth - margins.left - margins.right
 	const height = width * 3 / 4
 
 	// if it exists, remove svg first
@@ -47,9 +45,15 @@ const handleNewPayload = ({ rows }) => {
 	// sort data
 	data = sortData(rows)
 
-	window.addEventListener('resize', handleResize)
 	handleResize()
 
 }
 
-setupIframe({ handleNewPayload, handleEnterView })
+const resizeEvent = (width) => {
+
+	globalWidth = width
+	handleResize()
+
+}
+
+setupIframe({ handleNewPayload, handleEnterView, resizeEvent })

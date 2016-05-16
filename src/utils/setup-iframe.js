@@ -112,9 +112,10 @@ const prod = ({ handleNewPayload, handleEnterView }) => {
 // setupIframe will take an object of functions:
 // handleNewPayload will get fired immediately on new data
 // handleEnterView will get fired when enter view happens
-const setupIframe = ({ handleNewPayload, handleEnterView }) => {
+const setupIframe = ({ handleNewPayload, handleEnterView,
+resizeEvent }) => {
 
-	pymChild = pymIframe({})
+	pymChild = pymIframe({ resizeEvent })
 
 	// determine environment (chartbuilder, dev, prod [default])
 	const parsed = parse(window.location.search)
