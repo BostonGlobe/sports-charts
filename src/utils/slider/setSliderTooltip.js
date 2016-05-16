@@ -15,8 +15,18 @@ const setSliderTooltip = ({ container, text, index }) => {
 	// eslint-disable-next-line no-param-reassign
 	tooltip.style.left = `${position}%`
 
-	// eslint-disable-next-line no-param-reassign
-	tooltip.style.transform = `translateX(-${position}%)`
+	const transforms = [
+		'webkitTransform',
+		'MozTransform',
+		'msTransform',
+		'OTransform',
+		'transform',
+	]
+
+	transforms.forEach(d => {
+		// eslint-disable-next-line no-param-reassign
+		tooltip.style[d] = `translateX(-${position}%)`
+	})
 
 }
 

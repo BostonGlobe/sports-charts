@@ -27,13 +27,13 @@ function handleSlider(container) {
 
 function initSlider(container) {
 
-	const { id } = container
-	const input = container.querySelector('input')
+	// const { id } = container
+	// const input = container.querySelector('input')
 
-	// prepare a <style> tag that will be used by handleSlider()
-	const st = document.createElement('style')
-	st.id = `s${id}`
-	document.head.appendChild(st)
+	// // prepare a <style> tag that will be used by handleSlider()
+	// const st = document.createElement('style')
+	// st.id = `s${id}`
+	// document.head.appendChild(st)
 
 	// // add event listeners to sliders
 	// input.addEventListener('input', () =>
