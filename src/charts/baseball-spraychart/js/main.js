@@ -109,8 +109,8 @@ let initialTimer
 const handleInputChange = (e) => {
 
 	if (!tracked) {
-		track('Click')
 		tracked = true
+		track('Click')
 	}
 
 	// stop the timer, if it's running
