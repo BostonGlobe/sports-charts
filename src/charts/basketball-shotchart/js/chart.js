@@ -65,12 +65,6 @@ function getHexMade(d) {
 	}, 0)
 }
 
-// extract the most recent date from all shots
-// function getLatestDate(rows) {
-// 	const sorted = rows.sort((a, b) => a.gameDateTime - b.gameDateTime)
-// 	return sorted[sorted.length - 1].gameDateTime
-// }
-
 // calculate bin avg. vs. league avg. and return proper color
 function getColor({ hex, averages }) {
 	if (hex.length > minShotsThreshold) {
