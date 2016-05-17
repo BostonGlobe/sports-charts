@@ -19,6 +19,10 @@
 			img { width: 100%; }
 			h1 { font-size: 2.6em; font-weight: bold; line-height: 1; margin: 0; margin-bottom: 0.1em; }
 			h2 { color: #555; font-weight: 400; margin: 0; }
+			#globe-graphic-iframe-1 {
+				max-width: 300px;
+				margin: 0 auto;
+			}
 		</style>
 	</head>
 	<body>
@@ -31,7 +35,7 @@
 
 			<!-- (BEGIN) globe graphic iframe -->
 
-			<div id='globe-graphic-iframe-1' class='igraphic-chart' style='margin: 20px 0;'></div>
+			<div id='globe-graphic-iframe-1' class='igraphic-chart'></div>
 
 			<script src='https://apps.bostonglobe.com/common/js/pym/pym-0.4.5.min.js'></script>
 			<script src='https://apps.bostonglobe.com/common/js/enter-view/enter-view-0.1.0.min.js'></script>
