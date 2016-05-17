@@ -43,10 +43,6 @@ function updateContainer({ width, height }) {
 	select('.chart-container svg').attr('width', width).attr('height', height * withoutBlueLinePercent)
 }
 
-// // create chart key with matching size and fills
-// function updateKey() {
-// }
-
 // render hexagons to chart
 function updateDOM() {
 	$('.shots').innerHTML = ''
@@ -115,23 +111,21 @@ function setupScales() {
 	scales.playerY.domain([top, bottom])
 }
 
-// // setup dom for key
-// function setupKey() {
-// 	select('.key-average')
-// 		.append('svg').attr('width', 0).attr('height', 0)
-// 			.append('g').attr('class', 'hex-group')
-// }
-
 // handle resize
-function handleResize() {
-	if (windowWidth !== window.innerWidth) {
-		windowWidth = window.innerWidth
+let globalWidth = 300
+let readyToResize = false
+function handleResize(pymWidth) {
 
-		const width = Math.floor($('.chart-container').offsetWidth)
-		const height = Math.floor(width * rinkRatio)
+	// TODO: re-enable the bit below to get responsive charts
+	if (pymWidth) {
+		globalWidth = pymWidth
+	}
+
+	if (readyToResize) {
+		const width = globalWidth
+		const height = Math.floor(globalWidth * rinkRatio)
 
 		updateContainer({ width, height })
-		// updateKey()
 
 		updateScales({ width, height })
 		const outer = select('.outer-rink')
@@ -145,21 +139,14 @@ function handleResize() {
 	}
 }
 
-// listen for resize event
-function setupResize() {
-	window.addEventListener('resize', handleResize)
-}
-
 // initialize chart
 function setup() {
 	setupDOM()
 	setupScales()
-	// setupKey()
 
 	// things we can do once we know width
+	readyToResize = true
 	handleResize()
-	setupResize()
-	// updateKey()
 }
 
-export default { setup, updateData }
+export default { setup, updateData, handleResize }
