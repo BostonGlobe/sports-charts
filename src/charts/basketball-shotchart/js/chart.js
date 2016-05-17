@@ -38,7 +38,6 @@ const fills = {
 	'below-threshold': 'transparent',
 }
 
-let windowWidth = 0
 let globalChartbuilder = false
 const globalData = {}
 
@@ -59,7 +58,7 @@ const globalData = {}
 // }
 
 function getBinRadius() {
-	return windowWidth * binRatio
+	return globalWidth * binRatio
 }
 
 // how many shots were made in this hex bin
@@ -283,11 +282,17 @@ function setupExplainer() {
 }
 
 // handle resize
-function handleResize() {
-	if (windowWidth !== window.innerWidth) {
-		windowWidth = window.innerWidth
+let globalWidth = 300
+let readyToResize = false
+function handleResize(pymWidth) {
 
-		const width = Math.floor($('.chart-container').offsetWidth)
+	// TODO: re-enable the bit below to get responsive charts
+	if (pymWidth) {
+		globalWidth = pymWidth
+	}
+
+	if (readyToResize) {
+		const width = globalWidth
 		const height = Math.floor(width * courtRatio)
 
 		updateContainer({ width, height })
@@ -307,12 +312,8 @@ function handleResize() {
 		drawCourt({ court, basket, width, height })
 
 		if (globalData.rows) updateBins()
-	}
-}
 
-// listen for resize event
-function setupResize() {
-	window.addEventListener('resize', handleResize)
+	}
 }
 
 // initialize chart
@@ -323,8 +324,8 @@ function setup() {
 	setupExplainer()
 
 	// things we can do once we know width
+	readyToResize = true
 	handleResize()
-	setupResize()
 	updateKey()
 }
 

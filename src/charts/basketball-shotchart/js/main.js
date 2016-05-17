@@ -8,4 +8,5 @@ const handleEnterView = (payload) => {
 	if (rows) chart.updateData({ rows, isChartbuilder })
 }
 
-setupIframe({ handleNewPayload, handleEnterView })
+setupIframe({ handleNewPayload, handleEnterView,
+	resizeEvent: chart.handleResize })
