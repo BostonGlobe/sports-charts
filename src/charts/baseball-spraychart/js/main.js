@@ -29,7 +29,8 @@ let data
 let uniqueDates
 let sliderInput
 let isChartbuilder
-let globalWidth
+let globalWidth = 300
+let readyToResize = false
 
 // create a custom container that will not be drawn to DOM,
 // but will be used to hold the data elements
@@ -69,27 +70,31 @@ const drawGrid = () => {
 // listen for resize event
 const handleResize = () => {
 
-	const { width, height } = drawGrid()
+	if (readyToResize) {
 
-	// reset canvas element
-	canvas = resetCanvas({ container: canvasContainer, margins, width,
-		height })
+		const { width, height } = drawGrid()
 
-	detachedContainer = document.createElement('custom')
+		// reset canvas element
+		canvas = resetCanvas({ container: canvasContainer, margins, width,
+			height })
 
-	// get the slider position
-	const { value } = sliderInput
-	const gameDateTime = uniqueDates[value - 1]
+		detachedContainer = document.createElement('custom')
 
-	// only draw data based on slider position if the timer has stopped
-	if (initialTimer && !initialTimer._call) {
+		// get the slider position
+		const { value } = sliderInput
+		const gameDateTime = uniqueDates[value - 1]
 
-		// draw data based on slider position
-		drawData({ data, detachedContainer, scales, gameDateTime,
-			uniqueDates, sliderContainer, isChartbuilder })
+		// only draw data based on slider position if the timer has stopped
+		if (initialTimer && !initialTimer._call) {
 
-		// draw canvas based on the data we just drew above
-		drawCanvas({ canvas, detachedContainer })
+			// draw data based on slider position
+			drawData({ data, detachedContainer, scales, gameDateTime,
+				uniqueDates, sliderContainer, isChartbuilder })
+
+			// draw canvas based on the data we just drew above
+			drawCanvas({ canvas, detachedContainer })
+
+		}
 
 	}
 
@@ -142,12 +147,12 @@ const setNewData = (newData) => {
 
 const drawChart = (newData) => {
 
-	handleResizeSafely = handleResize
+	readyToResize = true
 
 	// if this is chartbuilder, don't animate
 	if (isChartbuilder) {
 
-		handleResizeSafely()
+		handleResize()
 
 		// draw data
 		drawData({ data, detachedContainer, isChartbuilder,
@@ -155,7 +160,7 @@ const drawChart = (newData) => {
 
 	} else {
 
-		handleResizeSafely()
+		handleResize()
 
 		// show slider
 		removeClass(sliderContainer, 'display-none')
@@ -217,12 +222,13 @@ const handleEnterView = (payload) => {
 	}
 }
 
-let handleResizeSafely = () => {}
-
 let resizeEvent = (width) => {
 
-	globalWidth = width
-	handleResizeSafely()
+	if (readyToResize) {
+		globalWidth = width
+	}
+
+	handleResize()
 
 }
 
