@@ -15,7 +15,7 @@ const options = [
 	{
 		_type: 'baseball-season-pitchers',
 		key: 'strikeoutsPerNine',
-		format: (n) => format('.2f')(n),
+		format: (n) => format('.1f')(n),
 	},
 
 	{
