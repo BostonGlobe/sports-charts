@@ -5,17 +5,17 @@ const options = [
 	{
 		_type: 'baseball-season-pitchers',
 		key: 'era',
-		format: (n) => +format('.2f')(n),
+		format: (n) => format('.2f')(n),
 	},
 	{
 		_type: 'baseball-season-pitchers',
 		key: 'walksAndHitsPerInningPct',
-		format: (n) => +format('.2f')(n),
+		format: (n) => format('.2f')(n),
 	},
 	{
 		_type: 'baseball-season-pitchers',
 		key: 'strikeoutsPerNine',
-		format: (n) => +format('.2f')(n),
+		format: (n) => format('.2f')(n),
 	},
 
 	{
