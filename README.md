@@ -20,6 +20,8 @@ If you make changes to something in **src/base** you must redeploy all charts.
 
 `node deploy -u username`
 
+When you run the upload command from apps shell, make sure to be inside the `sports` directory.
+
 ## Fonts
 Available fonts:
 * Benton regular ('benton-regular')

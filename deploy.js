@@ -12,7 +12,7 @@ function displayUploadScript(charts) {
 	const files = (c) =>
 		`charts/${c}/index.html charts/${c}/bundle.css charts/${c}/main.js charts/${c}/main.js.map`
 	const command = `
-		upload ${charts.map(files).join(' ')} chart-base.css chart-base.js
+		upload ${charts.map(files).join(' ')} charts/chart-base.css charts/chart-base.js
 	`.trim()
 	console.log('\n-- upload command --')
 	console.log(command)
