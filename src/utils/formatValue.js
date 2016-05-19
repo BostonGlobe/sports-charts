@@ -4,33 +4,33 @@ const options = [
 
 	{
 		_type: 'baseball-season-pitchers',
-		key: 'era',
+		key: 'ERA',
 		format: (n) => format('.2f')(n),
 	},
 	{
 		_type: 'baseball-season-pitchers',
-		key: 'walksAndHitsPerInningPct',
+		key: 'WHIP',
 		format: (n) => format('.2f')(n),
 	},
 	{
 		_type: 'baseball-season-pitchers',
-		key: 'strikeoutsPerNine',
+		key: 'K/9',
 		format: (n) => format('.1f')(n),
 	},
 
 	{
 		_type: 'baseball-season-batters',
-		key: 'avg',
+		key: 'Avg',
 		format: (n) => format('.3f')(n).replace(/^0\./, '.'),
 	},
 	{
 		_type: 'baseball-season-batters',
-		key: 'obp',
+		key: 'OBP',
 		format: (n) => format('.3f')(n).replace(/^0\./, '.'),
 	},
 	{
 		_type: 'baseball-season-batters',
-		key: 'ops',
+		key: 'OPS',
 		format: (n) => format('.3f')(n).replace(/^0\./, '.'),
 	},
 
