@@ -19,10 +19,11 @@ function addFontRule(sheet, font) {
 
 export default function (args) {
 	const sheet = createStylesheet()
-	const handleError = err => console.err(err)
+	const handleError = err => console.error(err)
+	const timeout = 10000
 
 	args.forEach(font => {
 		const fontObserver = new FontFaceObserver(`${font.family}`, { weight: font.weight })
-		fontObserver.check().then(() => addFontRule(sheet, font)).catch(handleError)
+		fontObserver.load(null, timeout).then(() => addFontRule(sheet, font)).catch(handleError)
 	})
 }
