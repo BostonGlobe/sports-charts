@@ -234,9 +234,10 @@
         "Hospital Address ": "string",
         "2014 NAS Discharges": "integer",
         "2014 Discharges for Delivery ": "integer",
-        "2014 NAS Discharge Rate per 1000 births": "number",
+        "2014 NAS Discharge Rate per 1000 births": "float",
         "2014 NAS % of Total Births": "string"
-      }
+      },
+      "sport": "newsroom"
     }
   }
 }
