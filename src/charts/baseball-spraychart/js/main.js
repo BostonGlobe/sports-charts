@@ -222,7 +222,7 @@ const handleEnterView = (payload) => {
 	}
 }
 
-let resizeEvent = (width) => {
+const resizeEvent = (width) => {
 	globalWidth = width
 	handleResize()
 }
