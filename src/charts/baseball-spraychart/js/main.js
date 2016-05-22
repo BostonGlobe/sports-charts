@@ -223,13 +223,8 @@ const handleEnterView = (payload) => {
 }
 
 let resizeEvent = (width) => {
-
-	if (readyToResize) {
-		globalWidth = width
-	}
-
+	globalWidth = width
 	handleResize()
-
 }
 
 setupIframe({ handleNewPayload, handleEnterView, resizeEvent })
