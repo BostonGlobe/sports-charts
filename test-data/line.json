@@ -1,243 +1,635 @@
 {
-  "_source": {
-    "payload": {
-      "rows": [
-        {
-          "Hospital Name": "Charlton Hospital (Southcoast Hospitals Group)",
-          "Hospital Address ": "363 Highland Ave, Fall River, MA 02720",
-          "2014 NAS Discharges": "91",
-          "2014 Discharges for Delivery ": "1558",
-          "2014 NAS Discharge Rate per 1000 births": "58.41",
-          "2014 NAS % of Total Births": "5.84%"
-        },
-        {
-          "Hospital Name": "St. Luke's Hospital (Southcoast Hospitals Group)",
-          "Hospital Address ": "101 Page St, New Bedford, MA 02740",
-          "2014 NAS Discharges": "76",
-          "2014 Discharges for Delivery ": "1361",
-          "2014 NAS Discharge Rate per 1000 births": "55.84",
-          "2014 NAS % of Total Births": "5.58%"
-        },
-        {
-          "Hospital Name": "Melrose-Wakefield Hospital",
-          "Hospital Address ": "585 Lebanon St, Melrose, MA 02176",
-          "2014 NAS Discharges": "51",
-          "2014 Discharges for Delivery ": "988",
-          "2014 NAS Discharge Rate per 1000 births": "51.62",
-          "2014 NAS % of Total Births": "5.16%"
-        },
-        {
-          "Hospital Name": "Cape Cod Hospital",
-          "Hospital Address ": "�27 Park St, Hyannis, MA 02601",
-          "2014 NAS Discharges": "36",
-          "2014 Discharges for Delivery ": "782",
-          "2014 NAS Discharge Rate per 1000 births": "46.04",
-          "2014 NAS % of Total Births": "4.60%"
-        },
-        {
-          "Hospital Name": "Berkshire Medical Center",
-          "Hospital Address ": "725 North Street, Pittsfield, MA �01201�",
-          "2014 NAS Discharges": "29",
-          "2014 Discharges for Delivery ": "748",
-          "2014 NAS Discharge Rate per 1000 births": "38.77",
-          "2014 NAS % of Total Births": "3.88%"
-        },
-        {
-          "Hospital Name": "Boston Medical Center",
-          "Hospital Address ": "840 Harrison Ave, Boston, MA 02118",
-          "2014 NAS Discharges": "95",
-          "2014 Discharges for Delivery ": "2520",
-          "2014 NAS Discharge Rate per 1000 births": "37.7",
-          "2014 NAS % of Total Births": "3.77%"
-        },
-        {
-          "Hospital Name": "Morton Hospital",
-          "Hospital Address ": "88 Washington St, Taunton, MA 02780",
-          "2014 NAS Discharges": "12",
-          "2014 Discharges for Delivery ": "365",
-          "2014 NAS Discharge Rate per 1000 births": "32.88",
-          "2014 NAS % of Total Births": "3.29%"
-        },
-        {
-          "Hospital Name": "Baystate Medical Center",
-          "Hospital Address ": "759 Chestnut Street, Springfield, MA 01199",
-          "2014 NAS Discharges": "131",
-          "2014 Discharges for Delivery ": "4100",
-          "2014 NAS Discharge Rate per 1000 births": "31.95",
-          "2014 NAS % of Total Births": "3.20%"
-        },
-        {
-          "Hospital Name": "HealthAlliance Hospital ",
-          "Hospital Address ": "60 Hospital Rd, Leominster, MA 01453",
-          "2014 NAS Discharges": "28",
-          "2014 Discharges for Delivery ": "904",
-          "2014 NAS Discharge Rate per 1000 births": "30.97",
-          "2014 NAS % of Total Births": "3.10%"
-        },
-        {
-          "Hospital Name": "Falmouth Hospital",
-          "Hospital Address ": "100 Ter Heun Dr, Falmouth, MA 02540",
-          "2014 NAS Discharges": "13",
-          "2014 Discharges for Delivery ": "436",
-          "2014 NAS Discharge Rate per 1000 births": "29.82",
-          "2014 NAS % of Total Births": "2.98%"
-        },
-        {
-          "Hospital Name": "St. Elizabeth's Medical Center",
-          "Hospital Address ": "736 Cambridge St, Brighton, MA 02135",
-          "2014 NAS Discharges": "27",
-          "2014 Discharges for Delivery ": "949",
-          "2014 NAS Discharge Rate per 1000 births": "28.45",
-          "2014 NAS % of Total Births": "2.85%"
-        },
-        {
-          "Hospital Name": "Good Samaritan Medical Center",
-          "Hospital Address ": "235 North Pearl Street, Brockton, MA 02301",
-          "2014 NAS Discharges": "24",
-          "2014 Discharges for Delivery ": "957",
-          "2014 NAS Discharge Rate per 1000 births": "25.08",
-          "2014 NAS % of Total Births": "2.51%"
-        },
-        {
-          "Hospital Name": "Signature Healthcare Brockton Hospital",
-          "Hospital Address ": "680 Centre Street, Brockton, MA 02302",
-          "2014 NAS Discharges": "23",
-          "2014 Discharges for Delivery ": "997",
-          "2014 NAS Discharge Rate per 1000 births": "23.07",
-          "2014 NAS % of Total Births": "2.31%"
-        },
-        {
-          "Hospital Name": "Tufts Medical Center",
-          "Hospital Address ": "800 Washington St, Boston, MA 02111",
-          "2014 NAS Discharges": "23",
-          "2014 Discharges for Delivery ": "1074",
-          "2014 NAS Discharge Rate per 1000 births": "21.42",
-          "2014 NAS % of Total Births": "2.14%"
-        },
-        {
-          "Hospital Name": "Lowell General Hospital",
-          "Hospital Address ": "1 Hospital Drive, Lowell, MA 01852",
-          "2014 NAS Discharges": "44",
-          "2014 Discharges for Delivery ": "2291",
-          "2014 NAS Discharge Rate per 1000 births": "19.21",
-          "2014 NAS % of Total Births": "1.92%"
-        },
-        {
-          "Hospital Name": "North Shore Medical Center - Salem Hospital",
-          "Hospital Address ": "81 Highland Avenue, Salem, MA 01970",
-          "2014 NAS Discharges": "23",
-          "2014 Discharges for Delivery ": "1247",
-          "2014 NAS Discharge Rate per 1000 births": "18.44",
-          "2014 NAS % of Total Births": "1.84%"
-        },
-        {
-          "Hospital Name": "UMass Memorial Medical Center",
-          "Hospital Address ": "119 Belmont Street, Worcester, MA 01605",
-          "2014 NAS Discharges": "70",
-          "2014 Discharges for Delivery ": "3894",
-          "2014 NAS Discharge Rate per 1000 births": "17.98",
-          "2014 NAS % of Total Births": "1.80%"
-        },
-        {
-          "Hospital Name": "Lawrence General Hospital",
-          "Hospital Address ": "1 General St, Lawrence, MA 01841",
-          "2014 NAS Discharges": "25",
-          "2014 Discharges for Delivery ": "1448",
-          "2014 NAS Discharge Rate per 1000 births": "17.27",
-          "2014 NAS % of Total Births": "1.73%"
-        },
-        {
-          "Hospital Name": "Beverly Hospital",
-          "Hospital Address ": "85 Herrick St, Beverly, MA 01915",
-          "2014 NAS Discharges": "39",
-          "2014 Discharges for Delivery ": "2270",
-          "2014 NAS Discharge Rate per 1000 births": "17.18",
-          "2014 NAS % of Total Births": "1.72%"
-        },
-        {
-          "Hospital Name": "South Shore Hospital",
-          "Hospital Address ": "55 Fogg Road at Route 18, South Weymouth, MA 02190 ",
-          "2014 NAS Discharges": "58",
-          "2014 Discharges for Delivery ": "3412",
-          "2014 NAS Discharge Rate per 1000 births": "17",
-          "2014 NAS % of Total Births": "1.70%"
-        },
-        {
-          "Hospital Name": "Sturdy Memorial Hospital",
-          "Hospital Address ": "211 Park St, Attleboro, MA 02703",
-          "2014 NAS Discharges": "12",
-          "2014 Discharges for Delivery ": "727",
-          "2014 NAS Discharge Rate per 1000 births": "16.51",
-          "2014 NAS % of Total Births": "1.65%"
-        },
-        {
-          "Hospital Name": "MetroWest Medical Center ",
-          "Hospital Address ": "115 Lincoln St, Framingham, MA 01702",
-          "2014 NAS Discharges": "12",
-          "2014 Discharges for Delivery ": "798",
-          "2014 NAS Discharge Rate per 1000 births": "15.04",
-          "2014 NAS % of Total Births": "1.50%"
-        },
-        {
-          "Hospital Name": "Saint Vincent Hospital",
-          "Hospital Address ": "123 Summer St, Worcester, MA 01608",
-          "2014 NAS Discharges": "24",
-          "2014 Discharges for Delivery ": "1999",
-          "2014 NAS Discharge Rate per 1000 births": "12.01",
-          "2014 NAS % of Total Births": "1.20%"
-        },
-        {
-          "Hospital Name": "Mercy Medical Center",
-          "Hospital Address ": "475 Sumner Ave, Springfield, MA 01108",
-          "2014 NAS Discharges": "13",
-          "2014 Discharges for Delivery ": "1212",
-          "2014 NAS Discharge Rate per 1000 births": "10.73",
-          "2014 NAS % of Total Births": "1.07%"
-        },
-        {
-          "Hospital Name": "Winchester Hospital",
-          "Hospital Address ": "41 Highland Ave, Winchester, MA 01890",
-          "2014 NAS Discharges": "13",
-          "2014 Discharges for Delivery ": "1829",
-          "2014 NAS Discharge Rate per 1000 births": "7.11",
-          "2014 NAS % of Total Births": "0.71%"
-        },
-        {
-          "Hospital Name": "Massachusetts General Hospital",
-          "Hospital Address ": "55 Fruit Street, Boston, MA 02114",
-          "2014 NAS Discharges": "24",
-          "2014 Discharges for Delivery ": "3804",
-          "2014 NAS Discharge Rate per 1000 births": "6.31",
-          "2014 NAS % of Total Births": "0.63%"
-        },
-        {
-          "Hospital Name": "Beth Israel Deaconess Medical Center",
-          "Hospital Address ": "330 Brookline Ave, Boston, MA 02215",
-          "2014 NAS Discharges": "28",
-          "2014 Discharges for Delivery ": "4806",
-          "2014 NAS Discharge Rate per 1000 births": "5.83",
-          "2014 NAS % of Total Births": "0.58%"
-        },
-        {
-          "Hospital Name": "Brigham and Women's Hospital",
-          "Hospital Address ": "75 Francis St, Boston, MA 02115",
-          "2014 NAS Discharges": "27",
-          "2014 Discharges for Delivery ": "6566",
-          "2014 NAS Discharge Rate per 1000 births": "4.11",
-          "2014 NAS % of Total Births": "0.41%"
-        }
-      ],
-      "hed": "a custom hed",
-      "subhed": "a custom subhed",
-      "mappings": {
-        "Hospital Name": "string",
-        "Hospital Address ": "string",
-        "2014 NAS Discharges": "integer",
-        "2014 Discharges for Delivery ": "integer",
-        "2014 NAS Discharge Rate per 1000 births": "float",
-        "2014 NAS % of Total Births": "string"
-      },
-      "sport": "newsroom"
-    }
-  }
+	"_source": {
+		"payload": {
+			"rows": [
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2000",
+					"price": "39.81"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2000",
+					"price": "36.35"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2000",
+					"price": "43.22"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Apr 1 2000",
+					"price": "28.37"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "May 1 2000",
+					"price": "25.45"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jun 1 2000",
+					"price": "32.54"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jul 1 2000",
+					"price": "28.4"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Aug 1 2000",
+					"price": "28.4"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Sep 1 2000",
+					"price": "24.53"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Oct 1 2000",
+					"price": "28.02"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Nov 1 2000",
+					"price": "23.34"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Dec 1 2000",
+					"price": "17.65"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2001",
+					"price": "24.84"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2001",
+					"price": "24"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2001",
+					"price": "22.25"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Apr 1 2001",
+					"price": "27.56"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "May 1 2001",
+					"price": "28.14"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jun 1 2001",
+					"price": "29.7"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jul 1 2001",
+					"price": "26.93"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Aug 1 2001",
+					"price": "23.21"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Sep 1 2001",
+					"price": "20.82"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Oct 1 2001",
+					"price": "23.65"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Nov 1 2001",
+					"price": "26.12"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Dec 1 2001",
+					"price": "26.95"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2002",
+					"price": "25.92"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2002",
+					"price": "23.73"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2002",
+					"price": "24.53"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Apr 1 2002",
+					"price": "21.26"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "May 1 2002",
+					"price": "20.71"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jun 1 2002",
+					"price": "22.25"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jul 1 2002",
+					"price": "19.52"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Aug 1 2002",
+					"price": "19.97"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Sep 1 2002",
+					"price": "17.79"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Oct 1 2002",
+					"price": "21.75"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Nov 1 2002",
+					"price": "23.46"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Dec 1 2002",
+					"price": "21.03"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2003",
+					"price": "19.31"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2003",
+					"price": "19.34"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2003",
+					"price": "19.76"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Apr 1 2003",
+					"price": "20.87"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "May 1 2003",
+					"price": "20.09"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jun 1 2003",
+					"price": "20.93"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jul 1 2003",
+					"price": "21.56"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Aug 1 2003",
+					"price": "21.65"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Sep 1 2003",
+					"price": "22.69"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Oct 1 2003",
+					"price": "21.45"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Nov 1 2003",
+					"price": "21.1"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Dec 1 2003",
+					"price": "22.46"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2004",
+					"price": "22.69"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2004",
+					"price": "21.77"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2004",
+					"price": "20.46"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Apr 1 2004",
+					"price": "21.45"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "May 1 2004",
+					"price": "21.53"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jun 1 2004",
+					"price": "23.44"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jul 1 2004",
+					"price": "23.38"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Aug 1 2004",
+					"price": "22.47"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Sep 1 2004",
+					"price": "22.76"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Oct 1 2004",
+					"price": "23.02"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Nov 1 2004",
+					"price": "24.6"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Dec 1 2004",
+					"price": "24.52"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2005",
+					"price": "24.11"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2005",
+					"price": "23.15"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2005",
+					"price": "22.24"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Apr 1 2005",
+					"price": "23.28"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "May 1 2005",
+					"price": "23.82"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jun 1 2005",
+					"price": "22.93"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jul 1 2005",
+					"price": "23.64"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Aug 1 2005",
+					"price": "25.35"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Sep 1 2005",
+					"price": "23.83"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Oct 1 2005",
+					"price": "23.8"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Nov 1 2005",
+					"price": "25.71"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Dec 1 2005",
+					"price": "24.29"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2006",
+					"price": "26.14"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2006",
+					"price": "25.04"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2006",
+					"price": "25.36"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Apr 1 2006",
+					"price": "22.5"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "May 1 2006",
+					"price": "21.19"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jun 1 2006",
+					"price": "21.8"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jul 1 2006",
+					"price": "22.51"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Aug 1 2006",
+					"price": "24.13"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Sep 1 2006",
+					"price": "25.68"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Oct 1 2006",
+					"price": "26.96"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Nov 1 2006",
+					"price": "27.66"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Dec 1 2006",
+					"price": "28.13"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2007",
+					"price": "29.07"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2007",
+					"price": "26.63"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2007",
+					"price": "26.35"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Apr 1 2007",
+					"price": "28.3"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "May 1 2007",
+					"price": "29.11"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jun 1 2007",
+					"price": "27.95"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jul 1 2007",
+					"price": "27.5"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Aug 1 2007",
+					"price": "27.34"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Sep 1 2007",
+					"price": "28.04"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Oct 1 2007",
+					"price": "35.03"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Nov 1 2007",
+					"price": "32.09"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Dec 1 2007",
+					"price": "34"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2008",
+					"price": "31.13"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2008",
+					"price": "26.07"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2008",
+					"price": "27.21"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Apr 1 2008",
+					"price": "27.34"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "May 1 2008",
+					"price": "27.25"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jun 1 2008",
+					"price": "26.47"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jul 1 2008",
+					"price": "24.75"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Aug 1 2008",
+					"price": "26.36"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Sep 1 2008",
+					"price": "25.78"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Oct 1 2008",
+					"price": "21.57"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Nov 1 2008",
+					"price": "19.66"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Dec 1 2008",
+					"price": "18.91"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2009",
+					"price": "16.63"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2009",
+					"price": "15.81"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2009",
+					"price": "17.99"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Apr 1 2009",
+					"price": "19.84"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "May 1 2009",
+					"price": "20.59"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jun 1 2009",
+					"price": "23.42"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jul 1 2009",
+					"price": "23.18"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Aug 1 2009",
+					"price": "24.43"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Sep 1 2009",
+					"price": "25.49"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Oct 1 2009",
+					"price": "27.48"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Nov 1 2009",
+					"price": "29.27"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Dec 1 2009",
+					"price": "30.34"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Jan 1 2010",
+					"price": "28.05"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Feb 1 2010",
+					"price": "28.67"
+				},
+				{
+					"symbol": "MSFT",
+					"date": "Mar 1 2010",
+					"price": "28.8"
+				}
+			],
+			"hed": "a custom hed",
+			"subhed": "a custom subhed",
+			"mappings": {
+				"symbol": "string",
+				"date": "date",
+				"price": "number"
+			},
+			"encoding": {
+				"x": { "field": "date", "type": "temporal" },
+				"y": { "field": "price", "type": "quantitative" }
+			},
+			"sport": "newsroom"
+		}
+	}
 }

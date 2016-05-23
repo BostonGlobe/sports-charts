@@ -4,6 +4,7 @@ const options = {
 	boolean: Boolean,
 	integer: Number,
 	float: Number,
+	number: Number,
 	object: Object,
 	date: (x) => new Date(x),
 	string: (x) => x.toString(),

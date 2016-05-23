@@ -25,6 +25,7 @@
     "url": "https://github.com/BostonGlobe/sports-charts/issues"
   },
   "dependencies": {
+    "d3": "^4.0.0-alpha.40",
     "d3-array": "0.7.1",
     "d3-axis": "^0.3.0",
     "d3-ease": "^0.7.0",
