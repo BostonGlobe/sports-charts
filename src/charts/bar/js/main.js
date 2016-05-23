@@ -1,11 +1,20 @@
 import { setupIframe } from '../../../utils/setup-iframe'
+import { $ } from '../../../utils/dom.js'
+import chart from './chart.js'
 
 const handleNewPayload = (payload) => {
-	console.log(JSON.stringify({ handleNewPayload: payload }, null, 2))
+
+	$('.chart-container pre').innerHTML =
+		JSON.stringify({ handleEnterView: payload }, null, 2)
+
+	const { rows } = payload
+
+	chart.setup({ data: rows })
+
 }
 
 const handleEnterView = (payload) => {
-	console.log(JSON.stringify({ handleEnterView: payload }, null, 2))
+
 }
 
 const resizeEvent = (width) => {
