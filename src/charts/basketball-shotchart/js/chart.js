@@ -230,7 +230,6 @@ function handleResize() {
 }
 
 function resizeEvent(width) {
-	console.log(width)
 	globalWidth = width
 	handleResize()
 }
