@@ -23,8 +23,8 @@ const courtRatio = courtHeight / courtWidth
 const hexbinner = hexbin()
 
 const scales = {
-	shotX: scaleLinear(),
-	shotY: scaleLinear(),
+	shotX: scaleLinear().domain([left, right]),
+	shotY: scaleLinear().domain([top, bottom]),
 	color: scaleQuantize().range(colorClasses),
 	delay: scaleOrdinal().domain(colorClasses).range(delayRange),
 }
@@ -36,7 +36,7 @@ const fills = {
 	'below-threshold': 'transparent',
 }
 
-const binOffset = 1.5
+const binOffset = 0.5
 let globalChartbuilder = false
 let globalWidth = 280
 let readyToResize = false
@@ -63,8 +63,8 @@ function updateContainer({ width, height }) {
 // create new stripe svg pattern for hex fills
 function updatePattern() {
 	$('.pattern-container').innerHTML = ''
-	const binRadius = getBinRadius()
-	const patternSize = Math.floor((binRadius - 1) / 2)
+	const binRadius = getBinRadius() - 1
+	const patternSize = Math.floor(binRadius / 2)
 
 	const pattern = select('.pattern-container')
 		.append('svg')
@@ -90,10 +90,9 @@ function updateKey() {
 	const g = svg.select('.hex-group')
 
 	const range = scales.color.range()
-	const binRadius = getBinRadius()
-	const sz = binRadius - 1
-	const padding = sz * 2
-	const height = sz * 3
+	const binRadius = getBinRadius() - 1
+	const padding = binRadius * 2
+	const height = binRadius * 3
 
 	svg.attr('width', padding * 4).attr('height', height)
 	g.attr('transform', `translate(${padding / 2},${height / 2})`)
@@ -112,13 +111,13 @@ function updateKey() {
 			.style('stroke', colors['celtics-team'])
 			.attr('d', hexbinner.hexagon(0))
 		.merge(hexagons)
-		.attr('transform', (d, i) => `translate(${i * sz * 2 + sz}, 0)`)
-		.attr('d', hexbinner.hexagon(binRadius - binOffset))
+		.attr('transform', (d, i) => `translate(${i * binRadius * 2 + binRadius}, 0)`)
+		.attr('d', hexbinner.hexagon(binRadius))
 }
 
 // render hexagons to chart
 function updateDOM() {
-	const binRadius = getBinRadius()
+	const binRadius = getBinRadius() - binOffset
 
 	$('.hexbin').innerHTML = ''
 	// bind data and set key
@@ -150,7 +149,7 @@ function updateDOM() {
 				if (hex.category === 'below-threshold') return 0
 				return globalChartbuilder ? 0 : scales.delay(hex.category)
 			})
-			.attr('d', hexbinner.hexagon(binRadius - binOffset))
+			.attr('d', hexbinner.hexagon(binRadius))
 }
 
 // make averages global for resize computations and update bins
