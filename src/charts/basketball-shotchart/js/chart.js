@@ -6,16 +6,14 @@ import { hexbin } from 'd3-hexbin'
 import { $, addClass, removeClass, hasClass } from '../../../utils/dom'
 import colors from '../../../utils/colors'
 import drawCourt from './drawCourt'
-import getWeightedAverage from './getWeightedAverage'
 
 import {
 	dimensions,
 	binRatio,
 	delayRange,
 	transitionDuration,
-	percentRange,
 	colorClasses,
-	minShotsThreshold,
+
 } from './config'
 
 const { left, right, top, bottom } = dimensions
@@ -25,9 +23,9 @@ const courtRatio = courtHeight / courtWidth
 const hexbinner = hexbin()
 
 const scales = {
-	shotX: scaleLinear(),
-	shotY: scaleLinear(),
-	color: scaleQuantize(),
+	shotX: scaleLinear().domain([left, right]),
+	shotY: scaleLinear().domain([top, bottom]),
+	color: scaleQuantize().range(colorClasses),
 	delay: scaleOrdinal().domain(colorClasses).range(delayRange),
 }
 
@@ -38,53 +36,15 @@ const fills = {
 	'below-threshold': 'transparent',
 }
 
+const binOffset = 0.5
 let globalChartbuilder = false
-const globalData = {}
-
-
-// --- HELPERS ---
-// function debugPoints(points) {
-// 	select('.hexbin')
-// 		.selectAll('circle')
-// 		.data(points)
-// 		.enter()
-// 		.append('circle')
-// 		.attr('cx', d => d.x)
-// 		.attr('cy', d => d.y)
-// 		.attr('r', 4)
-// 		.style('opacity', 1)
-// 		.style('stroke', 'red')
-// 		.style('fill', d => d.made ? 'black' : 'white')
-// }
+let globalWidth = 280
+let readyToResize = false
+let globalRows = []
 
 function getBinRadius() {
-	return globalWidth * binRatio
+	return Math.floor(globalWidth * binRatio)
 }
-
-// how many shots were made in this hex bin
-function getHexMade(d) {
-	return d.reduce((previous, current) => {
-		const datum = current[2]
-		const madeValue = datum.made ? 1 : 0
-		const next = previous + madeValue
-		return next
-	}, 0)
-}
-
-// calculate bin avg. vs. league avg. and return proper color
-function getColor({ hex, averages }) {
-	if (hex.length > minShotsThreshold) {
-		const made = getHexMade(hex)
-		const average = getWeightedAverage({ hex, averages })
-		const percent = +((made / hex.length * 1000) / 10).toFixed(2)
-		const diff = percent - average
-		const color = scales.color(diff)
-		return `${color} bin-radius-${getBinRadius()}`
-	}
-
-	return 'below-threshold'
-}
-
 
 // --- UPDATE ---
 
@@ -103,8 +63,8 @@ function updateContainer({ width, height }) {
 // create new stripe svg pattern for hex fills
 function updatePattern() {
 	$('.pattern-container').innerHTML = ''
-	const binRadius = getBinRadius()
-	const patternSize = Math.floor((binRadius - 1) / 2)
+	const binRadius = getBinRadius() - 1
+	const patternSize = Math.floor(binRadius / 2)
 
 	const pattern = select('.pattern-container')
 		.append('svg')
@@ -130,10 +90,9 @@ function updateKey() {
 	const g = svg.select('.hex-group')
 
 	const range = scales.color.range()
-	const binRadius = getBinRadius()
-	const sz = binRadius - 1
-	const padding = sz * 2
-	const height = sz * 3
+	const binRadius = getBinRadius() - 1
+	const padding = binRadius * 2
+	const height = binRadius * 3
 
 	svg.attr('width', padding * 4).attr('height', height)
 	g.attr('transform', `translate(${padding / 2},${height / 2})`)
@@ -152,17 +111,19 @@ function updateKey() {
 			.style('stroke', colors['celtics-team'])
 			.attr('d', hexbinner.hexagon(0))
 		.merge(hexagons)
-		.attr('transform', (d, i) => `translate(${i * sz * 2 + sz}, 0)`)
-		.attr('d', hexbinner.hexagon(sz))
+		.attr('transform', (d, i) => `translate(${i * binRadius * 2 + binRadius}, 0)`)
+		.attr('d', hexbinner.hexagon(binRadius))
 }
 
 // render hexagons to chart
-function updateDOM({ hexbinData, averages }) {
+function updateDOM() {
+	const binRadius = getBinRadius() - binOffset
+
 	$('.hexbin').innerHTML = ''
 	// bind data and set key
 	const hexagons = select('.hexbin')
 		.selectAll('.hexagon')
-		.data(hexbinData, d => `${d.i}-${d.j}`)
+		.data(globalRows, d => [d.x, d.y, { ...d }])
 
 	hexagons.exit().remove()
 
@@ -170,64 +131,33 @@ function updateDOM({ hexbinData, averages }) {
 	const enterSelection = hexagons.enter()
 		.append('path')
 			.attr('class', 'hexagon')
+			// .attr('d', d => createHexagon())
 			.attr('d', hexbinner.hexagon(0))
 
 	// position, color, and scale all hexagons
 	enterSelection.merge(hexagons)
-		.attr('transform', hex => `translate(${hex.x}, ${hex.y})`)
-		.attr('class', hex => getColor({ hex, averages }))
-		.style('fill', hex => {
-			const cat = getColor({ hex, averages }).split(' ')[0]
-			return fills[cat]
-		})
-		.style('stroke', hex => {
-			const cat = getColor({ hex, averages }).split(' ')[0]
-			return cat === 'below-threshold' ? 'transparent' : colors['celtics-team']
-		})
+		.attr('transform', hex => `translate(${scales.shotX(hex.x)}, ${scales.shotY(hex.y)})`)
+		.attr('class', hex => `${hex.category} bin-radius-${getBinRadius()}`)
+		.style('fill', hex => fills[hex.category])
+		.style('stroke', hex =>
+			hex.category === 'below-threshold' ? 'transparent' : colors['celtics-team']
+		)
 		.transition()
 			.duration(globalChartbuilder ? 0 : transitionDuration)
 			.ease(easeQuadOut)
 			.delay(hex => {
-				const className = getColor({ hex, averages }).split(' ')[0]
-				if (className === 'below-threshold') return 0
-				return globalChartbuilder ? 0 : scales.delay(className)
+				if (hex.category === 'below-threshold') return 0
+				return globalChartbuilder ? 0 : scales.delay(hex.category)
 			})
-			.attr('d', hexbinner.hexagon(getBinRadius() - 1))
-}
-
-// compute new aggregation of points to bins
-function updateBins() {
-
-	const { averages, rows } = globalData
-
-	// get x,y coords for each shot
-	const points = rows.map(shot => ({
-		...shot,
-		x: scales.shotX(shot.shotX),
-		y: scales.shotY(shot.shotY),
-	}))
-
-	// bin data into hexes
-	const hexbinData = hexbinner(points.map(point =>
-		[point.x, point.y, { ...point }]
-	))
-
-	// make updates
-	updateDOM({ hexbinData, averages })
-
-	// debug
-	// debugPoints(points)
-
-	return true
+			.attr('d', hexbinner.hexagon(binRadius))
 }
 
 // make averages global for resize computations and update bins
 function updateData({ rows, isChartbuilder }) {
 	// make it global so we can reuse on resize
-	globalData.averages = rows.filter(r => r._type === 'basketball-averages')
-	globalData.rows = rows.filter(r => r._type === 'basketball-shotchart')
+	globalRows = rows.map(r => ({ x: +r.x, y: +r.y, category: r.category }))
 	globalChartbuilder = isChartbuilder
-	updateBins()
+	updateDOM()
 }
 
 
@@ -245,15 +175,6 @@ function setupDOM() {
 		.attr('id', 'clip')
 		.append('rect')
 			.attr('class', 'mesh')
-}
-
-// basic domain/range for scales
-function setupScales() {
-	scales.shotX.domain([left, right])
-	scales.shotY.domain([top, bottom])
-	scales.color
-		.domain([-percentRange, percentRange])
-		.range(colorClasses)
 }
 
 // setup dom for key
@@ -282,15 +203,7 @@ function setupExplainer() {
 }
 
 // handle resize
-let globalWidth = 300
-let readyToResize = false
-function handleResize(pymWidth) {
-
-	// TODO: re-enable the bit below to get responsive charts
-	if (pymWidth) {
-		globalWidth = pymWidth
-	}
-
+function handleResize() {
 	if (readyToResize) {
 		const width = globalWidth
 		const height = Math.floor(width * courtRatio)
@@ -311,15 +224,18 @@ function handleResize(pymWidth) {
 		$('.basket').innerHTML = ''
 		drawCourt({ court, basket, width, height })
 
-		if (globalData.rows) updateBins()
-
+		if (globalRows) updateDOM()
 	}
+}
+
+function resizeEvent(width) {
+	globalWidth = width
+	handleResize()
 }
 
 // initialize chart
 function setup() {
 	setupDOM()
-	setupScales()
 	setupKey()
 	setupExplainer()
 
@@ -329,4 +245,4 @@ function setup() {
 	updateKey()
 }
 
-export default { setup, updateData }
+export default { setup, updateData, resizeEvent }

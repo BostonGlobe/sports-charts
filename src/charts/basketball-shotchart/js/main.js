@@ -9,4 +9,4 @@ const handleEnterView = (payload) => {
 }
 
 setupIframe({ handleNewPayload, handleEnterView,
-	resizeEvent: chart.handleResize })
+	resizeEvent: chart.resizeEvent })
