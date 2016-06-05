@@ -36,7 +36,7 @@ const fills = {
 	'below-threshold': 'transparent',
 }
 
-const binOffset = 0.5
+const binOffset = 1
 let globalChartbuilder = false
 let globalWidth = 280
 let readyToResize = false
