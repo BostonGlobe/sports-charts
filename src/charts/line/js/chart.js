@@ -36,16 +36,6 @@ const setupScales = ({ rows, mappings, encoding, width, height }) => {
 
 const setup = ({ rows, mappings, encoding, axesLabels }) => {
 
-	// hardcode chart to these dimensions for now
-	const outerWidth = 300
-	const outerHeight = outerWidth * 0.75
-
-	// setup svg
-	const root = d3.select($svg)
-
-	// setup svg g
-	const svg = root.append('g')
-
 	// create line data
 	const lineData = _(rows)
 		.groupBy(encoding.color ? encoding.color.field : _.noop)
@@ -60,6 +50,12 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 		.map(d => _.last(d.value))
 		.value()
 
+	// setup svg
+	const root = d3.select($svg)
+
+	// setup svg g
+	const svg = root.append('g')
+
 	// create hidden labels container
 	const hiddenLabels = svg.append('g')
 		.attr('class', 'labels-hidden')
@@ -68,14 +64,19 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 	hiddenLabels.selectAll('text')
 			.data(labelData)
 		.enter().append('text')
-		.text(d => d.symbol)
+		.text(d => d[encoding.color.field])
 
 	// get hidden labels bbox
 	const labelsBBox = hiddenLabels.node().getBBox()
 	const labelsWidth = labelsBBox.width
+	const labelsHeight = hiddenLabels.select('text').node().getBBox().height
+
+	// hardcode chart to these dimensions for now
+	const outerWidth = 300
+	const outerHeight = outerWidth * 0.75
 
 	// setup margins
-	const margin = { top: 20, right: labelsWidth + 5, bottom: 20, left: 50 }
+	const margin = { top: 25, right: labelsWidth, bottom: 25, left: 50 }
 	const width = outerWidth - margin.left - margin.right
 	const height = outerHeight - margin.top - margin.bottom
 
@@ -99,6 +100,8 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 		.attr('class', 'axis axis--x')
 		.attr('transform', `translate(0, ${height})`)
 		.call(d3.axisBottom(x)
+			.tickSize(0)
+			.tickPadding(5)
 			.ticks(5)
 		)
 
@@ -106,12 +109,13 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 	svg.append('g')
 		.attr('class', 'axis axis--y')
 		.call(d3.axisLeft(y)
+			.tickSize(0)
 			.ticks(5)
 		)
 	.append('text')
 		.attr('class', 'axis-title')
 		.attr('y', 0)
-		.attr('dy', '-0.5em')
+		.attr('dy', '-0.75em')
 		.style('text-anchor', 'end')
 		.text(axesLabels.y || titleize(encoding.y.field))
 
@@ -126,17 +130,17 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 
 	// setup labels
 	const textLabel = labeler.textLabel()
-		.padding(3)
-		.value(d => d.symbol)
+		.padding(0)
+		.value(d => d[encoding.color.field])
 
 	const labelStrategy = labeler.annealing()
 		.bounds([width, height])
 
 	const labels = labeler.label(labelStrategy)
-		.size(d => [labelsWidth, 16])
+		.size(d => [labelsWidth, labelsHeight + 2])
 		.position(d => [
-			x(d.date),
-			y(d.price),
+			x(d[encoding.x.field]),
+			y(d[encoding.y.field]),
 		])
 		.component(textLabel)
 

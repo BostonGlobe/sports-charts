@@ -1,9 +1,24 @@
+$color-highlight-1 = #c1604e
+$color-highlight-2 = #58889e
+$color-highlight-3 = #9cbb70
+$color-secondary = #777
+$color-axis = #aaa
+$color-ticks = #666
+$color-axis-title = #666
+
 svg
 
-	border solid red 1px
+	// border solid red 1px
 
 	.axis
-		font-size 0.7em
+		.tick
+			font-size 0.7em
+			fill $color-ticks
+		.axis-title
+			font-size 0.8em
+			fill $color-axis-title
+		path.domain
+			stroke $color-axis
 
 	.axis path,
 	.axis line
@@ -16,40 +31,45 @@ svg
 			fill none
 			stroke black
 			&.line-0
-				stroke red
+				stroke $color-highlight-1
+				stroke-width 2px
 			&.line-1
-				stroke blue
+				stroke $color-secondary
 			&.line-2
-				stroke brown
+				stroke $color-secondary
 			&.line-3
-				stroke green
+				stroke $color-secondary
 			&.line-4
-				stroke pink
+				stroke $color-secondary
+
+	g.labels-hidden
+		visibility hidden
 
 	g.labels,
 	g.labels-hidden
 
+		circle, rect
+			display none
+
 		g.label:nth-child(1)
 			text
-				fill red
+				fill $color-highlight-1
 
 		g.label:nth-child(2)
 			text
-				fill blue
+				fill $color-secondary
 
 		g.label:nth-child(3)
 			text
-				fill brown
+				fill $color-secondary
 
 		g.label:nth-child(4)
 			text
-				fill green
+				fill $color-secondary
 
 		g.label:nth-child(5)
 			text
-				fill pink
+				fill $color-secondary
 
-		rect
-			fill none
 		text
-			font-size 0.8em
+			font-size 0.9em
