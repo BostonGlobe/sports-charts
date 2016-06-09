@@ -11,7 +11,46 @@ svg
 		stroke blue
 		shape-rendering crispEdges
 
-	path
-		fill none
-		stroke red
+	g.lines
+		path
+			fill none
+			stroke black
+			&.line-0
+				stroke red
+			&.line-1
+				stroke blue
+			&.line-2
+				stroke brown
+			&.line-3
+				stroke green
+			&.line-4
+				stroke pink
 
+	g.line-labels
+
+	g.labels
+
+		g.label:nth-child(1)
+			text
+				fill red
+
+		g.label:nth-child(2)
+			text
+				fill blue
+
+		g.label:nth-child(3)
+			text
+				fill brown
+
+		g.label:nth-child(4)
+			text
+				fill green
+
+		g.label:nth-child(5)
+			text
+				fill pink
+
+		rect
+			fill none
+		text
+			font-size 0.8em

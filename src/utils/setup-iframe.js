@@ -10,6 +10,7 @@ let pymChild = null
 
 const convertPayload = ({ rows, mappings, ...other }) => ({
 	...other,
+	mappings,
 	rows: convertRows({ rows, mappings }),
 })
 
