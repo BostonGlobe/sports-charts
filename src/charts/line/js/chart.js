@@ -40,16 +40,50 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 	const outerWidth = 300
 	const outerHeight = outerWidth * 0.75
 
+	// setup svg
+	const root = d3.select($svg)
+
+	// setup svg g
+	const svg = root.append('g')
+
+	// create line data
+	const lineData = _(rows)
+		.groupBy(encoding.color ? encoding.color.field : _.noop)
+		.map((value, key) => ({
+			key,
+			value,
+		}))
+		.value()
+
+	// create label data
+	const labelData = _(lineData)
+		.map(d => _.last(d.value))
+		.value()
+
+	// create hidden labels container
+	const hiddenLabels = svg.append('g')
+		.attr('class', 'labels-hidden')
+
+	// add hidden labels
+	hiddenLabels.selectAll('text')
+			.data(labelData)
+		.enter().append('text')
+		.text(d => d.symbol)
+
+	// get hidden labels bbox
+	const labelsBBox = hiddenLabels.node().getBBox()
+	const labelsWidth = labelsBBox.width
+
 	// setup margins
-	const margin = { top: 20, right: 40, bottom: 25, left: 45 }
+	const margin = { top: 20, right: labelsWidth + 5, bottom: 20, left: 50 }
 	const width = outerWidth - margin.left - margin.right
 	const height = outerHeight - margin.top - margin.bottom
 
-	// setup svg
-	const svg = d3.select($svg)
+	root
 		.attr('width', outerWidth)
 		.attr('height', outerHeight)
-	.append('g')
+
+	svg
 		.attr('transform', `translate(${margin.left}, ${margin.top})`)
 
 	// setup scales
@@ -81,14 +115,6 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 		.style('text-anchor', 'end')
 		.text(axesLabels.y || titleize(encoding.y.field))
 
-	const lineData = _(rows)
-		.groupBy(encoding.color ? encoding.color.field : _.noop)
-		.map((value, key) => ({
-			key,
-			value,
-		}))
-		.value()
-
 	// setup lines
 	svg.append('g')
 			.attr('class', 'lines')
@@ -100,27 +126,23 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 
 	// setup labels
 	const textLabel = labeler.textLabel()
-		.padding(2)
+		.padding(3)
 		.value(d => d.symbol)
 
 	const labelStrategy = labeler.annealing()
 		.bounds([width, height])
 
 	const labels = labeler.label(labelStrategy)
-		.size(d => [width, 16])
+		.size(d => [labelsWidth, 16])
 		.position(d => [
 			x(d.date),
 			y(d.price),
 		])
 		.component(textLabel)
 
-	const labelData = _(lineData)
-		.map(d => _.last(d.value))
-		.value()
-
 	svg.append('g')
 			.attr('class', 'labels')
-			.attr('transform', `translate(${width}, 0)`)
+			.attr('transform', `translate(${labelsWidth}, 0)`)
 		.datum(labelData)
 			.call(labels)
 
