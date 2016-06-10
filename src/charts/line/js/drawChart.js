@@ -74,6 +74,13 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 
 	if (margins) {
 
+		// make curtain clip
+		const curtainClip = g.append('clipPath')
+				.attr('id', 'clip')
+			.append('rect')
+				.attr('height', height)
+				.attr('width', 0)
+
 		// setup line generator
 		const line = d3.line()
 			.x(d => x(d[encoding.x.field]))
@@ -88,6 +95,19 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 			.enter().append('path')
 				.attr('d', d => line(d.value))
 				.attr('class', (d, i) => `line-${i}`)
+				.attr('clip-path', 'url(#clip)')
+
+		curtainClip.transition()
+			.duration(2000)
+			.attr('width', width)
+			.on('end', () => {
+
+				svg.selectAll('g.labels')
+					.transition()
+					.duration(250)
+					.style('opacity', 1)
+
+			})
 
 		// setup labels
 		const textLabel = labeler.textLabel()
@@ -106,7 +126,7 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 			.component(textLabel)
 
 		svg.append('g')
-				.attr('class', 'labels')
+				.attr('class', 'labels hidden')
 				.attr('transform', `translate(${margins.right*2}, 0)`)
 			.datum(labelData)
 				.call(labels)
