@@ -1,46 +1,29 @@
-$color-highlight-1 = #c1604e
-$color-highlight-2 = #58889e
-$color-highlight-3 = #9cbb70
-$color-secondary = #777
-$color-axis = #aaa
-$color-ticks = #666
-$color-axis-title = #666
-
 svg
 
 	// border solid red 1px
 
 	.axis
 		.tick
-			font-size 0.7em
-			fill $color-ticks
+			font-size 0.6em
 		.axis-title
-			font-size 0.8em
-			fill $color-axis-title
+			font-size 0.9em
 		path.domain
-			stroke $color-axis
+			stroke none
 
 	.axis path,
 	.axis line
 		fill none
-		stroke blue
+		stroke lighten(black, 75)
 		shape-rendering crispEdges
+
+	.axis line
+		stroke-dasharray 1 4
 
 	g.lines
 		path
 			fill none
 			stroke black
-			&.line-0
-				stroke $color-highlight-1
-				stroke-width 2px
-			&.line-1
-				stroke $color-secondary
-			&.line-2
-				stroke $color-secondary
-			&.line-3
-				stroke $color-secondary
-			&.line-4
-				stroke $color-secondary
+			stroke-width 1px
 
 	g.labels-hidden
 		visibility hidden
@@ -51,25 +34,5 @@ svg
 		circle, rect
 			display none
 
-		g.label:nth-child(1)
-			text
-				fill $color-highlight-1
-
-		g.label:nth-child(2)
-			text
-				fill $color-secondary
-
-		g.label:nth-child(3)
-			text
-				fill $color-secondary
-
-		g.label:nth-child(4)
-			text
-				fill $color-secondary
-
-		g.label:nth-child(5)
-			text
-				fill $color-secondary
-
 		text
-			font-size 0.9em
+			font-size 0.8em

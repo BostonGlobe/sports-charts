@@ -76,7 +76,7 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 	const outerHeight = outerWidth * 0.75
 
 	// setup margins
-	const margin = { top: 25, right: labelsWidth, bottom: 25, left: 50 }
+	const margin = { top: 30, right: labelsWidth, bottom: 15, left: 30 }
 	const width = outerWidth - margin.left - margin.right
 	const height = outerHeight - margin.top - margin.bottom
 
@@ -94,6 +94,7 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 	const line = d3.line()
 		.x(d => x(d[encoding.x.field]))
 		.y(d => y(d[encoding.y.field]))
+		.curve(d3.curveMonotoneX)
 
 	// setup x axis
 	svg.append('g')
@@ -106,17 +107,24 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 		)
 
 	// setup y axis
-	svg.append('g')
+	const yAxis = svg.append('g')
 		.attr('class', 'axis axis--y')
+		.attr('transform', `translate(${-margin.left}, 0)`)
 		.call(d3.axisLeft(y)
-			.tickSize(0)
+			.tickSize(-(width + margin.left))
 			.ticks(5)
 		)
-	.append('text')
+
+	yAxis.selectAll('text')
+		.attr('dx', 5)
+		.attr('dy', -3)
+		.style('text-anchor', 'start')
+
+	yAxis.append('text')
 		.attr('class', 'axis-title')
 		.attr('y', 0)
-		.attr('dy', '-0.75em')
-		.style('text-anchor', 'end')
+		.attr('dy', '-1.25em')
+		.style('text-anchor', 'start')
 		.text(axesLabels.y || titleize(encoding.y.field))
 
 	// setup lines
