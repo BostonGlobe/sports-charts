@@ -12,7 +12,7 @@ const outerWidth = 300
 const outerHeight = outerWidth * 0.75
 
 // TODO
-// add initial transition
+// hook up initial transition to enter-view
 // sort values
 // deal with baseline/no baseline
 
