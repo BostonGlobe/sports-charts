@@ -41,6 +41,10 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 			.ticks(5)
 		)
 
+	// style x-axis ticks
+	xAxis.selectAll('text')
+		.classed('benton-regular', true)
+
 	// draw y-axis
 	const yAxis = g.append('g')
 		.attr('class', 'axis axis--y')
@@ -54,6 +58,7 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 	// style y-axis ticks
 	yAxis.selectAll('text')
 		.attr('dy', -2)
+		.classed('benton-regular', true)
 		.style('text-anchor', 'start')
 
 	// create hidden labels container
