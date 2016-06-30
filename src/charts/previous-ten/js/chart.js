@@ -51,7 +51,7 @@ const updateData = (rows) => {
 					<td>${r.score}</td>
 					<td>${r.where}</td>
 					<td>${r.opponentAbbr}</td>
-					<td><a href='${r.storyUrl}' target='_blank'>${dateline(r.gameDate).getAPDate()}</a></td>
+					<td><a class='game-date' href='${r.storyUrl}' target='_blank'>${dateline(r.gameDate).getAPDate()}</a></td>
 				</tr>
 			`
 		})
