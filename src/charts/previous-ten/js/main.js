@@ -5,7 +5,7 @@ const handleNewData = (rows) => chart.updateData(rows)
 
 const handleNewPayload = (payload) => {
 	const { rows } = payload
-	if (rows) handleNewData(rows)
+	if (rows && rows.length) handleNewData(rows)
 }
 
 const handleEnterView = () => {
