@@ -37,6 +37,7 @@ const cleanRows = (rows) =>
 		.map(getStreak)
 
 const updateData = (rows) => {
+
 	const clean = cleanRows(rows)
 
 	const team = rows[0].teamNickname
@@ -50,7 +51,7 @@ const updateData = (rows) => {
 					<td>${r.score}</td>
 					<td>${r.where}</td>
 					<td>${r.opponentAbbr}</td>
-					<td>${dateline(r.gameDate).getAPDate()}</td>
+					<td><a href='${r.storyUrl}' target='_blank'>${dateline(r.gameDate).getAPDate()}</a></td>
 				</tr>
 			`
 		})
