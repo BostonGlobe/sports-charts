@@ -1,81 +1,49 @@
 import d3 from 'd3'
+import _ from 'lodash'
 import { $ } from '../../../utils/dom.js'
+import { titleize } from 'underscore.string'
+import drawChart from './drawChart.js'
 
 // convenience variables
 const container = $('.chart-container')
-const $svg = $('.chart-container svg')
+
+// hardcode chart to these dimensions for now
+const outerWidth = 300
+const outerHeight = outerWidth * 0.75
 
 // TODO
-// label end datum
-// setup automatic padding
+// hook up initial transition to enter-view
+// sort values
+// deal with baseline/no baseline
 
-const setupScales = ({ rows, mappings, encoding, width, height }) => {
+const setup = ({ rows, mappings, encoding, axesLabels }) => {
 
-	const options = {
-		temporal: d3.scaleTime,
-		quantitative: d3.scaleLinear,
-	}
+	// create line data
+	const lineData = _(rows)
+		.groupBy(encoding.color ? encoding.color.field : _.noop)
+		.map((value, key) => ({
+			key,
+			value,
+		}))
+		.value()
 
-	const x = options[encoding.x.type]()
-		.range([0, width])
-		.domain(d3.extent(rows, d => d[encoding.x.field]))
+	// create label data
+	const labelData = _(lineData)
+		.map(d => _.last(d.value))
+		.value()
 
-	const y = options[encoding.y.type]()
-		.range([height, 0])
-		.domain(d3.extent(rows, d => d[encoding.y.field]))
+	// we are going to draw the chart in 2 stages:
+	// first we'll draw a chart with default margins, axes, no lines
+	// we'll get the axes dimensions and then...
+	const margins = drawChart({ container, outerWidth, outerHeight, rows,
+		mappings, encoding, lineData, labelData })
 
-	return { x, y }
+	// ...redraw the chart, this time with the correct margins
+	drawChart({ container, outerWidth, outerHeight, rows, mappings, margins,
+		encoding, lineData, labelData })
 
-}
-
-const setup = ({ rows, mappings, encoding }) => {
-
-	// hardcode chart to these dimensions for now
-	const outerWidth = 300
-	const outerHeight = outerWidth * 0.75
-
-	// setup margins
-	const margin = { top: 20, right: 20, bottom: 30, left: 70 }
-	const width = outerWidth - margin.left - margin.right
-	const height = outerHeight - margin.top - margin.bottom
-
-	// setup svg
-	const svg = d3.select($svg)
-		.attr('width', outerWidth)
-		.attr('height', outerHeight)
-	.append('g')
-		.attr('transform', `translate(${margin.left}, ${margin.top})`)
-
-	// setup scales
-	const { x, y } = setupScales({ rows, mappings, encoding, width, height })
-
-	// setup line generator
-	const line = d3.line()
-		.x(d => x(d[encoding.x.field]))
-		.y(d => y(d[encoding.y.field]))
-
-	svg.append('g')
-		.attr('class', 'axis axis--x')
-		.attr('transform', `translate(0, ${height})`)
-		.call(d3.axisBottom(x)
-			.ticks(5)
-		)
-
-	svg.append('g')
-		.attr('class', 'axis axis--y')
-		.call(d3.axisLeft(y)
-			.ticks(5)
-		)
-	.append('text')
-		.attr('class', 'axis-title')
-		.attr('y', 0)
-		.attr('dy', '-0.5em')
-		.style('text-anchor', 'end')
-		.text('Price ($)')
-
-	svg.append('path')
-		.datum(rows)
-		.attr('d', line)
+	$('.chart-y-axis-title').innerHTML =
+		axesLabels.y || titleize(encoding.y.field)
 
 }
 

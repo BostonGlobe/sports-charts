@@ -1,17 +1,43 @@
+.chart-y-axis-title
+	font-size 0.8em
+
 svg
 
-	border solid red 1px
+	&.hidden
+		visibility hidden
 
 	.axis
-		font-size 0.7em
+		.tick
+			font-size 0.6em
+		path.domain
+			stroke none
 
 	.axis path,
 	.axis line
 		fill none
-		stroke blue
+		stroke lighten(black, 75)
 		shape-rendering crispEdges
 
-	path
-		fill none
-		stroke red
+	.axis line
+		stroke-dasharray 1 4
 
+	g.lines
+		path
+			fill none
+			stroke black
+			stroke-width 1px
+
+	g.labels-hidden
+		visibility hidden
+
+	g.labels,
+	g.labels-hidden
+
+		&.hidden
+			opacity 0
+
+		circle, rect
+			display none
+
+		text
+			font-size 0.8em
