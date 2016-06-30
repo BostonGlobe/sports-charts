@@ -16,7 +16,8 @@ const outerHeight = outerWidth * 0.75
 // sort values
 // deal with baseline/no baseline
 
-const setup = ({ rows, mappings, encoding, axesLabels }) => {
+const setup = ({ rows, mappings, encoding, source, credits,
+	axesLabels }) => {
 
 	// create line data
 	const lineData = _(rows)
@@ -44,6 +45,10 @@ const setup = ({ rows, mappings, encoding, axesLabels }) => {
 
 	$('.chart-y-axis-title').innerHTML =
 		axesLabels.y || titleize(encoding.y.field)
+
+	// populate source/credits
+	$('footer .source span').innerHTML = source
+	$('footer .credits span').innerHTML = credits
 
 }
 

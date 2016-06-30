@@ -2803,8 +2803,8 @@
 					"price": "223.02"
 				}
 			],
-			"hed": "a line hed",
-			"subhed": "a custom subhed",
+			"hed": "stock market down 5 percent",
+			"subhed": "The Dow Jones industrial average briefly fell more than 1,000 points during early morning trading",
 			"mappings": {
 				"symbol": "string",
 				"date": "date",
@@ -2818,6 +2818,8 @@
 			"axesLabels": {
 				"y": "Price ($)"
 			},
+			"source": "MassGIS, DCR",
+			"credits": "Gabriel Florit, Tonia Cowan",
 			"sport": "newsroom"
 		}
 	}
