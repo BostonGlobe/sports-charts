@@ -102,11 +102,14 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 				.attr('class', (d, i) => `line-${i}`)
 				.attr('clip-path', 'url(#clip)')
 
+		// transition out the curtain, left-to-right
 		curtainClip.transition()
 			.duration(2000)
 			.attr('width', width)
 			.on('end', () => {
 
+				// when the transition is done, and all lines are visible,
+				// fade in the line labels
 				svg.selectAll('g.labels')
 					.transition()
 					.duration(250)
