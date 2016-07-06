@@ -1,6 +1,9 @@
-import d3 from 'd3'
 import setupScales from './setupScales.js'
-import labeler from 'd3fc-label-layout'
+// import labeler from 'd3fc-label-layout'
+import { select, selectAll } from 'd3-selection'
+import { axisBottom, axisLeft } from 'd3-axis'
+import { line, curveMonotoneX } from 'd3-shape'
+import { transition } from 'd3-transition'
 
 const defaultMargins = { top: 50, right: 50, bottom: 50, left: 50 }
 
@@ -13,13 +16,13 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 	const height = outerHeight - top - bottom
 
 	// get existing svg
-	let svg = d3.select(container).select('svg')
+	let svg = select(container).select('svg')
 
 	// if present, remove it
 	if (svg) svg.remove()
 
 	// create it again
-	svg = d3.select(container).append('svg')
+	svg = select(container).append('svg')
 		.classed('hidden', !margins)
 		.attr('width', outerWidth)
 		.attr('height', outerHeight)
@@ -35,7 +38,7 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 	const xAxis = g.append('g')
 		.attr('class', 'axis axis--x')
 		.attr('transform', `translate(0, ${height})`)
-		.call(d3.axisBottom(x)
+		.call(axisBottom(x)
 			.tickSize(0)
 			.tickPadding(5)
 			.ticks(5)
@@ -49,7 +52,7 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 	const yAxis = g.append('g')
 		.attr('class', 'axis axis--y')
 		.attr('transform', `translate(${!!margins ? -left : 0}, 0)`)
-		.call(d3.axisLeft(y)
+		.call(axisLeft(y)
 			.tickSize(!!margins ? -(width + left) : 0)
 			.tickPadding(0)
 			.ticks(5)
@@ -64,26 +67,26 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 	let labelsWidth = 0
 	let labelsHeight = 0
 
-	// if we have color, draw line-end labels so we can measure them
-	if (encoding.color) {
+	// // if we have color, draw line-end labels so we can measure them
+	// if (encoding.color) {
 
-		// create hidden labels container
-		const hiddenLabels = g.append('g')
-			.attr('class', 'labels-hidden')
+	// 	// create hidden labels container
+	// 	const hiddenLabels = g.append('g')
+	// 		.attr('class', 'labels-hidden')
 
-		// add hidden labels
-		hiddenLabels.selectAll('text')
-				.data(labelData)
-			.enter().append('text')
-				.text(d => d[encoding.color.field])
+	// 	// add hidden labels
+	// 	hiddenLabels.selectAll('text')
+	// 			.data(labelData)
+	// 		.enter().append('text')
+	// 			.text(d => d[encoding.color.field])
 
-		// get hidden labels bbox, so we can calculate labels width
-		// (which is also margin.right)
-		const labelsBBox = hiddenLabels.node().getBBox()
-		labelsWidth = labelsBBox.width
-		labelsHeight = hiddenLabels.select('text').node().getBBox().height
+	// 	// get hidden labels bbox, so we can calculate labels width
+	// 	// (which is also margin.right)
+	// 	const labelsBBox = hiddenLabels.node().getBBox()
+	// 	labelsWidth = labelsBBox.width
+	// 	labelsHeight = hiddenLabels.select('text').node().getBBox().height
 
-	}
+	// }
 
 	// if we have margins, it means we're going to draw the chart
 	// a second time, with the margins provided by the first rendering
@@ -97,10 +100,10 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 				.attr('width', 0)
 
 		// setup line generator
-		const line = d3.line()
+		const lineGenerator = line()
 			.x(d => x(d[encoding.x.field]))
 			.y(d => y(d[encoding.y.field]))
-			.curve(d3.curveMonotoneX)
+			.curve(curveMonotoneX)
 
 		// draw lines
 		g.append('g')
@@ -108,7 +111,7 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 			.selectAll('path')
 				.data(lineData, d => d.key)
 			.enter().append('path')
-				.attr('d', d => line(d.value))
+				.attr('d', d => lineGenerator(d.value))
 				.attr('class', (d, i) => `line-${i}`)
 				.attr('clip-path', 'url(#clip)')
 
@@ -118,40 +121,40 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 			.attr('width', width)
 			.on('end', () => {
 
-				// when the transition is done, and all lines are visible,
-				// fade in the line labels
-				svg.selectAll('g.labels')
-					.transition()
-					.duration(250)
-					.style('opacity', 1)
+				// // when the transition is done, and all lines are visible,
+				// // fade in the line labels
+				// svg.selectAll('g.labels')
+				// 	.transition()
+				// 	.duration(250)
+				// 	.style('opacity', 1)
 
 			})
 
 		// if we have color, draw labels at end of lines
-		if (encoding.color) {
+		// if (encoding.color) {
 
-			const textLabel = labeler.textLabel()
-				.padding(0)
-				.value(d => d[encoding.color.field])
+		// 	const textLabel = labeler.textLabel()
+		// 		.padding(0)
+		// 		.value(d => d[encoding.color.field])
 
-			const labelStrategy = labeler.annealing()
-				.bounds([width, height])
+		// 	const labelStrategy = labeler.annealing()
+		// 		.bounds([width, height])
 
-			const labels = labeler.label(labelStrategy)
-				.size(d => [labelsWidth, labelsHeight + 2])
-				.position(d => [
-					x(d[encoding.x.field]),
-					y(d[encoding.y.field]),
-				])
-				.component(textLabel)
+		// 	const labels = labeler.label(labelStrategy)
+		// 		.size(d => [labelsWidth, labelsHeight + 2])
+		// 		.position(d => [
+		// 			x(d[encoding.x.field]),
+		// 			y(d[encoding.y.field]),
+		// 		])
+		// 		.component(textLabel)
 
-			svg.append('g')
-					.attr('class', 'labels hidden')
-					.attr('transform', `translate(${margins.right*2}, 0)`)
-				.datum(labelData)
-					.call(labels)
+		// 	svg.append('g')
+		// 			.attr('class', 'labels hidden')
+		// 			.attr('transform', `translate(${margins.right*2}, 0)`)
+		// 		.datum(labelData)
+		// 			.call(labels)
 
-		}
+		// }
 
 	}
 

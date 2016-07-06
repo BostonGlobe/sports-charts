@@ -1,4 +1,3 @@
-import d3 from 'd3'
 import _ from 'lodash'
 import { $ } from '../../../utils/dom.js'
 import { titleize } from 'underscore.string'
