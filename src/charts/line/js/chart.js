@@ -16,8 +16,9 @@ const outerHeight = outerWidth * 0.75
 // sort values
 // deal with baseline/no baseline
 
-const setup = ({ rows, mappings, encoding, source, credits,
-	axesLabels }) => {
+const setup = ({ rows, mappings, source, credits, settings }) => {
+
+	const { encoding, axesLabels } = settings
 
 	// create line data
 	const lineData = _(rows)

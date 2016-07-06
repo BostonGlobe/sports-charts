@@ -2810,13 +2810,15 @@
 				"date": "date",
 				"price": "number"
 			},
-			"encoding": {
-				"x": { "field": "date" },
-				"y": { "field": "price" },
-				"color": { "field": "symbol" }
-			},
-			"axesLabels": {
-				"y": "Price ($)"
+			"settings": {
+				"encoding": {
+					"x": { "field": "date" },
+					"y": { "field": "price" },
+					"color": { "field": "symbol" }
+				},
+				"axesLabels": {
+					"y": "Price ($)"
+				}
 			},
 			"source": "MassGIS, DCR",
 			"credits": "Gabriel Florit, Tonia Cowan",

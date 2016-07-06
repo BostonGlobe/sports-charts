@@ -61,22 +61,32 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 		.classed('benton-regular', true)
 		.style('text-anchor', 'start')
 
-	// create hidden labels container
-	const hiddenLabels = g.append('g')
-		.attr('class', 'labels-hidden')
+	let labelsWidth = 0
+	let labelsHeight = 0
 
-	// add hidden labels
-	hiddenLabels.selectAll('text')
-			.data(labelData)
-		.enter().append('text')
-			.text(d => d[encoding.color.field])
+	// if we have color, draw line-end labels so we can measure them
+	if (encoding.color) {
 
-	// get hidden labels bbox, so we can calculate labels width
-	// (which is also margin.right)
-	const labelsBBox = hiddenLabels.node().getBBox()
-	const labelsWidth = labelsBBox.width
-	const labelsHeight = hiddenLabels.select('text').node().getBBox().height
+		// create hidden labels container
+		const hiddenLabels = g.append('g')
+			.attr('class', 'labels-hidden')
 
+		// add hidden labels
+		hiddenLabels.selectAll('text')
+				.data(labelData)
+			.enter().append('text')
+				.text(d => d[encoding.color.field])
+
+		// get hidden labels bbox, so we can calculate labels width
+		// (which is also margin.right)
+		const labelsBBox = hiddenLabels.node().getBBox()
+		labelsWidth = labelsBBox.width
+		labelsHeight = hiddenLabels.select('text').node().getBBox().height
+
+	}
+
+	// if we have margins, it means we're going to draw the chart
+	// a second time, with the margins provided by the first rendering
 	if (margins) {
 
 		// make curtain clip
@@ -117,33 +127,38 @@ outerWidth, outerHeight, rows, mappings, encoding }) => {
 
 			})
 
-		// setup labels
-		const textLabel = labeler.textLabel()
-			.padding(0)
-			.value(d => d[encoding.color.field])
+		// if we have color, draw labels at end of lines
+		if (encoding.color) {
 
-		const labelStrategy = labeler.annealing()
-			.bounds([width, height])
+			const textLabel = labeler.textLabel()
+				.padding(0)
+				.value(d => d[encoding.color.field])
 
-		const labels = labeler.label(labelStrategy)
-			.size(d => [labelsWidth, labelsHeight + 2])
-			.position(d => [
-				x(d[encoding.x.field]),
-				y(d[encoding.y.field]),
-			])
-			.component(textLabel)
+			const labelStrategy = labeler.annealing()
+				.bounds([width, height])
 
-		svg.append('g')
-				.attr('class', 'labels hidden')
-				.attr('transform', `translate(${margins.right*2}, 0)`)
-			.datum(labelData)
-				.call(labels)
+			const labels = labeler.label(labelStrategy)
+				.size(d => [labelsWidth, labelsHeight + 2])
+				.position(d => [
+					x(d[encoding.x.field]),
+					y(d[encoding.y.field]),
+				])
+				.component(textLabel)
+
+			svg.append('g')
+					.attr('class', 'labels hidden')
+					.attr('transform', `translate(${margins.right*2}, 0)`)
+				.datum(labelData)
+					.call(labels)
+
+		}
 
 	}
 
 	return {
 		top: 10,
-		right: labelsWidth,
+		// if we don't have labels, add a space for last x-axis tick label
+		right: labelsWidth || 10,
 		bottom: xAxis.node().getBBox().height,
 		left: yAxis.node().getBBox().width * 2,
 	}
