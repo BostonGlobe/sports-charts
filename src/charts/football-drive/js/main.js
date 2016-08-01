@@ -1,11 +1,14 @@
 import { setupIframe } from '../../../utils/setup-iframe'
+import { setup, draw } from './chart.js'
 
 const handleNewPayload = (payload) => {
 	console.log(JSON.stringify({ handleNewPayload: payload }, null, 2))
+	setup(payload)
 }
 
 const handleEnterView = (payload) => {
 	console.log(JSON.stringify({ handleEnterView: payload }, null, 2))
+	draw(payload)
 }
 
 const resizeEvent = (width) => {

@@ -1,1 +1,28 @@
-{}
+{
+	"_source": {
+		"payload": {
+			"rows": [
+				{
+					"from": 10,
+					"to": 20
+				},
+				{
+					"from": 20,
+					"to": 25
+				},
+				{
+					"from": 25,
+					"to": 40
+				}
+			],
+			"mappings": {
+				"from": "number",
+				"to": "number"
+			},
+			"hed": "hed",
+			"subhed": "subhed",
+			"sport": "football"
+		}
+	}
+}
+
